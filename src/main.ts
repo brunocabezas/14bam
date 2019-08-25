@@ -3,6 +3,7 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import axiosClient from "../api/client";
 import VueAxios from "vue-axios";
+import "./main.styl";
 
 Vue.config.productionTip = false;
 

@@ -20,6 +20,7 @@ export default class App extends Vue {
   mounted() {
     loadPages();
     loadPosts();
+    console.log('wp');
   }
 }
 </script>
