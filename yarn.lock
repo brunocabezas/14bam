@@ -8305,6 +8305,11 @@ vue-axios@^2.1.4:
   resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-2.1.4.tgz#a9d298f7e876f9a87feb336b37adcbce34ff9f9f"
   integrity sha512-DS8Q+WFT3i7nS0aZ/NMmTPf2yhbtlXhj4QEZmY69au/BshsGzGjC6dXaniZaPQlErP3J3Sv1HtQ4RVrXaUTkxA==
 
+vue-burger-button@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vue-burger-button/-/vue-burger-button-0.1.2.tgz#905772fd48defae8ab206b0567051c4521b1c921"
+  integrity sha512-ccP3QHVuObTsyScFANYunaeBza0jJGi3Yfk11cl1urwnInFcNg/zVGp4zcH62YE2FEC9B8VPgqLWaaj04/BKKQ==
+
 vue-class-component@^7.0.1, vue-class-component@^7.0.2:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.1.0.tgz#b33efcb10e17236d684f70b1e96f1946ec793e87"
