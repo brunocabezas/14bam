@@ -31,4 +31,4 @@
 </template>
 
 <script src="./header.ts" lang="ts" ></script>
-<style src="./header.styl" lang="styl"></style>
+<style src="./header.styl" scoped lang="styl"></style>
