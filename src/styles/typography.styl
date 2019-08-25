@@ -1,34 +1,45 @@
+@import './colors';
+
 @font-face {
-  font-family: NewsCycle;
-  src: url("/src/assets/fonts/News_Cycle/NewsCycle-Regular.ttf") format("truetype");
+  font-family: "NewsCycle";
+  src: url("/src/assets/fonts/News_Cycle/NewsCycle-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: NewsCycleBold;
-  src: url("/src/assets/fonts/News_Cycle/NewsCycle-Bold.ttf") format("truetype");
+  font-family: "NewsCycleBold";
+  src: url("/src/assets/fonts/News_Cycle/NewsCycle-Bold.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: RobotoMono;
-  src: url("/src/assets/fonts/Roboto_Mono/RobotoMono-Regular.ttf") format("truetype");
+  font-family: "RobotoMono";
+  src: url("/src/assets/fonts/Roboto_Mono/RobotoMono-Bold.woff") format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: RobotoMonoBold;
-  src: url("/src/assets/fonts/Roboto_Mono/RobotoMono-Bold.ttf") format("truetype");
+  font-family: "RobotoMonoBold";
+  src: url("/src/assets/fonts/Roboto_Mono/RobotoMono-Bold.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 * {
-  font-family: NewsCycle, Frutiger, "Helvetica Neue", Helvetica,
+  font-family: "NewsCycleBold", Frutiger, "Helvetica Neue", Helvetica,
     "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT",
     "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans",
     "Nimbus Sans L", Tahoma, Geneva, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h6 {
+  color: $white;
+}
+
+p, a, span {
+  font-family: "RobotoMono";
+  color: $black;
 }
