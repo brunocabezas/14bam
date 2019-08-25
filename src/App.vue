@@ -8,13 +8,20 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "./components/HelloWorld.vue";
+import { loadPages, loadPosts } from "../api/client";
 
 @Component({
   components: {
     HelloWorld
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  // Lifecycle hook
+  mounted() {
+    loadPages();
+    loadPosts();
+  }
+}
 </script>
 
 <style>
