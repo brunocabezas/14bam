@@ -1,6 +1,10 @@
 <template>
   <div class="header">
-    <div class="headerLogo">LOGO</div>
+    <div class="headerLogo">
+      <img 
+        alt="Bienal Artes Mediales Logo"
+        src="@/assets/logo.png" />
+    </div>
     <div class="headerNav">
       <nav 
         :class="{
