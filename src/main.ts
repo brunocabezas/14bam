@@ -1,12 +1,19 @@
 import Vue from "vue";
-import App from "./App.vue";
-import "./registerServiceWorker";
+import Icon from '../node_modules/vue-awesome/components/Icon.vue';
 import axiosClient from "../api/client";
 import VueAxios from "vue-axios";
 import VueRouter from 'vue-router'
 import router from './router';
-
+import App from "./App.vue";
+// only import the icons you use to reduce bundle size
+import 'vue-awesome/icons/brands/facebook';
+import 'vue-awesome/icons/brands/twitter';
+import "./registerServiceWorker";
 import "./main.styl";
+
+// globally (in your main .js file)
+Vue.component('v-icon', Icon);
+
 
 Vue.config.productionTip = false;
 

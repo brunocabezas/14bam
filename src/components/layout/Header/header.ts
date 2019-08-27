@@ -1,11 +1,13 @@
 
 import { Component, Vue } from "vue-property-decorator";
-import BurgerButton from 'vue-burger-button';
-import 'vue-burger-button/dist/vue-burger-button.css';
+import BurgerButton from "vue-burger-button";
+import SocialNetworks from "../../common/SocialNetworks.vue";
+import "vue-burger-button/dist/vue-burger-button.css";
 
 @Component({
   components: {
-    BurgerButton
+    BurgerButton,
+    SocialNetworks
   }
 })
 export default class Header extends Vue {

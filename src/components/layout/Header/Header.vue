@@ -17,7 +17,7 @@
           <li class="headerNavMenuItem"><a href="">page3</a></li>
         </ul>
         <div class="headerNavContact">
-          <div class="">round icons</div>
+          <SocialNetworks/>
           <p>contacto@cchv.cl</p>
         </div>
       </nav>  
