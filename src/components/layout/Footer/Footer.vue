@@ -5,7 +5,11 @@
         suscribete a nuestro boletin
       </h1>
       <div class="susbscribeInput">
-        <input type="text" @value="mailInput">
+        <input
+          placeholder="Ingresa tu correo"
+          type="text"
+          @keyup.enter="enterClicked()"
+          @value="mailInput">
       </div>
     </div>
     <div class="footerRight">

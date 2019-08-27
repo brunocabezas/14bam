@@ -12,12 +12,12 @@
           'headerNavOverlay--open' : isOpen,
           }">
         <ul class="headerNavMenu">
-          <li class="headerNavMenuItem"><a href="">page1</a></li>
-          <li class="headerNavMenuItem"><a href="">page2</a></li>
-          <li class="headerNavMenuItem"><a href="">page3</a></li>
+          <li class="headerNavMenuItem"><a>Sobre la bienal</a></li>
+          <li class="headerNavMenuItem"><a>Programas</a></li>
+          <li class="headerNavMenuItem"><a>Lugares</a></li>
         </ul>
         <div class="headerNavContact">
-          <SocialNetworks/>
+          <SocialNetworks isWhite />
           <p>contacto@cchv.cl</p>
         </div>
       </nav>  
@@ -25,7 +25,7 @@
         class="burgerButton"
         :active="isOpen"
         :bar-color="isOpen ? 'white' : 'black'"
-        :bar-height="5"
+        :bar-height="4"
         :bar-width="30"
         @click="toggleMenu"
         type="button" 

@@ -14,16 +14,14 @@ export const loadPosts = () =>
     console.log('loadPosts', response.data);
   });
 
-export const loadPost = (postId : number) =>
+export const loadPost = (postId) =>
   Vue.axios.get(routes.post(postId)).then(response => {
     console.log('loadPost', postId, response.data);
   });
 
 // Custom posts
 export const loadVideos = () =>
-  Vue.axios.get(routes.videos).then(response => {
-    console.log('loadVideos', response.data);
-  });
+  Vue.axios.get(routes.videos);
 
 export const loadSponsors = () =>
   Vue.axios.get(routes.sponsors).then(response => {
