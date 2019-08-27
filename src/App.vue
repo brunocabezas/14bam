@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <Header />
     <div class="appContent">
       <router-view></router-view>
@@ -25,7 +25,7 @@ export default class App extends Vue {
   mounted() {
     loadPages();
     loadPosts();
-    console.log('wp');
   }
 }
 </script>
+<style lang="stylus" src="./app.styl"></style>
