@@ -12,8 +12,11 @@
   <section class="program">
     single program
   </section> -->
+  <!-- <section class="sponsors">
+    <h2 class="sectionTitle">Financia</h2>
+    <h2 class="sectionTitle">Auspicia</h2>
+  </section> -->
 </div>
-  
 </template>
 
 <script src="./home.js" ></script>

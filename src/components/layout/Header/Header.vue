@@ -17,7 +17,7 @@
           <li class="headerNavMenuItem"><a>Lugares</a></li>
         </ul>
         <div class="headerNavContact">
-          <SocialNetworks/>
+          <SocialNetworks isWhite />
           <p>contacto@cchv.cl</p>
         </div>
       </nav>  
