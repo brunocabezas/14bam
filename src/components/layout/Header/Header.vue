@@ -21,7 +21,7 @@
           <p>contacto@cchv.cl</p>
         </div>
       </nav>  
-      <burger-button
+      <!-- <burger-button
         class="burgerButton"
         :active="isOpen"
         :bar-color="isOpen ? 'white' : 'black'"
@@ -29,7 +29,7 @@
         :bar-width="30"
         @click="toggleMenu"
         type="button" 
-      />
+      /> -->
     </div>
   </div>
 </template>

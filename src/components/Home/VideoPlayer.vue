@@ -10,7 +10,6 @@
 import { Vue, Component, Prop, Watch } from "vue-property-decorator"
 import vueVimeoPlayer from "vue-vimeo-player";
 import VueYoutube from "vue-youtube";
-
 Vue.use(VueYoutube)
 Vue.use(vueVimeoPlayer)
 

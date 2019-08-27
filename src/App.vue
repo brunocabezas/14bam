@@ -1,11 +1,11 @@
 <template>
   <div id="app" class="app">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:500,700&display=swap" rel="stylesheet">
-    <Header />
+    <!-- <Header /> -->
     <div class="appContent">
       <router-view></router-view>
     </div>
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
