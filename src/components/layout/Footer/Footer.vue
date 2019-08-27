@@ -1,13 +1,16 @@
 <template>
   <div class="footer">
     <div class="footerLeft">
-    <h1>
-      suscribete a nuestro boletin
-    </h1>
-    <div><input type="text" @value="mailInput"></div>
+      <h1 class="susbscribeText">
+        suscribete a nuestro boletin
+      </h1>
+      <div class="susbscribeInput">
+        <input type="text" @value="mailInput">
       </div>
+    </div>
     <div class="footerRight">
-      <p>contact@cchv.cl</p>
+      <SocialNetworks />  
+      <p class="contactText">contact@cchv.cl</p>
     </div>
   </div>
 </template>
