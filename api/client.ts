@@ -19,6 +19,17 @@ export const loadPost = (postId : number) =>
     console.log('loadPost', postId, response.data);
   });
 
+// Custom posts
+export const loadVideos = () =>
+  Vue.axios.get(routes.videos).then(response => {
+    console.log('loadVideos', response.data);
+  });
+
+export const loadSponsors = () =>
+  Vue.axios.get(routes.sponsors).then(response => {
+    console.log('loadSponsors', response.data);
+  });
+
 export default axios.create({
   baseURL: BASE_URL
 });

@@ -1,7 +1,7 @@
 <template>
   <div class="socialNetworks">
     <a class="socialNetworks__link" href="" target="_blank">
-      <v-icon
+      <v-icon 
         name="brands/facebook"
         scale="1"
         title="Vue.js">
@@ -18,26 +18,22 @@
 </template>
 
 <script>
-import { Vue, Component } from 'vue-property-decorator';
-import Icon from '../../../node_modules/vue-awesome/components/Icon.vue';
+import { Vue, Component } from "vue-property-decorator";
+import Icon from "../../../node_modules/vue-awesome/components/Icon.vue";
 
 @Component({
   components: {
-    'v-icon': Icon
-  } 
+    "v-icon": Icon
+  }
 })
-export default class SocialNetworks extends Vue {
-
-}
+export default class SocialNetworks extends Vue {}
 </script>
 
 <style lang="stylus" scoped>
-@import '../../styles/colors';
+@import "../../styles/colors";
 
 .socialNetworks
   color $white
-
   &__link
     margin-right 10px
-
 </style>
