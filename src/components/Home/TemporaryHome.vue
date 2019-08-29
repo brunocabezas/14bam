@@ -1,19 +1,16 @@
 <template>
-<div class="home">
+<div class="temporaryHome">
   <div class="imgPlaceholder"></div>
 </div>
 </template>
 
-<script src="./home.js" >
+<script >
 import { Vue } from 'vue-property-decorator';
-
-export default class TemporaryHome extends Vue {
-
-}
+export default class TemporaryHome extends Vue {}
 </script>
-<style scoped lang="stylus">
 
-.home
+<style scoped lang="stylus">
+.temporaryHome
   height 100%
   width 100%
 

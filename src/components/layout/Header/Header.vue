@@ -1,16 +1,15 @@
 <template>
   <div class="header">
     <div class="headerLogo">
-      <img 
-        alt="Bienal Artes Mediales Logo"
-        src="@/assets/logo.png" />
+      <img alt="Bienal Artes Mediales Logo" src="@/assets/logo.png" />
     </div>
     <div class="headerNav">
-      <nav 
+      <nav
         :class="{
-          'headerNavOverlay': true,
-          'headerNavOverlay--open' : isOpen,
-          }">
+          headerNavOverlay: true,
+          'headerNavOverlay--open': isOpen
+        }"
+      >
         <ul class="headerNavMenu">
           <li class="headerNavMenuItem"><a>Sobre la bienal</a></li>
           <li class="headerNavMenuItem"><a>Programas</a></li>
@@ -20,7 +19,7 @@
           <SocialNetworks isWhite />
           <p>contacto@cchv.cl</p>
         </div>
-      </nav>  
+      </nav>
       <!-- <burger-button
         class="burgerButton"
         :active="isOpen"
@@ -34,5 +33,5 @@
   </div>
 </template>
 
-<script src="./header.ts" lang="ts" ></script>
+<script src="./header.ts" lang="ts"></script>
 <style src="./header.styl" scoped lang="styl"></style>
