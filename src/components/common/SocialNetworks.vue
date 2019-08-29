@@ -3,18 +3,24 @@
     'socialNetworks': true,
     'isWhite' : isWhite
   }">
-    <a class="socialNetworks__link" href="" target="_blank">
+    <a
+      class="socialNetworks__link"
+      title="Facebook"
+      href="https://www.facebook.com/BienalArtesMedialesChile"
+      target="_blank">
       <v-icon 
         name="brands/facebook"
-        scale="1.5"
-        title="Vue.js">
+        scale="1.5">
       </v-icon>
     </a>
-    <a class="socialNetworks__link" href="" target="_blank">
+    <a 
+      class="socialNetworks__link"
+      title="Instagram"
+      href="http://instagram.com/bienalartesmediales"
+      target="_blank">
       <v-icon
-        name="brands/twitter"
-        scale="1.5"
-        title="Vue.js">
+        name="brands/instagram"
+        scale="1.5">
       </v-icon>
     </a>
   </div>
@@ -41,6 +47,8 @@ export default class SocialNetworks extends Vue {
 
 .socialNetworks
   color $white
+  padding-top 15px
+
   &__link
     margin-right 15px
 

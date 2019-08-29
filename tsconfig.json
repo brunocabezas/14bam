@@ -8,7 +8,9 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "esModuleInterop": true,
+    "strictPropertyInitialization": false,
     "resolveJsonModule": true,
+    "noImplicitAny": false, // TODO Enable
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
@@ -32,9 +34,13 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx", "src/vue.config.js"
+    "tests/**/*.tsx",
+    "src/vue.config.js",
+    "src/components/Home/home.js"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "client",
+    "home"
   ]
 }
