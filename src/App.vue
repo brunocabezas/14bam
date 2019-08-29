@@ -35,7 +35,6 @@ export default class App extends Vue {
 
   @Watch('$route')
   onPropertyChanged(to, from) {
-    console.log(from.name);
     this.showHeaderAndFooter = from.name==='temporaryHome';
   }
 }
