@@ -1,18 +1,18 @@
 @import './colors';
 
-@font-face {
-  font-family: "NewsCycle";
-  src: url("/src/assets/fonts/News_Cycle/NewsCycle-Regular.ttf") format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: "NewsCycle";
+//   src: url("/src/assets/fonts/News_Cycle/NewsCycle-Regular.ttf") format('truetype');
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
-@font-face {
-  font-family: "NewsCycleBold";
-  src: url("/src/assets/fonts/News_Cycle/NewsCycle-Bold.ttf") format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: "NewsCycleBold";
+//   src: url("/src/assets/fonts/News_Cycle/NewsCycle-Bold.ttf") format('truetype');
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 // @font-face {
 //   font-family: "RobotoMono";
@@ -28,18 +28,17 @@
 //   font-style: normal;
 // }
 
-* {
-  font-family: "NewsCycleBold", Frutiger, "Helvetica Neue", Helvetica,
-    "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT",
-    "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans",
-    "Nimbus Sans L", Tahoma, Geneva, Arial, sans-serif;
-}
+*
+  font-family 'News Cycle', sans-serif
+  font-weight 700
+  line-height 1.3em
+  font-style normal
 
 h1, h2, h3, h4, h6 {
   color: $white;
 }
 
-p, a, span {
+p, a, span, input {
   font-family: 'Roboto Mono', monospace;
   color: $black;
 }

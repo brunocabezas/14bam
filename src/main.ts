@@ -10,7 +10,6 @@ import App from "./App.vue";
 import 'vue-awesome/icons/brands/facebook';
 import 'vue-awesome/icons/brands/instagram';
 import "./registerServiceWorker";
-import "./main.styl";
 // globally (in your main .js file)
 Vue.component('v-icon', Icon);
 
