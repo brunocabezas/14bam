@@ -14,7 +14,7 @@
     </div>
     <div class="footerRight">
       <SocialNetworks />  
-      <p class="contactText">contact@cchv.cl</p>
+      <p class="contactText">contacto@cchv.cl</p>
     </div>
   </div>
 </template>
