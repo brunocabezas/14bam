@@ -1,8 +1,8 @@
 <template>
 <div class="home">
-  <section class="videos">
-    <VideoPlayer :url="video.url" />
-  </section>
+  <div class="homeTop">
+    <img src="./home.gif" alt="">
+  </div>
   <!-- <section class="places">
     grid of places
   </section>
@@ -12,14 +12,16 @@
   <section class="program">
     single program
   </section> -->
-  <section class="sponsors">
-      <div 
-        class="sponsor"
-        v-for="sponsor in sponsors" 
-        v-bind:style="{ 'background-image': `url(${sponsor.logo.url})`, height: `${sponsor.logo.height}px` }"
-        v-bind:key="sponsor.name">
-      </div>
-  </section>
+  <div class="sections">
+    <section class="sponsors">
+        <div 
+          class="sponsor"
+          v-for="sponsor in sponsors" 
+          v-bind:style="{ 'background-image': `url(${sponsor.logo.url})`, height: `${sponsor.logo.height}px` }"
+          v-bind:key="sponsor.name">
+        </div>
+    </section>
+  </div>
 </div>
 </template>
 
