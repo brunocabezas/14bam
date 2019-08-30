@@ -3,9 +3,15 @@ import { Component, Vue } from "vue-property-decorator";
 import { loadSponsors, loadVideos } from "../../../api/client";
 import VideoPlayer from "./VideoPlayer.vue";
 
+const getSponsorsFromApi = apiSponsors =>
+  apiSponsors.map(sponsor => ({
+    logo: sponsor.acf_fields && sponsor.acf_fields.logo,
+    name: sponsor.title && sponsor.title.rendered || ''
+  }));
+
 @Component({
   components: {
-    VideoPlayer,
+    VideoPlayer
   }
 })
 export default class Home extends Vue {
@@ -17,10 +23,11 @@ export default class Home extends Vue {
     id: 0,
     url: ""
   };
-  // slides : Array =  "[]";
 
   mounted() {
-    loadSponsors();
+    loadSponsors().then((response) => {
+      this.sponsors = getSponsorsFromApi(response.data);
+    });
     loadVideos().then((response) => {
       const { data } = response;
       this.videos = data;
