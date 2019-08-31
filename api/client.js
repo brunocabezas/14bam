@@ -24,9 +24,7 @@ export const loadVideos = () =>
   Vue.axios.get(routes.videos);
 
 export const loadSponsors = () =>
-  Vue.axios.get(routes.sponsors).then(response => {
-    console.log('loadSponsors', response.data);
-  });
+  Vue.axios.get(routes.sponsors)
 
 export default axios.create({
   baseURL: BASE_URL

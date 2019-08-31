@@ -2,9 +2,12 @@
   <div id="app" class="app">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.goo/gleapis.com/css?family=News+Cycle:400,700&display=swap" rel="stylesheet">
-    <Header v-if="showHeaderAndFooter" />
-    <div class="appContent">
-      <router-view></router-view>
+    <div class="appContainer">
+
+      <Header v-if="showHeaderAndFooter" />
+      <div class="appContent">
+        <router-view></router-view>
+      </div>
     </div>
     <Footer v-if="showHeaderAndFooter" />
   </div>
