@@ -3,5 +3,6 @@ export default {
   posts: '/posts',
   sponsors: '/sponsors',
   videos: '/videos',
+  expositions: '/expositions',
   post: postId => `/posts/${postId}`
 }

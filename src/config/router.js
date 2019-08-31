@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import TemporaryHome from '@/components/Home/TemporaryHome.vue'
+import FutureHome from '@/components/FutureHome/FutureHome.vue'
 import Home from '@/components/Home/Home.vue'
 import Places from '@/components/Places/Places.vue'
 import Programs from '@/components/Programs/Programs.vue'
@@ -17,9 +17,9 @@ export default new Router({
       component: Home
     },
     {
-      path: paths.temporaryHome,
-      name: 'temporaryHome',
-      component: TemporaryHome
+      path: paths.futureHome,
+      name: 'futureHome',
+      component: FutureHome
     },
     // Not used for now
     {

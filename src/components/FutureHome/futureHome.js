@@ -1,9 +1,10 @@
 
 import { Component, Vue } from 'vue-property-decorator'
-import { loadSponsors, loadVideos } from '../../../api/client'
-import VideoPlayer from './VideoPlayer.vue'
+import { loadSponsors, loadVideos, loadExpositions } from '../../../api/client'
+import VideoPlayer from '../Home/VideoPlayer.vue'
 import store from '@/config/store'
-import { getSponsorsFromApi } from '@/helpers/apiHelpers'
+// import { getExpositionsFromApi, getSponsorsFromApi } from '@/helpers/apiHelpers'
+import { getSponsorsFromApi, getExpositionsFromApi } from '@/helpers/apiHelpers'
 
 @Component({
   components: {
@@ -11,7 +12,9 @@ import { getSponsorsFromApi } from '@/helpers/apiHelpers'
   },
   store
 })
-class Home extends Vue {
+class FutureHome extends Vue {
+  // places : Array =  '[]';
+  // programs : Array =  '[]';
   videos = [];
   video = {
     id: 0,
@@ -22,9 +25,17 @@ class Home extends Vue {
     return this.$store.state.sponsors
   }
 
+  get expositions () {
+    return this.$store.state.expositions
+  }
+
   mounted () {
     loadSponsors().then((response) => {
       this.$store.commit('loadSponsors', getSponsorsFromApi(response.data))
+    })
+    loadExpositions().then((response) => {
+      console.log(response.data)
+      this.$store.commit('loadExpositions', getExpositionsFromApi(response.data))
     })
     loadVideos().then((response) => {
       const { data } = response
@@ -38,4 +49,4 @@ class Home extends Vue {
     }).catch(res => console.log('loadVideosError', res))
   }
 }
-export default Home
+export default FutureHome

@@ -5,12 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    sponsors: []
+    sponsors: [],
+    expositions: []
   },
   mutations: {
-    loadSponsors (state, sponsors) {
+    loadSponsors (state, data) {
       // mutate state
-      state.sponsors = sponsors
+      state.sponsors = data
+    },
+    loadExpositions (state, data) {
+      state.expositions = data
     }
   }
 })

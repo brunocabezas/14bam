@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import { Component, Vue, Watch } from 'vue-property-decorator'
+// import { Component, Vue, Watch } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import Header from '@/components/layout/Header/Header.vue'
 import Footer from '@/components/layout/Footer/Footer.vue'
 // import { loadPages, loadPosts } from '../api/client.js'
@@ -28,24 +29,24 @@ import Footer from '@/components/layout/Footer/Footer.vue'
   components: {
     Header,
     Footer
-  },
+  }
 })
 class App extends Vue {
   // Header and footer are hidden on temporaryHome
   showHeaderAndFooter = true
 
-  // Lifecycle hook
-  mounted () {
-    // console.log(this.$route);
-    if (this.$route.name === 'temporaryHome') {
-      this.showHeaderAndFooter = false
-    }
-  }
+  // // Lifecycle hook
+  // mounted () {
+  //   // console.log(this.$route);
+  //   if (this.$route.name === 'temporaryHome') {
+  //     this.showHeaderAndFooter = false
+  //   }
+  // }
 
-  @Watch('$route')
-  onPropertyChanged (to, from) {
-    this.showHeaderAndFooter = from.name === 'temporaryHome'
-  }
+  // @Watch('$route')
+  // onPropertyChanged (to, from) {
+  //   this.showHeaderAndFooter = from.name === 'temporaryHome'
+  // }
 }
 export default App
 </script>
