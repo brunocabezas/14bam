@@ -9,20 +9,24 @@
       rel="stylesheet"
     />
     <div class="appContainer">
-      <Header v-if="showHeaderAndFooter" />
-      <div class="appContent">
+      <Header :isOnHome="isOnHome" />
+      <div
+        v-bind:class="{
+          'appContent': true,
+          'appContent--home': isOnHome
+        }">
         <router-view></router-view>
       </div>
     </div>
-    <Footer v-if="showHeaderAndFooter" />
+    <Footer />
   </div>
 </template>
 
 <script>
-// import { Component, Vue, Watch } from 'vue-property-decorator'
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
 import Header from '@/components/layout/Header/Header.vue'
 import Footer from '@/components/layout/Footer/Footer.vue'
+// import urls from '@/config/urls'
 // import { loadPages, loadPosts } from '../api/client.js'
 
 @Component({
@@ -33,20 +37,20 @@ import Footer from '@/components/layout/Footer/Footer.vue'
 })
 class App extends Vue {
   // Header and footer are hidden on temporaryHome
-  showHeaderAndFooter = true
+  isOnHome = false
 
-  // // Lifecycle hook
-  // mounted () {
-  //   // console.log(this.$route);
-  //   if (this.$route.name === 'temporaryHome') {
-  //     this.showHeaderAndFooter = false
-  //   }
-  // }
+  // Lifecycle hook
+  mounted () {
+    // console.log(this.$route);
+    if (this.$route.name === 'home') {
+      this.isOnHome = true
+    }
+  }
 
-  // @Watch('$route')
-  // onPropertyChanged (to, from) {
-  //   this.showHeaderAndFooter = from.name === 'temporaryHome'
-  // }
+ @Watch('$route')
+  onPropertyChanged (to, from) {
+    this.isOnHome = from.name === 'home'
+  }
 }
 export default App
 </script>

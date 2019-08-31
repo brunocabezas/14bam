@@ -21,6 +21,7 @@ class FutureHome extends Vue {
     id: 0,
     url: ''
   };
+  urls = urls
 
   get sponsors () {
     return this.$store.state.sponsors
@@ -28,10 +29,6 @@ class FutureHome extends Vue {
 
   get expositions () {
     return this.$store.state.expositions
-  }
-
-  getExpoLink (expoName) {
-    return urls.exposition(expoName)
   }
 
   mounted () {

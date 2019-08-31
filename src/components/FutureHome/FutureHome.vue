@@ -15,7 +15,7 @@
     <div class="sections">
       <section class="section expositions">
         <h1 class="sectionTitle">
-        <router-link to="expositions">Exposiciones</router-link></h1>
+        <router-link :to="urls.expositions" >Exposiciones</router-link></h1>
         <div class="expositionsGrid">
           <div
             class="exposition"
@@ -23,7 +23,7 @@
             v-bind:key="exposition.name"
           >
             <h3 class="expositionName">
-               <router-link :to="getExpoLink(exposition.name)">
+               <router-link :to="urls.exposition(exposition.name)">
                  {{ exposition.name }}
                 </router-link>
             </h3>
