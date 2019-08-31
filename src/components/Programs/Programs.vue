@@ -4,5 +4,5 @@
   </div>
 </template>
 
-<script src="./programs.ts" lang="ts" ></script>
+<script src="./programs.js" ></script>
 <style src="./programs.styl" scoped lang="styl"></style>

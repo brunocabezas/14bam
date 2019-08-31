@@ -11,9 +11,15 @@
         }"
       >
         <ul class="headerNavMenu">
-          <li class="headerNavMenuItem"><a>Sobre la bienal</a></li>
-          <li class="headerNavMenuItem"><a>Programas</a></li>
-          <li class="headerNavMenuItem"><a>Lugares</a></li>
+          <li class="headerNavMenuItem">
+            <a>Sobre la bienal</a>
+          </li>
+          <li class="headerNavMenuItem">
+            <a>Programas</a>
+          </li>
+          <li class="headerNavMenuItem">
+            <a>Lugares</a>
+          </li>
         </ul>
         <div class="headerNavContact">
           <SocialNetworks isWhite />
@@ -27,11 +33,11 @@
         :bar-height="4"
         :bar-width="30"
         @click="toggleMenu"
-        type="button" 
-      /> -->
+        type="button"
+      />-->
     </div>
   </div>
 </template>
 
-<script src="./header.ts" lang="ts"></script>
+<script src="./header.js"></script>
 <style src="./header.styl" scoped lang="styl"></style>

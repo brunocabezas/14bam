@@ -11,7 +11,7 @@ import "vue-burger-button/dist/vue-burger-button.css";
   }
 })
 export default class Header extends Vue {
-  isOpen : boolean = false;
+  isOpen = false;
 
   toggleMenu() {
     this.isOpen = !this.isOpen;
