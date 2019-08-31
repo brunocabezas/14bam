@@ -1,0 +1,802 @@
+[
+  {
+    "id": 158,
+    "date": "2019-08-29T02:17:41",
+    "date_gmt": "2019-08-29T02:17:41",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=sponsor&#038;p=158"
+    },
+    "modified": "2019-08-29T02:17:41",
+    "modified_gmt": "2019-08-29T02:17:41",
+    "slug": "aliados-de-medios",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/aliados-de-medios\/",
+    "title": {
+      "rendered": "Aliados de Medios"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": {
+        "ID": 148,
+        "id": 148,
+        "title": "aliados-medios",
+        "filename": "aliados-medios.png",
+        "url": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-medios.png",
+        "alt": "",
+        "author": "1",
+        "description": "",
+        "caption": "",
+        "name": "aliados-medios",
+        "date": "2019-08-29 02:13:57",
+        "modified": "2019-08-29 02:17:41",
+        "mime_type": "image\/png",
+        "type": "image",
+        "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+        "width": 1024,
+        "height": 330,
+        "sizes": {
+          "thumbnail": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-medios-150x150.png",
+          "thumbnail-width": 150,
+          "thumbnail-height": 150,
+          "medium": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-medios-300x97.png",
+          "medium-width": 300,
+          "medium-height": 97,
+          "medium_large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-medios-768x248.png",
+          "medium_large-width": 768,
+          "medium_large-height": 248,
+          "large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-medios-1024x330.png",
+          "large-width": 1024,
+          "large-height": 330
+        }
+      },
+      "url": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors\/158"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=158"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=158"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 157,
+    "date": "2019-08-29T02:17:17",
+    "date_gmt": "2019-08-29T02:17:17",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=sponsor&#038;p=157"
+    },
+    "modified": "2019-08-29T02:17:17",
+    "modified_gmt": "2019-08-29T02:17:17",
+    "slug": "aliados-2",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/aliados-2\/",
+    "title": {
+      "rendered": "Aliados"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": {
+        "ID": 149,
+        "id": 149,
+        "title": "aliados",
+        "filename": "aliados.png",
+        "url": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados.png",
+        "alt": "",
+        "author": "1",
+        "description": "",
+        "caption": "",
+        "name": "aliados",
+        "date": "2019-08-29 02:14:00",
+        "modified": "2019-08-29 02:17:17",
+        "mime_type": "image\/png",
+        "type": "image",
+        "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+        "width": 1024,
+        "height": 577,
+        "sizes": {
+          "thumbnail": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-150x150.png",
+          "thumbnail-width": 150,
+          "thumbnail-height": 150,
+          "medium": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-300x169.png",
+          "medium-width": 300,
+          "medium-height": 169,
+          "medium_large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-768x433.png",
+          "medium_large-width": 768,
+          "medium_large-height": 433,
+          "large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-1024x577.png",
+          "large-width": 1024,
+          "large-height": 577
+        }
+      },
+      "url": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors\/157"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=157"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=157"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 156,
+    "date": "2019-08-29T02:16:52",
+    "date_gmt": "2019-08-29T02:16:52",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=sponsor&#038;p=156"
+    },
+    "modified": "2019-08-29T02:16:52",
+    "modified_gmt": "2019-08-29T02:16:52",
+    "slug": "aliados-cientificos-y-academicos",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/aliados-cientificos-y-academicos\/",
+    "title": {
+      "rendered": "Aliados cient\u00edficos y acad\u00e9micos"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": {
+        "ID": 146,
+        "id": 146,
+        "title": "aliados-cientificos-academicos",
+        "filename": "aliados-cientificos-academicos.png",
+        "url": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-cientificos-academicos.png",
+        "alt": "",
+        "author": "1",
+        "description": "",
+        "caption": "",
+        "name": "aliados-cientificos-academicos",
+        "date": "2019-08-29 02:13:50",
+        "modified": "2019-08-29 02:16:52",
+        "mime_type": "image\/png",
+        "type": "image",
+        "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+        "width": 1024,
+        "height": 433,
+        "sizes": {
+          "thumbnail": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-cientificos-academicos-150x150.png",
+          "thumbnail-width": 150,
+          "thumbnail-height": 150,
+          "medium": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-cientificos-academicos-300x127.png",
+          "medium-width": 300,
+          "medium-height": 127,
+          "medium_large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-cientificos-academicos-768x325.png",
+          "medium_large-width": 768,
+          "medium_large-height": 325,
+          "large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-cientificos-academicos-1024x433.png",
+          "large-width": 1024,
+          "large-height": 433
+        }
+      },
+      "url": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors\/156"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=156"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=156"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 155,
+    "date": "2019-08-29T02:16:21",
+    "date_gmt": "2019-08-29T02:16:21",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=sponsor&#038;p=155"
+    },
+    "modified": "2019-08-29T02:16:21",
+    "modified_gmt": "2019-08-29T02:16:21",
+    "slug": "aliados-internacionales-2",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/aliados-internacionales-2\/",
+    "title": {
+      "rendered": "Aliados internacionales"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": {
+        "ID": 147,
+        "id": 147,
+        "title": "aliados-internacionales",
+        "filename": "aliados-internacionales.png",
+        "url": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-internacionales.png",
+        "alt": "",
+        "author": "1",
+        "description": "",
+        "caption": "",
+        "name": "aliados-internacionales",
+        "date": "2019-08-29 02:13:54",
+        "modified": "2019-08-29 02:16:21",
+        "mime_type": "image\/png",
+        "type": "image",
+        "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+        "width": 1024,
+        "height": 417,
+        "sizes": {
+          "thumbnail": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-internacionales-150x150.png",
+          "thumbnail-width": 150,
+          "thumbnail-height": 150,
+          "medium": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-internacionales-300x122.png",
+          "medium-width": 300,
+          "medium-height": 122,
+          "medium_large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-internacionales-768x313.png",
+          "medium_large-width": 768,
+          "medium_large-height": 313,
+          "large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/aliados-internacionales-1024x417.png",
+          "large-width": 1024,
+          "large-height": 417
+        }
+      },
+      "url": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors\/155"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=155"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=155"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 154,
+    "date": "2019-08-29T02:15:41",
+    "date_gmt": "2019-08-29T02:15:41",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=sponsor&#038;p=154"
+    },
+    "modified": "2019-08-29T02:15:41",
+    "modified_gmt": "2019-08-29T02:15:41",
+    "slug": "espacios-2",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/espacios-2\/",
+    "title": {
+      "rendered": "Espacios"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": {
+        "ID": 151,
+        "id": 151,
+        "title": "espacios",
+        "filename": "espacios.png",
+        "url": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/espacios.png",
+        "alt": "",
+        "author": "1",
+        "description": "",
+        "caption": "",
+        "name": "espacios",
+        "date": "2019-08-29 02:14:07",
+        "modified": "2019-08-29 02:15:41",
+        "mime_type": "image\/png",
+        "type": "image",
+        "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+        "width": 1024,
+        "height": 446,
+        "sizes": {
+          "thumbnail": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/espacios-150x150.png",
+          "thumbnail-width": 150,
+          "thumbnail-height": 150,
+          "medium": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/espacios-300x131.png",
+          "medium-width": 300,
+          "medium-height": 131,
+          "medium_large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/espacios-768x335.png",
+          "medium_large-width": 768,
+          "medium_large-height": 335,
+          "large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/espacios-1024x446.png",
+          "large-width": 1024,
+          "large-height": 446
+        }
+      },
+      "url": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors\/154"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=154"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=154"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 153,
+    "date": "2019-08-29T02:15:13",
+    "date_gmt": "2019-08-29T02:15:13",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=sponsor&#038;p=153"
+    },
+    "modified": "2019-08-29T02:15:13",
+    "modified_gmt": "2019-08-29T02:15:13",
+    "slug": "auspicia-2",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/auspicia-2\/",
+    "title": {
+      "rendered": "Auspicia"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": {
+        "ID": 150,
+        "id": 150,
+        "title": "auspicia",
+        "filename": "auspicia.png",
+        "url": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/auspicia.png",
+        "alt": "",
+        "author": "1",
+        "description": "",
+        "caption": "",
+        "name": "auspicia",
+        "date": "2019-08-29 02:14:04",
+        "modified": "2019-08-29 02:15:13",
+        "mime_type": "image\/png",
+        "type": "image",
+        "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+        "width": 1024,
+        "height": 503,
+        "sizes": {
+          "thumbnail": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/auspicia-150x150.png",
+          "thumbnail-width": 150,
+          "thumbnail-height": 150,
+          "medium": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/auspicia-300x147.png",
+          "medium-width": 300,
+          "medium-height": 147,
+          "medium_large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/auspicia-768x377.png",
+          "medium_large-width": 768,
+          "medium_large-height": 377,
+          "large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/auspicia-1024x503.png",
+          "large-width": 1024,
+          "large-height": 503
+        }
+      },
+      "url": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors\/153"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=153"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=153"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 144,
+    "date": "2019-08-29T02:14:34",
+    "date_gmt": "2019-08-29T02:14:34",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=sponsor&#038;p=144"
+    },
+    "modified": "2019-08-29T02:14:53",
+    "modified_gmt": "2019-08-29T02:14:53",
+    "slug": "144-2",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/144-2\/",
+    "title": {
+      "rendered": "Financia"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": {
+        "ID": 152,
+        "id": 152,
+        "title": "financia-organiza",
+        "filename": "financia-organiza.png",
+        "url": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/financia-organiza.png",
+        "alt": "",
+        "author": "1",
+        "description": "",
+        "caption": "",
+        "name": "financia-organiza",
+        "date": "2019-08-29 02:14:10",
+        "modified": "2019-08-29 02:14:34",
+        "mime_type": "image\/png",
+        "type": "image",
+        "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+        "width": 1024,
+        "height": 389,
+        "sizes": {
+          "thumbnail": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/financia-organiza-150x150.png",
+          "thumbnail-width": 150,
+          "thumbnail-height": 150,
+          "medium": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/financia-organiza-300x114.png",
+          "medium-width": 300,
+          "medium-height": 114,
+          "medium_large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/financia-organiza-768x292.png",
+          "medium_large-width": 768,
+          "medium_large-height": 292,
+          "large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/financia-organiza-1024x389.png",
+          "large-width": 1024,
+          "large-height": 389
+        }
+      },
+      "url": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors\/144"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=144"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=144"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 107,
+    "date": "2019-08-27T04:33:27",
+    "date_gmt": "2019-08-27T04:33:27",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=sponsor&#038;p=107"
+    },
+    "modified": "2019-08-27T04:33:27",
+    "modified_gmt": "2019-08-27T04:33:27",
+    "slug": "primer-sponsor",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/primer-sponsor\/",
+    "title": {
+      "rendered": "Primer sponsor"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": {
+        "ID": 108,
+        "id": 108,
+        "title": "logo",
+        "filename": "logo.png",
+        "url": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/logo.png",
+        "alt": "",
+        "author": "1",
+        "description": "",
+        "caption": "",
+        "name": "logo",
+        "date": "2019-08-27 04:32:52",
+        "modified": "2019-08-27 04:33:27",
+        "mime_type": "image\/png",
+        "type": "image",
+        "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+        "width": 261,
+        "height": 61,
+        "sizes": {
+          "thumbnail": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/logo-150x61.png",
+          "thumbnail-width": 150,
+          "thumbnail-height": 61,
+          "medium": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/logo.png",
+          "medium-width": 261,
+          "medium-height": 61,
+          "medium_large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/logo.png",
+          "medium_large-width": 261,
+          "medium_large-height": 61,
+          "large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/08\/logo.png",
+          "large-width": 261,
+          "large-height": 61
+        }
+      },
+      "url": "www.bienaldeartesmediales.cl\/14"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors\/107"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=107"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=107"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

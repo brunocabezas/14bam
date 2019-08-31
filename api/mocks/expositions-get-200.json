@@ -1,0 +1,341 @@
+[
+  {
+    "id": 111,
+    "date": "2019-08-27T18:00:34",
+    "date_gmt": "2019-08-27T18:00:34",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=exposicion&#038;p=111"
+    },
+    "modified": "2019-08-30T00:45:38",
+    "modified_gmt": "2019-08-30T00:45:38",
+    "slug": "litte-ja-goabdda-drones-y-tambores",
+    "status": "publish",
+    "type": "exposicion",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/exposicion\/litte-ja-goabdda-drones-y-tambores\/",
+    "title": {
+      "rendered": "Litte ja Goabdd\u00e1 [Drones y tambores]"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "web": "http:\/\/www.mssa.cl",
+      "direccion": "Av. Rep\u00fablica 475, Santiago",
+      "texto_curatorial": "<p>MSSA se incorpora a la 14 Bienal de Artes Mediales<\/p>\n<p>A trav\u00e9s de una instalaci\u00f3n sobre conflictos medioambientales y activismo ind\u00edgena del artista Ignacio Acosta, el Museo de la Solidaridad Salvador Allende ser\u00e1 parte de la Bienal de Artes Mediales de Santiago, uno de los encuentros de arte contempor\u00e1neo m\u00e1s relevantes de Am\u00e9rica Latina, que este a\u00f1o reflexiona sobre la naturaleza como una esfera de confluencia para las artes y las ciencias.<\/p>\n<p>El pr\u00f3ximo 31 de agosto se inaugurar\u00e1 el segundo ciclo expositivo del MSSA y con ello, la apertura de la muestra Litte ja Goabdd\u00e1 [Drones y tambores] del artista Ignacio Acosta (Valpara\u00edso, 1976), quien por medio de fotograf\u00eda y video explora el uso de drones que realizan las comunidades ind\u00edgenas S\u00e1mi, como medio de resistencia y protesta contra el proyecto minero G\u00e1llak en Norbotten Country, Suecia.<\/p>\n<p>Con esta exposici\u00f3n, el MSSA se suma a los programas y actividades de la 14 Bienal de Artes Mediales, un encuentro que desde 1993 se ha posicionado como un espacio abierto a distintas expresiones de arte contempor\u00e1neo, especialmente al di\u00e1logo entre artes, ciencias y humanidades. Impulsada por la Corporaci\u00f3n Chilena de Video y Artes Electr\u00f3nicas, el tema central de esta Bienal ser\u00e1 \u201cEl cuarto mundo\u201d, una alusi\u00f3n a un posible futuro derivado del cambio clim\u00e1tico, que se inspira en la obra del mismo nombre del artista Carlos Ort\u00fazar, emplazada hasta septiembre de 1973 en la entrada norte del edificio UNCTAD III. En su primera versi\u00f3n, esta escultura se instal\u00f3 como una advertencia frente a la distinci\u00f3n entre \u201cprimer, segundo y tercer mundo\u201d y, en el contexto de la Bienal, la obra ser\u00e1 restablecida para convertirse en el eje de su curator\u00eda.<\/p>\n<p>\u201cEs un verdadero honor para la Bienal de Artes Mediales ser parte del programa editorial del MSSA, instituci\u00f3n que conserva una de las colecciones de artes visuales m\u00e1s importante de Latinoam\u00e9rica, que desarrolla una l\u00ednea curatorial que cruza contingencias urgentes para el contexto social chileno y desarrolla un programa de mediaci\u00f3n y educaci\u00f3n coherente con la transformaci\u00f3n de los museos en el siglo XXI\u201d, cuenta Enrique Rivera, director de la Bienal. <\/p>\n<p>En tanto, para el MSSA, \u201ces muy importante el v\u00ednculo con la Bienal de Artes Mediales, pues entendemos que su propuesta se emparenta con nuestra pol\u00edtica curatorial de arte y pol\u00edtica, aborda tem\u00e1ticas contingentes como la producci\u00f3n sustentable, la gesti\u00f3n de recursos y el cambio clim\u00e1tico\u201d, expresa Claudia Zald\u00edvar, directora del Museo de la Solidaridad Salvador Allende.<\/p>\n<p>Programa conjunto<\/p>\n<p>El programa incluye el desarrollo de actividades de mediaci\u00f3n y educaci\u00f3n, en conjunto con el \u00e1rea de Programas P\u00fablicos del MSSA y de la Escuela de la Intuici\u00f3n de la Bienal de Artes Mediales, realizadas para la exposici\u00f3n de Ignacio Acosta. <\/p>\n<p>La exposici\u00f3n Litte ja Goabdd\u00e1 [Drones y tambores] cuenta con la colaboraci\u00f3n de British Council y del proyecto Drone Vision, impulsado por Hasselblad Foundation y Valand Academy de la Gothenburg University, bajo el liderazgo de la investigadora Sarah Tuck. La muestra nace de las estrategias investigativas del estudio Copper Geographies (2010-2016), realizado como parte del proyecto Traces of Nitrate y desarrollado en colaboraci\u00f3n con la historiadora de Arte y Dise\u00f1o Louise Purbrick y el fot\u00f3grafo Xavier Ribas de la Universidad de Brighton. Acosta se ha dedicado en los \u00faltimos 10 a\u00f1os a estudiar sitios afectados por la explotaci\u00f3n de ecolog\u00edas debido a la intervenci\u00f3n colonial y capitalizaci\u00f3n intensiva en Sudam\u00e9rica y Europa del norte. Nacido en Chile y formado en Londres con un doctorado, Acosta aborda la investigaci\u00f3n a trav\u00e9s de la fotograf\u00eda y el video como una herramienta para explorar din\u00e1micas de poder geopol\u00edtico en base a minerales y narrativas hist\u00f3ricas.<\/p>\n",
+      "espacio": "Museo de la Solidaridad Salvador Allende",
+      "titulo": "Litte ja Goabdd\u00e1 [Drones y tambores",
+      "artistas": [
+        {
+          "ID": 178,
+          "post_author": "1",
+          "post_date": "2019-08-30 00:35:04",
+          "post_date_gmt": "2019-08-30 00:35:04",
+          "post_content": "",
+          "post_title": "Ignacio Acosta",
+          "post_excerpt": "",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_password": "",
+          "post_name": "ignacio-acosta",
+          "to_ping": "",
+          "pinged": "",
+          "post_modified": "2019-08-30 00:47:24",
+          "post_modified_gmt": "2019-08-30 00:47:24",
+          "post_content_filtered": "",
+          "post_parent": 0,
+          "guid": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=participante&#038;p=178",
+          "menu_order": 0,
+          "post_type": "participante",
+          "post_mime_type": "",
+          "comment_count": "0",
+          "filter": "raw"
+        }
+      ],
+      "curadores": "",
+      "fecha_inicio": "",
+      "horarios": "Martes a s\u00e1bado, 10.00 a 18.00 h",
+      "fecha_termino": "",
+      "horarios_2": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/expositions\/111"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/expositions"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/exposicion"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=111"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=111"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 110,
+    "date": "2019-08-27T17:58:16",
+    "date_gmt": "2019-08-27T17:58:16",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=exposicion&#038;p=110"
+    },
+    "modified": "2019-08-30T06:42:20",
+    "modified_gmt": "2019-08-30T06:42:20",
+    "slug": "el-cuarto-mundo",
+    "status": "publish",
+    "type": "exposicion",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/exposicion\/el-cuarto-mundo\/",
+    "title": {
+      "rendered": "El Cuarto Mundo"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "web": "",
+      "direccion": "",
+      "texto_curatorial": "<p>El Cuarto Mundo, escultura de Carlos Ort\u00fazar, es el punto de orientaci\u00f3n general para la 14 Bienal de Artes Mediales. Instalada originalmente en el patio norte del edificio construido durante el gobierno de Salvador Allende para ser sede de la UNCTAD III, la obra pas\u00f3 a formar parte del Centro Cultural Metropolitano Gabriela Mistral, espacio que encarnaba el proyecto de urbanismo popular de este per\u00edodo. El Cuarto Mundo de Ort\u00fazar se levant\u00f3 como alternativa a la violenta categor\u00eda socioecon\u00f3mica de \u201ctercer mundo\u201d que se impon\u00eda en los a\u00f1os de la Guerra Fr\u00eda a las naciones empobrecidas, con la intenci\u00f3n de desactivarlas y mantenerlas como espacios de extracci\u00f3n de recursos b\u00e1sicos para el desarrollo del \u201cprimer mundo\u201d. La escultura ser\u00e1 reconstruida por JEMO, la maestranza de acero que fabric\u00f3 la obra original. Reinstalada en el mismo lugar en el que Ort\u00fazar la ubic\u00f3 en 1972, la escultura es uno de los puntos magn\u00e9ticos de esta bienal que aspira a convertirse en un eje de orientaci\u00f3n para la ciudad de Santiago.<\/p>\n",
+      "espacio": "Plaza Villavisencio",
+      "titulo": "El cuarto Mundo",
+      "artistas": [
+        {
+          "ID": 173,
+          "post_author": "1",
+          "post_date": "2019-08-30 00:10:00",
+          "post_date_gmt": "2019-08-30 00:10:00",
+          "post_content": "",
+          "post_title": "Carlos Ort\u00fazar",
+          "post_excerpt": "",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_password": "",
+          "post_name": "carlos-ortuzar",
+          "to_ping": "",
+          "pinged": "",
+          "post_modified": "2019-08-30 00:32:14",
+          "post_modified_gmt": "2019-08-30 00:32:14",
+          "post_content_filtered": "",
+          "post_parent": 0,
+          "guid": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=participante&#038;p=173",
+          "menu_order": 0,
+          "post_type": "participante",
+          "post_mime_type": "",
+          "comment_count": "0",
+          "filter": "raw"
+        }
+      ],
+      "curadores": [
+        {
+          "ID": 171,
+          "post_author": "1",
+          "post_date": "2019-08-29 17:05:55",
+          "post_date_gmt": "2019-08-29 17:05:55",
+          "post_content": "",
+          "post_title": "Cornelia Vargas",
+          "post_excerpt": "",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_password": "",
+          "post_name": "171-2",
+          "to_ping": "",
+          "pinged": "",
+          "post_modified": "2019-08-30 01:00:08",
+          "post_modified_gmt": "2019-08-30 01:00:08",
+          "post_content_filtered": "",
+          "post_parent": 0,
+          "guid": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=participante&#038;p=171",
+          "menu_order": 0,
+          "post_type": "participante",
+          "post_mime_type": "",
+          "comment_count": "0",
+          "filter": "raw"
+        }
+      ],
+      "fecha_inicio": "",
+      "horarios": "",
+      "fecha_termino": "",
+      "horarios_2": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/expositions\/110"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/expositions"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/exposicion"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=110"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=110"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 109,
+    "date": "2019-08-27T16:11:23",
+    "date_gmt": "2019-08-27T16:11:23",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=exposicion&#038;p=109"
+    },
+    "modified": "2019-08-30T17:04:04",
+    "modified_gmt": "2019-08-30T17:04:04",
+    "slug": "cien-es-un-color",
+    "status": "publish",
+    "type": "exposicion",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/exposicion\/cien-es-un-color\/",
+    "title": {
+      "rendered": "Cien es un Color"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "web": "http:\/\/www.gam.cl",
+      "direccion": "Av Libertador Bernardo O'Higgins 227",
+      "texto_curatorial": "<p>Cien es un color explora la abstracci\u00f3n como un lenguaje compartido entre las artes y las matem\u00e1ticas. A trav\u00e9s de la obra reciente y del archivo de la artista germano-chilena Cornelia Vargas, sumamos esta muestra a las acciones de conmemoraci\u00f3n del centenario de la fundaci\u00f3n de la Bauhaus, centro de experimentaci\u00f3n pl\u00e1stica, tecnol\u00f3gica y did\u00e1ctica que form\u00f3 parte de la corriente modernista iniciada a fines del siglo XIX. Como veh\u00edculo fundamental de la expansi\u00f3n de esta utop\u00eda constructiva, la Bauhaus cruz\u00f3 los saberes art\u00edsticos, cient\u00edficos y tecnol\u00f3gicos con las pr\u00e1cticas cotidianas del dise\u00f1o y la arquitectura para contrarrestar el exceso de irracionalidad que marcaba las din\u00e1micas sociales de esos a\u00f1os.<\/p>\n<p>Cien a\u00f1os despu\u00e9s, tanto en Chile como en el resto del mundo, la amenaza del exceso irracional y la evidencia de las debilidades del sistema democr\u00e1tico persisten, pero bajo nuevas formas: el super\u00e1vit de basura, la circulaci\u00f3n masiva de informaci\u00f3n falsa, la saturaci\u00f3n de di\u00f3xido de carbono en la atm\u00f3sfera, de pl\u00e1stico en los mares, de individualismo y de consumo, determina como constante desaf\u00edo a la vida colectiva. En tiempos de exceso, recordar la herencia bauhausiana y localizar sus huellas a nivel local supone observar la pervivencia de proyectos guiados por una \u00e9tica de la econom\u00eda de recursos, la b\u00fasqueda de precisi\u00f3n y comprensi\u00f3n en base a lenguajes comunes y la orientaci\u00f3n interdisciplinar de sus colaboradores. \u00a0<\/p>\n<p>Siguiendo las exploraciones de la Escuela de Ulm durante la d\u00e9cada de 1950 en torno a la semi\u00f3tica, el lenguaje algor\u00edtmico y la visualizaci\u00f3n de datos, esta exposici\u00f3n da cuenta del di\u00e1logo que Cornelia Vargas ha sostenido con el matem\u00e1tico Alejandro Jofr\u00e9, miembro del Centro de Modelamiento Matem\u00e1tico de la Universidad de Chile. Este di\u00e1logo se proyecta tambi\u00e9n hacia las obras de Fresia Gangas, Adriana Tureuna, Fresia Barr\u00eda y las integrantes de la Agrupaci\u00f3n de Colchanderas del Itata, Ninhue y Quirihue, Regi\u00f3n de \u00d1uble, artesanas que cultivan materias, formas y saberes ligados a otras geometr\u00edas. Sus piezas, realizadas especialmente para la muestra, dan cuenta de la diversidad de l\u00f3gicas abstractas y al mismo tiempo, de la continuidad de los patrones y matrices que emergen de los procesos creativos humanos. La exposici\u00f3n es, entonces, una invitaci\u00f3n a enhebrar las tecnolog\u00edas de la memoria, de los materiales, de la creaci\u00f3n art\u00edstica y de la forma funcional con el hilo de la abstracci\u00f3n.<\/p>\n",
+      "espacio": "Centro Cultural Gabriela Mistral",
+      "titulo": "Cien es un Color",
+      "artistas": [
+        {
+          "ID": 171,
+          "post_author": "1",
+          "post_date": "2019-08-29 17:05:55",
+          "post_date_gmt": "2019-08-29 17:05:55",
+          "post_content": "",
+          "post_title": "Cornelia Vargas",
+          "post_excerpt": "",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_password": "",
+          "post_name": "171-2",
+          "to_ping": "",
+          "pinged": "",
+          "post_modified": "2019-08-30 01:00:08",
+          "post_modified_gmt": "2019-08-30 01:00:08",
+          "post_content_filtered": "",
+          "post_parent": 0,
+          "guid": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=participante&#038;p=171",
+          "menu_order": 0,
+          "post_type": "participante",
+          "post_mime_type": "",
+          "comment_count": "0",
+          "filter": "raw"
+        }
+      ],
+      "curadores": "",
+      "fecha_inicio": "",
+      "horarios": "Ma a Vi - 10 a 21 h",
+      "fecha_termino": "",
+      "horarios_2": "S\u00e1 y Do - 11 a 21 h"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/expositions\/109"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/expositions"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/exposicion"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=109"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=109"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

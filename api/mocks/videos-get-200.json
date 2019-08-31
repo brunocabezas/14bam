@@ -1,0 +1,69 @@
+[
+  {
+    "id": 160,
+    "date": "2019-08-29T03:31:08",
+    "date_gmt": "2019-08-29T03:31:08",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=video&#038;p=160"
+    },
+    "modified": "2019-08-29T04:48:35",
+    "modified_gmt": "2019-08-29T04:48:35",
+    "slug": "14-bienal-de-artes-mediales",
+    "status": "publish",
+    "type": "video",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/video\/14-bienal-de-artes-mediales\/",
+    "title": {
+      "rendered": "14 Bienal de Artes Mediales"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": "https:\/\/www.youtube.com\/watch?v=0KDjGI1Na0Y"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/videos\/160"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/videos"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/video"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=160"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=160"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
