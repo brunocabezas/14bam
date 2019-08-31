@@ -3,7 +3,7 @@ export default {
   temporaryHome: '/temporaryHome',
   home: '/',
   programs: '/programas',
-  program: (programName: string) => `/programas/${programName}`,
+  program: programName => `/programas/${programName}`,
   places: '/espacios',
-  place: (placeName: string) => `/espacios/${placeName}`,
+  place: placeName => `/espacios/${placeName}`
 }

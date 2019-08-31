@@ -3,7 +3,6 @@
     <div class="footerLeft">
       <h1 class="suscribeText">suscribete a nuestro boletin</h1>
       <div class="suscribeInput">
-        
         <!-- Begin Mailchimp Signup Form -->
         <div id="mc_embed_signup">
           <form
@@ -18,7 +17,14 @@
             <div id="mc_embed_signup_scroll">
               <div class="mc-field-group">
                 <!-- <label for="mce-EMAIL">Email Address </label> -->
-                <input type="email" placeholder="Ingresa tu correo" value name="EMAIL" class="required email" id="mce-EMAIL" />
+                <input
+                  type="email"
+                  placeholder="Ingresa tu correo"
+                  value
+                  name="EMAIL"
+                  class="required email"
+                  id="mce-EMAIL"
+                />
               </div>
               <div id="mce-responses" class="clear">
                 <div class="response" id="mce-error-response" style="display:none"></div>
@@ -57,5 +63,5 @@
   </div>
 </template>
 
-<script src="./footer.ts" lang="ts" ></script>
+<script src="./footer.js"></script>
 <style src="./footer.styl" scoped lang="styl"></style>

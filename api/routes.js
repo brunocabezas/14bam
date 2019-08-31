@@ -3,5 +3,5 @@ export default {
   posts : "/posts",
   sponsors : "/sponsors",
   videos : "/videos",
-  post : (postId : number) : string => `/posts/${postId}`
+  post : postId => `/posts/${postId}`
 }
