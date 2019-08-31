@@ -2,6 +2,8 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { loadSponsors, loadVideos } from '../../../api/client'
 import VideoPlayer from './VideoPlayer.vue'
+import store from '@/config/store'
+// import store from '../../config/storeOLD'
 
 const getSponsorsFromApi = apiSponsors =>
   apiSponsors.map(sponsor => ({
@@ -12,21 +14,25 @@ const getSponsorsFromApi = apiSponsors =>
 @Component({
   components: {
     VideoPlayer
-  }
+  },
+  store
 })
 class Home extends Vue {
   // places : Array =  '[]';
   // programs : Array =  '[]';
-  sponsors = [];
   videos = [];
   video = {
     id: 0,
     url: ''
   };
 
+  get sponsors () {
+    return this.$store.state.sponsors
+  }
+
   mounted () {
     loadSponsors().then((response) => {
-      this.sponsors = getSponsorsFromApi(response.data)
+      this.$store.commit('loadSponsors', getSponsorsFromApi(response.data))
     })
     loadVideos().then((response) => {
       const { data } = response
