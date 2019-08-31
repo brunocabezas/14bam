@@ -4,6 +4,8 @@ export default {
   home: '/',
   programs: '/programas',
   program: programName => `/programas/${programName}`,
+  expositions: '/exposiciones',
+  exposition: expoName => `/exposiciones/${expoName}`,
   places: '/espacios',
   place: placeName => `/espacios/${placeName}`
 }

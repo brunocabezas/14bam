@@ -3,6 +3,7 @@ import { Component, Vue } from 'vue-property-decorator'
 import { loadSponsors, loadVideos, loadExpositions } from '../../../api/client'
 import VideoPlayer from '../Home/VideoPlayer.vue'
 import store from '@/config/store'
+import urls from '@/config/urls'
 // import { getExpositionsFromApi, getSponsorsFromApi } from '@/helpers/apiHelpers'
 import { getSponsorsFromApi, getExpositionsFromApi } from '@/helpers/apiHelpers'
 
@@ -27,6 +28,10 @@ class FutureHome extends Vue {
 
   get expositions () {
     return this.$store.state.expositions
+  }
+
+  getExpoLink (expoName) {
+    return urls.exposition(expoName)
   }
 
   mounted () {

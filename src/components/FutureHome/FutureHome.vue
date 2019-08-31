@@ -14,14 +14,19 @@
     </section>-->
     <div class="sections">
       <section class="section expositions">
-        <h1 class="sectionTitle">Exposiciones</h1>
+        <h1 class="sectionTitle">
+        <router-link to="expositions">Exposiciones</router-link></h1>
         <div class="expositionsGrid">
           <div
             class="exposition"
             v-for="exposition in expositions"
             v-bind:key="exposition.name"
           >
-            <h3 class="expositionName">{{ exposition.name }}</h3>
+            <h3 class="expositionName">
+               <router-link :to="getExpoLink(exposition.name)">
+                 {{ exposition.name }}
+                </router-link>
+            </h3>
             <div class="expositionText">
               <p>{{exposition.place}}</p>
               <p>{{exposition.hour}}</p>
