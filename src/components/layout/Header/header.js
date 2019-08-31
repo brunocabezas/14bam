@@ -1,8 +1,8 @@
 
-import { Component, Vue } from "vue-property-decorator";
-import BurgerButton from "vue-burger-button";
-import SocialNetworks from "../../common/SocialNetworks.vue";
-import "vue-burger-button/dist/vue-burger-button.css";
+import { Component, Vue } from 'vue-property-decorator'
+import BurgerButton from 'vue-burger-button'
+import SocialNetworks from '../../common/SocialNetworks.vue'
+import 'vue-burger-button/dist/vue-burger-button.css'
 
 @Component({
   components: {
@@ -10,10 +10,11 @@ import "vue-burger-button/dist/vue-burger-button.css";
     SocialNetworks
   }
 })
-export default class Header extends Vue {
-  isOpen = false;
+class Header extends Vue {
+  isOpen = false
 
-  toggleMenu() {
-    this.isOpen = !this.isOpen;
+  toggleMenu () {
+    this.isOpen = !this.isOpen
   }
 }
+export default Header

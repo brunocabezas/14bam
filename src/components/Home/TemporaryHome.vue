@@ -5,8 +5,9 @@
 </template>
 
 <script >
-import { Vue } from 'vue-property-decorator';
-export default class TemporaryHome extends Vue {}
+import { Vue } from 'vue-property-decorator'
+class TemporaryHome extends Vue {}
+export default TemporaryHome
 </script>
 
 <style scoped lang="stylus">
@@ -20,7 +21,7 @@ export default class TemporaryHome extends Vue {}
   background-position: center center;
   background-size: initial;
   height 100%
-  
+
   @media (max-width: 1520px)
     background-size contain
 </style>

@@ -28,7 +28,7 @@ import Footer from '@/components/layout/Footer/Footer.vue'
   components: {
     Header,
     Footer
-  }
+  },
 })
 class App extends Vue {
   // Header and footer are hidden on temporaryHome
