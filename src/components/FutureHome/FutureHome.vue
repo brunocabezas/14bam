@@ -23,7 +23,7 @@
             v-bind:key="exposition.name"
           >
             <h3 class="expositionName">
-               <router-link :to="urls.exposition(exposition.name)">
+               <router-link :to="urls.exposition(exposition.slug)">
                  {{ exposition.name }}
                 </router-link>
             </h3>

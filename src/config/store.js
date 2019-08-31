@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     sponsors: [],
-    expositions: []
+    expositions: [],
+    exposition: {}
   },
   mutations: {
     loadSponsors (state, data) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     loadExpositions (state, data) {
       state.expositions = data
+    },
+    loadExposition (state, data) {
+      state.exposition = data
     }
   }
 })
