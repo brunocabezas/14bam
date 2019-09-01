@@ -1,11 +1,7 @@
 <template>
   <div class="header">
     <div class="headerLogo">
-
-      <router-link
-        v-if="!isOnHome"
-        :to="urls.home"
-      >
+      <router-link title="Inicio" v-if="!isOnHome" :to="urls.home">
         <img alt="Bienal Artes Mediales Logo" src="@/assets/logo.png" />
       </router-link>
       <img
@@ -22,22 +18,29 @@
         }"
       >
         <ul class="headerNavMenu">
-          <li class="headerNavMenuItem">
-            <a>Sobre la bienal</a>
+          <li @click="toggleMenu" class="headerNavMenuItem">
+            <router-link title="Inicio" :to="urls.home">Inicio</router-link>
           </li>
-          <li class="headerNavMenuItem">
-            <a>Programas</a>
+          <li @click="toggleMenu" class="headerNavMenuItem">
+            <router-link title="Exposiciones" :to="urls.expositions"
+              >Exposiciones</router-link
+            >
           </li>
-          <li class="headerNavMenuItem">
+          <li @click="toggleMenu" class="headerNavMenuItem">
+            <router-link title="Participantes" :to="urls.participants"
+              >Participantes</router-link
+            >
+          </li>
+          <!-- <li class="headerNavMenuItem">
             <a>Lugares</a>
-          </li>
+          </li> -->
         </ul>
         <div class="headerNavContact">
           <SocialNetworks isWhite />
           <p>contacto@cchv.cl</p>
         </div>
       </nav>
-      <!-- <burger-button
+      <burger-button
         class="burgerButton"
         :active="isOpen"
         :bar-color="isOpen ? 'white' : 'black'"
@@ -45,7 +48,7 @@
         :bar-width="30"
         @click="toggleMenu"
         type="button"
-      />-->
+      />
     </div>
   </div>
 </template>

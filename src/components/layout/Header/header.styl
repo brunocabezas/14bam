@@ -25,6 +25,7 @@
 
     .burgerButton
       z-index 9
+      margin-right 10px
     
     .headerNavOverlay
       position fixed
@@ -50,15 +51,19 @@
       
       .headerNavMenu
         padding 0
+        width 100%
         text-align center
 
-        .headerNavMenuItem a
-          font-size 30pt
-          color $white
-          text-decoration none
-          text-transform uppercase
-          &:hover
-            text-decoration underline
+        .headerNavMenuItem
+          margin-bottom 10px
+          a
+            font-size 30pt
+            display block
+            color $white
+            text-decoration none
+            text-transform uppercase
+            &:hover
+              text-decoration underline
 
       .headerNavContact
         margin-top 15px
