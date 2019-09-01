@@ -10,14 +10,16 @@ import App from './App.vue'
 import 'vue-awesome/icons/brands/facebook'
 import 'vue-awesome/icons/brands/instagram'
 import './registerServiceWorker'
+import store from './config/store'
+import 'es6-promise/auto'
 // globally (in your main .js file)
 Vue.component('v-icon', Icon)
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axiosClient)
-
 // eslint-disable-next-line no-new
 new Vue({
+  store: store.state,
   el: '#app',
   render: h => h(App),
   router

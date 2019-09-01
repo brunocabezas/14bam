@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import TemporaryHome from '@/components/Home/TemporaryHome.vue'
+import FutureHome from '@/components/FutureHome/FutureHome.vue'
 import Home from '@/components/Home/Home.vue'
 import Places from '@/components/Places/Places.vue'
+import Expositions from '@/components/Expositions/Expositions.vue'
+import Exposition from '@/components/Expositions/Exposition/Exposition.vue'
 import Programs from '@/components/Programs/Programs.vue'
 import paths from '@/config/urls'
 
@@ -12,14 +14,19 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: paths.home,
-      name: 'home',
-      component: Home
+      path: paths.futureHome,
+      name: 'futureHome',
+      component: FutureHome
     },
     {
-      path: paths.temporaryHome,
-      name: 'temporaryHome',
-      component: TemporaryHome
+      path: paths.expositions,
+      name: 'expositions',
+      component: Expositions
+    },
+    {
+      path: paths.exposition(':slug'),
+      name: 'exposition',
+      component: Exposition
     },
     // Not used for now
     {
@@ -31,6 +38,11 @@ export default new Router({
       path: paths.programs,
       name: 'programs',
       component: Programs
+    },
+    {
+      path: paths.home,
+      name: 'home',
+      component: Home
     }
   ]
 })

@@ -8,12 +8,12 @@
       title="Facebook"
       href="https://www.facebook.com/BienalArtesMedialesChile"
       target="_blank">
-      <v-icon 
+      <v-icon
         name="brands/facebook"
         scale="1.5">
       </v-icon>
     </a>
-    <a 
+    <a
       class="socialNetworks__link"
       title="Instagram"
       href="http://instagram.com/bienalartesmediales"
@@ -27,19 +27,20 @@
 </template>
 
 <script>
-import { Vue, Component, Props } from "vue-property-decorator";
-import Icon from "../../../node_modules/vue-awesome/components/Icon.vue";
+import { Vue, Component } from 'vue-property-decorator'
+import Icon from '../../../node_modules/vue-awesome/components/Icon.vue'
 
 @Component({
   components: {
-    "v-icon": Icon
-  }, 
-  props : {
+    'v-icon': Icon
+  },
+  props: {
     isWhite: Boolean
   }
 })
-export default class SocialNetworks extends Vue {
-}
+class SocialNetworks extends Vue {}
+export default SocialNetworks
+
 </script>
 
 <style lang="stylus" scoped>
@@ -55,5 +56,4 @@ export default class SocialNetworks extends Vue {
   &.isWhite
     .fa-icon
       fill white
-    
 </style>

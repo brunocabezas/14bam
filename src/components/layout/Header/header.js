@@ -1,19 +1,29 @@
 
-import { Component, Vue } from "vue-property-decorator";
-import BurgerButton from "vue-burger-button";
-import SocialNetworks from "../../common/SocialNetworks.vue";
-import "vue-burger-button/dist/vue-burger-button.css";
+import { Component, Vue } from 'vue-property-decorator'
+import BurgerButton from 'vue-burger-button'
+import SocialNetworks from '../../common/SocialNetworks.vue'
+import urls from '@/config/urls'
+import 'vue-burger-button/dist/vue-burger-button.css'
 
 @Component({
   components: {
     BurgerButton,
     SocialNetworks
+  },
+  props: {
+    isOnHome: Boolean
+  },
+  data () {
+    return {
+      urls
+    }
   }
 })
-export default class Header extends Vue {
-  isOpen = false;
+class Header extends Vue {
+  isOpen = false
 
-  toggleMenu() {
-    this.isOpen = !this.isOpen;
+  toggleMenu () {
+    this.isOpen = !this.isOpen
   }
 }
+export default Header

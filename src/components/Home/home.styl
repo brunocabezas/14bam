@@ -19,12 +19,19 @@
     flex-direction column
     flex-wrap wrap
     section
+      padding 1em 3em
       height 100%
       flex 1
 
-      .sponsor
-        background-position center center
-        background-repeat no-repeat
-        background-size contain
-        &:last-child
-          margin 40px 0 60px 0
+      .sectionTitle
+        text-decoration underline
+        font-size 36pt
+        color $black
+
+      &.sponsors
+        .sponsor
+          background-position center center
+          background-repeat no-repeat
+          background-size contain
+          &:last-child
+            margin 40px 0 60px 0

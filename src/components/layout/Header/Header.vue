@@ -1,7 +1,18 @@
 <template>
   <div class="header">
     <div class="headerLogo">
-      <img alt="Bienal Artes Mediales Logo" src="@/assets/logo.png" />
+
+      <router-link
+        v-if="!isOnHome"
+        :to="urls.home"
+      >
+        <img alt="Bienal Artes Mediales Logo" src="@/assets/logo.png" />
+      </router-link>
+      <img
+        v-if="isOnHome"
+        alt="Bienal Artes Mediales Logo"
+        src="@/assets/logo.png"
+      />
     </div>
     <div class="headerNav">
       <nav

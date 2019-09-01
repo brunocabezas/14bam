@@ -1,22 +1,29 @@
 
 import { Component, Vue } from 'vue-property-decorator'
 import { loadSponsors, loadVideos } from '../../../api/client'
-import VideoPlayer from './VideoPlayer.vue'
+import VideoPlayer from '../Home/VideoPlayer.vue'
+import ExpositionsGrid from '../Expositions/ExpositionsGrid.vue'
 import store from '@/config/store'
+import urls from '@/config/urls'
+// import { getExpositionsFromApi, getSponsorsFromApi } from '@/helpers/apiHelpers'
 import { getSponsorsFromApi } from '@/helpers/apiHelpers'
 
 @Component({
   components: {
-    VideoPlayer
+    VideoPlayer,
+    ExpositionsGrid
   },
   store
 })
-class Home extends Vue {
+class FutureHome extends Vue {
+  // places : Array =  '[]';
+  // programs : Array =  '[]';
   videos = [];
   video = {
     id: 0,
     url: ''
   };
+  urls = urls
 
   get sponsors () {
     return this.$store.state.sponsors
@@ -38,4 +45,4 @@ class Home extends Vue {
     }).catch(res => console.log('loadVideosError', res))
   }
 }
-export default Home
+export default FutureHome
