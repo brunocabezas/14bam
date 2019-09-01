@@ -1,15 +1,17 @@
 
 import { Component, Vue } from 'vue-property-decorator'
-import { loadSponsors, loadVideos, loadExpositions } from '../../../api/client'
+import { loadSponsors, loadVideos } from '../../../api/client'
 import VideoPlayer from '../Home/VideoPlayer.vue'
+import ExpositionsGrid from '../Expositions/ExpositionsGrid.vue'
 import store from '@/config/store'
 import urls from '@/config/urls'
 // import { getExpositionsFromApi, getSponsorsFromApi } from '@/helpers/apiHelpers'
-import { getSponsorsFromApi, getExpositionsFromApi } from '@/helpers/apiHelpers'
+import { getSponsorsFromApi } from '@/helpers/apiHelpers'
 
 @Component({
   components: {
-    VideoPlayer
+    VideoPlayer,
+    ExpositionsGrid
   },
   store
 })
@@ -27,17 +29,9 @@ class FutureHome extends Vue {
     return this.$store.state.sponsors
   }
 
-  get expositions () {
-    return this.$store.state.expositions
-  }
-
   mounted () {
     loadSponsors().then((response) => {
       this.$store.commit('loadSponsors', getSponsorsFromApi(response.data))
-    })
-    loadExpositions().then((response) => {
-      console.log(response.data)
-      this.$store.commit('loadExpositions', getExpositionsFromApi(response.data))
     })
     loadVideos().then((response) => {
       const { data } = response

@@ -10,27 +10,13 @@ import store from '@/config/store'
 })
 class Exposition extends Vue {
   get exposition () {
-    const { exposition, expositions } = this.$store.state
-    const unvalidExposition = isEmpty(exposition) || exposition.id === -1
-
-    if (unvalidExposition && expositions.length > 0) {
-      const isOnState = expositions
-        .find(expo => expo.slug === this.$route.params.slug)
-
-      // If item is on state, retrieving it from there
-      if (isOnState) {
-        return isOnState
-      }
-    }
-    return exposition
+    return this.$store.state.exposition
   }
 
   mounted () {
     if (this.$route.params.slug) {
-      const unvalidExposition = isEmpty(this.exposition) ||
-        this.exposition.id === -1 ||
-        this.exposition.slug !== this.$route.paramas.slug
-      if (unvalidExposition) {
+      const doRequest = this.$route.params.slug !== this.exposition.slug
+      if (doRequest) {
         loadExposition(this.$route.params.slug).then(res => {
           this.$store.commit('loadExposition', getExpositionFromApi(res.data))
         })
