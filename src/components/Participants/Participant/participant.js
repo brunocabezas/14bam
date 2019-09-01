@@ -2,11 +2,15 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { loadParticipant } from '../../../../api/client'
 import { getParticipantFromApi } from '../../../helpers/apiHelpers'
+import Carousel from '@/components/common/Carousel.vue'
 import store from '@/config/store'
 import urls from '@/config/urls'
 
 @Component({
-  store
+  store,
+  components: {
+    Carousel
+  }
 })
 class Participant extends Vue {
   urls = urls

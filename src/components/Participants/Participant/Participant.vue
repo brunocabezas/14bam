@@ -1,10 +1,10 @@
 <template>
   <div class="page participant">
     <div class="leftSection">
-      <div
+      <Carousel className="participanGallery" :images="participant.images" />
+      <!-- <div
         v-bind:style="{ 'background-image': `url(${participant.img})` }"
-        class="participanGallery"
-      ></div>
+      ></div> -->
       <div class="pageList participantExpo">
         <h2 class="pageListTitle">Curatoria</h2>
         <ul class="pageListWrapper">
