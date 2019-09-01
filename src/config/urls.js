@@ -1,6 +1,6 @@
 // All urls used on the Vue app are here
 export default {
-  futureHome: '/futureHome',
+  futureHome: '/futuro',
   home: '/',
   programs: '/programas',
   program: programName => `/programas/${programName}`,

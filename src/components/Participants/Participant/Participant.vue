@@ -1,7 +1,11 @@
 <template>
   <div class="page participant">
     <div class="leftSection">
-      <Carousel className="participanGallery" :images="participant.images" />
+      <Carousel
+        v-if="participant.images.length > 0"
+        className="participanGallery"
+        :images="participant.images"
+      />
       <!-- <div
         v-bind:style="{ 'background-image': `url(${participant.img})` }"
       ></div> -->
@@ -9,13 +13,16 @@
         <h2 class="pageListTitle">Curatoria</h2>
         <ul class="pageListWrapper">
           <li class="pageListItem">
-            <router-link :to="urls.exposition(participant.expo.post_name)">
-              {{participant.expo.post_title}}
+            <router-link
+              :title="participant.expo.post_title"
+              :to="urls.exposition(participant.expo.post_name)"
+            >
+              {{ participant.expo.post_title }}
             </router-link>
           </li>
         </ul>
       </div>
-      <div>RELACIONADOS</div>
+      <!-- <div>RELACIONADOS</div> -->
     </div>
     <div class="rightSection">
       <h1 class="pageTitle">{{ participant.name }}</h1>

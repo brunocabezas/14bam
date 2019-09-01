@@ -32,7 +32,7 @@ class Header extends Vue {
       // esc key pressed
       this.isOpen = !this.isOpen
     }
-    console.log('this.toggleMenu')
+    // console.log('this.toggleMenu')
   }
 
   toggleMenu () {

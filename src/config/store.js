@@ -11,7 +11,8 @@ export default new Vuex.Store({
     participants: [],
     participant: {
       id: -1,
-      expo: {}
+      expo: {},
+      images: []
     },
     exposition: {
       id: -1,

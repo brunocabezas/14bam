@@ -49,7 +49,9 @@
               v-bind:key="artist.id"
               v-for="artist in exposition.artists"
             >
-              <router-link :to="urls.participant(artist.post_name)">
+              <router-link
+                :title="artist.post_title"
+                :to="urls.participant(artist.post_name)">
                 {{ artist.post_title }}
               </router-link >
             </li>
@@ -67,7 +69,9 @@
               v-bind:key="curator.id"
               v-for="curator in exposition.curators"
             >
-              <router-link :to="urls.participant(curator.post_name)">
+              <router-link
+                :title="curator.post_title"
+                :to="urls.participant(curator.post_name)">
                 {{ curator.post_title }}
               </router-link >
             </li>

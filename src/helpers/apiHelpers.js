@@ -1,4 +1,4 @@
-
+// Gets advanced custom fields values from results
 const getAcfField = (results, fieldName, defaultValue = '') =>
   (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
 
@@ -54,6 +54,8 @@ export const getParticipantFromApi = (results = []) =>
     workTitle: getAcfField(results[0], 'work_title'),
     workDescription: getAcfField(results[0], 'work_text'),
     img: getAcfField(results[0], 'fotos', [{ url: '' }])[0].url,
-    images: getAcfField(results[0], 'fotos', [{ url: '' }]).map(img => img.url),
+    // Filtering images with non valid url
+    images: getAcfField(results[0], 'fotos', [{ url: '' }])
+      .filter(img => img.url).map(img => img.url),
     expo: getAcfField(results[0], 'exposicion', [])[0] || {}
   })

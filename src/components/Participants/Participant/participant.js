@@ -24,7 +24,6 @@ class Participant extends Vue {
       const doRequest = this.$route.params.slug !== this.participant.slug
       if (doRequest) {
         loadParticipant(this.$route.params.slug).then(res => {
-          console.log(res.data)
           this.$store.commit('loadParticipant', getParticipantFromApi(res.data))
         })
       }

@@ -1,22 +1,38 @@
 <template>
   <div :class="'carousel ' + className">
-    <Swiper :urlList="images" ref="mySwiper"></Swiper>
+    <hr>
+    <vue-carousel
+      :paginationEnabled="false"
+      :perPage="1"
+      :navigate-to="currentImage">
+      <slide
+        v-bind:key="image"
+        v-for="image in images">
+        <div
+          class="carouselImage"
+          v-bind:style="{'background-image': `url(${image})` }"></div>
+      </slide>
+    </vue-carousel>
     <button
+      v-if="images.length > 1"
       title="Imagen anterior"
       class="carouselButton carouselButton--prev"
       type="button"
       @click="goToPrevItem">
        <v-icon
+        color="white"
         name="chevron-left"
         scale="1.5">
       </v-icon>
     </button>
     <button
+      v-if="images.length > 1"
       title="Imagen siguiente"
       class="carouselButton carouselButton--next"
       type="button"
       @click="goToNextItem">
       <v-icon
+        color="white"
         name="chevron-right"
         scale="1.5">
       </v-icon>
@@ -27,16 +43,13 @@
 <script>
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
-import 'vue-active-swiper/dist/VueActiveSwiper.css'
+import { Carousel as VueCarousel, Slide } from 'vue-carousel'
 import Icon from '../../../node_modules/vue-awesome/components/Icon.vue'
-// in ES6 modules
-import VueActiveSwiper, { Swiper, SwiperItem } from 'vue-active-swiper'
-Vue.use(VueActiveSwiper)
 
 @Component({
   components: {
-    Swiper,
-    SwiperItem,
+    VueCarousel,
+    Slide,
     'v-icon': Icon
   },
   props: {
@@ -51,15 +64,22 @@ Vue.use(VueActiveSwiper)
   }
 })
 class Carousel extends Vue {
+  currentImage = 0
+
   goToNextItem () {
-    const { activeIndex } = this.$refs.mySwiper
-    this.$refs.mySwiper.goto((activeIndex - 1) + 1)
+    if (this.currentImage === (this.images.length - 1)) {
+      this.currentImage = 0
+    } else {
+      this.currentImage = this.currentImage + 1
+    }
   }
 
   goToPrevItem () {
-    console.log(this.$refs.mySwiper)
-    const { activeIndex } = this.$refs.mySwiper
-    this.$refs.mySwiper.goto((activeIndex - 1) - 1)
+    if (this.currentImage === 0) {
+      this.currentImage = this.images.length - 1
+    } else {
+      this.currentImage = this.currentImage - 1
+    }
   }
 }
 export default Carousel
@@ -70,6 +90,7 @@ export default Carousel
   position relative
   display flex
   align-items center
+  justify-content center
   .carouselButton--next
     right 0
   .carouselButton--prev
@@ -79,4 +100,16 @@ export default Carousel
     border none
     position absolute
     cursor pointer
+
+</style>
+
+<style lang="stylus">
+.VueCarousel
+  height 100%
+  width 100%
+  .VueCarousel-wrapper,
+  .carouselImage,
+  .VueCarousel-inner
+    height 100% !important
+    width 100%
 </style>
