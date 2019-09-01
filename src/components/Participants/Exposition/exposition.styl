@@ -1,0 +1,68 @@
+@import "../../../styles/colors";
+
+.exposition
+  // Top section with basic information about an exposition
+  .expositionInfo
+    display flex
+    padding 0 1em
+    border-top 3px solid $black
+    border-bottom 3px solid $black
+    vertical-align center
+
+    .expositionInfoItem
+      flex 1
+      padding 1em
+      font-weight bold
+      text-align center
+      display flex
+      align-items center
+      justify-content center
+      
+      .link
+        font-family 'News Cycle', sans-serif
+
+      &:first-child
+        text-align left
+
+      &:last-child
+        text-align right
+        flex-direction column
+        justify-content center
+
+  // Main exposition section
+  .expositionLayout
+    padding 2em
+    display flex
+    // Layout is divided in two columns
+    .rightSection
+    .leftSection
+      flex 1 1 50%
+      padding 15px
+    .leftSection
+      text-align justify
+
+    .rightSection
+      .expositionArtistsList
+      .expositionCuratorsList
+        padding 0
+        margin-top 5px
+      .expositionArtist
+      .expositionCurator
+        font-weight bold
+        color $white
+        text-decoration underline
+        font-size: 24px
+      .expositionGallery
+        margin-bottom 3em
+        background-color $black
+        height 300px
+        
+  .expositionTitle
+    margin-top 0
+    text-decoration underline
+
+  .expositionSmallTitle
+    color $black
+    margin-bottom 0
+    text-decoration underline
+    font-weight bold

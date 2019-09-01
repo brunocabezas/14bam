@@ -1,7 +1,19 @@
+
+const getAcfField = (results, fieldName, defaultValue = '') =>
+  (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
+
 export const getSponsorsFromApi = sponsors =>
   sponsors.map(sponsor => ({
     logo: sponsor.acf_fields && sponsor.acf_fields.logo,
     name: (sponsor.title && sponsor.title.rendered) || ''
+  }))
+
+export const getParticipantsFromApi = participants =>
+  participants.map(person => ({
+    id: person.id,
+    wpId: person.id,
+    name: (person.title && person.title.rendered) || '',
+    img: getAcfField(person, 'fotos', [{ url: '' }])[0].url
   }))
 
 export const getExpositionsFromApi = expositions =>
@@ -19,17 +31,15 @@ export const getExpositionFromApi = (results = []) =>
     id: results[0].id,
     wpId: results[0].id,
     slug: results[0].slug,
-    place: (results[0].acf_fields && results[0].acf_fields.espacio) || '',
-    hour: (results[0].acf_fields && results[0].acf_fields.horarios) || '',
-    hour2: (results[0].acf_fields && results[0].acf_fields.horarios_2) || '',
-    web: (results[0].acf_fields && results[0].acf_fields.web) || '',
-    address: (results[0].acf_fields && results[0].acf_fields.direccion) || '',
-    startDate: (results[0].acf_fields && results[0].acf_fields.fecha_inicio) || '',
-    endDate: (results[0].acf_fields && results[0].acf_fields.fecha_termino) || '',
-    description: (results[0].acf_fields && results[0].acf_fields.texto_curatorial) || '',
-    name: (results[0].title && results[0].title.rendered) || '',
-    artists: (results[0].acf_fields && results[0].acf_fields.artistas
-      .map(art => ({ id: art.id, name: art.post_title }))) || [],
-    curators: (results[0].acf_fields && results[0].acf_fields.curadores
-      .map(art => ({ id: art.id, name: art.post_title }))) || []
+    place: getAcfField(results, 'espacio'),
+    hour: getAcfField(results, 'horarios'),
+    hour2: getAcfField(results, 'horarios_2'),
+    web: getAcfField(results, 'web'),
+    address: getAcfField(results, 'direccion'),
+    startDate: getAcfField(results, 'fecha_inicio'),
+    endDate: getAcfField(results, 'fecha_termino'),
+    description: getAcfField(results, 'texto_curatorial'),
+    artists: getAcfField(results, 'artistas', []),
+    curators: getAcfField(results, 'curadores', []),
+    name: (results[0].title && results[0].title.rendered) || ''
   })

@@ -7,6 +7,11 @@ export default new Vuex.Store({
   state: {
     sponsors: [],
     expositions: [],
+    // Artits and curators
+    participants: [],
+    participant: {
+      id: -1
+    },
     exposition: {
       id: -1,
       curators: [],
@@ -23,6 +28,12 @@ export default new Vuex.Store({
     },
     loadExposition (state, data) {
       state.exposition = data
+    },
+    loadParticipants (state, data) {
+      state.participants = data
+    },
+    loadParticipant (state, data) {
+      state.participant = data
     }
   }
 })
