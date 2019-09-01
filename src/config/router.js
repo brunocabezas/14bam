@@ -16,37 +16,44 @@ export default new Router({
   routes: [
     {
       path: paths.home,
+      publicPath: '/',
       name: 'home',
       component: Home
     },
     {
       path: paths.futureHome,
+      publicPath: '/',
       name: 'futureHome',
       component: FutureHome
     },
     {
       path: paths.expositions,
+      publicPath: '/',
       name: 'expositions',
       component: Expositions
     },
     {
       path: paths.exposition(':slug'),
+      publicPath: '/',
       name: 'exposition',
       component: Exposition
     },
     {
       path: paths.participants,
+      publicPath: '/',
       name: 'participants',
       component: Participants
     },
     {
       path: paths.participant(':slug'),
+      publicPath: '/',
       name: 'participant',
       component: Participant
     },
     // Not used for now
     {
       path: paths.programs,
+      publicPath: '/',
       name: 'programs',
       component: Programs
     }

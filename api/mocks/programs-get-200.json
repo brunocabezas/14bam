@@ -1,0 +1,130 @@
+[
+  {
+    "id": 125,
+    "date": "2019-08-28T22:09:40",
+    "date_gmt": "2019-08-28T22:09:40",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=programa&#038;p=125"
+    },
+    "modified": "2019-08-28T22:09:40",
+    "modified_gmt": "2019-08-28T22:09:40",
+    "slug": "primer-programa",
+    "status": "publish",
+    "type": "programa",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/programa\/primer-programa\/",
+    "title": {
+      "rendered": "Primer programa"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/programs\/125"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/programs"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/programa"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=125"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=125"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 115,
+    "date": "2019-08-27T18:05:36",
+    "date_gmt": "2019-08-27T18:05:36",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=programa&#038;p=115"
+    },
+    "modified": "2019-08-27T18:05:36",
+    "modified_gmt": "2019-08-27T18:05:36",
+    "slug": "cine-foro-del-cuarto-mundo",
+    "status": "publish",
+    "type": "programa",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/programa\/cine-foro-del-cuarto-mundo\/",
+    "title": {
+      "rendered": "Cine foro del cuarto mundo"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/programs\/115"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/programs"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/programa"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=115"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=115"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

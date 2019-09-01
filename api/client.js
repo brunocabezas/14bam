@@ -38,6 +38,12 @@ export const loadParticipants = () =>
 export const loadParticipant = (name) =>
   Vue.axios.get(routes.participant(name))
 
+export const loadPrograms = () =>
+  Vue.axios.get(routes.programs)
+
+export const loadProgram = (name) =>
+  Vue.axios.get(routes.program(name))
+
 export default axios.create({
   baseURL: BASE_URL
 })

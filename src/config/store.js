@@ -7,6 +7,11 @@ export default new Vuex.Store({
   state: {
     sponsors: [],
     expositions: [],
+    exposition: {
+      id: -1,
+      curators: [],
+      artists: []
+    },
     // Artits and curators
     participants: [],
     participant: {
@@ -14,10 +19,11 @@ export default new Vuex.Store({
       expo: {},
       images: []
     },
-    exposition: {
+    // Artits and curators
+    programs: [],
+    program: {
       id: -1,
-      curators: [],
-      artists: []
+      events: []
     }
   },
   mutations: {
@@ -36,6 +42,12 @@ export default new Vuex.Store({
     },
     loadParticipant (state, data) {
       state.participant = data
+    },
+    loadPrograms (state, data) {
+      state.programs = data
+    },
+    loadProgram (state, data) {
+      state.program = data
     }
   }
 })
