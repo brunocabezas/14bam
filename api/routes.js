@@ -4,6 +4,8 @@ export default {
   sponsors: '/sponsors',
   videos: '/videos',
   expositions: '/expositions',
-  exposition: name => `/expositions?slug=${name}`,
+  participants: '/participants',
+  participant: slug => `/participants?slug=${slug}`,
+  exposition: slug => `/expositions?slug=${slug}`,
   post: postId => `/posts/${postId}`
 }

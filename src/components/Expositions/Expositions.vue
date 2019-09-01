@@ -1,7 +1,7 @@
 <template>
   <div class="expositions page">
     <h1 class="pageTitle">Exposiciones</h1>
-    <ExpositionsGrid :expositions="expositions"/>
+    <ExpositionsGrid />
   </div>
 </template>
 
@@ -14,8 +14,7 @@ import ExpositionsGrid from './ExpositionsGrid.vue'
     ExpositionsGrid
   }
 })
-class Expositions extends Vue {
-}
+class Expositions extends Vue {}
 export default Expositions
 </script>
 <style src="./expositions.styl" scoped lang="styl"></style>

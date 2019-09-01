@@ -16,6 +16,7 @@
     "vue-awesome": "^3.5.4",
     "vue-axios": "^2.1.4",
     "vue-burger-button": "^0.1.2",
+    "vue-carousel": "^0.18.0",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.1.2",

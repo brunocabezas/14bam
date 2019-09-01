@@ -9,6 +9,8 @@ import App from './App.vue'
 // only import the icons you use to reduce bundle size
 import 'vue-awesome/icons/brands/facebook'
 import 'vue-awesome/icons/brands/instagram'
+import 'vue-awesome/icons/chevron-left'
+import 'vue-awesome/icons/chevron-right'
 import './registerServiceWorker'
 import store from './config/store'
 import 'es6-promise/auto'

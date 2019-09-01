@@ -1,9 +1,12 @@
+// Gets advanced custom fields values from results
+const getAcfField = (results, fieldName, defaultValue = '') =>
+  (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
+
 export const getSponsorsFromApi = sponsors =>
   sponsors.map(sponsor => ({
     logo: sponsor.acf_fields && sponsor.acf_fields.logo,
     name: (sponsor.title && sponsor.title.rendered) || ''
   }))
-
 export const getExpositionsFromApi = expositions =>
   expositions.map(expo => ({
     id: expo.id,
@@ -19,17 +22,40 @@ export const getExpositionFromApi = (results = []) =>
     id: results[0].id,
     wpId: results[0].id,
     slug: results[0].slug,
-    place: (results[0].acf_fields && results[0].acf_fields.espacio) || '',
-    hour: (results[0].acf_fields && results[0].acf_fields.horarios) || '',
-    hour2: (results[0].acf_fields && results[0].acf_fields.horarios_2) || '',
-    web: (results[0].acf_fields && results[0].acf_fields.web) || '',
-    address: (results[0].acf_fields && results[0].acf_fields.direccion) || '',
-    startDate: (results[0].acf_fields && results[0].acf_fields.fecha_inicio) || '',
-    endDate: (results[0].acf_fields && results[0].acf_fields.fecha_termino) || '',
-    description: (results[0].acf_fields && results[0].acf_fields.texto_curatorial) || '',
+    place: getAcfField(results[0], 'espacio'),
+    hour: getAcfField(results[0], 'horarios'),
+    hour2: getAcfField(results[0], 'horarios_2'),
+    web: getAcfField(results[0], 'web'),
+    address: getAcfField(results[0], 'direccion'),
+    startDate: getAcfField(results[0], 'fecha_inicio'),
+    endDate: getAcfField(results[0], 'fecha_termino'),
+    description: getAcfField(results[0], 'texto_curatorial'),
+    artists: getAcfField(results[0], 'artistas', []),
+    curators: getAcfField(results[0], 'curadores', []),
+    name: (results[0].title && results[0].title.rendered) || ''
+  })
+
+export const getParticipantsFromApi = participants =>
+  participants.map(person => ({
+    id: person.id,
+    wpId: person.id,
+    slug: person.slug,
+    name: (person.title && person.title.rendered) || '',
+    img: getAcfField(person, 'fotos', [{ url: '' }])[0].url
+  }))
+
+export const getParticipantFromApi = (results = []) =>
+  Object.assign({}, {
+    id: results[0].id,
+    wpId: results[0].id,
+    slug: results[0].slug,
     name: (results[0].title && results[0].title.rendered) || '',
-    artists: (results[0].acf_fields && results[0].acf_fields.artistas
-      .map(art => ({ id: art.id, name: art.post_title }))) || [],
-    curators: (results[0].acf_fields && results[0].acf_fields.curadores
-      .map(art => ({ id: art.id, name: art.post_title }))) || []
+    bio: getAcfField(results[0], 'bio'),
+    workTitle: getAcfField(results[0], 'work_title'),
+    workDescription: getAcfField(results[0], 'work_text'),
+    img: getAcfField(results[0], 'fotos', [{ url: '' }])[0].url,
+    // Filtering images with non valid url
+    images: getAcfField(results[0], 'fotos', [{ url: '' }])
+      .filter(img => img.url).map(img => img.url),
+    expo: getAcfField(results[0], 'exposicion', [])[0] || {}
   })
