@@ -1,10 +1,13 @@
 <template>
-  <div class="exposition">
+  <div class="exposition page">
     <ul class="expositionInfo">
       <li class="expositionInfoItem">
         {{ exposition.place }}
       </li>
-      <li v-if="exposition.startDate && exposition.endDate" class="expositionInfoItem">
+      <li
+        v-if="exposition.startDate && exposition.endDate"
+        class="expositionInfoItem"
+      >
         {{ exposition.startDate }}
         {{ exposition.endDate }}
       </li>
@@ -14,7 +17,10 @@
       <li v-if="exposition.hour2" class="expositionInfoItem">
         {{ exposition.hour2 }}
       </li>
-      <li  v-if="exposition.address || exposition.web" class="expositionInfoItem">
+      <li
+        v-if="exposition.address || exposition.web"
+        class="expositionInfoItem"
+      >
         <span>
           {{ exposition.address }}
           <a target="_blank" class="link" :href="exposition.web">{{
@@ -25,7 +31,6 @@
     </ul>
 
     <div class="expositionLayout">
-
       <div class="leftSection">
         <h1 class="expositionTitle">{{ exposition.name }}</h1>
         <p v-html="exposition.description"></p>
@@ -33,28 +38,38 @@
 
       <div class="rightSection">
         <div class="expositionGallery"></div>
-        <div v-if="exposition.artists.length > 0" class="expositionArtists">
-          <h2 class="expositionSmallTitle">Artistas</h2>
-          <ul class="expositionArtistsList">
+        <div
+          v-if="exposition.artists.length > 0"
+          class="pageList expositionArtists"
+        >
+          <h2 class="pageListTitle">Artistas</h2>
+          <ul class="pageListWrapper">
             <li
-              class="expositionArtist"
+              class="pageListItem"
               v-bind:key="artist.id"
               v-for="artist in exposition.artists"
             >
-              {{ artist.name }}
+              <router-link :to="urls.participant(artist.post_name)">
+                {{ artist.post_title }}
+              </router-link >
             </li>
           </ul>
         </div>
 
-        <div v-if="exposition.curators.length > 0" class="expositionCurators">
-          <h2 class="expositionSmallTitle">Curadores</h2>
-          <ul class="expositionCuratorsList">
+        <div
+          v-if="exposition.curators.length > 0"
+          class="pageList expositionCurators"
+        >
+          <h2 class="pageListTitle">Curadores</h2>
+          <ul class="pageListWrapper">
             <li
-              class="expositionCurator"
+              class="pageListItem"
               v-bind:key="curator.id"
               v-for="curator in exposition.curators"
             >
-              {{ curator.name }}
+              <router-link :to="urls.participant(curator.post_name)">
+                {{ curator.post_title }}
+              </router-link >
             </li>
           </ul>
         </div>

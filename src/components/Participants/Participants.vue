@@ -11,7 +11,7 @@
         }"
       >
         <h3 class="participantName">
-          <router-link :title="person.name" :to="urls.participant(person.name)">
+          <router-link :title="person.name" :to="urls.participant(person.slug)">
             {{ person.name }}
           </router-link>
         </h3>

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import FutureHome from '@/components/FutureHome/FutureHome.vue'
 import Home from '@/components/Home/Home.vue'
 import Participants from '@/components/Participants/Participants.vue'
+import Participant from '@/components/Participants/Participant/Participant.vue'
 import Expositions from '@/components/Expositions/Expositions.vue'
 import Exposition from '@/components/Expositions/Exposition/Exposition.vue'
 import Programs from '@/components/Programs/Programs.vue'
@@ -32,6 +33,11 @@ export default new Router({
       path: paths.participants,
       name: 'participants',
       component: Participants
+    },
+    {
+      path: paths.participant(':slug'),
+      name: 'participant',
+      component: Participant
     },
     {
       path: paths.home,
