@@ -21,5 +21,15 @@ export const getExpositionFromApi = (results = []) =>
     slug: results[0].slug,
     place: (results[0].acf_fields && results[0].acf_fields.espacio) || '',
     hour: (results[0].acf_fields && results[0].acf_fields.horarios) || '',
-    name: (results[0].title && results[0].title.rendered) || ''
+    hour2: (results[0].acf_fields && results[0].acf_fields.horarios_2) || '',
+    web: (results[0].acf_fields && results[0].acf_fields.web) || '',
+    address: (results[0].acf_fields && results[0].acf_fields.direccion) || '',
+    startDate: (results[0].acf_fields && results[0].acf_fields.fecha_inicio) || '',
+    endDate: (results[0].acf_fields && results[0].acf_fields.fecha_termino) || '',
+    description: (results[0].acf_fields && results[0].acf_fields.texto_curatorial) || '',
+    name: (results[0].title && results[0].title.rendered) || '',
+    artists: (results[0].acf_fields && results[0].acf_fields.artistas
+      .map(art => ({ id: art.id, name: art.post_title }))) || [],
+    curators: (results[0].acf_fields && results[0].acf_fields.curadores
+      .map(art => ({ id: art.id, name: art.post_title }))) || []
   })

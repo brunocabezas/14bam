@@ -11,7 +11,9 @@ import store from '@/config/store'
 class Exposition extends Vue {
   get exposition () {
     const { exposition, expositions } = this.$store.state
-    if (isEmpty(exposition) && expositions.length > 0) {
+    const unvalidExposition = isEmpty(exposition) || exposition.id === -1
+
+    if (unvalidExposition && expositions.length > 0) {
       const isOnState = expositions
         .find(expo => expo.slug === this.$route.params.slug)
 
@@ -24,10 +26,15 @@ class Exposition extends Vue {
   }
 
   mounted () {
-    if (this.$route.params.slug && isEmpty(this.exposition)) {
-      loadExposition(this.$route.params.slug).then(res => {
-        this.$store.commit('loadExposition', getExpositionFromApi(res.data))
-      })
+    if (this.$route.params.slug) {
+      const unvalidExposition = isEmpty(this.exposition) ||
+        this.exposition.id === -1 ||
+        this.exposition.slug !== this.$route.paramas.slug
+      if (unvalidExposition) {
+        loadExposition(this.$route.params.slug).then(res => {
+          this.$store.commit('loadExposition', getExpositionFromApi(res.data))
+        })
+      }
     }
   }
 }

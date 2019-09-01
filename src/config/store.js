@@ -7,7 +7,11 @@ export default new Vuex.Store({
   state: {
     sponsors: [],
     expositions: [],
-    exposition: {}
+    exposition: {
+      id: -1,
+      curators: [],
+      artists: []
+    }
   },
   mutations: {
     loadSponsors (state, data) {
