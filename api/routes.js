@@ -5,6 +5,7 @@ export default {
   videos: '/videos',
   expositions: '/expositions',
   participants: '/participants',
-  exposition: name => `/expositions?slug=${name}`,
+  participant: slug => `/participants?slug=${slug}`,
+  exposition: slug => `/expositions?slug=${slug}`,
   post: postId => `/posts/${postId}`
 }
