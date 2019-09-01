@@ -9,7 +9,9 @@
         <h2 class="pageListTitle">Curatoria</h2>
         <ul class="pageListWrapper">
           <li class="pageListItem">
-            {{participant.expo}}
+            <router-link :to="urls.exposition(participant.expo.post_name)">
+              {{participant.expo.post_title}}
+            </router-link>
           </li>
         </ul>
       </div>

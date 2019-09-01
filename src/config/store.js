@@ -10,7 +10,8 @@ export default new Vuex.Store({
     // Artits and curators
     participants: [],
     participant: {
-      id: -1
+      id: -1,
+      expo: {}
     },
     exposition: {
       id: -1,

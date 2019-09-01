@@ -54,5 +54,5 @@ export const getParticipantFromApi = (results = []) =>
     workTitle: getAcfField(results[0], 'work_title'),
     workDescription: getAcfField(results[0], 'work_text'),
     img: getAcfField(results[0], 'fotos', [{ url: '' }])[0].url,
-    expo: getAcfField(results[0], 'exposicion', [])
+    expo: getAcfField(results[0], 'exposicion', [])[0] || {}
   })

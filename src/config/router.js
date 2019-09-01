@@ -15,6 +15,11 @@ export default new Router({
   mode: 'history',
   routes: [
     {
+      path: paths.home,
+      name: 'home',
+      component: Home
+    },
+    {
       path: paths.futureHome,
       name: 'futureHome',
       component: FutureHome
@@ -38,11 +43,6 @@ export default new Router({
       path: paths.participant(':slug'),
       name: 'participant',
       component: Participant
-    },
-    {
-      path: paths.home,
-      name: 'home',
-      component: Home
     },
     // Not used for now
     {

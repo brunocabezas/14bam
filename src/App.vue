@@ -41,7 +41,6 @@ class App extends Vue {
 
   // Lifecycle hook
   mounted () {
-    // console.log(this.$route);
     if (this.$route.name === 'home') {
       this.isOnHome = true
     }
@@ -49,7 +48,7 @@ class App extends Vue {
 
  @Watch('$route')
   onPropertyChanged (to, from) {
-    this.isOnHome = from.name === 'home'
+    this.isOnHome = to.name === 'home'
   }
 }
 export default App

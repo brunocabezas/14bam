@@ -18,6 +18,7 @@ import { getSponsorsFromApi } from '@/helpers/apiHelpers'
 class FutureHome extends Vue {
   // places : Array =  '[]';
   // programs : Array =  '[]';
+  expositions = [];
   videos = [];
   video = {
     id: 0,

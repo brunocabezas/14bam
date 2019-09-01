@@ -41,6 +41,7 @@
         </div>
       </nav>
       <burger-button
+        v-if="!isOnHome"
         class="burgerButton"
         :active="isOpen"
         :bar-color="isOpen ? 'white' : 'black'"
