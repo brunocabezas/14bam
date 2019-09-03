@@ -13,9 +13,11 @@ class Programs extends Vue {
     return this.$store.state.programs
   }
 
+  urls = this.$root.urls
+
   mounted () {
     loadPrograms().then(res => {
-      this.$store.commit('loadPrograms', res.data)
+      this.$store.commit('loadPrograms', res)
     })
   }
 }

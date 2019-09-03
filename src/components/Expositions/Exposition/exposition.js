@@ -3,13 +3,12 @@ import { Component, Vue } from 'vue-property-decorator'
 import { loadExposition } from '../../../../api/client'
 import { getExpositionFromApi } from '../../../helpers/apiHelpers'
 import store from '@/config/store'
-import urls from '@/config/urls'
 
 @Component({
   store
 })
 class Exposition extends Vue {
-  urls = urls
+  urls = this.$root.urls
 
   get exposition () {
     return this.$store.state.exposition

@@ -7,7 +7,7 @@ export default {
   exposition: slug => `/expositions?slug=${slug}`,
   participants: '/participants',
   participant: slug => `/participants?slug=${slug}`,
-  programs: '/programs',
+  programs: '/programaGeneral',
   program: slug => `/programs?slug=${slug}`,
   post: postId => `/posts/${postId}`
 }

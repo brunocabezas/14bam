@@ -4,7 +4,6 @@ import { loadParticipant } from '../../../../api/client'
 import { getParticipantFromApi } from '../../../helpers/apiHelpers'
 import Carousel from '@/components/common/Carousel.vue'
 import store from '@/config/store'
-import urls from '@/config/urls'
 
 @Component({
   store,
@@ -13,7 +12,7 @@ import urls from '@/config/urls'
   }
 })
 class Participant extends Vue {
-  urls = urls
+  urls = this.$root.urls
 
   get participant () {
     return this.$store.state.participant

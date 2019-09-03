@@ -24,14 +24,13 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { getParticipantsFromApi } from '@/helpers/apiHelpers'
 import { loadParticipants } from '../../../api/client'
-import urls from '@/config/urls'
 import store from '@/config/store'
 
 @Component({
   store
 })
 class Participants extends Vue {
-  urls = urls
+  urls = this.$root.urls
 
   get participants () {
     return this.$store.state.participants
