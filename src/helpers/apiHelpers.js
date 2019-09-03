@@ -2,8 +2,10 @@
 const getAcfField = (results, fieldName, defaultValue = '') =>
   (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
 
+// Gets wordpress post title
 const getWPTitle = object =>
- (object.title && object.title.rendered) || '' 
+  (object.title && object.title.rendered) || ''
+
 export const getSponsorsFromApi = sponsors =>
   sponsors.map(sponsor => ({
     logo: sponsor.acf_fields && sponsor.acf_fields.logo,
@@ -68,4 +70,17 @@ export const getPrograms = (apiResponse = []) => {
     .map(({ id, slug, ...others }) => ({
       id, slug, name: getWPTitle(others), events: getAcfField(others, 'programas', [])
     }))
+}
+
+// Main program is not included
+export const getProgramFromApi = (apiResponse = []) => {
+  const responseData = apiResponse.data[0]
+  console.log(responseData)
+  return Object.assign({}, {
+    id: responseData.id,
+    slug: responseData.slug,
+    name: getWPTitle(responseData),
+    text: getAcfField(responseData, 'texto'),
+    events: getAcfField(responseData, 'programas', [])
+  })
 }

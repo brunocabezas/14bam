@@ -12,7 +12,7 @@
             v-bind:key="program.id"
             v-for="program in program.events"
           >
-            <router-link 
+            <router-link
               class="programEventLink"
               :title="program.post_title"
               :to="urls.event(program.post_name)"

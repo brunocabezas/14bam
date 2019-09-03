@@ -7,6 +7,7 @@ import Participant from '@/components/Participants/Participant/Participant.vue'
 import Expositions from '@/components/Expositions/Expositions.vue'
 import Exposition from '@/components/Expositions/Exposition/Exposition.vue'
 import Programs from '@/components/Programs/Programs.vue'
+import Program from '@/components/Programs/Program/Program.vue'
 import paths from '@/config/urls'
 
 Vue.use(Router)
@@ -50,12 +51,17 @@ export default new Router({
       name: 'participant',
       component: Participant
     },
-    // Not used for now
     {
       path: paths.programs,
       publicPath: '/',
       name: 'programs',
       component: Programs
+    },
+    {
+      path: paths.program(':slug'),
+      publicPath: '/',
+      name: 'program',
+      component: Program
     }
   ]
 })

@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     sponsors: [],
+    // Expositions
     expositions: [],
     exposition: {
       id: -1,
@@ -19,7 +20,7 @@ export default new Vuex.Store({
       expo: {},
       images: []
     },
-    // Artits and curators
+    // Programs and sub-programs
     programs: [],
     program: {
       id: -1,
