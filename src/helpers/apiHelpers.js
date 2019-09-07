@@ -65,22 +65,21 @@ export const getParticipantFromApi = (apiResponse = []) =>
   })
 
 // Main program is not included
-export const getPrograms = (apiResponse = []) => {
-  return apiResponse.filter(program => true)
+export const getPrograms = ({ data }) => {
+  return data.filter(program => true)
     .map(({ id, slug, ...others }) => ({
       id, slug, name: getWPTitle(others), events: getAcfField(others, 'programas', [])
     }))
 }
 
-// Main program is not included
 export const getProgramFromApi = (apiResponse = []) => {
-  const responseData = apiResponse.data[0]
-  console.log(responseData)
+  // Getting the first program
+  const firstProgram = apiResponse.data[0]
   return Object.assign({}, {
-    id: responseData.id,
-    slug: responseData.slug,
-    name: getWPTitle(responseData),
-    text: getAcfField(responseData, 'texto'),
-    events: getAcfField(responseData, 'programas', [])
+    id: firstProgram.id,
+    slug: firstProgram.slug,
+    name: getWPTitle(firstProgram),
+    text: getAcfField(firstProgram, 'texto'),
+    events: getAcfField(firstProgram, 'programas', [])
   })
 }

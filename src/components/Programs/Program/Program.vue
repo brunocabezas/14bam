@@ -8,7 +8,7 @@
       <div class="programGallery"></div>
 
        <div
-          v-if="program.events.length > 0"
+          v-if="program.events && program.events.length > 0"
           class="pageList programEvents"
         >
           <h2 class="pageListTitle">Programas</h2>
@@ -18,11 +18,11 @@
               v-bind:key="event.id"
               v-for="event in program.events"
             >
-              <!-- <router-link
-                :title="artist.post_title"
-                :to="urls.participant(artist.post_name)"> -->
+              <router-link
+                :title="event.post_title"
+                :to="urls.event(event.post_name)">
                 {{ event.post_title }}
-              <!-- </router-link > -->
+              </router-link >
             </li>
           </ul>
         </div>

@@ -57,11 +57,25 @@ export default new Router({
       name: 'programs',
       component: Programs
     },
+    // Following routes both use Program, which based on
+    // programType property will display things accordingly
     {
       path: paths.program(':slug'),
       publicPath: '/',
       name: 'program',
-      component: Program
+      component: Program,
+      props: {
+        programType: 'program'
+      }
+    },
+    {
+      path: paths.event(':slug'),
+      publicPath: '/',
+      name: 'event',
+      component: Program,
+      props: {
+        programType: 'event'
+      }
     }
   ]
 })

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import routes from './routes'
-import { getProgramFromApi } from '../src/helpers/apiHelpers'
+import { getProgramFromApi, getPrograms } from '../src/helpers/apiHelpers'
 import { resolvedPromise } from '../src/helpers/promiseHelpers'
 
 const BASE_URL = 'http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2'
@@ -42,12 +42,15 @@ export const loadParticipant = (name) =>
 
 export const loadPrograms = () =>
   Vue.axios.get(routes.generalPrograms)
-    .then(response => {
-      return response
-    })
+    .then(res => resolvedPromise((getPrograms(res))))
 
 export const loadProgram = (slug) =>
   Vue.axios.get(routes.generalProgram(slug))
+    // Using api helpers to select data returning a promise
+    .then(res => resolvedPromise((getProgramFromApi(res))))
+
+export const loadEvent = (slug) =>
+  Vue.axios.get(routes.program(slug))
     // Using api helpers to select data returning a promise
     .then(res => resolvedPromise((getProgramFromApi(res))))
 

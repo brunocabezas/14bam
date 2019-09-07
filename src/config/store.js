@@ -25,6 +25,10 @@ export default new Vuex.Store({
     program: {
       id: -1,
       events: []
+    },
+    // An event is the same as a program but without events (programs)
+    event: {
+      id: -1
     }
   },
   mutations: {
@@ -49,6 +53,9 @@ export default new Vuex.Store({
     },
     loadProgram (state, data) {
       state.program = data
+    },
+    loadEvent (state, data) {
+      state.event = data
     }
   }
 })
