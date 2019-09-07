@@ -4,7 +4,6 @@ import { loadSponsors, loadVideos } from '../../../api/client'
 import VideoPlayer from '../Home/VideoPlayer.vue'
 import ExpositionsGrid from '../Expositions/ExpositionsGrid.vue'
 import store from '@/config/store'
-import urls from '@/config/urls'
 // import { getExpositionsFromApi, getSponsorsFromApi } from '@/helpers/apiHelpers'
 import { getSponsorsFromApi } from '@/helpers/apiHelpers'
 
@@ -24,7 +23,7 @@ class FutureHome extends Vue {
     id: 0,
     url: ''
   };
-  urls = urls
+  urls = this.$root.urls
 
   get sponsors () {
     return this.$store.state.sponsors

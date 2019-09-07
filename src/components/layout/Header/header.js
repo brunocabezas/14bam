@@ -2,7 +2,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import BurgerButton from 'vue-burger-button'
 import SocialNetworks from '../../common/SocialNetworks.vue'
-import urls from '@/config/urls'
 import 'vue-burger-button/dist/vue-burger-button.css'
 
 @Component({
@@ -15,7 +14,7 @@ import 'vue-burger-button/dist/vue-burger-button.css'
   }
 })
 class Header extends Vue {
-  urls = urls
+  urls = this.$root.urls
 
   isOpen = false
 

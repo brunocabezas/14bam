@@ -22,6 +22,9 @@
             <router-link title="Inicio" :to="urls.home">Inicio</router-link>
           </li>
           <li @click="toggleMenu" class="headerNavMenuItem">
+            <router-link title="Programas" :to="urls.programs">Programas</router-link>
+          </li>
+          <li @click="toggleMenu" class="headerNavMenuItem">
             <router-link title="Exposiciones" :to="urls.expositions"
               >Exposiciones</router-link
             >

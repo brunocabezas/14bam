@@ -22,14 +22,13 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { getExpositionsFromApi } from '@/helpers/apiHelpers'
 import { loadExpositions } from '../../../api/client'
-import urls from '@/config/urls'
 import store from '@/config/store'
 
 @Component({
   store
 })
 class ExpositionsGrid extends Vue {
-  urls = urls
+  urls = this.$root.urls
 
   get expositions () {
     return this.$store.state.expositions

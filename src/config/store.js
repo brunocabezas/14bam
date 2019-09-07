@@ -6,7 +6,13 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     sponsors: [],
+    // Expositions
     expositions: [],
+    exposition: {
+      id: -1,
+      curators: [],
+      artists: []
+    },
     // Artits and curators
     participants: [],
     participant: {
@@ -14,10 +20,15 @@ export default new Vuex.Store({
       expo: {},
       images: []
     },
-    exposition: {
+    // Programs and sub-programs
+    programs: [],
+    program: {
       id: -1,
-      curators: [],
-      artists: []
+      events: []
+    },
+    // An event is the same as a program but without events (programs)
+    event: {
+      id: -1
     }
   },
   mutations: {
@@ -36,6 +47,15 @@ export default new Vuex.Store({
     },
     loadParticipant (state, data) {
       state.participant = data
+    },
+    loadPrograms (state, data) {
+      state.programs = data
+    },
+    loadProgram (state, data) {
+      state.program = data
+    },
+    loadEvent (state, data) {
+      state.event = data
     }
   }
 })
