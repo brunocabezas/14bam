@@ -11,14 +11,22 @@ export const getSponsorsFromApi = sponsors =>
     logo: sponsor.acf_fields && sponsor.acf_fields.logo,
     name: (sponsor.title && sponsor.title.rendered) || ''
   }))
-export const getExpositionsFromApi = expositions =>
-  expositions.map(expo => ({
+export const getExpositionsFromApi = response =>
+  response.data.map(expo => ({
     id: expo.id,
     wpId: expo.id,
     slug: expo.slug,
-    place: (expo.acf_fields && expo.acf_fields.espacio) || '',
-    hour: (expo.acf_fields && expo.acf_fields.horarios) || '',
-    name: (expo.title && expo.title.rendered) || ''
+    place: getAcfField(expo, 'espacio'),
+    hour: getAcfField(expo, 'horarios'),
+    hour2: getAcfField(expo, 'horarios_2'),
+    web: getAcfField(expo, 'web'),
+    address: getAcfField(expo, 'direccion'),
+    startDate: getAcfField(expo, 'fecha_inicio'),
+    endDate: getAcfField(expo, 'fecha_termino'),
+    description: getAcfField(expo, 'texto_curatorial'),
+    artists: getAcfField(expo, 'artistas', []),
+    curators: getAcfField(expo, 'curadores', []),
+    name: getWPTitle(expo)
   }))
 
 export const getExpositionFromApi = (apiResponse = []) =>

@@ -33,8 +33,7 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-// import { getExpositionsFromApi } from '@/helpers/apiHelpers'
-// import { loadExpositions } from '../../../api/client'
+import { loadExpositions } from '../../../api/client'
 // import Loader from '@/components/common/Loader'
 import store from '@/config/store'
 
@@ -44,31 +43,37 @@ import store from '@/config/store'
   //   Loader
   // },
   props: {
-    expoId: Number,
+    expoId: {
+      default: null,
+      type: Number
+    },
     expo: {
       default: null,
       type: Object
     }
   }
 })
-class ExpositionsInfo extends Vue {
+class ExpositionInfo extends Vue {
   loadingData = false
 
   get exposition () {
+    console.log(this.$store.state.expositions)
     return this.expo || this.$store.state.expositions
       .find(expo => expo.id === this.expoId) ||
         {}
   }
 
-  // mounted () {
-  //   this.loadingData = true
-  //   loadExpositions().then((response) => {
-  //     this.$store.commit('loadExpositions', getExpositionsFromApi(response.data))
-  //     this.loadingData = false
-  //   })
-  // }
+  mounted () {
+    this.loadingData = true
+    if (Object.keys(this.exposition).length === 0) {
+      loadExpositions().then((response) => {
+        this.$store.commit('loadExpositions', response)
+        this.loadingData = false
+      })
+    }
+  }
 }
-export default ExpositionsInfo
+export default ExpositionInfo
 </script>
 
 <style scoped lang="stylus">

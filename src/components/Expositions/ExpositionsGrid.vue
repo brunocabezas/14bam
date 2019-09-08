@@ -22,7 +22,6 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-import { getExpositionsFromApi } from '@/helpers/apiHelpers'
 import { loadExpositions } from '../../../api/client'
 import Loader from '@/components/common/Loader'
 import store from '@/config/store'
@@ -44,7 +43,7 @@ class ExpositionsGrid extends Vue {
   mounted () {
     this.loadingData = true
     loadExpositions().then((response) => {
-      this.$store.commit('loadExpositions', getExpositionsFromApi(response.data))
+      this.$store.commit('loadExpositions', response)
       this.loadingData = false
     })
   }
