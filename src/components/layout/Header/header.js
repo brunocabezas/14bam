@@ -34,6 +34,15 @@ class Header extends Vue {
     // console.log('this.toggleMenu')
   }
 
+  clickOutsideMenu (event) {
+    const isBurgerButton = event.target.className.includes('burgerButton')
+    const isBarElement = event.target.className.includes('bar')
+    // Closing overlay by toggling the state
+    if (this.isOpen && !isBurgerButton && !isBarElement) {
+      this.isOpen = !this.isOpen
+    }
+  }
+
   toggleMenu () {
     this.isOpen = !this.isOpen
   }
