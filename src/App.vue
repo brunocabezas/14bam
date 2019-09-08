@@ -8,15 +8,15 @@
       href="https://fonts.goo/gleapis.com/css?family=News+Cycle:400,700&display=swap"
       rel="stylesheet"
     />
-    <div class="appContainer">
-      <Header :isOnHome="isOnHome" />
-      <div
-        v-bind:class="{
-          'appContent': true,
-          'appContent--home': isOnHome
-        }">
-        <router-view></router-view>
-      </div>
+    <Header :isOnHome="isOnHome" />
+    <div
+      v-bind:class="{
+        appContent: true,
+        page: true,
+        'appContent--home': isOnHome
+      }"
+    >
+      <router-view></router-view>
     </div>
     <Footer />
   </div>
@@ -46,7 +46,7 @@ class App extends Vue {
     }
   }
 
- @Watch('$route')
+  @Watch('$route')
   onPropertyChanged (to, from) {
     this.isOnHome = to.name === 'home'
   }

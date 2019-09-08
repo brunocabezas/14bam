@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="participants">
     <h1 class="pageTitle">Participantes</h1>
     <div class="participants">
       <div

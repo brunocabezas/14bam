@@ -1,17 +1,19 @@
-@import "./styles/constants";
+@import './styles/constants';
 
 .app
-  padding 0
-  min-height 100%
+  padding: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 
-  .appContainer
-    min-height 100%
-    display flex
-    flex-direction column
+  .appContent
+    position: relative;
+    flex-grow: 1;
+    padding-top: $header_height;
 
-    .appContent
-      flex 10
-      height "calc(100% - %s)" % ($header_height)
-      padding-top $header_height
-      &&--home
-        padding-top 0
+    &&--home
+      padding-top: 0;
+
+  .footer, .appContent
+    flex-shrink: 0;

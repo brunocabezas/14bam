@@ -1,5 +1,5 @@
 <template>
-  <div class="page participant">
+  <div class="participant">
     <div class="leftSection">
       <Carousel
         v-if="participant.images.length > 0"

@@ -1,5 +1,5 @@
 <template>
-  <div class="exposition page">
+  <div class="exposition">
     <ul class="expositionInfo">
       <li class="expositionInfoItem">
         {{ exposition.place }}

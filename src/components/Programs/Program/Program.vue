@@ -1,5 +1,5 @@
 <template>
-  <div class="program page">
+  <div class="program">
     <div class="leftSection">
       <h1>{{ program.name }}</h1>
       <div v-html="program.text" class="programText"></div>
