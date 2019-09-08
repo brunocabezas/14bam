@@ -50,13 +50,18 @@ export default ExpositionsGrid
 
   .exposition
     flex: 1 1 33.3%;
-    margin-bottom 10px
+    margin-bottom 1.5em
 
     .expositionName
       margin: 0 0 5px 0;
+      font-size 25px
 
     .expositionText
-      color: $black;
+      p
+        color: $black;
+        font-family "News Cycle", 'sans-serif'
+        font-size 25px
+        font-weight bold
 
       *
         margin: 0;

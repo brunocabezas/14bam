@@ -23,6 +23,7 @@
       >
         <span>
           {{ exposition.address }}
+          <br/>
           <a target="_blank" class="link" :href="exposition.web">{{
             exposition.web
           }}</a>
@@ -83,4 +84,4 @@
 </template>
 
 <script src="./exposition.js"></script>
-<style src="./exposition.styl" lang="stylus" scoped></style>
+<style src="./exposition.styl" lang="stylus"></style>

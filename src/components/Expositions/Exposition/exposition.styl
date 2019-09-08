@@ -11,7 +11,8 @@
 
     .expositionInfoItem
       flex 1
-      padding 1em
+      padding 0.8em 0
+      font-size 25px
       font-weight bold
       text-align center
       display flex
@@ -31,17 +32,22 @@
 
   // Main exposition section
   .expositionLayout
-    padding 2em
+    padding 2em 1em
     display flex
     // Layout is divided in two columns
     .rightSection
     .leftSection
       flex 1 1 50%
-      padding 15px
+
     .leftSection
-      text-align justify
+      padding 15px 35px 15px 15px 
+      p
+      p > *
+        font-size 13px
+        line-height 24px !important
 
     .rightSection
+      padding 15px 15px 15px 35px
       .expositionGallery
         margin-bottom 3em
         background-color $black
@@ -49,4 +55,6 @@
         
   .expositionTitle
     margin-top 0
+    font-weight bold
+    font-size 46px
     text-decoration underline
