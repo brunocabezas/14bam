@@ -1,3 +1,5 @@
+import { flatten, onlyUnique } from './arrayHelpers'
+
 //
 // apiHelpers
 // All helpers defined here handle API responses and
@@ -61,9 +63,21 @@ export const getParticipantsFromApi = participants =>
     wpId: person.id,
     slug: person.slug,
     name: getWPTitle(person),
-    img: getAcfField(person, 'fotos', [{ url: '' }])[0].url
+    img: getAcfField(person, 'fotos', [{ url: '' }])[0].url,
+    keywords: getAcfField(person, 'palabras_clave', []).map(keywords => keywords.name)
   }))
 
+// Loops trough participantes, getting a list of unique keywords
+export const getKeywordsFromParticipants = participants => {
+  const nestedKeywords = participants
+    .map(person => person.keywords.map(keyword => keyword))
+
+  return flatten(nestedKeywords).filter(onlyUnique).map(key => ({
+    name: key,
+    id: key,
+    participants: participants.filter(p => p.keywords.includes(key))
+  }))
+}
 // Using first result of the respose
 // This route returns an array, the response could include more posts
 export const getParticipantFromApi = (apiResponse = []) =>
@@ -89,10 +103,10 @@ export const getParticipantFromApi = (apiResponse = []) =>
       })),
     // Arrays of Strings, keywords
     keywords: getAcfField(apiResponse[0], 'palabras_clave', [])
-      .map(related => ({
-        id: related.term_id,
-        name: related.name,
-        slug: related.slug
+      .map(keyword => ({
+        id: keyword.term_id,
+        name: keyword.name,
+        slug: keyword.slug
       }))
   })
 

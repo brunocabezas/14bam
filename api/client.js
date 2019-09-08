@@ -1,7 +1,13 @@
 import Vue from 'vue'
 import axios from 'axios'
 import routes from './routes'
-import { getProgramFromApi, getPrograms, getExpositionsFromApi } from '../src/helpers/apiHelpers'
+import {
+  getProgramFromApi,
+  getPrograms,
+  getExpositionsFromApi,
+  getParticipantsFromApi,
+  getKeywordsFromParticipants
+} from '../src/helpers/apiHelpers'
 import { resolvedPromise } from '../src/helpers/promiseHelpers'
 
 const BASE_URL = 'http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2'
@@ -38,6 +44,11 @@ export const loadExposition = (name) =>
 
 export const loadParticipants = () =>
   Vue.axios.get(routes.participants)
+    // Using api helpers to select data returning a promise
+    .then(res => resolvedPromise(
+      getParticipantsFromApi(res.data),
+      getKeywordsFromParticipants(getParticipantsFromApi(res.data))
+    ))
 
 export const loadParticipant = (name) =>
   Vue.axios.get(routes.participant(name))

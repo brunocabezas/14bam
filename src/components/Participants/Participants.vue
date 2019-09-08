@@ -24,8 +24,8 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-import { getParticipantsFromApi } from '@/helpers/apiHelpers'
 import { loadParticipants } from '../../../api/client'
+import { getKeywordsFromParticipants } from '@/helpers/apiHelpers'
 import store from '@/config/store'
 import Loader from '@/components/common/Loader'
 
@@ -47,7 +47,8 @@ class Participants extends Vue {
   mounted () {
     this.loadingData = true
     loadParticipants().then((response) => {
-      this.$store.commit('loadParticipants', getParticipantsFromApi(response.data))
+      this.$store.commit('loadParticipants', response)
+      this.$store.commit('loadKeywords', getKeywordsFromParticipants(response))
       this.loadingData = false
     })
   }
