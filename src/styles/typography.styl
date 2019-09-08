@@ -1,52 +1,50 @@
 @import './colors';
 
 // @font-face {
-//   font-family: "NewsCycle";
-//   src: url("/src/assets/fonts/News_Cycle/NewsCycle-Regular.ttf") format('truetype');
-//   font-weight: normal;
-//   font-style: normal;
+// font-family: "NewsCycle";
+// src: url("/src/assets/fonts/News_Cycle/NewsCycle-Regular.ttf") format('truetype');
+// font-weight: normal;
+// font-style: normal;
 // }
 
 // @font-face {
-//   font-family: "NewsCycleBold";
-//   src: url("/src/assets/fonts/News_Cycle/NewsCycle-Bold.ttf") format('truetype');
-//   font-weight: normal;
-//   font-style: normal;
+// font-family: "NewsCycleBold";
+// src: url("/src/assets/fonts/News_Cycle/NewsCycle-Bold.ttf") format('truetype');
+// font-weight: normal;
+// font-style: normal;
 // }
 
 // @font-face {
-//   font-family: "RobotoMono";
-//   src: url("/src/assets/fonts/Roboto_Mono/RobotoMono-Bold.woff") format('woff');
-//   font-weight: normal;
-//   font-style: normal;
+// font-family: "RobotoMono";
+// src: url("/src/assets/fonts/Roboto_Mono/RobotoMono-Bold.woff") format('woff');
+// font-weight: normal;
+// font-style: normal;
 // }
 
 // @font-face {
-//   font-family: 'Roboto B';
-//   src: url("/src/assets/fonts/RobotoMono-Bold.ttf") format('truetype');
-//   font-weight: normal;
-//   font-style: normal;
+// font-family: 'Roboto B';
+// src: url("/src/assets/fonts/RobotoMono-Bold.ttf") format('truetype');
+// font-weight: normal;
+// font-style: normal;
 // }
+* :not(input):not(p):not(a)
+  font-family: 'News Cycle', sans-serif;
+  line-height: 1.3em;
 
-*
-  font-family 'News Cycle', sans-serif
-  line-height 1.3em
-  font-style normal
-
-h1, h2, h3, h4, h6 {
+h1, h2, h3, h4, h6
   color: $white;
-  a {
-    color: $white;
-    font-family 'News Cycle', sans-serif
-  }
-}
 
-p, a, input {
+  a
+    color: $white;
+    font-family: 'News Cycle', sans-serif;
+
+p, a, input
   font-family: 'Roboto Mono', monospace;
   color: $black;
-}
 
-p {
-  font-size 13px
-  line-height 24px
-}
+i
+  font-style: italic;
+
+p
+  font-size: 13px;
+  line-height: 24px;

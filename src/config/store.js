@@ -20,6 +20,7 @@ export default new Vuex.Store({
       expo: {},
       images: []
     },
+    keywords: [],
     // Programs and sub-programs
     programs: [],
     program: {
@@ -56,6 +57,9 @@ export default new Vuex.Store({
     },
     loadEvent (state, data) {
       state.event = data
+    },
+    loadKeywords (state, data) {
+      state.keywords = data
     }
   }
 })

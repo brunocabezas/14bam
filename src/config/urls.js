@@ -6,10 +6,13 @@ export default {
   program: programName => `/14/programas/${programName}`,
   // Events belong to programs
   event: eventName => `/14/programa/${eventName}`,
+  // Expositions
   expositions: '/14/exposiciones',
   exposition: expoName => `/14/exposiciones/${expoName}`,
+  // Participants
   participants: '/14/participantes',
   participant: name => `/14/participantes/${name}`,
-  places: '/14/espacios',
-  place: placeName => `/14/espacios/${placeName}`
+  keyword: slug => `/14/palabras-clave/${slug}`
+  // places: '/14/espacios',
+  // place: placeName => `/14/espacios/${placeName}`,
 }

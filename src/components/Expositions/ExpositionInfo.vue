@@ -1,5 +1,5 @@
 <template>
-  <ul class="expositionInfo">
+  <ul v-if="Object.keys(this.exposition).length > 0" class="expositionInfo">
     <li class="expositionInfoItem">
       {{ exposition.place }}
     </li>
@@ -57,7 +57,6 @@ class ExpositionInfo extends Vue {
   loadingData = false
 
   get exposition () {
-    console.log(this.$store.state.expositions)
     return this.expo || this.$store.state.expositions
       .find(expo => expo.id === this.expoId) ||
         {}
