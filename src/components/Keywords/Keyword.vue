@@ -1,17 +1,13 @@
 <template>
-    <div class="keyword">
-        <h1>Palabra clave: <i>{{keyword.name}}</i></h1>
-        <Loader :loading="loadingData">
-          <h3 v-if="keyword.participants.length>0">
-            {{keyword.participants.length}} participante(s) relacionado(s)
-          </h3>
-          <div>
-            <div v-bind:key="person.id" v-for="person in keyword.participants">
-                {{ person.name }}
-            </div>
-          </div>
-        </Loader>
-    </div>
+  <div class="keyword">
+    <h1>Palabra clave: <i>{{keyword.name}}</i></h1>
+    <Loader :loading="loadingData">
+      <h3 v-if="keyword.participants.length>0">
+        {{keyword.participants.length}} participante(s) relacionado(s)
+      </h3>
+      <ParticpantsGrid :participantsProps="keyword.participants" />
+    </Loader>
+  </div>
 </template>
 
 <script>
@@ -19,12 +15,14 @@ import { Vue, Component } from 'vue-property-decorator'
 import { loadParticipants } from '../../../api/client'
 import { getKeywordsFromParticipants } from '@/helpers/apiHelpers'
 import Loader from '@/components/common/Loader'
+import ParticpantsGrid from '@/components/Participants/ParticipantsGrid'
 import store from '@/config/store'
 
 @Component({
   store,
   components: {
-    Loader
+    Loader,
+    ParticpantsGrid
   }
 })
 class Keyword extends Vue {
