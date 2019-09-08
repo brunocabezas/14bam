@@ -58,6 +58,7 @@ export default ExpositionsGrid
   flex-wrap: wrap;
 
   .exposition
+    padding 0 5px
     flex: 1 1 33.3%;
     margin-bottom 1.5em
 

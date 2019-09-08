@@ -1,36 +1,7 @@
 <template>
   <Loader :loading="loadingData">
     <div class="exposition">
-      <ul class="expositionInfo">
-        <li class="expositionInfoItem">
-          {{ exposition.place }}
-        </li>
-        <li
-          v-if="exposition.startDate && exposition.endDate"
-          class="expositionInfoItem"
-        >
-          {{ exposition.startDate }}
-          {{ exposition.endDate }}
-        </li>
-        <li v-if="exposition.hour" class="expositionInfoItem">
-          {{ exposition.hour }}
-        </li>
-        <li v-if="exposition.hour2" class="expositionInfoItem">
-          {{ exposition.hour2 }}
-        </li>
-        <li
-          v-if="exposition.address || exposition.web"
-          class="expositionInfoItem"
-        >
-          <span>
-            {{ exposition.address }}
-            <br/>
-            <a target="_blank" class="link" :href="exposition.web">{{
-              exposition.web
-            }}</a>
-          </span>
-        </li>
-      </ul>
+      <ExpositionInfo :expo="exposition" />
 
       <div class="expositionLayout">
         <div class="leftSection">

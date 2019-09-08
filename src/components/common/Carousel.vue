@@ -100,11 +100,11 @@ export default Carousel
     border none
     position absolute
     cursor pointer
-    
+
   .carouselImage
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-position center center
+    background-size cover
+    background-repeat no-repeat
 
 </style>
 
