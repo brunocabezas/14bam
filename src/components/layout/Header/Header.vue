@@ -17,7 +17,9 @@
           'headerNavOverlay--open': isOpen
         }"
       >
-        <ul class="headerNavMenu">
+        <ul
+          class="headerNavMenu"
+          v-click-outside="clickOutsideMenu">
           <li @click="toggleMenu" class="headerNavMenuItem">
             <router-link title="Inicio" :to="urls.home">Inicio</router-link>
           </li>
