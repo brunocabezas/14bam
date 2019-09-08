@@ -2,13 +2,19 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { loadExposition } from '../../../../api/client'
 import { getExpositionFromApi } from '../../../helpers/apiHelpers'
+import Loader from '@/components/common/Loader'
 import store from '@/config/store'
 
 @Component({
-  store
+  store,
+  components: {
+    Loader
+  }
 })
 class Exposition extends Vue {
   urls = this.$root.urls
+
+  loadingData = false
 
   get exposition () {
     return this.$store.state.exposition
@@ -18,8 +24,10 @@ class Exposition extends Vue {
     if (this.$route.params.slug) {
       const doRequest = this.$route.params.slug !== this.exposition.slug
       if (doRequest) {
+        this.loadingData = true
         loadExposition(this.$route.params.slug).then(res => {
           this.$store.commit('loadExposition', getExpositionFromApi(res.data))
+          this.loadingData = false
         })
       }
     }
