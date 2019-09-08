@@ -5,8 +5,7 @@ import {
   getProgramFromApi,
   getPrograms,
   getExpositionsFromApi,
-  getParticipantsFromApi,
-  getKeywordsFromParticipants
+  getParticipantsFromApi
 } from '../src/helpers/apiHelpers'
 import { resolvedPromise } from '../src/helpers/promiseHelpers'
 
@@ -45,10 +44,7 @@ export const loadExposition = (name) =>
 export const loadParticipants = () =>
   Vue.axios.get(routes.participants)
     // Using api helpers to select data returning a promise
-    .then(res => resolvedPromise(
-      getParticipantsFromApi(res.data),
-      getKeywordsFromParticipants(getParticipantsFromApi(res.data))
-    ))
+    .then(res => resolvedPromise(getParticipantsFromApi(res.data)))
 
 export const loadParticipant = (name) =>
   Vue.axios.get(routes.participant(name))

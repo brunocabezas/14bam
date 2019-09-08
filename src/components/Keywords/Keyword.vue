@@ -1,38 +1,57 @@
 <template>
     <div class="keyword">
-        <h1>{{keyword.name}}</h1>
+        <h1>Palabra clave: <i>{{keyword.name}}</i></h1>
+        <Loader :loading="loadingData">
+          <h3 v-if="keyword.participants.length>0">
+            {{keyword.participants.length}} participante(s) relacionado(s)
+          </h3>
+          <div>
+            <div v-bind:key="person.id" v-for="person in keyword.participants">
+                {{ person.name }}
+            </div>
+          </div>
+        </Loader>
     </div>
 </template>
 
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-// import { loadKeyword } from '../../../api/client'
+import { loadParticipants } from '../../../api/client'
+import { getKeywordsFromParticipants } from '@/helpers/apiHelpers'
+import Loader from '@/components/common/Loader'
 import store from '@/config/store'
 
 @Component({
-  store
+  store,
+  components: {
+    Loader
+  }
 })
 class Keyword extends Vue {
+  loadingData = false
+
   get keyword () {
-    // const noKeyword
-    // if (this.$store.)
-    return { name: 'Keyword name' }
+    const noStoreData = this.$store.state.keywords.length === 0
+    // Using route paraments to set name
+    const defaultKeyword = {
+      name: this.$route.params.slug || '', participants: []
+    }
+    if (noStoreData) {
+      return { ...defaultKeyword }
+    } else {
+      return this.$store.state.keywords
+        .find(key => key.name === this.$route.params.slug) || { ...defaultKeyword }
+    }
   }
 
   mounted () {
-    // loadTaxonomy('chano')
-    // if (this.$route.params.slug) {
-    //   const doRequest = this.$route.params.slug
-    //   if (doRequest) {
-    //     this.loadingData = true
-    //     loadKeyword(this.$route.params.slug).then(res => {
-    //       this.$store.commit('loadKeyword', getParticipantFromApi(res.data))
-    //       this.loadingData = false
-    //     })
-    //   }
-    // }
+    this.loadingData = true
+    loadParticipants().then((response) => {
+      this.$store.commit('loadParticipants', response)
+      this.$store.commit('loadKeywords', getKeywordsFromParticipants(response))
+      this.loadingData = false
+    })
   }
-// }
 }
 export default Keyword
 </script>

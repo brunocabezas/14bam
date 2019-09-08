@@ -12,5 +12,8 @@ export default {
   generalProgram: slug => `/programaGeneral?slug=${slug}`,
   // Regular programs
   program: slug => `/programs?slug=${slug}`,
-  post: postId => `/post/${postId}`
+  // Not used
+  post: postId => `/post/${postId}`,
+  taxonomy: id => `/tags`
+  // taxonomy: id => '/participants?filter[post_tag]=chano'
 }
