@@ -1,5 +1,5 @@
 <template>
-  <div class="expositions page">
+  <div class="expositions">
     <h1 class="pageTitle">Exposiciones</h1>
     <ExpositionsGrid />
   </div>
