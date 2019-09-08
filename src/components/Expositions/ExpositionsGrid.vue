@@ -64,6 +64,10 @@ export default ExpositionsGrid
     .expositionName
       margin: 0 0 5px 0;
       font-size 25px
+      a
+        text-decoration none
+        &:hover
+          text-decoration underline
 
     .expositionText
       p

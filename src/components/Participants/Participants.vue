@@ -80,5 +80,4 @@ export default Participants
       background-color darken($purple, 30%)
     .participantName
       opacity 1
-      z-index 9
 </style>
