@@ -2,9 +2,13 @@
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import { loadProgram, loadEvent } from '../../../../api/client'
 import store from '@/config/store'
+import Loader from '@/components/common/Loader'
 
 @Component({
   store,
+  components: {
+    Loader
+  },
   props: {
     // prograType displays sets wheter the item displayed is an program or an event
     // a single program can contain many events
@@ -21,6 +25,8 @@ import store from '@/config/store'
 class Program extends Vue {
   urls = this.$root.urls
 
+  loadingData = false
+
   get program () {
     return this.$props.programType === 'program'
       ? this.$store.state.program : this.$store.state.event
@@ -32,7 +38,7 @@ class Program extends Vue {
   }
 
   mounted () {
-    console.log(this, this.type, this.$props.programType)
+    // console.log(this, this.type, this.$props.programType)
     if (this.$route.params.slug) {
       const doRequest = this.$route.params.slug !== this.program.slug
       if (doRequest) {
@@ -46,8 +52,12 @@ class Program extends Vue {
     const action = type === 'program' ? loadProgram : loadEvent
     const commitMsg = type === 'program' ? 'loadProgram' : 'loadEvent'
     // Use slug from route to query wp rest api
+    this.loadingData = true
     action(this.$route.params.slug)
-      .then(res => this.$store.commit(commitMsg, res))
+      .then(res => {
+        this.loadingData = false
+        this.$store.commit(commitMsg, res)
+      })
   }
 }
 export default Program

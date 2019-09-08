@@ -8,7 +8,7 @@
       :color="color"
       :size="size">
     </bounce-loader>
-    <slot/>
+    <slot v-if="!loading" />
   </div>
 </template>
 
