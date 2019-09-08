@@ -1,3 +1,10 @@
+//
+// apiHelpers
+// All helpers defined here handle API responses and
+// This logic layer is ment to format the data as required
+// and should be placed before is stored on vuex store
+
+// Local Helpers
 // Gets advanced custom fields values from results
 const getAcfField = (results, fieldName, defaultValue = '') =>
   (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
@@ -9,8 +16,9 @@ const getWPTitle = object =>
 export const getSponsorsFromApi = sponsors =>
   sponsors.map(sponsor => ({
     logo: sponsor.acf_fields && sponsor.acf_fields.logo,
-    name: (sponsor.title && sponsor.title.rendered) || ''
+    name: getWPTitle(sponsor)
   }))
+
 export const getExpositionsFromApi = response =>
   response.data.map(expo => ({
     id: expo.id,
@@ -52,10 +60,12 @@ export const getParticipantsFromApi = participants =>
     id: person.id,
     wpId: person.id,
     slug: person.slug,
-    name: (person.title && person.title.rendered) || '',
+    name: getWPTitle(person),
     img: getAcfField(person, 'fotos', [{ url: '' }])[0].url
   }))
 
+// Using first result of the respose
+// This route returns an array, the response could include more posts
 export const getParticipantFromApi = (apiResponse = []) =>
   Object.assign({}, {
     id: apiResponse[0].id,
@@ -69,7 +79,21 @@ export const getParticipantFromApi = (apiResponse = []) =>
     // Filtering images with non valid url
     images: getAcfField(apiResponse[0], 'fotos', [{ url: '' }])
       .filter(img => img.url).map(img => img.url),
-    expo: getAcfField(apiResponse[0], 'exposicion', [])[0] || {}
+    expo: getAcfField(apiResponse[0], 'exposicion', [])[0] || {},
+    // Related participants
+    related: getAcfField(apiResponse[0], 'relacionados', [])
+      .map(related => ({
+        id: related.ID,
+        name: related.post_title,
+        slug: related.post_name
+      })),
+    // Arrays of Strings, keywords
+    keywords: getAcfField(apiResponse[0], 'palabras_clave', [])
+      .map(related => ({
+        id: related.term_id,
+        name: related.name,
+        slug: related.slug
+      }))
   })
 
 // Main program is not included
