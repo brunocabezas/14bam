@@ -1,9 +1,12 @@
 <template>
   <Loader :loading="loadingData">
-    <div class="programsContainer">
+    <div class="twoPrograms">
       <div v-bind:key="program.id" v-for="program in programs" class="program">
-        <h1 class="programTitle">
-          <router-link :to="urls.program(program.slug)">{{ program.name }}</router-link></h1>
+        <h2 class="programTitle">
+          <router-link :to="urls.program(program.slug)">{{
+            program.name
+          }}</router-link>
+        </h2>
         <ul class="programEventList">
           <li
             class="programEvent"
@@ -25,62 +28,65 @@
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator'
-import { loadPrograms } from '../../../api/client'
-import Loader from '@/components/common/Loader.vue'
-import store from '@/config/store'
+import { Component, Vue } from "vue-property-decorator";
+import { loadPrograms } from "../../../api/client";
+import Loader from "@/components/common/Loader.vue";
+import store from "@/config/store";
 
 @Component({
   store,
   components: {
     Loader
   },
-  data () {
-    return { loading: false }
+  data() {
+    return { loading: false };
   }
 })
 class Programs extends Vue {
   // programs : Array =  '[]';
   loadingData = false;
 
-  get programs () {
-    return this.$store.state.programs
+  get programs() {
+    return this.$store.state.programs;
   }
 
-  urls = this.$root.urls
+  urls = this.$root.urls;
 
-  mounted () {
-    this.loadingData = true
+  mounted() {
+    this.loadingData = true;
     loadPrograms().then(res => {
-      this.$store.commit('loadPrograms', res)
-      this.loadingData = false
-    })
+      this.$store.commit("loadPrograms", res);
+      this.loadingData = false;
+    });
   }
 }
-export default Programs
+export default Programs;
 </script>
-<style  scoped lang="styl">
-@import "../../styles/colors";
-.programs
-  .programsTitle
-    color $black
-    text-decoration underline
+<style scoped lang="stylus">
+@import '../../styles/colors';
 
-  .programsContainer
-    display flex
-    padding 15px
+.twoPrograms
+  display: flex;
+  padding: 15px;
 
-    .program
-      flex 1 1 50%
-      .programTitle
-        text-decoration underline
-      .programEventList
-        padding 0
-        .programEvent
-          color $white
-          font-size 26px
-        .programEventLink
-          color $white
-          font-size 26px
-          text-decoration none
+  .program
+    flex: 1 1 50%;
+
+    .programTitle
+      text-decoration: underline;
+      font-size 30px
+
+    .programEventList
+      padding: 0;
+
+      .programEvent
+        color: $white;
+        font-size: 26px;
+        &:hover
+          text-decoration underline
+
+      .programEventLink
+        color: $white;
+        font-size: 26px;
+        text-decoration: none;
 </style>

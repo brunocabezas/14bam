@@ -13,6 +13,7 @@
         <h1 class="sectionTitle">
           <router-link :to="urls.programs">Programas</router-link>
         </h1>
+        <TwoPrograms />
       </section>
       <section class="section sponsors">
         <div
