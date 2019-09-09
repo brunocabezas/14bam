@@ -1,23 +1,18 @@
 <template>
   <div class="home">
-    <div class="homeTop">
+    <section class="homeTop">
       <img src="../Home/home.gif" alt />
-    </div>
-    <!-- <section class="places">
-    grid of places
-  </section>
-  <section class="twoPrograms">
-    two programs
-  </section>
-  <section class="program">
-    single program
-    </section>-->
-    <div class="sections">
+    </section>
       <section class="section expositions">
         <h1 class="sectionTitle">
           <router-link :to="urls.expositions">Exposiciones</router-link>
         </h1>
-        <ExpositionsGrid :expositions="expositions"/>
+        <ExpositionsGrid/>
+      </section>
+      <section class="section programs">
+        <h1 class="sectionTitle">
+          <router-link :to="urls.programs">Programas</router-link>
+        </h1>
       </section>
       <section class="section sponsors">
         <div
@@ -30,7 +25,6 @@
           v-bind:key="sponsor.name"
         ></div>
       </section>
-    </div>
   </div>
 </template>
 

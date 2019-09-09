@@ -1,37 +1,35 @@
-@import "../../styles/colors";
+@import '../../styles/colors';
 
 .home
-  height 100%
-  position relative
-  .homeTop
-    position absolute
-    height 100vh
-    width 100%
-    display flex
-    align-items center
-    justify-content center
-    .videoPlayer
-      height 100%
-    
-  .sections
-    padding-top 100vh
-    display flex
-    flex-direction column
-    flex-wrap wrap
-    section
-      padding 1em 3em
-      height 100%
-      flex 1
+  height: 100%;
+  position: relative;
 
-      .sectionTitle
-        text-decoration underline
-        font-size 36pt
-        color $black
+  section
+    position relative
+    min-height: calc(100vh - 100px);
+    padding: 1em 3em 1em 3em;
+    flex: 1;
 
-      &.sponsors
-        .sponsor
-          background-position center center
-          background-repeat no-repeat
-          background-size contain
-          &:last-child
-            margin 40px 0 60px 0
+    .sectionTitle
+      text-decoration: underline;
+      font-size: 36pt;
+      margin-bottom 1em
+      a
+        color: $black;
+
+    &.homeTop
+      display: flex;
+      align-items: center;
+      justify-content: center;
+          
+      .videoPlayer
+        height: 100%;
+
+    &.sponsors
+      .sponsor
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &:last-child
+          margin: 40px 0 60px 0;
