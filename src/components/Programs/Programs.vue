@@ -17,4 +17,15 @@ import TwoPrograms from './TwoPrograms'
 class Programs extends Vue {}
 export default Programs
 </script>
-<style src="./programs.styl" scoped lang="styl"></style>
+<style scoped lang="stylus">
+@import "../../styles/colors";
+
+.programs
+  .programsTitle a
+    color $black
+    text-decoration underline
+
+  .programsContainer
+    display flex
+    padding 15px
+</style>
