@@ -1,33 +1,31 @@
 <template>
   <div class="programs">
     <h1 class="programsTitle">Programas</h1>
-
-    <Loader :loading="loadingData">
-      <div class="programsContainer">
-        <div v-bind:key="program.id" v-for="program in programs" class="program">
-          <h1 class="programTitle">
-            <router-link :to="urls.program(program.slug)">{{ program.name }}</router-link></h1>
-          <ul class="programEventList">
-            <li
-              class="programEvent"
-              v-bind:key="program.id"
-              v-for="program in program.events"
-            >
-              <router-link
-                class="programEventLink"
-                :title="program.post_title"
-                :to="urls.event(program.post_name)"
-              >
-                {{ program.post_title }}
-              </router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </Loader>
-
+    <TwoPrograms />
   </div>
 </template>
 
-<script src="./programs.js" ></script>
-<style src="./programs.styl" scoped lang="styl"></style>
+<script>
+import { Component, Vue } from 'vue-property-decorator'
+import TwoPrograms from './TwoPrograms'
+
+@Component({
+  components: {
+    TwoPrograms
+  }
+})
+class Programs extends Vue {}
+export default Programs
+</script>
+<style scoped lang="stylus">
+@import "../../styles/colors";
+
+.programs
+  .programsTitle a
+    color $black
+    text-decoration underline
+
+  .programsContainer
+    display flex
+    padding 15px
+</style>

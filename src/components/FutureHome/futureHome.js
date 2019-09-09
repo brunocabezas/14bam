@@ -2,7 +2,8 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { loadSponsors, loadVideos } from '../../../api/client'
 import VideoPlayer from '../Home/VideoPlayer.vue'
-import ExpositionsGrid from '../Expositions/ExpositionsGrid.vue'
+import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid.vue'
+import TwoPrograms from '@/components/Programs/TwoPrograms.vue'
 import store from '@/config/store'
 // import { getExpositionsFromApi, getSponsorsFromApi } from '@/helpers/apiHelpers'
 import { getSponsorsFromApi } from '@/helpers/apiHelpers'
@@ -10,7 +11,8 @@ import { getSponsorsFromApi } from '@/helpers/apiHelpers'
 @Component({
   components: {
     VideoPlayer,
-    ExpositionsGrid
+    ExpositionsGrid,
+    TwoPrograms
   },
   store
 })
