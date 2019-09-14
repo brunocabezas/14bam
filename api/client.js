@@ -5,6 +5,7 @@ import {
   getProgramFromApi,
   getPrograms,
   getExpositionsFromApi,
+  getCalendarFromApi,
   getParticipantsFromApi
 } from '../src/helpers/apiHelpers'
 import { resolvedPromise } from '../src/helpers/promiseHelpers'
@@ -60,6 +61,14 @@ export const loadProgram = (slug) =>
 export const loadEvent = (slug) =>
   Vue.axios.get(routes.program(slug))
     .then(res => resolvedPromise((getProgramFromApi(res))))
+
+export const loadCalendar = () =>
+  Vue.axios.get(routes.calendar)
+    .then(res => resolvedPromise((getCalendarFromApi(res))))
+
+export const loadProgramCalendar = (googleCalendarId = '') =>
+  Vue.axios.get(routes.programCalendar(googleCalendarId))
+    .then(res => resolvedPromise((res)))
 
 export default axios.create({
   baseURL: BASE_URL
