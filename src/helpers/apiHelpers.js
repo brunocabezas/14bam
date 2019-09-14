@@ -1,4 +1,9 @@
 import { flatten, onlyUnique } from './arrayHelpers'
+import {
+  getTimeOfDateTimeString,
+  getMonthOfDateTimeString,
+  getDayOfDateTimeString
+} from './dateHelpers'
 
 //
 // apiHelpers
@@ -128,4 +133,17 @@ export const getProgramFromApi = (apiResponse = []) => {
     text: getAcfField(firstProgram, 'texto'),
     events: getAcfField(firstProgram, 'programas', [])
   })
+}
+
+export const getCalendarFromApi = (apiResponse = []) => {
+  const events = apiResponse.data && apiResponse.data.items
+  // Getting the first program
+  console.log(apiResponse)
+  return events.map(event => ({
+    id: event.id,
+    name: event.summary,
+    date: getDayOfDateTimeString(event.start.dateTime),
+    month: getMonthOfDateTimeString(event.start.dateTime),
+    time: getTimeOfDateTimeString(event.start.dateTime)
+  }))
 }
