@@ -6,7 +6,14 @@ import store from '@/config/store'
 // import { getSponsorsFromApi } from '@/helpers/apiHelpers'
 
 @Component({
-  store
+  store,
+  filters: {
+    // january => JAN
+    shortMonth: function (monthName) {
+      if (!monthName) return monthName
+      return monthName.substring(0, 3).toUpperCase()
+    }
+  }
 })
 class HomeAgenda extends Vue {
   urls = this.$root.urls

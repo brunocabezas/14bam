@@ -25,3 +25,14 @@ export const getMonthOfDateTimeString = (dateStr = '') => {
   const date = new Date(dateStr)
   return monthNames[date.getMonth()]
 }
+
+export const sortByDate = (a, b) => {
+  // Turn your strings into dates, and then subtract them
+  // to get a value that is either negative, positive, or zero.
+  return new Date(a.start.dateTime) - new Date(b.start.dateTime)
+}
+
+// Receives array of dates, and returns the closer to today
+const today = new Date()
+export const findCloseToToday = (a, b) =>
+  Math.abs(a - today) < Math.abs(b - today) ? a : b

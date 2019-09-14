@@ -2,8 +2,8 @@
   <div class="agenda">
     <div class="agendaEvent" v-for="event in events" v-bind:key="event.key">
       <div class="agendaEventDate">
-        {{event.date}} <br />
-        {{event.month}}
+        <div class="agendaEventDay">{{event.date}}</div>
+        <div class="agendaEventMonth">{{event.month | shortMonth }}</div>
       </div>
       <div class="agendaEventTime">{{event.time}}hrs</div>
       <div class="agendaEventTitle">{{ event.name }}</div>
@@ -20,3 +20,27 @@
 </template>
 
 <script src='./homeAgenda.js'></script>
+<style lang="stylus" scoped>
+@import "../../../styles/colors"
+
+.agenda
+  .agendaEvent
+    border-bottom 2px solid $black
+    display flex
+    color $white
+    align-items center
+    .agendaEventTitle
+    .agendaEventTime
+      font-family "Roboto Mono"
+    .agendaEventTitle
+    .agendaEventTime
+    .agendaEventDate
+      padding 5px 10px
+    .agendaEventDate
+      font-weight bold
+      text-align center
+      .agendaEventDay
+        font-size 18px
+      .agendaEventMonth
+        font-size 14px
+</style>
