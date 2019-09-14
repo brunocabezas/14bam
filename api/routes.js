@@ -1,3 +1,17 @@
+
+const GOOGLE_API_KEY = process.env.VUE_APP_CALENDAR_API_KEY || ''
+const CALENDAR_ID = process.env.VUE_APP_CALENDAR_ID || ''
+
+if (!GOOGLE_API_KEY) {
+  console.warn('Unvalid calendar API key, programs calendars will not be displayed')
+}
+
+if (!CALENDAR_ID) {
+  console.warn('Unvalid google calendar id, home agenda will not be displayed')
+}
+
+console.log(process.env)
+
 export default {
   pages: '/pages',
   posts: '/posts',
@@ -12,6 +26,9 @@ export default {
   generalProgram: slug => `/programaGeneral?slug=${slug}`,
   // Regular programs
   program: slug => `/programs?slug=${slug}`,
+  programCalendar: googleCalendarId =>
+    `https://www.googleapis.com/calendar/v3/calendars/${googleCalendarId}/events?key=${GOOGLE_API_KEY}`,
+  calendar: `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${GOOGLE_API_KEY}`,
   // Not used
   post: postId => `/post/${postId}`,
   taxonomy: id => `/tags`

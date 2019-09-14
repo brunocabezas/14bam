@@ -1,4 +1,11 @@
 import { flatten, onlyUnique } from './arrayHelpers'
+import {
+  getTimeOfDateTimeString,
+  getMonthOfDateTimeString,
+  getDayOfDateTimeString,
+  findCloseToToday,
+  sortByDate
+} from './dateHelpers'
 
 //
 // apiHelpers
@@ -128,4 +135,35 @@ export const getProgramFromApi = (apiResponse = []) => {
     text: getAcfField(firstProgram, 'texto'),
     events: getAcfField(firstProgram, 'programas', [])
   })
+}
+
+export const getCalendarFromApi = (apiResponse = []) => {
+  const events = apiResponse.data && apiResponse.data.items
+  // Get closest to today's date
+
+  const closestToToday = events
+    .map(event => new Date(event.start.dateTime))
+    .reduce(findCloseToToday)
+
+  const sortedEvents = events
+    .sort(sortByDate)
+    .map(event => ({
+      id: event.id,
+      name: event.summary,
+      dateTime: new Date(event.start.dateTime),
+      date: getDayOfDateTimeString(event.start.dateTime),
+      month: getMonthOfDateTimeString(event.start.dateTime),
+      time: getTimeOfDateTimeString(event.start.dateTime)
+    }))
+
+  // Find event with closest to today's date
+  const closestOnSortedEvents = sortedEvents
+    .find(event => event.dateTime &&
+      event.dateTime.getTime() === closestToToday.getTime())
+
+  // Based on the found item index, ten events are displayed on the calendar
+  const spliceIndex = closestOnSortedEvents
+    ? sortedEvents.indexOf(closestOnSortedEvents) : 0
+
+  return sortedEvents.splice(spliceIndex, 10)
 }

@@ -1,6 +1,6 @@
 
 import { Component, Vue, Watch } from 'vue-property-decorator'
-import { loadProgram, loadEvent } from '../../../../api/client'
+import { loadProgram, loadEvent, loadProgramCalendar } from '../../../../api/client'
 import store from '@/config/store'
 import Loader from '@/components/common/Loader'
 
@@ -57,6 +57,9 @@ class Program extends Vue {
       .then(res => {
         this.loadingData = false
         this.$store.commit(commitMsg, res)
+        if (type === 'program') {
+          loadProgramCalendar()
+        }
       })
   }
 }

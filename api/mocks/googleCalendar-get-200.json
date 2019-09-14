@@ -1,0 +1,1815 @@
+{
+  "JSON": {
+    "kind": "calendar#events",
+    "etag": "\"p33ceftl5oj3e80g\"",
+    "summary": "Campos Magnéticos",
+    "description": "Programa de actividades para el público general de la 14 Bienal de Artes Mediales | El Cuarto Mundo",
+    "updated": "2019-09-10T15:07:52.791Z",
+    "timeZone": "America/Santiago",
+    "accessRole": "reader",
+    "defaultReminders": [],
+    "nextSyncToken": "CNjn9qXExuQCEAAYAQ==",
+    "items": [
+      {
+        "kind": "calendar#event",
+        "etag": "\"3125881460510000\"",
+        "id": "3vulhitcr7mpg6l5r6neapelgt",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=M3Z1bGhpdGNyN21wZzZsNXI2bmVhcGVsZ3QgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:11:58.000Z",
+        "updated": "2019-07-12T14:12:10.255Z",
+        "summary": "Inauguración Tercer Paisaje",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-17T19:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-17T21:00:00-03:00"
+        },
+        "iCalUID": "3vulhitcr7mpg6l5r6neapelgt@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3125885852784000\"",
+        "id": "5g8qj60ddd6kpg98lrh8ksunj2",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NWc4cWo2MGRkZDZrcGc5OGxyaDhrc3VuajIgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:48:46.000Z",
+        "updated": "2019-07-12T14:48:46.392Z",
+        "summary": "International Biennial Association",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-12-09T08:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-12-14T09:00:00-03:00"
+        },
+        "iCalUID": "5g8qj60ddd6kpg98lrh8ksunj2@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3126049682028000\"",
+        "id": "7dat1enuseakq221rcdcref8s8",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=N2RhdDFlbnVzZWFrcTIyMXJjZGNyZWY4czggY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-13T13:34:00.000Z",
+        "updated": "2019-07-13T13:34:01.014Z",
+        "summary": "Centro de Estudios del Agua | Agua y Arte",
+        "location": "Corporación Cultural Matucana 100, Matucana 100, Santiago, Estación Central, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-07T10:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-07T18:30:00-03:00"
+        },
+        "iCalUID": "7dat1enuseakq221rcdcref8s8@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3126050055544000\"",
+        "id": "6qetjf1165k0u8u6t9unpino01",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NnFldGpmMTE2NWswdTh1NnQ5dW5waW5vMDEgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-13T13:34:57.000Z",
+        "updated": "2019-07-13T13:37:07.772Z",
+        "summary": "Centro de Estudios del Agua | Cuenca del Valle Central",
+        "location": "Corporación Cultural Matucana 100, Matucana 100, Santiago, Estación Central, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-21T10:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-21T19:00:00-03:00"
+        },
+        "iCalUID": "6qetjf1165k0u8u6t9unpino01@google.com",
+        "sequence": 4
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3126050106092000\"",
+        "id": "00p9i1k4u6uplggdr2l5g5909v",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MDBwOWkxazR1NnVwbGdnZHIybDVnNTkwOXYgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-13T13:36:02.000Z",
+        "updated": "2019-07-13T13:37:33.046Z",
+        "summary": "Centro de Estudios del Agua | Gastón Soublette",
+        "location": "Corporación Cultural Matucana 100, Matucana 100, Santiago, Estación Central, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-12-05T10:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-12-05T18:30:00-03:00"
+        },
+        "iCalUID": "00p9i1k4u6uplggdr2l5g5909v@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3126050205892000\"",
+        "id": "496145t35apf4cldtibrak78s2",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NDk2MTQ1dDM1YXBmNGNsZHRpYnJhazc4czIgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-13T13:38:22.000Z",
+        "updated": "2019-07-13T13:38:22.946Z",
+        "summary": "Centro de Estudios del Agua | Pueblos Originarios",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-12-12T10:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-12-12T18:30:00-03:00"
+        },
+        "iCalUID": "496145t35apf4cldtibrak78s2@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3126409107850000\"",
+        "id": "5q5hcsmceiqbvp9ipu9ga55mij",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NXE1aGNzbWNlaXFidnA5aXB1OWdhNTVtaWogY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:06:53.000Z",
+        "updated": "2019-07-15T15:29:13.925Z",
+        "summary": "Encuentro espacios de la bienal",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-07-26T11:00:00-04:00",
+          "timeZone": "America/Santiago"
+        },
+        "end": {
+          "dateTime": "2019-07-26T13:00:00-04:00",
+          "timeZone": "America/Santiago"
+        },
+        "iCalUID": "5q5hcsmceiqbvp9ipu9ga55mij@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3127791934632000\"",
+        "id": "1lkv29l0j6dobb4enpl4tobl7c",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MWxrdjI5bDBqNmRvYmI0ZW5wbDR0b2JsN2MgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:13:43.000Z",
+        "updated": "2019-07-23T15:32:47.316Z",
+        "summary": "Lanzamiento Revista Endémico | Denise Lira",
+        "location": "Museo Nacional de Bellas Artes, José Miguel de La Barra 650, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-19T13:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-19T14:15:00-03:00"
+        },
+        "iCalUID": "1lkv29l0j6dobb4enpl4tobl7c@google.com",
+        "sequence": 4
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3127792158998000\"",
+        "id": "4947tjtd9g7gbjatneim5131a9",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NDk0N3RqdGQ5ZzdnYmphdG5laW01MTMxYTkgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:12:51.000Z",
+        "updated": "2019-07-23T15:34:39.499Z",
+        "summary": "Conferencia Transformations",
+        "location": "Museo Nacional de Bellas Artes, José Miguel de La Barra 650, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-18T15:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-18T18:30:00-03:00"
+        },
+        "iCalUID": "4947tjtd9g7gbjatneim5131a9@google.com",
+        "sequence": 2
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3127801405192000\"",
+        "id": "dah5k8a7lp3amfgh9hl7n2g36k",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=ZGFoNWs4YTdscDNhbWZnaDlobDduMmczNmsgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-19T15:53:46.000Z",
+        "updated": "2019-07-23T16:51:42.596Z",
+        "summary": "Asamblea Arte y Ciencia",
+        "location": "Museo Nacional de Bellas Artes, José Miguel de La Barra 650, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-29T10:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-29T13:00:00-03:00"
+        },
+        "iCalUID": "dah5k8a7lp3amfgh9hl7n2g36k@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3128873413858000\"",
+        "id": "vqv3aurp182i4g895ovt808ak0",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=dnF2M2F1cnAxODJpNGc4OTVvdnQ4MDhhazAgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-29T21:44:24.000Z",
+        "updated": "2019-07-29T21:45:06.929Z",
+        "summary": "Jornada Monumento MDH",
+        "location": "Cerrillos, Chile, Los Cerrillos, Cerrillos, Chile, Santiago Metropolitan Region, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-12-06T12:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-12-06T13:00:00-03:00"
+        },
+        "iCalUID": "vqv3aurp182i4g895ovt808ak0@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3129201376420000\"",
+        "id": "02sk5f54ei5cgbfdocmvpmbm3m",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MDJzazVmNTRlaTVjZ2JmZG9jbXZwbWJtM20gY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-31T19:18:08.000Z",
+        "updated": "2019-07-31T19:18:08.210Z",
+        "summary": "Semana de Lanzamiento | 14Bienal de Artes Mediales | El cuarto mundo",
+        "location": "Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-08-26T10:00:00-04:00"
+        },
+        "end": {
+          "dateTime": "2019-08-31T11:00:00-04:00"
+        },
+        "iCalUID": "02sk5f54ei5cgbfdocmvpmbm3m@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3129201552608000\"",
+        "id": "1t2nc2206c4c1o06i2cp4c1fa4",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MXQybmMyMjA2YzRjMW8wNmkyY3A0YzFmYTQgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-31T19:19:36.000Z",
+        "updated": "2019-07-31T19:19:36.304Z",
+        "summary": "Simetría | Encuentro de Arte y Ciencia",
+        "description": "* Evento accesible solo con invitación.",
+        "location": "CEPAL, Santiago, Vitacura, Santiago Metropolitan Region, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-08-26T10:00:00-04:00"
+        },
+        "end": {
+          "dateTime": "2019-08-26T13:00:00-04:00"
+        },
+        "iCalUID": "1t2nc2206c4c1o06i2cp4c1fa4@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3129343123948000\"",
+        "id": "1gsg6d9b13ualkfaalsb3dvtp0",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MWdzZzZkOWIxM3VhbGtmYWFsc2IzZHZ0cDAgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-01T14:59:13.000Z",
+        "updated": "2019-08-01T14:59:21.974Z",
+        "summary": "Cine Foro | Revista Endémico",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-09-24T21:15:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-09-24T21:45:00-03:00"
+        },
+        "iCalUID": "1gsg6d9b13ualkfaalsb3dvtp0@google.com",
+        "sequence": 2
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3130047133832000\"",
+        "id": "1bm2uul0b8dudmtfr3qbsu331d",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MWJtMnV1bDBiOGR1ZG10ZnIzcWJzdTMzMWQgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-23T15:21:18.000Z",
+        "updated": "2019-08-05T16:46:06.916Z",
+        "summary": "Performance Poxypol | Museo de Química y Farmacia",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-29T19:15:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-29T20:15:00-03:00"
+        },
+        "iCalUID": "1bm2uul0b8dudmtfr3qbsu331d@google.com",
+        "sequence": 4
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3130047431944000\"",
+        "id": "13scpdeld46ff9hng18vdi1jp0",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MTNzY3BkZWxkNDZmZjlobmcxOHZkaTFqcDAgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:39:36.000Z",
+        "updated": "2019-08-05T16:48:35.972Z",
+        "summary": "Inauguración | Precisión",
+        "location": "MAC Parque Forestal",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-28T19:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-28T21:00:00-03:00"
+        },
+        "iCalUID": "13scpdeld46ff9hng18vdi1jp0@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3130047461716000\"",
+        "id": "7gaoolrn04sdb3ioidff1pdbg0",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=N2dhb29scm4wNHNkYjNpb2lkZmYxcGRiZzAgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:47:32.000Z",
+        "updated": "2019-08-05T16:48:50.858Z",
+        "summary": "Performance | Soundwalk Collective",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-28T21:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-28T22:45:00-03:00"
+        },
+        "iCalUID": "7gaoolrn04sdb3ioidff1pdbg0@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3130072699106000\"",
+        "id": "0257nt7s0n4qprmmp5m6nkh6d9",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MDI1N250N3MwbjRxcHJtbXA1bTZua2g2ZDkgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:35:31.000Z",
+        "updated": "2019-08-05T20:19:09.553Z",
+        "summary": "Noche Bank of America",
+        "location": "Museo Nacional de Bellas Artes, José Miguel de La Barra 650, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-29T19:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-29T22:00:00-03:00"
+        },
+        "iCalUID": "0257nt7s0n4qprmmp5m6nkh6d9@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3130241768600000\"",
+        "id": "518dmt05gsa8tbdqkhj8tfvqtn",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NTE4ZG10MDVnc2E4dGJkcWtoajh0ZnZxdG4gY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-31T19:14:22.000Z",
+        "updated": "2019-08-06T19:48:04.300Z",
+        "summary": "Dusk Chorus | Nika Saravanja, Alessandro D’Emilia",
+        "description": "A través de los ojos de David Monacchi viajamos a la Amazonía de Ecuador para grabar los paisajes acústicos de estos bosques primarios. Utilizando las últimas tecnologías de grabación, percibimos de primera fuente cómo es el trabajo que existe detrás del proyecto  Fragments of Extinction. Este filme también ofrece una experiencia sonora única para poder escuchar los bosques y experimentar cómo suenan los millones de años de evolución en nuestro planeta.",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-09-24T20:15:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-09-24T21:15:00-03:00"
+        },
+        "iCalUID": "518dmt05gsa8tbdqkhj8tfvqtn@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3130562877188000\"",
+        "id": "7bcqolecugoodttkm8bfronnvl",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=N2JjcW9sZWN1Z29vZHR0a204YmZyb25udmwgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-23T16:52:08.000Z",
+        "updated": "2019-08-08T16:23:58.594Z",
+        "summary": "Julian Charrière + Pauline Julier + Jean Paul Felley | conferencia artistas suizos",
+        "location": "MAC Parque Forestal",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-29T14:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-29T16:00:00-03:00"
+        },
+        "iCalUID": "7bcqolecugoodttkm8bfronnvl@google.com",
+        "sequence": 2
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3130563685014000\"",
+        "id": "4n6e4su37vlkdhavi50gon0f7b",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NG42ZTRzdTM3dmxrZGhhdmk1MGdvbjBmN2IgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-08T16:30:42.000Z",
+        "updated": "2019-08-08T16:30:42.507Z",
+        "summary": "Laboratorio Dasein",
+        "location": "Zócalo, Museo de Arte Contemporáneo Parque Forestal",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-30T15:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-30T18:00:00-03:00"
+        },
+        "iCalUID": "4n6e4su37vlkdhavi50gon0f7b@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3131754913814000\"",
+        "id": "5glg8ckim4g7f6k47pab8entpv",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NWdsZzhja2ltNGc3ZjZrNDdwYWI4ZW50cHYgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-15T13:56:00.000Z",
+        "updated": "2019-08-15T13:57:36.907Z",
+        "summary": "Infinito y Más Allá | Museo del Hongo",
+        "location": "Museo Benjamín Vicuña Mackenna",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-08T19:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-08T22:30:00-03:00"
+        },
+        "iCalUID": "5glg8ckim4g7f6k47pab8entpv@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3132488722654000\"",
+        "id": "2vseu0d460cuha5epve3mmrddm",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MnZzZXUwZDQ2MGN1aGE1ZXB2ZTNtbXJkZG0gY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:20:15.000Z",
+        "updated": "2019-08-19T19:52:41.327Z",
+        "summary": "El Fin del Mundo | MAVI",
+        "location": "Museo de Artes Visuales, José Victorino Lastarria 307, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-07T19:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-07T21:00:00-03:00"
+        },
+        "iCalUID": "2vseu0d460cuha5epve3mmrddm@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3132623962830000\"",
+        "id": "5isoolb7olvvjl1ue5hrsadlop",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NWlzb29sYjdvbHZ2amwxdWU1aHJzYWRsb3AgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-20T14:39:41.000Z",
+        "updated": "2019-08-20T14:39:41.415Z",
+        "summary": "Cien es un Color | Cierre",
+        "description": "Hoy finaliza la exposición Cien es un Color de Cornelia Vargas, en conjunto con el centro de modelamiento matemático CR2 y la Fundación Artesanías de Chile en la Sala de Artes Visuales del Centro Cultural GAM.",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-10T10:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-10T18:00:00-03:00"
+        },
+        "iCalUID": "5isoolb7olvvjl1ue5hrsadlop@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3132624900828000\"",
+        "id": "6quo5cfdel45kfu7s9ih8su7k0",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NnF1bzVjZmRlbDQ1a2Z1N3M5aWg4c3U3azAgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-31T16:50:17.000Z",
+        "updated": "2019-08-20T14:47:30.414Z",
+        "summary": "Lanzamiento Programa Cineteca Nacional | Planets |Momoko Seto",
+        "description": "<br>Con la serie <i>Planets</i> la artista Momoko Seto recrea procesos químicos y biológicos que registra combinando miradas de extrema proximidad y extrañeza. Entre un espacio cósmico y microscópico, la vida mineral, vegetal y fungi transcurre en total ausencia de lo humano.<br>Una de las actividades de la semana de lanzamiento de la 14 Bienal de Artes Mediales, donde presentaremos el trabajo de una artista que participó en la última versión e introduciremos la selección audiovisual que se presentará durante los meses de la bienal en la Cineteca Nacional.",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-08-27T20:00:00-04:00"
+        },
+        "end": {
+          "dateTime": "2019-08-27T21:30:00-04:00"
+        },
+        "iCalUID": "6quo5cfdel45kfu7s9ih8su7k0@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3132625093918000\"",
+        "id": "6t6vpn4dcipdljk5n73o84ulst",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NnQ2dnBuNGRjaXBkbGprNW43M284NHVsc3QgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-01T14:55:27.000Z",
+        "updated": "2019-08-20T14:49:06.959Z",
+        "summary": "Lanzamiento Catálogo 13BAM",
+        "description": "El director de la Bienal de Artes Mediales Enrique Rivera, junto al director del Museo Nacional de Bellas Artes Fernando Pérez Oyarzún, y la directora del Centro Cultural La Moneda Beatriz Bustos; nos presentan el catálogo de lo que fue la bienal \"Temblor\" en el 2017, dando así inicio al ciclo de la 14Bienal.",
+        "location": "Cineteca Nacional de Chile - Sala de Cine, Centro Cultural La Moneda (Plaza de la Ciudadanía 26, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-08-27T21:30:00-04:00"
+        },
+        "end": {
+          "dateTime": "2019-08-27T22:30:00-04:00"
+        },
+        "iCalUID": "6t6vpn4dcipdljk5n73o84ulst@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3132626796442000\"",
+        "id": "146nt7tbb1k9c4nlanbqghq389",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MTQ2bnQ3dGJiMWs5YzRubGFuYnFnaHEzODkgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-14T19:07:01.000Z",
+        "updated": "2019-08-20T15:03:18.221Z",
+        "summary": "Ritos de Tambores",
+        "description": "<br><b>Resistencias en el mundo Sámi y Mapuche</b><br>Como timbal chamánico, el tambor de las comunidades Sámi como el Kultrún en el mundo Mapuche, constituyen instrumentos vernáculos  que contienen una cosmovisión alusivas a poderes terrestres y espirituales. A partir del uso de sus resonancias sonoras en la exposición Drones y tambores de Ignacio Acosta, se busca abrir una conversación que explore el rol de sus funciones, sus conexiones con la tierra y sus extensiones hacia las luchas legales y políticas por la restitución territorial.&nbsp;&nbsp;<br><br>Ignacio Acosta (artista)<br>Piergiorgio Di Giminiani (antropólogo, PUC)<br>Pascual Levi Curriao (Lonko Pewenche y Asesor intercultural U. Bío Bío)<br>Modera: Andrea Jösch  (curadora y fotógrafa)",
+        "location": "Museo de la Solidaridad Salvador Allende, Av. República 475, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-09-05T19:00:00-04:00"
+        },
+        "end": {
+          "dateTime": "2019-09-05T21:00:00-04:00"
+        },
+        "iCalUID": "146nt7tbb1k9c4nlanbqghq389@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3132627523100000\"",
+        "id": "3lt690ptc2pajn5ot85cffn0ts",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=M2x0NjkwcHRjMnBham41b3Q4NWNmZm4wdHMgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:08:20.000Z",
+        "updated": "2019-08-20T15:09:21.550Z",
+        "summary": "Drones y Tambores | Ignacio Acosta",
+        "description": "\nDurante varios viajes de investigación, Ignacio Acosta (1976) se reunió con los activistas y con familias Sámi que viven y trabajan en la zona Gállak, en el condado de Norrbotten, Suecia, hoy amenazada por la minería. El proyecto, desarrollado de manera colaborativa con los Sámi, releva la importancia de la tierra y transmite la ansiedad que produce la posibilidad de que los activistas no logren detener la apertura de la mina. ",
+        "location": "Museo de la Solidaridad Salvador Allende, Av. República 475, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-08-31T12:00:00-04:00"
+        },
+        "end": {
+          "dateTime": "2019-08-31T15:00:00-04:00"
+        },
+        "iCalUID": "3lt690ptc2pajn5ot85cffn0ts@google.com",
+        "sequence": 4
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3133091574948000\"",
+        "id": "69b4hjolgudb5uhej1ht0mjp2p",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NjliNGhqb2xndWRiNXVoZWoxaHQwbWpwMnAgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-01T14:37:26.000Z",
+        "updated": "2019-08-23T07:36:27.474Z",
+        "summary": "Cuarto Mundo | Carlos Ortúzar",
+        "description": "El cuarto mundo se inspira en la escultura del artista chileno Carlos Ortúzar (1935-1985) instalada en 1972 en el patio norte del Centro Cultural Metropolitano Gabriela Mistral. \n\nEn su primera versión, la obra se configuró como un manifiesto visual y advertencia frente a la distinción entre el “primer, segundo y tercer mundo”. Esta división expande los efectos de la revolución industrial a una escala global, afectando a todos los seres de la Tierra, clasificándolos como recursos de producción extractivista, tanto natural como cognitivo.  Desaparecida en 1973, la obra en esta bienal se convierte en un mecanismo de orientación para transitar entre el desequilibrio y la estabilidad.\n\n*Acceso solo con invitación",
+        "location": "Centro Gabriela Mistral, Av Libertador Bernardo O'Higgins 227, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-08-30T10:00:00-04:00"
+        },
+        "end": {
+          "dateTime": "2019-08-30T11:30:00-04:00"
+        },
+        "iCalUID": "69b4hjolgudb5uhej1ht0mjp2p@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3133094274280000\"",
+        "id": "0rl7jmbaenqdajhatcabd5re5v",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MHJsN2ptYmFlbnFkYWpoYXRjYWJkNXJlNXYgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-01T15:06:13.000Z",
+        "updated": "2019-08-23T07:58:57.140Z",
+        "summary": "Paisajes Críticos | Selección de cine experimental sudamericano",
+        "description": "Paisajes Críticos\nSelección cine experimental sudamericano \n(Curadoras: Carol Illanes y Vanja Munjin, 71 min.)\n\nLa libertad (Laura Huertas Millán, Colombia, 2017) 29 mins\nO peixe (Jonathas de Andrade, Brasil, 2016) 40 min \nMe consume (Antonio Pichillá, Guatemala, 2015) \n \nCine Foro: Carol Illanes y Vanja Munjin",
+        "location": "Cineteca Nacional de Chile - Sala de Cine, Centro Cultural La Moneda (Plaza de la Ciudadanía 26, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-22T20:15:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-22T21:45:00-03:00"
+        },
+        "iCalUID": "0rl7jmbaenqdajhatcabd5re5v@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3133094418604000\"",
+        "id": "6qaanefq13qfnrv9nh5rnvgfoo",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NnFhYW5lZnExM3FmbnJ2OW5oNXJudmdmb28gY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-23T08:00:09.000Z",
+        "updated": "2019-08-23T08:00:09.302Z",
+        "summary": "Paisajes Críticos | Selección de cine experimental sudamericano",
+        "description": "Paisajes Críticos\nSelección cine experimental sudamericano \n(Curadoras: Carol Illanes y Vanja Munjin, 50 min.)\n\nThe Whisperer (Oscar Santillán, Ecuador, 2014) \nTierra Quemada (Gabriela Golder, Argentina, 2015)  \nAmerika: la bahía de las flechas (Ana Vaz, Brasil, 2016) \nCeniza Verde (Pablo Mazzolo, Argentina, 2019) \nAltiplano (Malena Szlam, Chile/Canadá, 2018)  ",
+        "location": "Cineteca Nacional de Chile - Sala de Cine, Centro Cultural La Moneda (Plaza de la Ciudadanía 26, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-12-17T20:15:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-12-17T21:15:00-03:00"
+        },
+        "iCalUID": "6qaanefq13qfnrv9nh5rnvgfoo@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3133094528052000\"",
+        "id": "5g64f7s150oavt3d2rgvc64ghd",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NWc2NGY3czE1MG9hdnQzZDJyZ3ZjNjRnaGQgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-23T08:01:04.000Z",
+        "updated": "2019-08-23T08:01:04.026Z",
+        "summary": "Cine Foro | Malena Szlam y Carol Illanes",
+        "description": "La curadora invitada para el Cine Foro, Carol Illanes, conversa con la artista Malena Szlam, realizadora de la obra audiovisual <i>Altiplano.</i>",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-12-17T21:15:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-12-17T22:15:00-03:00"
+        },
+        "iCalUID": "5g64f7s150oavt3d2rgvc64ghd@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3133094635818000\"",
+        "id": "4h2ce7rhmmkpdjdgovetfjo5t7",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NGgyY2U3cmhtbWtwZGpkZ292ZXRmam81dDcgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-01T15:06:46.000Z",
+        "updated": "2019-08-23T08:01:57.909Z",
+        "summary": "Cine Foro | Carol Illanes + Vanja Munjin",
+        "description": "Las curadoras invitadas para el Cine Foro, Carol Illanes y Vanja Munjin, profundizan en la selección de documentos de cine experimental sudamericano presentado en el contexto de la 14 Bienal <i>El cuarto mundo</i>.",
+        "location": "Cineteca Nacional de Chile - Sala de Cine, Centro Cultural La Moneda (Plaza de la Ciudadanía 26, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-22T21:45:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-22T22:30:00-03:00"
+        },
+        "iCalUID": "4h2ce7rhmmkpdjdgovetfjo5t7@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3133107336658000\"",
+        "id": "78pmakuf31gr62df5cbhqlgskr",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NzhwbWFrdWYzMWdyNjJkZjVjYmhxbGdza3IgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-23T09:47:46.000Z",
+        "updated": "2019-08-23T09:47:48.329Z",
+        "summary": "Performance de la Muerte | José Manuel Bidegain",
+        "location": "Fundación Plaza Mulato Gil de Castro, José Victorino Lastarria 307, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-08T18:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-08T19:15:00-03:00"
+        },
+        "iCalUID": "78pmakuf31gr62df5cbhqlgskr@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135435155332000\"",
+        "id": "08svh3bs6ttb005dcf4cgme6lm",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MDhzdmgzYnM2dHRiMDA1ZGNmNGNnbWU2bG0gY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-13T15:27:32.000Z",
+        "updated": "2019-09-05T21:06:17.666Z",
+        "summary": "Ronda del Cuarto Mundo",
+        "description": "<br>*Cupos limitados<br>Investigadores de diversas disciplinas, quienes han trabajado con los archivos sobre Carlos Ortúzar y la escultura El Cuarto Mundo, reciben la obra con una conversación sobre su historia y contingencia desde el ámbito artístico y social.<br><br>En su primera versión, la obra se configuró como un manifiesto visual y advertencia frente a la distinción entre el “primer, segundo y tercer mundo”. Esta división expande los efectos de la revolución industrial a una escala global, afectando a todos los seres de la Tierra, clasificándolos como recursos de producción extractivista, tanto natural como cognitivo.  Desaparecida en 1973, la obra en esta bienal se convierte en un mecanismo de orientación para transitar entre el desequilibrio y la estabilidad.<br><br>La 14 Bienal <i>El cuarto mundo</i> se inspira en la escultura del artista chileno Carlos Ortúzar (1935-1985) instalada en 1972 en el patio norte del Centro Cultural Metropolitano Gabriela Mistral.&nbsp;",
+        "location": "Centro Gabriela Mistral, Av Libertador Bernardo O'Higgins 227, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-09-08T15:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-09-08T16:45:00-03:00"
+        },
+        "iCalUID": "08svh3bs6ttb005dcf4cgme6lm@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135562061992000\"",
+        "id": "1pbku4mdhr7o2o6em1t4bgcvlq",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MXBia3U0bWRocjdvMm82ZW0xdDRiZ2N2bHEgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-20T17:44:12.000Z",
+        "updated": "2019-09-06T14:43:50.996Z",
+        "summary": "Cien es un Color | Diálogo de Cornelia Vargas y Alejandro Jofré",
+        "description": "La artista visual Cornelia Vargas (Hochschule für Gestaltung  de Ulm) conversa con el doctor en matemática aplicada, Alejandro Jofré; quienes han mantenido una relación basada en el intercambio de historias y la dilucidación de conceptos en torno a las formas, los colores y los números. Este diálogo dio pie para una exploración de las posibilidades de los números primos en el arte, resultando en las obras presentadas en la exposición Cien es un Color en la Sala de Artes Visuales del Centro Cultural GAM.\n\nUna conversación sobre la indeterminancia, la infinitud, y lo aleatorio.\n\nLugar: Sala 1, Centro Cultural GAM.",
+        "location": "Centro Gabriela Mistral, Av Libertador Bernardo O'Higgins 227, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-09-08T17:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-09-08T18:30:00-03:00"
+        },
+        "iCalUID": "1pbku4mdhr7o2o6em1t4bgcvlq@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135563046082000\"",
+        "id": "5rran4k2jla085l433fu2h4vk4",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NXJyYW40azJqbGEwODVsNDMzZnUyaDR2azQgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-07T15:17:07.000Z",
+        "updated": "2019-09-06T14:52:03.041Z",
+        "summary": " Museo del Hongo | David Benjamin",
+        "location": "Cerrillos, Los Cerrillos, Cerrillos, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-12-07T12:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-12-07T13:00:00-03:00"
+        },
+        "iCalUID": "5rran4k2jla085l433fu2h4vk4@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135563518078000\"",
+        "id": "3lh5p426ilgvl01e96k455a74e",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=M2xoNXA0MjZpbGd2bDAxZTk2azQ1NWE3NGUgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-06T14:55:22.000Z",
+        "updated": "2019-09-06T14:55:59.039Z",
+        "summary": "Charla | Etienne de France",
+        "description": "Mediante un trabajo multidisciplinario y múltiples fragmentaciones, Etienne explora la relación entre los conceptos de naturaleza y paisaje a través de una serie de trabajos que utilizan diversos medios como video, escritura, fotografía, escultura y dibujo que le permiten problematizar el paisaje como un espacio de simbolismo y emancipación.\n\nLa obra -elaborado a partir de la investigación realizada durante el programa de residencia de la Fundación Mar Adentro en Bosque Pehuén, Araucanía Andina, Chile-, consiste en una instalación de video que busca una representación contemporánea de este entorno natural en la situación política y económica de la región de la Araucanía en Chile, donde la industria y el monocultivo continúan provocando importantes conflictos territoriales y causando grandes perturbaciones ecológicas.",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-18T11:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-18T12:15:00-03:00"
+        },
+        "iCalUID": "3lh5p426ilgvl01e96k455a74e@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135563794732000\"",
+        "id": "06k9hnsdn1mg7frstn6kv7i59n",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MDZrOWhuc2RuMW1nN2Zyc3RuNmt2N2k1OW4gY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-06T14:58:17.000Z",
+        "updated": "2019-09-06T14:58:17.366Z",
+        "summary": "Performance | Bárbara González",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-20T17:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-20T18:00:00-03:00"
+        },
+        "iCalUID": "06k9hnsdn1mg7frstn6kv7i59n@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135563838742000\"",
+        "id": "6220b0c1oqrqussqfkvq6rug2l",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NjIyMGIwYzFvcXJxdXNzcWZrdnE2cnVnMmwgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:11:46.000Z",
+        "updated": "2019-09-06T14:58:39.371Z",
+        "summary": "Lanzamiento Foco de Escucha",
+        "location": "Museo del Sonido, Huérfanos 2919, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-15T19:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-15T20:00:00-03:00"
+        },
+        "iCalUID": "6220b0c1oqrqussqfkvq6rug2l@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135563929632000\"",
+        "id": "1cql6jc86jeu85b7fa19d7cluv",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MWNxbDZqYzg2amV1ODViN2ZhMTlkN2NsdXYgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-06T14:59:13.000Z",
+        "updated": "2019-09-06T14:59:24.816Z",
+        "summary": "Performance | Astralba + Nico Trompe",
+        "location": "Museo del Sonido, Huérfanos 2919, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-15T20:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-15T21:00:00-03:00"
+        },
+        "iCalUID": "1cql6jc86jeu85b7fa19d7cluv@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135567019258000\"",
+        "id": "7sivjrqj4v098fp60rpoehea13",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=N3NpdmpycWo0djA5OGZwNjBycG9laGVhMTMgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-06T15:25:09.000Z",
+        "updated": "2019-09-06T15:25:09.629Z",
+        "summary": "Laboratorio Abierto | Galería CAVA",
+        "description": "En el marco de la Bienal de Artes Mediales 2019 el equipo creativo de la instalación  “Simbiosis Meditativa” integrado por Jean-Danton Laffert, Karin Astudillo y Camilo Gouet, realizarán un “Laboratorio Abierto”, durante el cual darán a conocer la obra desde su sistema de funcionamiento,  experimentando en vivo la medición de la fotosíntesis de las especies vegetales a través de su configuración como artefacto biotecnológico.",
+        "location": "Dieciocho 438, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-20T10:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-20T12:00:00-03:00"
+        },
+        "iCalUID": "7sivjrqj4v098fp60rpoehea13@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135574003246000\"",
+        "id": "25j9i3dat1mbls17aherhj7ict",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MjVqOWkzZGF0MW1ibHMxN2FoZXJoajdpY3QgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-23T09:44:27.000Z",
+        "updated": "2019-09-06T16:23:21.623Z",
+        "summary": "Elisa Balmaceda | Posada del Corregidor",
+        "description": "En el marco del Premio Municipal de Arte Joven 2018, Elisa Balmaceda exhibe una selección de obras que exploran la relación entre luz, paisaje y tecnología. Valiéndose de la energía solar, la muestra reúne una video-instalación, objetos y fotografías que buscan contraponer la actual degradación ambiental con el rescate de formas ancestrales de relacionarnos con el tiempo-espacio y la observación de la naturaleza. La exposición contempla la realización de una visita guiada y una caminata en colaboración con el arqueo-astrónomo Patricio Bustamante (por confirmar).",
+        "location": "Galería de Arte Posada del Corregidor, Esmeralda 749, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-09-28T12:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-09-28T14:30:00-03:00"
+        },
+        "iCalUID": "25j9i3dat1mbls17aherhj7ict@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135574619338000\"",
+        "id": "20vqtmnq3e158eu34s6aa6qgut",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MjB2cXRtbnEzZTE1OGV1MzRzNmFhNnFndXQgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-06T14:57:59.000Z",
+        "updated": "2019-09-06T16:28:29.669Z",
+        "summary": "Performance | Gregorio Fontaine",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-20T15:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-20T16:30:00-03:00"
+        },
+        "iCalUID": "20vqtmnq3e158eu34s6aa6qgut@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135575229732000\"",
+        "id": "386bda9pla63n5nu0057scs77p",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=Mzg2YmRhOXBsYTYzbjVudTAwNTdzY3M3N3AgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-06T16:33:34.000Z",
+        "updated": "2019-09-06T16:33:34.866Z",
+        "summary": "Fiesta Gallery Weekend",
+        "location": "Corporación Cultural Matucana 100, Matucana 100, Santiago, Estación Central, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-19T22:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-19T23:00:00-03:00"
+        },
+        "iCalUID": "386bda9pla63n5nu0057scs77p@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135576692146000\"",
+        "id": "ku756ct2tju7rkcnqv0d2lbid8",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=a3U3NTZjdDJ0anU3cmtjbnF2MGQybGJpZDggY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-26T18:10:20.000Z",
+        "updated": "2019-09-06T16:45:46.073Z",
+        "summary": "Deriva | Patricio Bustamante + Elisa Balmaceda",
+        "description": "*cupos limitados\n\nEl arqueoastrónomo Patricio Bustamante en conjunto con la artista Elisa Balmaceda, realizarán una deriva guiada por el centro de la ciudad de Santiago, reflexionando sobre la historia de la cosmovisión de los habitantes de nuestro territorio.",
+        "location": "Galería de Arte Posada del Corregidor, Esmeralda 749, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-09-28T16:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-09-28T18:00:00-03:00"
+        },
+        "iCalUID": "ku756ct2tju7rkcnqv0d2lbid8@google.com",
+        "sequence": 5
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135579677216000\"",
+        "id": "66cj2r9t403fu0t8m6andafu89",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NjZjajJyOXQ0MDNmdTB0OG02YW5kYWZ1ODkgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-31T16:51:46.000Z",
+        "updated": "2019-09-06T17:10:38.608Z",
+        "summary": "Fabrizio Terranova | Story Telling for Earthly Survival",
+        "description": "Donna Haraway, filósofa feminista, historiadora de las conciencias humanas, primates y cyborgs, comparte en este documental su universo rebelde y esperanzador. La autora del “Manifiesto Cyborg” (1985) se abre a un diálogo con el realizador Fabrizio Terranova, que nos lleva a recorrer las realidades, ficciones y fricciones contemporáneas desde la perspectiva de una de las mentes más curiosas y ágiles de nuestra época. ",
+        "location": "Cineteca Nacional de Chile - Sala de Cine, Centro Cultural La Moneda (Plaza de la Ciudadanía 26, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-09-12T20:15:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-09-12T21:45:00-03:00"
+        },
+        "iCalUID": "66cj2r9t403fu0t8m6andafu89@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135581743814000\"",
+        "id": "7buo2ptt41dkssvchodsb33a1t",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=N2J1bzJwdHQ0MWRrc3N2Y2hvZHNiMzNhMXQgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-06T15:01:20.000Z",
+        "updated": "2019-09-06T17:27:51.907Z",
+        "summary": "Deriva del tercer paisaje | _unespacio",
+        "description": "Taller colectivo de artistas que participan en la 14 Bienal. Tanto el jardín como los talleres de los artistas de _un espacio estarán abiertos para el desarrollo de una actividad, conducida por Coloco, que contribuya a procesar la experiencia de la caminata por el paisaje urbano. La sesión se prolonga con una instalación del artista Sebastián Preece.",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-18T19:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-18T20:00:00-03:00"
+        },
+        "iCalUID": "7buo2ptt41dkssvchodsb33a1t@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135581799872000\"",
+        "id": "1p4stu69j87jech50hv3v1lup6",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MXA0c3R1NjlqODdqZWNoNTBodjN2MWx1cDYgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:13:25.000Z",
+        "updated": "2019-09-06T17:28:19.936Z",
+        "summary": "Asamblea Tercer Paisaje",
+        "description": "Esta actividad, que tendrá lugar en el Salón Blanco del Museo Nacional de Bellas Artes, consiste en una reunión abierta de actores vinculados al fomento de la biodiversidad en la ciudad de Santiago. El objetivo de la reunión es promover los terrenos de asilvestramiento de la ciudad, difundir las prácticas y conceptos involucrados en la noción de jardín planetario de Gilles Clément y conocer cómo estas se convierten en políticas públicas y acciones locales de administración de los sitios eriazos.\n\n\nSe busca convocar agentes de la administración pública, especialistas y organizaciones de la sociedad civil en torno a la gestión de espacios verdes públicos y comunitarios.",
+        "location": "Museo Nacional de Bellas Artes, José Miguel de La Barra 650, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-19T10:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-19T12:45:00-03:00"
+        },
+        "iCalUID": "1p4stu69j87jech50hv3v1lup6@google.com",
+        "sequence": 3
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135583313328000\"",
+        "id": "06akvf4bcc038qst9qml511reu",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MDZha3ZmNGJjYzAzOHFzdDlxbWw1MTFyZXUgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-19T19:59:01.000Z",
+        "updated": "2019-09-06T17:40:56.664Z",
+        "summary": "SED | Gianfranco Foschino",
+        "description": "Exposición individual de Gianfranco Foschino curada por Dan Cameron. Cada semana que pasa recibimos creciente y urgente confirmación de que el futuro de nuestra especie, tanto como el de la vida en este planeta, depende de nuestra rapidamente cambiante relación con el único elemento esencial que ha sido la base de formas de vida de células únicas a evolucionar, en el curso de 10 millones de años, a nosotros. Puesto de manera simple, partes densamenta habitadas de este planeta se están quedando sin agua potable, mientras otras partes, debido al alza en el nivel del mar, están en serio peligro de ahogarse. Mientras el planeta se calienta, eventos de temperaturas extremas aumentan, tanto como la contaminación del agua y su privatización.",
+        "location": "Corporación Cultural Matucana 100, Matucana 100, Santiago, Estación Central, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-05T19:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-05T21:30:00-03:00"
+        },
+        "iCalUID": "06akvf4bcc038qst9qml511reu@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135583796786000\"",
+        "id": "0p4u003u7sgj5d4tnuoc979nje",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MHA0dTAwM3U3c2dqNWQ0dG51b2M5NzluamUgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-08T16:17:37.000Z",
+        "updated": "2019-09-06T17:44:58.393Z",
+        "summary": "Mille Kalsmouse + Uffe Isoloto + Lea Porsager ",
+        "description": "Los artistas daneses hablan de sus obras presentadas para la 14 Bienal de Artes Mediales.",
+        "location": "Museo de Artes Visuales, José Victorino Lastarria 307, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-08T17:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-08T18:30:00-03:00"
+        },
+        "iCalUID": "0p4u003u7sgj5d4tnuoc979nje@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135586378114000\"",
+        "id": "3669brr20nf66uihgms2kd4v8p",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MzY2OWJycjIwbmY2NnVpaGdtczJrZDR2OHAgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-13T22:18:23.000Z",
+        "updated": "2019-09-06T18:06:29.057Z",
+        "summary": "Inauguración SEMICONDUCTOR | Centro de Arte Contemporáneo Cerrillos + Monumento Abierto | Museo del Hongo",
+        "description": "\nCurada por Mónica Bello. Worlds in the Making del dúo británico Semiconductor es trabajo épico de imagen movimiento de tres canales  que explora cómo nosotros observamos, experimentamos y creamos un entendimiento de los orígenes físicos del mundo que nos rodea. Apropiandonos de herramientas y procesos de volcanología  para reinterpretar los paisajes primigenios de nuestro volcánico planeta, Semiconductor crea un mundo ligeramente alejado del que creemos conocer, interrumpiendo nuestras asunciones cotidianas sobre la realidad y cuestionando como la ciencia afecta nuestra experiencia del mundo natural. \n\nEl Museo del Hongo dará inicio a la construcción de un monumento hecho en base a biomaterial fúngico, diseñado por el artista estadounidense David Benjamin en conjunto con el artista nacional Iván Navarro. Este objeto se erige como una edificación de nuevos paradigmas en torno a los materiales y sus procesos productivos, además de plantear nuevas posibilidades en el ecosistema modificado que vivimos. Durante el tiempo de exhibición, se desarrollará en Cerrillos el encuentro mundial más importante en torno al cambio climático, COP25, por lo que el Monumento toma especial relevancia como un símbolo de protesta fungi; ya que a pesar que este Reino ha sido ignorado en su mayoría por los estudios biológicos, en él podríamos encontrar tecnologías y soluciones a varias de las crisis mundiales actuales, además de promulgar los principios de código abierto. Los hongos nos pueden entregar herramientas para remediar el daño que hemos producido en los ecosistemas.",
+        "location": "Centro Nacional de Arte Contemporáneo Cerrillos",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-09T12:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-09T15:00:00-03:00"
+        },
+        "iCalUID": "3669brr20nf66uihgms2kd4v8p@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135587966700000\"",
+        "id": "0405cujabb682si916atc0jnjf",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MDQwNWN1amFiYjY4MnNpOTE2YXRjMGpuamYgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-23T15:19:34.000Z",
+        "updated": "2019-09-06T18:19:43.350Z",
+        "summary": "Inauguración Alejandra Prieto | Museo QyF",
+        "description": "<i>Sólo tendrás Piedras</i> es un video que surge en el contexto de una investigación visual y objetual mayor en torno al litio. En el video se ve una mujer que deambula por el salar de Uyuni, reserva mundial del metal blanco; además, se escuchan y se leen extractos del poema  Testimonio de Circunstancias del poeta Rodrigo Lira. Este poema, a su vez, describe con imágenes reconocibles estados mentales difíciles de describir y transmitir como, por ejemplo, la euforia y la depresión. El litio, es un elemento químico que, además de ser \"el petróleo blanco\" del futuro por su uso como conductor eléctrico en baterías, es un material que estabiliza los estados de ánimo en las personas, actuando sin explicación clara, en la química del cerebro.&nbsp;",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-29T18:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-29T19:15:00-03:00"
+        },
+        "iCalUID": "0405cujabb682si916atc0jnjf@google.com",
+        "sequence": 3
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135588838854000\"",
+        "id": "2mm99hlgmfbn3oepg6fc6mhaa2",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=Mm1tOTlobGdtZmJuM29lcGc2ZmM2bWhhYTIgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-08-05T16:44:00.000Z",
+        "updated": "2019-09-06T18:26:59.427Z",
+        "summary": "Performance Somática ",
+        "description": "\nArtistas: Carolina Marín y Esteban Agosín\nSomática se desarrolla a través del diálogo del artefacto vestible, el cuerpo en movimiento, el espacio que habita, y pequeños dispositivos sonoros de retroalimentación y resonancia.",
+        "location": "Museo Nacional de Bellas Artes, José Miguel de La Barra 650, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-29T16:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-29T17:00:00-03:00"
+        },
+        "iCalUID": "2mm99hlgmfbn3oepg6fc6mhaa2@google.com",
+        "sequence": 2
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135589833398000\"",
+        "id": "3up2bif75pk66dv75gpr68aar7",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=M3VwMmJpZjc1cGs2NmR2NzVncHI2OGFhcjcgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:14:30.000Z",
+        "updated": "2019-09-06T18:35:16.699Z",
+        "summary": "Performance | Nicole L'Huillier",
+        "description": "Este ritual o fiesta se inicia desde el concepto de lo alien y es una respuesta directa al mito de Orfeo y las Bacantes. A su vez, se busca revertir o romper con ideas culturales en torno a cánones y estereotipos clásicos que imponen por ejemplo a Orfeo como figura simbólica de la música. Este ritual propone explorar lo anti-órfico. Cuando Orfeo muere bajo el desenfreno y éxtasis de las Bacantes, Apolo transforma a las Bacantes en Robles y toma la Lira de Orfeo y la lleva al cielo como constelación. En este ritual, la Lira se cae del cielo y se rompe, dando inicio a una liberación de lo clásico y Orfeo, al romperse la Lira, se libera y de sus ruinas emerge la Parasitic Alien Orchestra / Orquesta Alienígena Parasítica, se vuelve salvaje, se vuelve noise, se vuelve híbrido, encuentra aceptación en su alienidad ruidosa y extraña. Los sonidos y movimientos que activan la orquesta vendrán de información y datos de la constelación de Lira. El coro canta la “canción de la Lira rota” que es compuesta por grabaciones de la interpretación de una lira rota y su proceso de romperse, así como por la interpretación de robles y sus múltiples sonoridades. \nLa idea es que esta instalación invite a la audiencia a ser parte de la performance y se unan en una improvisación/jam sessions de celebración ruidosa con las Bacantes. Para esto se contempla armar un programa público con distintas agrupaciones y músicos, y también invitar a la gente a gritar, hacer ruido, traer su instrumentos, cacerolas y pitos para unirse a la orquesta.",
+        "location": "Museo Nacional de Bellas Artes, José Miguel de La Barra 650, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-19T15:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-19T16:00:00-03:00"
+        },
+        "iCalUID": "3up2bif75pk66dv75gpr68aar7@google.com",
+        "sequence": 2
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135589863338000\"",
+        "id": "0d82nip2m0l494ijcnkg4d8fmj",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MGQ4Mm5pcDJtMGw0OTRpamNua2c0ZDhmbWogY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:14:05.000Z",
+        "updated": "2019-09-06T18:35:31.669Z",
+        "summary": "Concierto | Ce Pams",
+        "description": "Ce Pams & Co. es un proyecto de música experimental donde confluye lo musical con sonoridades provenientes de instrumentos construidos con materiales reciclados y/o no convencionales. Dialogando con las obras de medición e investigación del agua, el colectivo utilizará gotarios e hidrófonos como material sonoro.",
+        "location": "Museo Nacional de Bellas Artes, José Miguel de La Barra 650, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-19T16:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-19T17:00:00-03:00"
+        },
+        "iCalUID": "0d82nip2m0l494ijcnkg4d8fmj@google.com",
+        "sequence": 6
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135589889072000\"",
+        "id": "2dnu0hkq4nk7kajspk9d45sbhf",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MmRudTBoa3E0bms3a2Fqc3BrOWQ0NXNiaGYgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-23T15:23:48.000Z",
+        "updated": "2019-09-06T18:35:44.536Z",
+        "summary": "Concierto | Futuro Fósil",
+        "description": "El proyecto surge del desierto, de la misma búsqueda de fósiles. ¿Qué pasaría si al escarbar, encontráramos un sonido fosilizado? ¿Cómo sonaría? ¿Cómo interpretamos y amplificamos los sonidos que se encuentran debajo de la tierra?\nUna propuesta híbrida, impredecible, con alma fantasmagórica viva, y un ambiente misterioso. ",
+        "location": "Museo Nacional de Bellas Artes, José Miguel de La Barra 650, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-19T17:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-19T18:00:00-03:00"
+        },
+        "iCalUID": "2dnu0hkq4nk7kajspk9d45sbhf@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3135590165574000\"",
+        "id": "usk9lqdv1fpov4siagjsabugbo",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=dXNrOWxxZHYxZnBvdjRzaWFnanNhYnVnYm8gY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-15T14:19:01.000Z",
+        "updated": "2019-09-06T18:38:02.787Z",
+        "summary": "Inauguración Phillip Klawitter",
+        "description": "La tecnología, desde el principio de los tiempos ha sido una herramienta para extender nuestras limitaciones físicas. Nos permite mirar más lejos, desde espacios subatómicos en donde las reglas de la física son distinta, hasta el profundo espacio exterior, en donde las distancias son tan grandes que el tiempo parece perder sentido.\n\nKlawitter combina un proceso de trabajo basado en la ingeniería, junto con estudios de arquitectura y arte, construye máquinas escultóricas para observar a donde nuestros sentidos no llegan. \nUsando internet como una externalización de su cerebro, microcontroladores Arduino,  equipamiento hackeado y un proceso heurístico basado completamente en un método de ensayo y error, Philip crea sistemas para filmar y registrar el crecimiento de micro planetas.\n\nEl resultado final es contenido multimedia variando desde intalacion, imágenes procesadas y técnicas híbridas de video timelapse.\nLos micro planetas son crecidos con colaboración de un laboratorio startup de tecnología. \nDesde el 2014 que Klawitter trabaja junto a Biotic Solutions para crear y desarrollar arte experimental.",
+        "location": "Sala de Arte CCU, Av Vitacura 2680, Las Condes, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-12-12T19:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-12-12T20:00:00-03:00"
+        },
+        "iCalUID": "usk9lqdv1fpov4siagjsabugbo@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3136081040020000\"",
+        "id": "5bsflsls1a57t2lh6o1165rikd",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NWJzZmxzbHMxYTU3dDJsaDZvMTE2NXJpa2QgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-06T15:22:20.000Z",
+        "updated": "2019-09-09T14:48:40.010Z",
+        "summary": "Conversatorio | Resignificaciones de lo vivo: investigación y reflexiones en torno en torno a Simbiosis Meditativa",
+        "description": "Jean-Danton Laffert (Artista Visual y docente. Magister en Artes Mediales, U. de Chile.), Karin Astudillo (Filósofa y docente, U. Alberto Hurtado) y Camilo Gouet (Biólogo, U. de Chile, Doctor en Psicología, PUC.)  realizarán este conversatorio donde se expondrá el proceso de investigación y un diálogo epistemológico sobre la obra, en torno al fenómeno de la observación y la indagación transdisciplinar sobre lo vivo, que abarca su manipulación, presencia y fundamentos para Simbiosis Meditativa.",
+        "location": "Galeria CAVA, Palacio Cousiño. Dieciocho 438, Santiago.",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-12T20:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-12T21:30:00-03:00"
+        },
+        "iCalUID": "5bsflsls1a57t2lh6o1165rikd@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3136081134670000\"",
+        "id": "5cv44v112kjo1iv8beuc6na6fi",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NWN2NDR2MTEya2pvMWl2OGJldWM2bmE2ZmkgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-09T14:49:27.000Z",
+        "updated": "2019-09-09T14:49:27.335Z",
+        "summary": "Inauguración | Simbiosis Meditativa",
+        "description": "\nObra bio-medial que explora un estado de interdependencia entre un organismo vivo y un sistema electrónico,buscando un resultado estético a partir de un proceso digital-biológico. Compuesta de contenedores con plantas de las especies Soleirolia Soleirolii y Mentha Pulegium más sensores en su interior, la actividad fotosintética vegetal es detectada por su absorción de dióxido de carbono. Esta información se envía a un módulo computarizado que procesa los datos y crea patrones gráficos generativos en tiempo real. ",
+        "location": "Galeria CAVA",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-12T19:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-12T20:30:00-03:00"
+        },
+        "iCalUID": "5cv44v112kjo1iv8beuc6na6fi@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3136081615648000\"",
+        "id": "6lcn7ns81hle1503sq0h9c9mmg",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NmxjbjduczgxaGxlMTUwM3NxMGg5YzltbWcgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-09T14:52:52.000Z",
+        "updated": "2019-09-09T14:53:27.824Z",
+        "summary": "El cuarto mundo | Cineteca Nacional",
+        "description": "<b>Los artistas plásticos de Chile&nbsp;</b><br>(Jorge di Lauro, 16 min, 1960, documental)<br><br>Con visita a los talleres de destacados pintores y escultores chilenos, se va configurando una visión sobre la creación artística. Finalmente, se registra la primera Feria de Artes Plásticas del Parque Forestal, donde varios de ellos exponen al aire libre sus obras.<br><br>Artistas que aparecen en sus talleres: Inés Puyó, Lily Garafulic, Carlos Pedraza, Sergio Montecinos, Ramón Vergara, Israel Roa, Pablo Burchard, Samuel Román, Camilo Mori, Henriette Petit, Luis Vargas Rosas, Sergio Mallol, Nemesio Antúnez, Gregorio de la Fuente, Gracia Barrios, José Balmes, Ricardo Yrarrázaval, Alberto Pérez y Rodolfo Opazo. También se ven las obras de Luis Herrera Guevara, Carlos Faz, Roberto Matta y Marco Bontá. En la Feria de Artes Plásticas del Parque Forestal, se aprecian exponiendo sus obras a Matilde Pérez, Violeta Parra y Alfredo Manzano “Manzanito”, entre otros.<br><br>Material ingresado a Cineteca en octubre de 2014 por Gisela Cares Reyes, titular de los derechos patrimoniales y de autor de la obra, permitiendo de esta manera disponer y exhibir su contenido para usos patrimoniales, académicos y de difusión. Se depositó una copia en 35mm a color, positivo.<br><br>El material se encontraba en buenas condiciones. Se digitalizó en escáner CTM Debrie, luego se le realizó un trabajo digital de leves correcciones de colores.<br><br><b>Algol&nbsp;</b><br>(Hans Werckmeister, 100 min, 1920, ficción)&nbsp;&nbsp;<br><br>Filmada en el año 1920, es una insólita cinta de ciencia ficción que se adelantó a su época. Aborda el tema del consumo y la monopolización de la energía a través de la historia de un hombre que trabaja en una mina de carbón. Ahí conocerá a un habitante del planeta Algol, quien le dará el prototipo para una máquina que puede proveer una fuente ilimitada de energía.<br><br>La copia fue encontrada en Chile en Iquique en manos de Guillermo Paykuric, un proyectorista de la época. Fue depositada en la Cineteca Nacional y restaurada en conjunto con el Museo del Cine de München. Es la única versión coloreada que hasta ahora se conoce en el mundo.<br><br>Cine Foro: Francisco Venegas",
+        "location": "Cineteca Nacional",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-19T20:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-19T21:45:00-03:00"
+        },
+        "iCalUID": "6lcn7ns81hle1503sq0h9c9mmg@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3136081625898000\"",
+        "id": "095e4trhgalomdmi5qnm9ugmou",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MDk1ZTR0cmhnYWxvbWRtaTVxbm05dWdtb3UgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-09T14:53:22.000Z",
+        "updated": "2019-09-09T14:53:32.949Z",
+        "summary": "Cine Foro | Francisco Venegas",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-11-19T21:45:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-11-19T22:30:00-03:00"
+        },
+        "iCalUID": "095e4trhgalomdmi5qnm9ugmou@google.com",
+        "sequence": 2
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3136118119414000\"",
+        "id": "3ohfn0i4ic1hui9gnuhlvj3hjk",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=M29oZm4waTRpYzFodWk5Z251aGx2ajNoamsgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-31T16:52:37.000Z",
+        "updated": "2019-09-09T19:57:39.707Z",
+        "summary": "Cine Foro | Lucía Egaña",
+        "description": "Lucía Egaña R. tiene formación en arte, estética, documental y un doctorado en comunicación audiovisual. Escribe, investiga y desarrolla proyectos de artes visuales sobre feminismos, pornografía, relaciones norte-sur, software libre y errores.",
+        "location": "Cineteca Nacional de Chile - Sala de Cine, Centro Cultural La Moneda (Plaza de la Ciudadanía 26, Santiago, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-09-12T21:45:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-09-12T22:30:00-03:00"
+        },
+        "iCalUID": "3ohfn0i4ic1hui9gnuhlvj3hjk@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3136255963410000\"",
+        "id": "j2k6r3519fm8cta3oqipm98ve0",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=ajJrNnIzNTE5Zm04Y3RhM29xaXBtOTh2ZTAgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-09-10T15:06:21.000Z",
+        "updated": "2019-09-10T15:06:21.705Z",
+        "summary": "Capsula America | La Voz del Pueblo",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-12T13:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-12T14:00:00-03:00"
+        },
+        "iCalUID": "j2k6r3519fm8cta3oqipm98ve0@google.com",
+        "sequence": 0
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3136255995322000\"",
+        "id": "50td979aa8vvjd45blttshk6nn",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NTB0ZDk3OWFhOHZ2amQ0NWJsdHRzaGs2bm4gY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-12T14:28:28.000Z",
+        "updated": "2019-09-10T15:06:37.661Z",
+        "summary": "Jardines Humanos",
+        "location": "Dominica, Recoleta, Región Metropolitana, Chile",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campo Magnético",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-12T12:00:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-12T13:30:00-03:00"
+        },
+        "iCalUID": "50td979aa8vvjd45blttshk6nn@google.com",
+        "sequence": 1
+      },
+      {
+        "kind": "calendar#event",
+        "etag": "\"3136256145582000\"",
+        "id": "31ke7fvvemsndimiq3j22fskl4",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MzFrZTdmdnZlbXNuZGltaXEzajIyZnNrbDQgY2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bn",
+        "created": "2019-07-23T15:14:56.000Z",
+        "updated": "2019-09-10T15:07:52.791Z",
+        "summary": "Inauguración Galería Macchina | Cristo Riffo",
+        "description": "“Arqueología de la luz” es una exposición que busca dar luces sobre histos históricos para la memoria de un territorio especifico, resaltando su condición polisémica. Para conseguir este objetivo, utiliza las herramientas de la electrónica, la óptica, la química y la estética,\n \nTomando como tema  central la historia moderna chilena, se presentaran 2 obras : “Historia hacia adentro” y “Arqueología de la luz”.  ,  las cuales pivotearán desde el uso de material de archivo los hitos  del Tren de la victoria de Salvador Allende y proyectos urbanísticos monumentales como el hospital Ochagavia, y regionales como la estación de trenes de Puerto Montt .\n\nAmbos dispostivos funcionan con polvo fotoluminiscente, material sensible a la luz y capaz de grabar imágenes. Su funcionamientos e interactividad utilizan los principios de neumatica y electromecánica. La proyección de imágenes de archivo sobre el polvo luminiscente y su disolución gestan la poética de la obra, que apela a la memoria y su fragilidad.",
+        "creator": {
+          "email": "anarosa@cchv.cl"
+        },
+        "organizer": {
+          "email": "cchv.cl_ctce5jqnsnp5rk4qadu3c1ut2k@group.calendar.google.com",
+          "displayName": "Campos Magnéticos",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2019-10-10T19:30:00-03:00"
+        },
+        "end": {
+          "dateTime": "2019-10-10T21:00:00-03:00"
+        },
+        "iCalUID": "31ke7fvvemsndimiq3j22fskl4@google.com",
+        "sequence": 1
+      }
+    ]
+  }
+}

@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     sponsors: [],
+    calendar: [],
     // Expositions
     expositions: [],
     exposition: {
@@ -60,6 +61,9 @@ export default new Vuex.Store({
     },
     loadKeywords (state, data) {
       state.keywords = data
+    },
+    loadCalendar (state, data) {
+      state.calendar = data
     }
   }
 })
