@@ -2,8 +2,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { loadCalendar } from '../../../../api/client'
 import store from '@/config/store'
-// import { getExpositionsFromApi, getSponsorsFromApi } from '@/helpers/apiHelpers'
-// import { getSponsorsFromApi } from '@/helpers/apiHelpers'
 
 @Component({
   store,

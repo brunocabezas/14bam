@@ -139,7 +139,8 @@ export const getProgramFromApi = (apiResponse = []) => {
 
 export const getCalendarFromApi = (apiResponse = []) => {
   const events = apiResponse.data && apiResponse.data.items
-  // Get closest to today's date 
+  // Get closest to today's date
+
   const closestToToday = events
     .map(event => new Date(event.start.dateTime))
     .reduce(findCloseToToday)

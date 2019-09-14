@@ -10,6 +10,7 @@
     </div>
     <div class="agendaSubscribe">
       <a
+        title="Ir al calendario de google"
         target="_blank"
         href="https://calendar.google.com/calendar/b/1?cid=Y2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
       >
@@ -43,4 +44,13 @@
         font-size 18px
       .agendaEventMonth
         font-size 14px
+  .agendaSubscribe
+    margin-top 10px
+    padding 10px 0
+    text-align right
+    a
+      font-family "News Cycle"
+      font-weight bold
+      text-transform uppercase
+      font-size 36px
 </style>
