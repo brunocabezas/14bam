@@ -31,7 +31,9 @@ export default new Vuex.Store({
     // An event is the same as a program but without events (programs)
     event: {
       id: -1
-    }
+    },
+    // Data fetched from google api to get lat,lon coordinates from an array of addresses
+    markersData: []
   },
   mutations: {
     loadSponsors (state, data) {
@@ -64,6 +66,9 @@ export default new Vuex.Store({
     },
     loadCalendar (state, data) {
       state.calendar = data
+    },
+    loadMarkersData (state, data) {
+      state.markersData = data
     }
   }
 })

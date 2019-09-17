@@ -22,53 +22,67 @@ export const loadPosts = () =>
     console.log('loadPosts', response.data)
   })
 
-export const loadPost = (postId) =>
+export const loadPost = postId =>
   Vue.axios.get(routes.post(postId)).then(response => {
     console.log('loadPost', postId, response.data)
   })
 
 // Custom posts
-export const loadVideos = () =>
-  Vue.axios.get(routes.videos)
+export const loadVideos = () => Vue.axios.get(routes.videos)
 
-export const loadSponsors = () =>
-  Vue.axios.get(routes.sponsors)
+export const loadSponsors = () => Vue.axios.get(routes.sponsors)
 
 export const loadExpositions = () =>
-  Vue.axios.get(routes.expositions)
+  Vue.axios
+    .get(routes.expositions)
     // Using api helpers to select data returning a promise
-    .then(res => resolvedPromise((getExpositionsFromApi(res))))
+    .then(res => resolvedPromise(getExpositionsFromApi(res)))
 
-export const loadExposition = (name) =>
-  Vue.axios.get(routes.exposition(name))
+export const loadExposition = name => Vue.axios.get(routes.exposition(name))
 
 export const loadParticipants = () =>
-  Vue.axios.get(routes.participants)
+  Vue.axios
+    .get(routes.participants)
     // Using api helpers to select data returning a promise
     .then(res => resolvedPromise(getParticipantsFromApi(res.data)))
 
-export const loadParticipant = (name) =>
-  Vue.axios.get(routes.participant(name))
+export const loadParticipant = name => Vue.axios.get(routes.participant(name))
 
 export const loadPrograms = () =>
-  Vue.axios.get(routes.generalPrograms)
-    .then(res => resolvedPromise((getPrograms(res))))
+  Vue.axios
+    .get(routes.generalPrograms)
+    .then(res => resolvedPromise(getPrograms(res)))
 
-export const loadProgram = (slug) =>
-  Vue.axios.get(routes.generalProgram(slug))
-    .then(res => resolvedPromise((getProgramFromApi(res))))
+export const loadProgram = slug =>
+  Vue.axios
+    .get(routes.generalProgram(slug))
+    .then(res => resolvedPromise(getProgramFromApi(res)))
 
-export const loadEvent = (slug) =>
-  Vue.axios.get(routes.program(slug))
-    .then(res => resolvedPromise((getProgramFromApi(res))))
+export const loadEvent = slug =>
+  Vue.axios
+    .get(routes.program(slug))
+    .then(res => resolvedPromise(getProgramFromApi(res)))
 
 export const loadCalendar = () =>
-  Vue.axios.get(routes.calendar)
-    .then(res => resolvedPromise((getCalendarFromApi(res))))
+  Vue.axios
+    .get(routes.calendar)
+    .then(res => resolvedPromise(getCalendarFromApi(res)))
 
 export const loadProgramCalendar = (googleCalendarId = '') =>
-  Vue.axios.get(routes.programCalendar(googleCalendarId))
-    .then(res => resolvedPromise((res)))
+  Vue.axios
+    .get(routes.programCalendar(googleCalendarId))
+    .then(res => resolvedPromise(res))
+
+export const loadMarkersData = (directions = []) => {
+  let promiseArray = directions.map(address => {
+    return Vue.axios
+      .get(routes.markerData(address))
+  })
+  return axios.all(promiseArray).then(response => {
+    console.log(response)
+    return resolvedPromise(response)
+  })
+}
 
 export default axios.create({
   baseURL: BASE_URL

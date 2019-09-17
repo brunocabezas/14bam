@@ -5,6 +5,7 @@
       :offset="[0,-50]"
       :zoom="7"
       :accessToken="mapBoxAccessToken"
+      :mapStyle="mapStyle"
     >
       <MglNavigationControl position="top-right" />
       <MglGeolocateControl position="top-right" />

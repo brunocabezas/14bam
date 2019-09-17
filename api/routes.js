@@ -1,8 +1,9 @@
 
-const GOOGLE_API_KEY = process.env.VUE_APP_CALENDAR_API_KEY || ''
+const CALENDAR_API_KEY = process.env.VUE_APP_CALENDAR_API_KEY || ''
 const CALENDAR_ID = process.env.VUE_APP_CALENDAR_ID || ''
+const GOOGLE_GEO_API = process.env.VUE_APP_GOOGLE_GEO_API || ''
 
-if (!GOOGLE_API_KEY) {
+if (!CALENDAR_API_KEY) {
   console.warn('Unvalid calendar API key, programs calendars will not be displayed')
 }
 
@@ -27,10 +28,11 @@ export default {
   // Regular programs
   program: slug => `/programs?slug=${slug}`,
   programCalendar: googleCalendarId =>
-    `https://www.googleapis.com/calendar/v3/calendars/${googleCalendarId}/events?key=${GOOGLE_API_KEY}`,
-  calendar: `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${GOOGLE_API_KEY}`,
+    `https://www.googleapis.com/calendar/v3/calendars/${googleCalendarId}/events?key=${CALENDAR_API_KEY}`,
+  calendar: `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${CALENDAR_API_KEY}`,
   // Not used
   post: postId => `/post/${postId}`,
+  markerData: address => `https://maps.googleapis.com/maps/api/geocode/json?key=${GOOGLE_GEO_API}&address=${address}`,
   taxonomy: id => `/tags`
   // taxonomy: id => '/participants?filter[post_tag]=chano'
 }

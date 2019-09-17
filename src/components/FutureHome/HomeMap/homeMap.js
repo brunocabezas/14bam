@@ -1,6 +1,5 @@
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import Mapbox from 'mapbox-gl'
-// import { loadCalendar } from '../../../../api/client'
 import {
   MglMap,
   MglMarker,
@@ -8,13 +7,11 @@ import {
   MglNavigationControl,
   MglGeolocateControl
 } from 'vue-mapbox'
-import findLatLong from 'find-lat-lng'
 import store from '@/config/store'
 import { loadMarkersData } from '../../../../api/client'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const MAPBOX_PUBLIC_TOKEN = process.env.VUE_APP_MAPBOX_PUBLIC_TOKEN || ''
-const GOOGLE_GEO_API = process.env.VUE_APP_GOOGLE_GEO_API || ''
-const geoCLient = findLatLong(GOOGLE_GEO_API)
 
 @Component({
   store,
@@ -37,10 +34,8 @@ class HomeMap extends Vue {
   urls = this.$root.urls
   mapBoxAccessToken = MAPBOX_PUBLIC_TOKEN
   mapStyle = 'mapbox://styles/mapbox/dark-v9'
+  // Map centered in Santiago, Chile
   mapCenter = [-70.64827, -33.45694]
-  mapStyle = {
-    // height: 500
-  }
 
   get directions () {
     // return this.$store.state.expositions.map(expo => expo.address)
@@ -79,11 +74,8 @@ class HomeMap extends Vue {
         null
         })
       })
-      .filter(notNulledMarker => notNulledMarker.coordinates)
-      // .filter(marker => ({ ...marker, coordinates: [marker.coordinates.lng, marker.coordinates.lat] }))
-      // .map((marker, ix) => [marker.lng, marker.lat])
-      // .map((marker, ix) => ({ lat: marker.lat, lng: marker.lng }))
-    console.log(markers)
+      // Removing nulled coordinates items
+      .filter(marker => marker.coordinates)
     return markers
   }
 
@@ -91,18 +83,19 @@ class HomeMap extends Vue {
   onPropertyChanged (value, oldValue) {
     // Do stuff with the watcher here.
     if (value.length > 0) {
-      console.log(value)
-      geoCLient(value).then(response => {
-        console.log('response')
-      })
+      this.fetchData(value)
     }
   }
   mounted () {
     if (this.directions.length > 0) {
-      loadMarkersData(this.directions).then(response => {
-        this.$store.commit('loadMarkersData', response)
-      })
+      this.fetchData()
     }
+  }
+
+  fetchData (data = null) {
+    loadMarkersData(data || this.directions).then(response => {
+      this.$store.commit('loadMarkersData', response)
+    })
   }
   created () {
     // We need to set mapbox-gl library here in order to use it in template

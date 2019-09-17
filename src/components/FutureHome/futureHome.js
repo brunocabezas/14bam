@@ -5,6 +5,7 @@ import VideoPlayer from '../Home/VideoPlayer.vue'
 import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid.vue'
 import TwoPrograms from '@/components/Programs/TwoPrograms.vue'
 import Agenda from '@/components/FutureHome/HomeAgenda/HomeAgenda.vue'
+import Map from '@/components/FutureHome/HomeMap/HomeMap.vue'
 import store from '@/config/store'
 // import { getExpositionsFromApi, getSponsorsFromApi } from '@/helpers/apiHelpers'
 import { getSponsorsFromApi } from '@/helpers/apiHelpers'
@@ -14,13 +15,12 @@ import { getSponsorsFromApi } from '@/helpers/apiHelpers'
     VideoPlayer,
     Agenda,
     ExpositionsGrid,
+    Map,
     TwoPrograms
   },
   store
 })
 class FutureHome extends Vue {
-  // places : Array =  '[]';
-  // programs : Array =  '[]';
   expositions = [];
   videos = [];
   video = {
