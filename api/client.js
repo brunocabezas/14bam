@@ -73,6 +73,7 @@ export const loadProgramCalendar = (googleCalendarId = '') =>
     .get(routes.programCalendar(googleCalendarId))
     .then(res => resolvedPromise(res))
 
+// directions is an array of strings representing valid addresses
 export const loadMarkersData = (directions = []) => {
   let promiseArray = directions.map(address => {
     return Vue.axios.get(routes.markerData(address))

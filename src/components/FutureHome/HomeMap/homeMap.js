@@ -41,8 +41,6 @@ class HomeMap extends Vue {
   mapCenter = [-70.64827, -33.45694]
 
   get expositions () {
-    console.log(this.$store.state.expositions
-      .filter(expo => expo.address))
     return this.$store.state.expositions
       .filter(expo => expo.address)
   }
@@ -75,12 +73,14 @@ class HomeMap extends Vue {
       )
     }
   }
+  // If exposition is defined; fetch lat, lng values as markers data
   mounted () {
     if (this.expositions.length > 0) {
       this.fetchData()
     }
   }
 
+  // retrieves lan, lng data from google geo api
   fetchData (data = null) {
     this.loadingData = true
     const directions = this.expositions.map(expo => expo.address)

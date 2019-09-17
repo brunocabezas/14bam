@@ -11,7 +11,9 @@ if (!CALENDAR_ID) {
   console.warn('Unvalid google calendar id, home agenda will not be displayed')
 }
 
-console.log(process.env)
+if (!GOOGLE_GEO_API) {
+  console.warn('Unvalid google geo api key, home map markers will not be displayed')
+}
 
 export default {
   pages: '/pages',
