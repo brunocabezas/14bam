@@ -18,6 +18,7 @@
     <section class="section agenda">
       <h1 class="sectionTitle">Agenda</h1>
       <Agenda />
+      <Map />
     </section>
     <section class="section sponsors">
       <div
