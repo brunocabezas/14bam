@@ -75,13 +75,9 @@ export const loadProgramCalendar = (googleCalendarId = '') =>
 
 export const loadMarkersData = (directions = []) => {
   let promiseArray = directions.map(address => {
-    return Vue.axios
-      .get(routes.markerData(address))
+    return Vue.axios.get(routes.markerData(address))
   })
-  return axios.all(promiseArray).then(response => {
-    console.log(response)
-    return resolvedPromise(response)
-  })
+  return axios.all(promiseArray).then(response => resolvedPromise(response))
 }
 
 export default axios.create({

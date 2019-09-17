@@ -7,6 +7,7 @@ import {
   MglNavigationControl,
   MglGeolocateControl
 } from 'vue-mapbox'
+import Loader from '@/components/common/Loader'
 import store from '@/config/store'
 import { loadMarkersData } from '../../../../api/client'
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -19,6 +20,7 @@ const MAPBOX_PUBLIC_TOKEN = process.env.VUE_APP_MAPBOX_PUBLIC_TOKEN || ''
     MglMap,
     MglMarker,
     MglNavigationControl,
+    Loader,
     MglPopup,
     MglGeolocateControl
   },
@@ -32,70 +34,64 @@ const MAPBOX_PUBLIC_TOKEN = process.env.VUE_APP_MAPBOX_PUBLIC_TOKEN || ''
 })
 class HomeMap extends Vue {
   urls = this.$root.urls
+  loadingData = true
   mapBoxAccessToken = MAPBOX_PUBLIC_TOKEN
   mapStyle = 'mapbox://styles/mapbox/dark-v9'
   // Map centered in Santiago, Chile
   mapCenter = [-70.64827, -33.45694]
 
-  get directions () {
-    // return this.$store.state.expositions.map(expo => expo.address)
-    return [
-      'Dieciocho 438, Santiago',
-      'Vitacura 2680, Santiago, Chile',
-      'José Victorino Lastarria 307, Plaza Mulato Gil, Santiago, Chile',
-      'Avenida Matucana 100, Santiago, Chile',
-      'Merced 50, Santiago, Chile',
-      'Félix Mendelssohn 2941, Santiago, Chile',
-      'Pedro Aguirre Cerda 6100, Santiago, Chile.',
-      'Vicuña Mackenna 94, Santiago, Chile',
-      'Avda. Jaime Guzmán Errázuriz 3300, Santiago, Chile',
-      'Huérfanos 2919, Santiago, Chile.',
-      'Recoleta 683, Santiago, Chile',
-      'Esmeralda 749, Santiago, Chile',
-      'Ismael Valdés Vergara 506, Santiago, Chile',
-      'José Miguel de la Barra 650, Santiago, Chile',
-      'Av. República 475, Santiago',
-      "Av Libertador Bernardo O'Higgins 227"
-    ]
+  get expositions () {
+    console.log(this.$store.state.expositions
+      .filter(expo => expo.address))
+    return this.$store.state.expositions
+      .filter(expo => expo.address)
   }
 
   get markers () {
     const markers = this.$store.state.markersData
       .map((marker, ix) => {
-        console.log(marker)
-        return ({
+        return {
           id: ix,
           coordinates:
-          (marker.data &&
-          marker.data.results &&
-          marker.data.results[0] &&
-          marker.data.results[0].geometry &&
-          marker.data.results[0].geometry.location) ||
-        null
-        })
+            (marker.data &&
+              marker.data.results &&
+              marker.data.results[0] &&
+              marker.data.results[0].geometry &&
+              marker.data.results[0].geometry.location) ||
+            null
+        }
       })
       // Removing nulled coordinates items
       .filter(marker => marker.coordinates)
     return markers
   }
 
-  @Watch('directions')
+  @Watch('expositions')
   onPropertyChanged (value, oldValue) {
     // Do stuff with the watcher here.
     if (value.length > 0) {
-      this.fetchData(value)
+      this.fetchData(
+        value.filter(expo => expo.address).map(expo => expo.address)
+      )
     }
   }
   mounted () {
-    if (this.directions.length > 0) {
+    if (this.expositions.length > 0) {
       this.fetchData()
     }
   }
 
   fetchData (data = null) {
-    loadMarkersData(data || this.directions).then(response => {
-      this.$store.commit('loadMarkersData', response)
-    })
+    this.loadingData = true
+    const directions = this.expositions.map(expo => expo.address)
+    loadMarkersData(data || directions)
+      .then(response => {
+        this.$store.commit('loadMarkersData', response)
+        this.loadingData = false
+      })
+      .catch(res => {
+        this.loadingData = false
+      })
   }
   created () {
     // We need to set mapbox-gl library here in order to use it in template
