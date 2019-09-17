@@ -5,16 +5,32 @@
   position: relative;
 
   section
-    position relative
+    position: relative;
     min-height: calc(100vh - 100px);
     padding: 1em 3em 1em 3em;
     flex: 1;
 
+    &.halfSections
+      display: flex;
+
+      .sectionRight
+        padding-left: 1em;
+        .loaderContainer
+          height: calc(100% - 62px - 80px);
+
+      .sectionLeft
+        padding-right: 1em;
+
+      .sectionRight, .sectionLeft
+        flex: 1 1 50%;
+        position: relative;
+
     .sectionTitle
       text-decoration: underline;
       font-size: 36pt;
-      margin-bottom 1em
+      margin-bottom: 1em;
       color: $black;
+
       a
         color: $black;
 
@@ -22,7 +38,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-          
+
       .videoPlayer
         height: 100%;
 

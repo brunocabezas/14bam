@@ -15,9 +15,15 @@
       </h1>
       <TwoPrograms />
     </section>
-    <section class="section agenda">
-      <h1 class="sectionTitle">Agenda</h1>
-      <Agenda />
+    <section class="section halfSections agenda">
+      <div class="sectionLeft">
+        <h1 class="sectionTitle">Agenda</h1>
+        <Agenda />
+      </div>
+      <div class="sectionRight">
+        <h1 class="sectionTitle">Mapa</h1>
+        <Map />
+      </div>
     </section>
     <section class="section sponsors">
       <div

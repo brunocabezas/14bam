@@ -1,0 +1,1994 @@
+[
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "438",
+              "short_name": "438",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Dieciocho",
+              "short_name": "Dieciocho",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Dieciocho 438, Santiago, Región Metropolitana, Chile",
+          "geometry": {
+            "location": {
+              "lat": -33.4519887,
+              "lng": -70.6570579
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.45063971970851,
+                "lng": -70.6557089197085
+              },
+              "southwest": {
+                "lat": -33.4533376802915,
+                "lng": -70.65840688029151
+              }
+            }
+          },
+          "place_id": "ChIJg6_jqwjFYpYRrNdqh3En86I",
+          "plus_code": {
+            "compound_code": "G8XV+65 Santiago, Chile",
+            "global_code": "47RFG8XV+65"
+          },
+          "types": [
+            "street_address"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Dieciocho 438, Santiago",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "2680",
+              "short_name": "2680",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Avenida Vitacura",
+              "short_name": "Av Vitacura",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Las Condes",
+              "short_name": "Las Condes",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Las Condes",
+              "short_name": "Las Condes",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Av Vitacura 2680, Las Condes, Región Metropolitana, Chile",
+          "geometry": {
+            "bounds": {
+              "northeast": {
+                "lat": -33.4157708,
+                "lng": -70.6043948
+              },
+              "southwest": {
+                "lat": -33.4161569,
+                "lng": -70.6049463
+              }
+            },
+            "location": {
+              "lat": -33.4159588,
+              "lng": -70.6046638
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.41461486970849,
+                "lng": -70.60332156970848
+              },
+              "southwest": {
+                "lat": -33.41731283029149,
+                "lng": -70.60601953029149
+              }
+            }
+          },
+          "place_id": "ChIJjzj9FkLPYpYRxx7QP0Zgi3Q",
+          "types": [
+            "premise"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Vitacura 2680, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "Plaza Mulato Gil de Castro",
+              "short_name": "Plaza Mulato Gil de Castro",
+              "types": [
+                "establishment",
+                "park",
+                "point_of_interest"
+              ]
+            },
+            {
+              "long_name": "307",
+              "short_name": "307",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "José Victorino Lastarria",
+              "short_name": "José Victorino Lastarria",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Lastarria",
+              "short_name": "Lastarria",
+              "types": [
+                "neighborhood",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Plaza Mulato Gil de Castro - José Victorino Lastarria 307, Santiago, Región Metropolitana, Chile",
+          "geometry": {
+            "location": {
+              "lat": -33.4375805,
+              "lng": -70.6409334
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.43623151970849,
+                "lng": -70.6395844197085
+              },
+              "southwest": {
+                "lat": -33.43892948029149,
+                "lng": -70.6422823802915
+              }
+            }
+          },
+          "place_id": "ChIJM454QJnFYpYR3Pufv2gXGj4",
+          "plus_code": {
+            "compound_code": "H965+XJ Santiago, Chile",
+            "global_code": "47RFH965+XJ"
+          },
+          "types": [
+            "establishment",
+            "park",
+            "point_of_interest"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=José Victorino Lastarria 307, Plaza Mulato Gil, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "100",
+              "short_name": "100",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Matucana",
+              "short_name": "Matucana",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Estación Central",
+              "short_name": "Estación Central",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Matucana 100, Santiago, Estación Central, Región Metropolitana, Chile",
+          "geometry": {
+            "location": {
+              "lat": -33.4448024,
+              "lng": -70.67990540000001
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.4434534197085,
+                "lng": -70.67855641970851
+              },
+              "southwest": {
+                "lat": -33.4461513802915,
+                "lng": -70.68125438029152
+              }
+            }
+          },
+          "place_id": "ChIJ1UKkyVDEYpYR0NtuZadH3HQ",
+          "plus_code": {
+            "compound_code": "H84C+32 Santiago, Chile",
+            "global_code": "47RFH84C+32"
+          },
+          "types": [
+            "art_gallery",
+            "establishment",
+            "food",
+            "movie_theater",
+            "point_of_interest",
+            "restaurant"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Avenida Matucana 100, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "50",
+              "short_name": "50",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Merced",
+              "short_name": "Merced",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Merced 50, Santiago, Región Metropolitana, Chile",
+          "geometry": {
+            "bounds": {
+              "northeast": {
+                "lat": -33.4369725,
+                "lng": -70.6359868
+              },
+              "southwest": {
+                "lat": -33.4372104,
+                "lng": -70.63615759999999
+              }
+            },
+            "location": {
+              "lat": -33.4371029,
+              "lng": -70.6360626
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.43574246970849,
+                "lng": -70.63472321970849
+              },
+              "southwest": {
+                "lat": -33.43844043029149,
+                "lng": -70.6374211802915
+              }
+            }
+          },
+          "place_id": "ChIJJfvcc5vFYpYRwbnds0et3ps",
+          "types": [
+            "premise"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Merced 50, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "2941",
+              "short_name": "2941",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Félix Mendelssohn",
+              "short_name": "Félix Mendelssohn",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Pedro Aguirre Cerda",
+              "short_name": "Pedro Aguirre Cerda",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Pedro Aguirre Cerda",
+              "short_name": "Pedro Aguirre Cerda",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Félix Mendelssohn 2941, Pedro Aguirre Cerda, Región Metropolitana, Chile",
+          "geometry": {
+            "location": {
+              "lat": -33.4811229,
+              "lng": -70.665829
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.47977391970849,
+                "lng": -70.66448001970849
+              },
+              "southwest": {
+                "lat": -33.48247188029149,
+                "lng": -70.66717798029151
+              }
+            }
+          },
+          "place_id": "ChIJeXk_hCjFYpYRBNilKhXMZBU",
+          "plus_code": {
+            "compound_code": "G89M+HM Santiago, Chile",
+            "global_code": "47RFG89M+HM"
+          },
+          "types": [
+            "street_address"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Félix Mendelssohn 2941, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "6100",
+              "short_name": "6100",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Avenida Pedro Aguirre Cerda",
+              "short_name": "Av. Pedro Aguirre Cerda",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Los Cerrillos",
+              "short_name": "Los Cerrillos",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Cerrillos",
+              "short_name": "Cerrillos",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Av. Pedro Aguirre Cerda 6100, Los Cerrillos, Cerrillos, Región Metropolitana, Chile",
+          "geometry": {
+            "bounds": {
+              "northeast": {
+                "lat": -33.4947282,
+                "lng": -70.7039384
+              },
+              "southwest": {
+                "lat": -33.4953307,
+                "lng": -70.70446369999999
+              }
+            },
+            "location": {
+              "lat": -33.4950862,
+              "lng": -70.70416209999999
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.49368046970849,
+                "lng": -70.7028520697085
+              },
+              "southwest": {
+                "lat": -33.49637843029149,
+                "lng": -70.7055500302915
+              }
+            }
+          },
+          "place_id": "ChIJ2ZgHiLLEYpYRKU3SOt6n_-E",
+          "types": [
+            "premise"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Pedro Aguirre Cerda 6100, Santiago, Chile.",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "94",
+              "short_name": "94",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Avenida Vicuña Mackenna",
+              "short_name": "Av. Vicuña Mackenna",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Providencia",
+              "short_name": "Providencia",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Providencia",
+              "short_name": "Providencia",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Av. Vicuña Mackenna 94, Providencia, Región Metropolitana, Chile",
+          "geometry": {
+            "bounds": {
+              "northeast": {
+                "lat": -33.4410546,
+                "lng": -70.6335002
+              },
+              "southwest": {
+                "lat": -33.4412417,
+                "lng": -70.63376600000001
+              }
+            },
+            "location": {
+              "lat": -33.4411364,
+              "lng": -70.63364609999999
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.4397991697085,
+                "lng": -70.6322841197085
+              },
+              "southwest": {
+                "lat": -33.4424971302915,
+                "lng": -70.63498208029151
+              }
+            }
+          },
+          "place_id": "ChIJ_9evMp3FYpYRuzQpCQ9_xhk",
+          "types": [
+            "premise"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Vicuña Mackenna 94, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "3300",
+              "short_name": "3300",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Jaime Guzmán Errázuriz",
+              "short_name": "Jaime Guzmán Errázuriz",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Ñuñoa",
+              "short_name": "Ñuñoa",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Ñuñoa",
+              "short_name": "Ñuñoa",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Jaime Guzmán Errázuriz 3300, Ñuñoa, Región Metropolitana, Chile",
+          "geometry": {
+            "bounds": {
+              "northeast": {
+                "lat": -33.4443521,
+                "lng": -70.59164489999999
+              },
+              "southwest": {
+                "lat": -33.4473235,
+                "lng": -70.595241
+              }
+            },
+            "location": {
+              "lat": -33.4457885,
+              "lng": -70.5937947
+            },
+            "location_type": "GEOMETRIC_CENTER",
+            "viewport": {
+              "northeast": {
+                "lat": -33.4443521,
+                "lng": -70.59164489999999
+              },
+              "southwest": {
+                "lat": -33.4473235,
+                "lng": -70.595241
+              }
+            }
+          },
+          "place_id": "ChIJWfP1IaPPYpYRHfDGVp5PxkQ",
+          "types": [
+            "establishment",
+            "premise",
+            "university"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Avda. Jaime Guzmán Errázuriz 3300, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "2919",
+              "short_name": "2919",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Huérfanos",
+              "short_name": "Huérfanos",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Yungay",
+              "short_name": "Yungay",
+              "types": [
+                "neighborhood",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Huérfanos 2919, Santiago, Región Metropolitana, Chile",
+          "geometry": {
+            "location": {
+              "lat": -33.4422617,
+              "lng": -70.675739
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.44091271970849,
+                "lng": -70.67439001970848
+              },
+              "southwest": {
+                "lat": -33.44361068029149,
+                "lng": -70.67708798029149
+              }
+            }
+          },
+          "place_id": "ChIJic_Je1HEYpYRs5aP8Id09TQ",
+          "plus_code": {
+            "compound_code": "H85F+3P Santiago, Chile",
+            "global_code": "47RFH85F+3P"
+          },
+          "types": [
+            "street_address"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Huérfanos 2919, Santiago, Chile.",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "683",
+              "short_name": "683",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Avenida Recoleta",
+              "short_name": "Av. Recoleta",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Recoleta",
+              "short_name": "Recoleta",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Recoleta",
+              "short_name": "Recoleta",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Av. Recoleta 683, Recoleta, Región Metropolitana, Chile",
+          "geometry": {
+            "location": {
+              "lat": -33.4245568,
+              "lng": -70.6454287
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.42320781970849,
+                "lng": -70.64407971970849
+              },
+              "southwest": {
+                "lat": -33.42590578029149,
+                "lng": -70.64677768029149
+              }
+            }
+          },
+          "place_id": "ChIJqzddX5XFYpYRZ4aflK3WhZA",
+          "plus_code": {
+            "compound_code": "H9G3+5R Santiago, Chile",
+            "global_code": "47RFH9G3+5R"
+          },
+          "types": [
+            "street_address"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Recoleta 683, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "749",
+              "short_name": "749",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Esmeralda",
+              "short_name": "Esmeralda",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Esmeralda 749, Santiago, Región Metropolitana, Chile",
+          "geometry": {
+            "bounds": {
+              "northeast": {
+                "lat": -33.4344174,
+                "lng": -70.6480775
+              },
+              "southwest": {
+                "lat": -33.4345758,
+                "lng": -70.6481795
+              }
+            },
+            "location": {
+              "lat": -33.4344689,
+              "lng": -70.6480945
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.43314761970851,
+                "lng": -70.64677951970849
+              },
+              "southwest": {
+                "lat": -33.43584558029151,
+                "lng": -70.64947748029151
+              }
+            }
+          },
+          "place_id": "ChIJK9aYK73FYpYRlVlbGSgLNhI",
+          "types": [
+            "premise"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Esmeralda 749, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "506",
+              "short_name": "506",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Ismael Valdés Vergara",
+              "short_name": "Ismael Valdés Vergara",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Bellas Artes",
+              "short_name": "Bellas Artes",
+              "types": [
+                "neighborhood",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Ismael Valdés Vergara 506, Santiago, Región Metropolitana, Chile",
+          "geometry": {
+            "location": {
+              "lat": -33.435621,
+              "lng": -70.64414339999999
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.4342720197085,
+                "lng": -70.6427944197085
+              },
+              "southwest": {
+                "lat": -33.4369699802915,
+                "lng": -70.6454923802915
+              }
+            }
+          },
+          "place_id": "ChIJF6TtbJjFYpYRQ-L_XGnuwlU",
+          "plus_code": {
+            "compound_code": "H974+Q8 Santiago, Chile",
+            "global_code": "47RFH974+Q8"
+          },
+          "types": [
+            "street_address"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Ismael Valdés Vergara 506, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "650",
+              "short_name": "650",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "José Miguel de La Barra",
+              "short_name": "José Miguel de La Barra",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "José Miguel de La Barra 650, Santiago, Región Metropolitana, Chile",
+          "geometry": {
+            "bounds": {
+              "northeast": {
+                "lat": -33.4349436,
+                "lng": -70.64323
+              },
+              "southwest": {
+                "lat": -33.4356541,
+                "lng": -70.64461330000002
+              }
+            },
+            "location": {
+              "lat": -33.435271,
+              "lng": -70.64389299999999
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.4339498697085,
+                "lng": -70.64257266970851
+              },
+              "southwest": {
+                "lat": -33.4366478302915,
+                "lng": -70.64527063029152
+              }
+            }
+          },
+          "place_id": "ChIJXWTpP5jFYpYRAQAeXkAF-V4",
+          "types": [
+            "premise"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=José Miguel de la Barra 650, Santiago, Chile",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "475",
+              "short_name": "475",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Avenida República",
+              "short_name": "Av. República",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Av. República 475, Santiago, Región Metropolitana, Chile",
+          "geometry": {
+            "bounds": {
+              "northeast": {
+                "lat": -33.4540601,
+                "lng": -70.667441
+              },
+              "southwest": {
+                "lat": -33.4542992,
+                "lng": -70.66783690000001
+              }
+            },
+            "location": {
+              "lat": -33.454147,
+              "lng": -70.6676391
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.4528306697085,
+                "lng": -70.6662899697085
+              },
+              "southwest": {
+                "lat": -33.4555286302915,
+                "lng": -70.66898793029152
+              }
+            }
+          },
+          "place_id": "ChIJfwpTIALFYpYRiI-fI1OqKao",
+          "types": [
+            "premise"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Av. República 475, Santiago",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  },
+  {
+    "data": {
+      "results": [
+        {
+          "address_components": [
+            {
+              "long_name": "227",
+              "short_name": "227",
+              "types": [
+                "street_number"
+              ]
+            },
+            {
+              "long_name": "Avenida Libertador Bernardo O'Higgins",
+              "short_name": "Av Libertador Bernardo O'Higgins",
+              "types": [
+                "route"
+              ]
+            },
+            {
+              "long_name": "Lastarria",
+              "short_name": "Lastarria",
+              "types": [
+                "neighborhood",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "locality",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_3",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Santiago",
+              "short_name": "Santiago",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Región Metropolitana",
+              "short_name": "Región Metropolitana",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ]
+            },
+            {
+              "long_name": "Chile",
+              "short_name": "CL",
+              "types": [
+                "country",
+                "political"
+              ]
+            }
+          ],
+          "formatted_address": "Av Libertador Bernardo O'Higgins 227, Santiago, Región Metropolitana, Chile",
+          "geometry": {
+            "bounds": {
+              "northeast": {
+                "lat": -33.4385704,
+                "lng": -70.639014
+              },
+              "southwest": {
+                "lat": -33.4397828,
+                "lng": -70.64057389999999
+              }
+            },
+            "location": {
+              "lat": -33.439161,
+              "lng": -70.6398035
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+              "northeast": {
+                "lat": -33.4378276197085,
+                "lng": -70.63844496970849
+              },
+              "southwest": {
+                "lat": -33.4405255802915,
+                "lng": -70.64114293029151
+              }
+            }
+          },
+          "place_id": "ChIJE_cVqZ7FYpYR2Zygvdwe5Yk",
+          "types": [
+            "premise"
+          ]
+        }
+      ],
+      "status": "OK"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "cache-control": "no-cache, must-revalidate",
+      "content-type": "application/json; charset=UTF-8",
+      "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+      "pragma": "no-cache"
+    },
+    "config": {
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAboRFDFpd8ToW22F-Z-dhXW6wHu_zu28I&address=Av Libertador Bernardo O'Higgins 227",
+      "method": "get",
+      "headers": {
+        "Accept": "application/json, text/plain, */*"
+      },
+      "baseURL": "http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2",
+      "transformRequest": [
+        null
+      ],
+      "transformResponse": [
+        null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1
+    },
+    "request": {}
+  }
+]

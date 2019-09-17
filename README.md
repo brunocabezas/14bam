@@ -34,6 +34,14 @@ Wordpress installation should follow [this template's](https://github.com/gilbit
 [This file](src/wpObjectMock.js) is used to mock this on development.
 
 ### Development
+Some environment flags are needed in order to have some features:
+```
+VUE_APP_GOOGLE_GEO_API // google geo api used to retrieve lat, lng values from addresses
+VUE_APP_MAPBOX_PUBLIC_TOKEN // token to be able to display map on home page
+VUE_APP_CALENDAR_ID // google calendar id to display on home page
+VUE_APP_CALENDAR_API_KEY // google calendar api key to be able to request data from calendars
+```
+
 Start development server with hot reloading:
 ```
 yarn run serve
