@@ -8,6 +8,7 @@
       class="expositionInfoItem"
     >
       {{ exposition.startDate }}
+      <br/>
       {{ exposition.endDate }}
     </li>
     <li v-if="exposition.hour" class="expositionInfoItem">
