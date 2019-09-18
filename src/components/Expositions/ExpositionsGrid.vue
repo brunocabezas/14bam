@@ -13,7 +13,7 @@
         </h3>
         <div class="expositionText">
           <p>{{ exposition.place }}</p>
-          <p>{{ exposition.hour }}</p>
+          <p>{{ exposition.startDate }} {{exposition.endDate && 'al'}} {{exposition.endDate}}</p>
         </div>
       </div>
     </div>
@@ -52,14 +52,17 @@ export default ExpositionsGrid
 </script>
 
 <style scoped lang="stylus">
+@import "../../styles/colors";
+
 .expositionsGrid
   display: flex;
   flex-wrap: wrap;
 
   .exposition
-    padding 0 5px
+    padding 0 20px
     flex: 1 1 33.3%;
-    margin-bottom 1.5em
+    margin-bottom 2em
+    max-width 33.3%
 
     .expositionName
       margin: 0 0 5px 0;
@@ -72,6 +75,7 @@ export default ExpositionsGrid
     .expositionText
       p
         color: $black;
+        line-height 30px
         font-family "News Cycle", 'sans-serif'
         font-size 25px
         font-weight bold

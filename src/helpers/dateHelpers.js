@@ -1,8 +1,8 @@
 // Add leading zeros to single numbers
 const addZeros = number => ('0' + number).slice(-2)
 
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
+const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
 ]
 
 export const getTimeOfDateTimeString = (dateStr = '') => {
