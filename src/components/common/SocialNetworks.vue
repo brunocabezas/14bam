@@ -23,6 +23,16 @@
         scale="1.5">
       </v-icon>
     </a>
+    <a
+      class="socialNetworks__link"
+      title="Canal de Youtube"
+      href="https://www.youtube.com/channel/UCTfTJE1BO8aviqV9vrJT1LA"
+      target="_blank">
+      <v-icon
+        name="brands/youtube"
+        scale="1.5">
+      </v-icon>
+    </a>
   </div>
 </template>
 
@@ -51,7 +61,12 @@ export default SocialNetworks
   padding-top 15px
 
   &__link
-    margin-right 15px
+    margin-right 10px
+    margin-left 10px
+    &:first-child
+      margin-left 0
+    &:last-child
+      margin-right 0
 
   &.isWhite
     .fa-icon

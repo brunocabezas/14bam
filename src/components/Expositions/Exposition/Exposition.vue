@@ -6,7 +6,7 @@
       <div class="expositionLayout">
         <div class="leftSection">
           <h1 class="expositionTitle">{{ exposition.name }}</h1>
-          <p v-html="exposition.description"></p>
+          <p class="expositionText" v-html="exposition.description"></p>
         </div>
 
         <div class="rightSection">
