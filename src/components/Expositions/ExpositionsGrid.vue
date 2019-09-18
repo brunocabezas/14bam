@@ -23,6 +23,7 @@
 <script>
 import { Vue, Component } from 'vue-property-decorator'
 import { loadExpositions } from '../../../api/client'
+import { dateStringToDate } from '@/helpers/dateHelpers'
 import Loader from '@/components/common/Loader'
 import store from '@/config/store'
 
@@ -37,7 +38,8 @@ class ExpositionsGrid extends Vue {
   loadingData = false
 
   get expositions () {
-    return this.$store.state.expositions
+    return this.$store.state.expositions.sort((a, b) =>
+      dateStringToDate(a.startDate) - dateStringToDate(b.startDate))
   }
 
   mounted () {
