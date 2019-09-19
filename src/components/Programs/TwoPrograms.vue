@@ -49,11 +49,11 @@ class Programs extends Vue {
   loadingData = false
 
   get firstProgram () {
-    return this.$store.state.programs[0]
+    return this.$store.state.programs[0] || {}
   }
 
   get secondProgram () {
-    return this.$store.state.programs[1]
+    return this.$store.state.programs[1] || {}
   }
 
   urls = this.$root.urls

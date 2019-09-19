@@ -1,5 +1,6 @@
 
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
 import BurgerButton from 'vue-burger-button'
 import SocialNetworks from '../../common/SocialNetworks.vue'
 import 'vue-burger-button/dist/vue-burger-button.css'
@@ -18,20 +19,34 @@ class Header extends Vue {
 
   isOpen = false
 
+  displayMenuButton = true
+
   created () {
     document.addEventListener('keyup', this.closeMenuByKeyboard)
+    document.addEventListener('scroll', this.handleScroll)
   }
 
   destroyed () {
+    document.removeEventListener('scroll', this.handleScroll)
     document.removeEventListener('keyup', this.closeMenuByKeyboard)
   }
 
   closeMenuByKeyboard (event) {
     if (event.keyCode === 27 && this.isOpen) {
       // esc key pressed
-      this.isOpen = !this.isOpen
+      this.toggleMenu()
     }
     // console.log('this.toggleMenu')
+  }
+
+  handleScroll (evt, el) {
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+
+    if (!this.displayMenuButton && window.scrollY > viewportHeight - 100) {
+      this.displayMenuButton = true
+    } else if (this.displayMenuButton && window.scrollY < viewportHeight - 100) {
+      this.displayMenuButton = false
+    }
   }
 
   clickOutsideMenu (event) {
@@ -40,7 +55,7 @@ class Header extends Vue {
       const isBarElement = event.target.className.includes('bar')
       // Closing overlay by toggling the state
       if (!isBurgerButton && !isBarElement) {
-        this.isOpen = !this.isOpen
+        this.toggleMenu()
       }
     }
   }

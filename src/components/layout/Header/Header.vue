@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="headerLogo">
+    <div class="headerLogo" v-if="displayMenuButton">
       <router-link title="Inicio" v-if="!isOnHome" :to="urls.home">
         <img alt="Bienal Artes Mediales Logo" src="@/assets/logo.png" />
       </router-link>
@@ -46,7 +46,7 @@
         </div>
       </nav>
       <burger-button
-        v-if="!isOnHome"
+        v-if="displayMenuButton"
         class="burgerButton"
         :active="isOpen"
         :bar-color="isOpen ? 'white' : 'black'"
