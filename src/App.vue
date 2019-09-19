@@ -41,7 +41,8 @@ class App extends Vue {
 
   // Lifecycle hook
   mounted () {
-    if (this.$route.name === 'home') {
+    if (this.$route.name === 'home' ||
+      this.$route.name === 'futureHome') {
       this.isOnHome = true
     }
   }
