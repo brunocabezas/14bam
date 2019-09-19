@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <section class="homeTop">
-      <img src="../Home/home.gif" alt />
+    <section class="section videos">
+      <VideoPlayer :url="video.url" />
     </section>
     <section class="section expositions">
       <h1 class="sectionTitle">
@@ -41,3 +41,13 @@
 
 <script src="./futureHome.js" ></script>
 <style src="../Home/home.styl" scoped lang="styl"></style>
+<style lang="stylus">
+.section.videos
+  .videoPlayer
+    display inline-block
+    #vimeo-player-1
+      &, iframe
+        width 100%
+        height 100%
+
+</style>
