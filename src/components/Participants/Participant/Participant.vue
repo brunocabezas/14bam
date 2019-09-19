@@ -1,6 +1,6 @@
 <template>
   <Loader :loading="loadingData">
-    <ExpositionInfo :expoId="participant.expo && participant.expo.ID" />
+    <ExpositionInfoBar :expoId="participant.expo && participant.expo.ID" />
     <div class="participant">
       <div class="leftSection">
         <Carousel

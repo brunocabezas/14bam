@@ -1,7 +1,7 @@
 <template>
   <Loader :loading="loadingData">
     <div class="exposition">
-      <ExpositionInfo :expo="exposition" />
+      <ExpositionInfoBar :expo="exposition" />
 
       <div class="expositionLayout">
         <div class="leftSection">

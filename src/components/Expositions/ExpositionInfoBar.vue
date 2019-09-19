@@ -1,31 +1,30 @@
 <template>
-  <ul v-if="Object.keys(this.exposition).length > 0" class="expositionInfo">
-    <li class="expositionInfoItem">
+  <ul v-if="Object.keys(this.exposition).length > 0" class="expositionInfoBar">
+    <li class="expositionInfoBarItem">
       {{ exposition.place }}
     </li>
     <li
       v-if="exposition.startDate && exposition.endDate"
-      class="expositionInfoItem"
+      class="expositionInfoBarItem"
     >
       {{ exposition.startDate }}
       <br/>
       {{ exposition.endDate }}
     </li>
-    <li v-if="exposition.hour" class="expositionInfoItem">
+    <li v-if="exposition.hour" class="expositionInfoBarItem">
       {{ exposition.hour }}
     </li>
-    <li v-if="exposition.hour2" class="expositionInfoItem">
+    <li v-if="exposition.hour2" class="expositionInfoBarItem">
       {{ exposition.hour2 }}
     </li>
     <li
       v-if="exposition.address || exposition.web"
-      class="expositionInfoItem"
+      class="expositionInfoBarItem"
     >
       <span>
         {{ exposition.address }}
         <br/>
         <a target="_blank" class="link" :href="exposition.web">{{
-          exposition.web
         }}</a>
       </span>
     </li>
@@ -54,7 +53,7 @@ import store from '@/config/store'
     }
   }
 })
-class ExpositionInfo extends Vue {
+class ExpositionInfoBar extends Vue {
   loadingData = false
 
   get exposition () {
@@ -73,20 +72,20 @@ class ExpositionInfo extends Vue {
     }
   }
 }
-export default ExpositionInfo
+export default ExpositionInfoBar
 </script>
 
 <style scoped lang="stylus">
 @import "../../styles/colors";
 
-.expositionInfo
+.expositionInfoBar
   display flex
   padding 0 1em
   border-top 3px solid $black
   border-bottom 3px solid $black
   vertical-align center
 
-  .expositionInfoItem
+  .expositionInfoBarItem
     flex 1
     padding 0.8em 0
     font-size 25px
