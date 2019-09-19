@@ -81,15 +81,15 @@ export default ExpositionInfoBar
 
 .expositionInfoBar
   display flex
-  padding 0 1em
+  padding 0
   border-top 3px solid $black
   border-bottom 3px solid $black
   vertical-align center
 
   .expositionInfoBarItem
     flex 1
-    padding 0.8em 0
-    font-size 25px
+    padding 0.8em 10px
+    font-size 22px
     font-weight bold
     text-align center
     display flex
@@ -101,9 +101,11 @@ export default ExpositionInfoBar
 
     &:first-child
       text-align left
+      padding-left 0
 
     &:last-child
       text-align right
+      padding-right 0
       flex-direction column
       justify-content center
 
