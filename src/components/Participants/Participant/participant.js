@@ -4,14 +4,14 @@ import { loadParticipant } from '../../../../api/client'
 import { getParticipantFromApi } from '../../../helpers/apiHelpers'
 import Carousel from '@/components/common/Carousel.vue'
 import Loader from '@/components/common/Loader.vue'
-import ExpositionInfo from '@/components/Expositions/ExpositionInfo.vue'
+import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar.vue'
 import store from '@/config/store'
 
 @Component({
   store,
   components: {
     Carousel,
-    ExpositionInfo,
+    ExpositionInfoBar,
     Loader
   }
 })

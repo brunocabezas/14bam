@@ -3,14 +3,14 @@ import { Component, Vue } from 'vue-property-decorator'
 import { loadExposition } from '../../../../api/client'
 import { getExpositionFromApi } from '../../../helpers/apiHelpers'
 import Loader from '@/components/common/Loader'
-import ExpositionInfo from '@/components/Expositions/ExpositionInfo'
+import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar'
 import store from '@/config/store'
 
 @Component({
   store,
   components: {
     Loader,
-    ExpositionInfo
+    ExpositionInfoBar
   }
 })
 class Exposition extends Vue {
