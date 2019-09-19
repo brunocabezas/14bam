@@ -25,6 +25,7 @@
         {{ exposition.address }}
         <br/>
         <a target="_blank" class="link" :href="exposition.web">{{
+          exposition.webText || exposition.web
         }}</a>
       </span>
     </li>
