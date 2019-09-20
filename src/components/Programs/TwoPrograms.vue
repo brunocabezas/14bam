@@ -1,27 +1,29 @@
 <template>
   <Loader :loading="loadingData">
     <div class="twoPrograms">
-      <div v-bind:key="program.id" v-for="program in programs" class="program">
+      <div>
         <h2 class="programTitle">
-          <router-link :to="urls.program(program.slug)">{{
-            program.name
+          <router-link :to="urls.program(firstProgram.slug)">{{
+            firstProgram.name
           }}</router-link>
         </h2>
-        <ul class="programEventList">
-          <li
-            class="programEvent"
-            v-bind:key="program.id"
-            v-for="program in program.events"
-          >
-            <router-link
-              class="programEventLink"
-              :title="program.post_title"
-              :to="urls.event(program.post_name)"
-            >
-              {{ program.post_title }}
-            </router-link>
-          </li>
-        </ul>
+        <p class="programAbstract" v-html="firstProgram.shortDescription"></p>
+      </div>
+      <div style="width:300px">
+        <!-- <video
+          width="300"
+          height="600"
+          name="Video Name"
+          src="@/assets/programsGif.mov">
+        </video> -->
+      </div>
+      <div>
+        <h2 class="programTitle">
+          <router-link :to="urls.program(secondProgram.slug)">{{
+            secondProgram.name
+          }}</router-link>
+        </h2>
+        <p class="programAbstract" v-html="secondProgram.shortDescription"></p>
       </div>
     </div>
   </Loader>
@@ -46,8 +48,12 @@ class Programs extends Vue {
   // programs : Array =  '[]'
   loadingData = false
 
-  get programs () {
-    return this.$store.state.programs
+  get firstProgram () {
+    return this.$store.state.programs[0] || {}
+  }
+
+  get secondProgram () {
+    return this.$store.state.programs[1] || {}
   }
 
   urls = this.$root.urls
@@ -66,27 +72,28 @@ export default Programs
 @import '../../styles/colors';
 
 .twoPrograms
-  display: flex;
+  display: inline-flex;
   padding: 15px;
 
-  .program
-    flex: 1 1 50%;
+  .programTitle
+    text-decoration: underline;
+    a
+      font-size 32px
 
-    .programTitle
-      text-decoration: underline;
-      font-size 30px
+  .programAbstract
+    text-align left
 
-    .programEventList
-      padding: 0;
+  // .programEventList
+  //   padding: 0;
 
-      .programEvent
-        color: $white;
-        font-size: 26px;
-        &:hover
-          text-decoration underline
+  //   .programEvent
+  //     color: $white;
+  //     font-size: 26px;
+  //     &:hover
+  //       text-decoration underline
 
-      .programEventLink
-        color: $white;
-        font-size: 26px;
-        text-decoration: none;
+  //   .programEventLink
+  //     color: $white;
+  //     font-size: 26px;
+  //     text-decoration: none;
 </style>

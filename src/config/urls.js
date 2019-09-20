@@ -12,7 +12,9 @@ export default {
   // Participants
   participants: '/14/participantes',
   participant: name => `/14/participantes/${name}`,
-  keyword: slug => `/14/palabras-clave/${slug}`
+  keyword: slug => `/14/palabras-clave/${slug}`,
   // places: '/14/espacios',
   // place: placeName => `/14/espacios/${placeName}`,
+  about: '/14/sobre-la-bienal',
+  contest: '/14/concurso-juan-downey'
 }

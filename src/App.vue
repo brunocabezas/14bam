@@ -8,7 +8,7 @@
       href="https://fonts.goo/gleapis.com/css?family=News+Cycle:400,700&display=swap"
       rel="stylesheet"
     />
-    <Header :isOnHome="isOnHome" />
+    <Header />
     <div
       v-bind:class="{
         appContent: true,
@@ -41,15 +41,15 @@ class App extends Vue {
 
   // Lifecycle hook
   mounted () {
-    if (this.$route.name === 'home' ||
-      this.$route.name === 'futureHome') {
+    if (this.$route.name === 'futureHome') {
       this.isOnHome = true
     }
   }
 
   @Watch('$route')
   onPropertyChanged (to, from) {
-    this.isOnHome = to.name === 'home'
+    // console.log(to.name === 'futureHome')
+    this.isOnHome = to.name === 'futureHome'
   }
 }
 export default App

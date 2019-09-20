@@ -9,6 +9,8 @@ import Exposition from '@/components/Expositions/Exposition/Exposition.vue'
 import Programs from '@/components/Programs/Programs.vue'
 import Keyword from '@/components/Keywords/Keyword.vue'
 import Program from '@/components/Programs/Program/Program.vue'
+import Contest from '@/components/Contest.vue'
+import About from '@/components/About.vue'
 import paths from '@/config/urls'
 
 Vue.use(Router)
@@ -29,6 +31,19 @@ export default new Router({
       component: FutureHome
     },
     {
+      path: paths.about,
+      publicPath: '/',
+      name: 'about',
+      component: About
+    },
+    {
+      path: paths.contest,
+      publicPath: '/',
+      name: 'contest',
+      component: Contest
+    },
+    // Expositions
+    {
       path: paths.expositions,
       publicPath: '/',
       name: 'expositions',
@@ -40,6 +55,7 @@ export default new Router({
       name: 'exposition',
       component: Exposition
     },
+    // Participants
     {
       path: paths.participants,
       publicPath: '/',

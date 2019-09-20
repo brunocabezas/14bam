@@ -57,17 +57,22 @@
 <script src="./participant.js"></script>
 <style src="./participant.styl" lang="stylus" scoped></style>
 <style lang="stylus">
+@import '../../../styles/colors'
+
 .keywords
   .keywordsTitle
     margin-bottom 0
   .keywordsParragraph
     margin 10px 0
     .keyword
-      margin 0
+      margin 0 5px 0 0
       font-size: 14px;
       color: white;
       text-decoration: none;
       display: inline-block;
+
+      &:last-child
+        margin-right 0
 
       .keywordLink
         font-size: 14px;
@@ -76,4 +81,9 @@
 
         &:hover
           text-decoration: underline;
+
+.participant
+  .rightSection
+    p
+      color $white
 </style>

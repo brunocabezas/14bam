@@ -123,7 +123,11 @@ export const getParticipantFromApi = (apiResponse = []) =>
 export const getPrograms = ({ data }) => {
   return data.filter(program => true)
     .map(({ id, slug, ...others }) => ({
-      id, slug, name: getWPTitle(others), events: getAcfField(others, 'programas', [])
+      id,
+      slug,
+      shortDescription: getAcfField(others, 'abstract'),
+      name: getWPTitle(others),
+      events: getAcfField(others, 'programas', [])
     }))
 }
 
