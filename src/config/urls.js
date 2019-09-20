@@ -15,6 +15,6 @@ export default {
   keyword: slug => `/14/palabras-clave/${slug}`,
   // places: '/14/espacios',
   // place: placeName => `/14/espacios/${placeName}`,
-  about: 'sobre-la-bienal',
-  contest: 'concurso-juan-downey'
+  about: '/14/sobre-la-bienal',
+  contest: '/14/concurso-juan-downey'
 }
