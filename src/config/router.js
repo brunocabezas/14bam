@@ -29,6 +29,19 @@ export default new Router({
       component: FutureHome
     },
     {
+      path: paths.about,
+      publicPath: '/',
+      name: 'about',
+      component: About
+    },
+    {
+      path: paths.contest,
+      publicPath: '/',
+      name: 'contest',
+      component: Contest
+    },
+    // Expositions
+    {
       path: paths.expositions,
       publicPath: '/',
       name: 'expositions',
@@ -40,6 +53,7 @@ export default new Router({
       name: 'exposition',
       component: Exposition
     },
+    // Participants
     {
       path: paths.participants,
       publicPath: '/',
