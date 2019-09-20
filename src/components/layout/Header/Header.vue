@@ -55,10 +55,10 @@
           </li>
           <li @click="toggleMenu" class="headerNavMenuItem">
             <router-link
-              title="Programa: Campos Magneticos"
+              title="Concurso Juan Downey"
               :to="urls.contest"
             >
-              Concurso juan downey</router-link
+              Concurso Juan Downey</router-link
             >
           </li>
         </ul>
