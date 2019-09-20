@@ -37,6 +37,7 @@ ul
       margin-top 5px
       .pageListItem
         font-weight bold
+        line-height 32px
         color $white
         a 
           color $white
@@ -44,6 +45,9 @@ ul
           font-size 30px
           font-family 'News Cycle', sans-serif
           font-weight bold
+          transition color .2s
+          &:hover
+            color: darken($white, 25);
 
 .leftSection
 .rightSection
