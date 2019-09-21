@@ -6,7 +6,9 @@
         <div v-html="program.text" class="programText"></div>
       </div>
       <div class="rightSection">
-        <div class="programGallery"></div>
+        <div v-if="images.length > 0" class="programGallery">
+          <Carousel :images="images" />
+        </div>
 
         <div
           v-if="program.events && program.events.length > 0"

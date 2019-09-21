@@ -140,6 +140,7 @@ export const getProgramFromApi = (apiResponse = []) => {
     slug: firstProgram.slug,
     name: getWPTitle(firstProgram),
     text: getAcfField(firstProgram, 'texto'),
+    images: getAcfField(firstProgram, 'galeria', []),
     events: getAcfField(firstProgram, 'programas', [])
   })
 }

@@ -26,7 +26,8 @@ export default new Vuex.Store({
     programs: [],
     program: {
       id: -1,
-      events: []
+      events: [],
+      images: []
     },
     // An event is the same as a program but without events (programs)
     event: {
