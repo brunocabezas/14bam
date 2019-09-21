@@ -1,17 +1,17 @@
 <template>
   <div class="programs">
     <h1 class="programsTitle">Programas</h1>
-    <TwoPrograms />
+    <MainPrograms />
   </div>
 </template>
 
 <script>
 import { Component, Vue } from 'vue-property-decorator'
-import TwoPrograms from './TwoPrograms'
+import MainPrograms from './MainPrograms'
 
 @Component({
   components: {
-    TwoPrograms
+    MainPrograms
   }
 })
 class Programs extends Vue {}

@@ -10,7 +10,9 @@
         </div>
 
         <div class="rightSection">
-          <div class="expositionGallery"></div>
+          <div class="expositionGallery">
+            <ExpositionGallery />
+          </div>
           <div
             v-if="exposition.artists.length > 0"
             class="pageList expositionArtists"

@@ -48,7 +48,7 @@ export const loadParticipants = () =>
 
 export const loadParticipant = name => Vue.axios.get(routes.participant(name))
 
-export const loadPrograms = () =>
+export const loadMainPrograms = () =>
   Vue.axios
     .get(routes.generalPrograms)
     .then(res => resolvedPromise(getPrograms(res)))

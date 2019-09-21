@@ -6,11 +6,13 @@ import {
 } from '../../../../api/client'
 import store from '@/config/store'
 import Loader from '@/components/common/Loader'
+import Carousel from '@/components/common/Carousel'
 
 @Component({
   store,
   components: {
-    Loader
+    Loader,
+    Carousel
   },
   props: {
     // prograType displays sets wheter the item displayed is an program or an event
@@ -36,10 +38,26 @@ class Program extends Vue {
       ? this.$store.state.program
       : this.$store.state.event
   }
+  loadingData = false
+
+  get images () {
+    // Getting array of urls from program
+    return (
+      (this.program &&
+        this.program.images &&
+        this.program.images.map(img => img.url)) ||
+      []
+    )
+  }
 
   @Watch('programType')
-  onPropertyChanged (value, oldValue) {
+  onProgramTypeChanged (value, oldValue) {
     this.fetchData(value)
+  }
+
+  @Watch('$route')
+  onRouteChanged (value, oldValue) {
+    this.fetchData()
   }
 
   mounted () {

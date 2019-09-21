@@ -4,7 +4,7 @@ import { loadParticipant } from '../../../../api/client'
 import { getParticipantFromApi } from '../../../helpers/apiHelpers'
 import Carousel from '@/components/common/Carousel.vue'
 import Loader from '@/components/common/Loader.vue'
-import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar.vue'
+import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/ExpositionInfoBar.vue'
 import store from '@/config/store'
 
 @Component({
