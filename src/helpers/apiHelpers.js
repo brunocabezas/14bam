@@ -73,6 +73,7 @@ export const getParticipantsFromApi = participants =>
     slug: person.slug,
     name: getWPTitle(person),
     img: getAcfField(person, 'fotos', [{ url: '' }])[0].url,
+    images: getAcfField(person, 'fotos', [{ url: '' }]),
     keywords: getAcfField(person, 'palabras_clave', []).map(keywords => keywords.name)
   }))
 

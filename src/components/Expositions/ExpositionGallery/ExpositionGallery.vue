@@ -1,13 +1,7 @@
 <template>
-  <span>exposition galelry</span>
+  <div class="expositionGallery">
+    <Carousel :images="images" />
+  </div>
 </template>
 
 <script src="./expositionGallery.js"></script>
-
-<style scoped lang="stylus">
-@import "../../styles/colors";
-
-.expositionGallery
-  display none
-
-</style>

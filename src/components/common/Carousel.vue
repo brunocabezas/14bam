@@ -91,6 +91,8 @@ export default Carousel
   display flex
   align-items center
   justify-content center
+  min-height 300px
+
   .carouselButton--next
     right 0
   .carouselButton--prev
@@ -115,6 +117,6 @@ export default Carousel
   .VueCarousel-wrapper,
   .carouselImage,
   .VueCarousel-inner
-    height 100% !important
+    height 300px !important
     width 100%
 </style>

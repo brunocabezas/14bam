@@ -4,13 +4,15 @@ import { loadExposition } from '../../../../api/client'
 import { getExpositionFromApi } from '../../../helpers/apiHelpers'
 import Loader from '@/components/common/Loader'
 import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/ExpositionInfoBar.vue'
+import ExpositionGallery from '@/components/Expositions/ExpositionGallery/ExpositionGallery.vue'
 import store from '@/config/store'
 
 @Component({
   store,
   components: {
     Loader,
-    ExpositionInfoBar
+    ExpositionInfoBar,
+    ExpositionGallery
   }
 })
 class Exposition extends Vue {
