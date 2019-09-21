@@ -1,6 +1,6 @@
 <template>
   <Loader :loading="loadingData">
-    <div class="twoPrograms">
+    <div class="mainPrograms">
       <div>
         <h2 class="programTitle">
           <router-link :to="urls.program(firstProgram.slug)">{{
@@ -44,7 +44,7 @@ import store from '@/config/store'
     return { loading: false }
   }
 })
-class Programs extends Vue {
+class MainPrograms extends Vue {
   // programs : Array =  '[]'
   loadingData = false
 
@@ -66,12 +66,12 @@ class Programs extends Vue {
     })
   }
 }
-export default Programs
+export default MainPrograms
 </script>
 <style scoped lang="stylus">
 @import '../../styles/colors';
 
-.twoPrograms
+.mainPrograms
   display: inline-flex;
   padding: 15px;
 
@@ -82,18 +82,4 @@ export default Programs
 
   .programAbstract
     text-align left
-
-  // .programEventList
-  //   padding: 0;
-
-  //   .programEvent
-  //     color: $white;
-  //     font-size: 26px;
-  //     &:hover
-  //       text-decoration underline
-
-  //   .programEventLink
-  //     color: $white;
-  //     font-size: 26px;
-  //     text-decoration: none;
 </style>

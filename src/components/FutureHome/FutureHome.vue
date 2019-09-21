@@ -13,7 +13,7 @@
       <h1 class="sectionTitle">
         <router-link :to="urls.programs">Programas</router-link>
       </h1>
-      <TwoPrograms />
+      <MainPrograms />
     </section>
     <section class="section halfSections agenda">
       <div class="sectionLeft">

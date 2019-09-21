@@ -3,15 +3,6 @@
     <div class="homeTop">
       <img src="./home.gif" alt />
     </div>
-    <!-- <section class="places">
-    grid of places
-  </section>
-  <section class="twoPrograms">
-    two programs
-  </section>
-  <section class="program">
-    single program
-    </section>-->
     <div class="sections">
       <section class="sponsors">
         <div
