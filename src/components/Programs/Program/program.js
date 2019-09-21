@@ -51,8 +51,13 @@ class Program extends Vue {
   }
 
   @Watch('programType')
-  onPropertyChanged (value, oldValue) {
+  onProgramTypeChanged (value, oldValue) {
     this.fetchData(value)
+  }
+
+  @Watch('$route')
+  onRouteChanged (value, oldValue) {
+    this.fetchData()
   }
 
   mounted () {
