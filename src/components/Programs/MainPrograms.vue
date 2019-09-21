@@ -31,7 +31,7 @@
 
 <script>
 import { Component, Vue } from 'vue-property-decorator'
-import { loadPrograms } from '../../../api/client'
+import { loadMainPrograms } from '../../../api/client'
 import Loader from '@/components/common/Loader.vue'
 import store from '@/config/store'
 
@@ -60,8 +60,8 @@ class MainPrograms extends Vue {
 
   mounted () {
     this.loadingData = true
-    loadPrograms().then(res => {
-      this.$store.commit('loadPrograms', res)
+    loadMainPrograms().then(res => {
+      this.$store.commit('loadMainPrograms', res)
       this.loadingData = false
     })
   }

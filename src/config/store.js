@@ -53,7 +53,7 @@ export default new Vuex.Store({
     loadParticipant (state, data) {
       state.participant = data
     },
-    loadPrograms (state, data) {
+    loadMainPrograms (state, data) {
       state.programs = data
     },
     loadProgram (state, data) {

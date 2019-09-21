@@ -41,7 +41,13 @@ class Program extends Vue {
   loadingData = false
 
   get images () {
-    return this.program.images.map(img => img.url)
+    // Getting array of urls from program
+    return (
+      (this.program &&
+        this.program.images &&
+        this.program.images.map(img => img.url)) ||
+      []
+    )
   }
 
   @Watch('programType')
