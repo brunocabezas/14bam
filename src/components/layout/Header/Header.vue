@@ -1,11 +1,11 @@
 <template>
   <div class="header">
     <div class="headerLogo" v-if="displayElements">
-      <router-link title="Inicio" v-if="!isOnHome" :to="urls.home">
+      <router-link title="Inicio" v-if="!isOnFutureHome" :to="urls.home">
         <img alt="Bienal Artes Mediales Logo" src="@/assets/logo.png" />
       </router-link>
       <img
-        v-if="isOnHome"
+        v-if="isOnFutureHome"
         alt="Bienal Artes Mediales Logo"
         src="@/assets/logo.png"
       />
@@ -68,7 +68,7 @@
         </div>
       </nav>
       <burger-button
-        v-if="displayElements"
+        v-if="displayElements && !isOnHome"
         class="burgerButton"
         :active="isOpen"
         :bar-color="isOpen ? 'white' : 'black'"
