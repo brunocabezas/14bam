@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { state as asyncState, asyncDataMutations } from './remoteData'
+import {
+  state as asyncState,
+  asyncDataMutations
+} from '@/helpers/remoteDataHelper'
 import actions from './actions'
 import getters from './getters'
-import mutationTypes from './mutationTypes'
+import mutationTypes from './baseMutationTypes'
 
 Vue.use(Vuex)
 

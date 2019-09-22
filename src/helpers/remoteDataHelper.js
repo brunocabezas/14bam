@@ -1,6 +1,17 @@
 import Vue from 'vue'
-// import axios from 'axios'
+//
+// remoteDataHelper
+// provides helpers to create different aspects to store information about
+// async data on vuex:
+// - Initial state helper via state
+// - Vuex async actions available through fetch
+// - Vuex mutations through asyncDataMutations
+// - Vuex message/mutations types thorugh getMsgs
 
+// getMsgs
+// SUCCESS => request has succeeded and data is submitted
+// FAILURE => request has failed, only visible in the error code for now
+// PENDING => loading indicator
 const getMsgs = slug => ({
   BASE: slug,
   SUCCESS: `${slug}_SUCCESS`,
@@ -9,10 +20,11 @@ const getMsgs = slug => ({
 })
 
 // state
+// initializes the corersponseding state node with information regarding asynchronous data
 export const state = (data = []) => ({
-  responseData: data,
-  status: undefined,
-  loading: false
+  responseData: data, // data from the API response
+  status: undefined, // status code
+  loading: false // loading indicator
 })
 
 // mutations
@@ -26,6 +38,7 @@ export const asyncDataMutations = slug => {
         case types.PENDING:
           return Vue.set(stateNode, 'loading', payload.value)
         case types.SUCCESS:
+          // When request succeeds, set loading and status
           Vue.set(stateNode, 'status', payload.statusCode)
           return Vue.set(stateNode, 'responseData', payload.data)
         case types.FAILURE:
@@ -37,6 +50,7 @@ export const asyncDataMutations = slug => {
 
 // action
 export const fetch = ({ url, slug }) => {
+  // Getting mutationTypes
   const mutationTypes = getMsgs(slug)
   return store => {
     // Send the pending flag. Useful for showing a spinner,
@@ -44,14 +58,11 @@ export const fetch = ({ url, slug }) => {
       type: mutationTypes.PENDING,
       value: true
     })
-    // make the ajax call.
+    // Make request
     Vue.axios(url, {})
       .then(response => {
         let data = response.data
-
-        // the call was successful!
-        // commit the response and status code to the store.
-        // we will write the actual mutation logic next.
+        // commit the response and status code to the store
         store.commit(mutationTypes.BASE, {
           type: mutationTypes.SUCCESS,
           data,

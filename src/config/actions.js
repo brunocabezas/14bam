@@ -1,5 +1,5 @@
-import { fetch as fetchData } from './remoteData'
-import mutationTypes from './mutationTypes'
+import { fetch as fetchData } from '../helpers/remoteDataHelper'
+import mutationTypes from './baseMutationTypes'
 import routes from '../../api/routes'
 
 export default {

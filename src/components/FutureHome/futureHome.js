@@ -2,7 +2,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { loadSponsors, loadVideos } from '../../../api/client'
 import VideoPlayer from '../Home/VideoPlayer.vue'
-import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid.vue'
+import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid/ExpositionsGrid.vue'
 import MainPrograms from '@/components/Programs/MainPrograms.vue'
 import Agenda from '@/components/FutureHome/HomeAgenda/HomeAgenda.vue'
 import Map from '@/components/FutureHome/HomeMap/HomeMap.vue'
