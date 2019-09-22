@@ -1,20 +1,27 @@
 import { Vue, Component } from 'vue-property-decorator'
 import Carousel from '@/components/common/Carousel.vue'
-// import Loader from '@/components/common/Loader'
 import store from '@/config/store'
-import { loadParticipants } from '../../../../api/client'
-import { getKeywordsFromParticipants } from '../../../helpers/apiHelpers'
 import { flatten } from '../../../helpers/arrayHelpers'
+import { mapActions, mapGetters } from 'vuex'
 
 @Component({
   store,
   components: {
     Carousel
+  },
+  computed: {
+    ...mapGetters({
+      loading: 'isLoadingParticipants',
+      participants: 'participants',
+      participantsNotFetched: 'participantsNotFetched'
+    })
+  },
+  methods: {
+    ...mapActions(['loadParticipants'])
   }
 })
 class ExpositionGallery extends Vue {
-  loading = false
-
+  // TODO add to getters
   get images () {
     // Array of ids
     const expositionArtists = this.$store.state.exposition.artists.map(
@@ -29,17 +36,10 @@ class ExpositionGallery extends Vue {
     return flatten(artistsImages).map(img => img.url)
   }
 
-  get participants () {
-    return this.$store.state.participants
-  }
-
   mounted () {
-    this.loading = true
-    loadParticipants().then(response => {
-      this.$store.commit('loadParticipants', response)
-      this.$store.commit('loadKeywords', getKeywordsFromParticipants(response))
-      this.loading = false
-    })
+    if (this.participantsNotFetched) {
+      this.loadParticipants()
+    }
   }
 }
 export default ExpositionGallery

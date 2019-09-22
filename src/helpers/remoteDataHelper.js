@@ -39,7 +39,11 @@ export const isLoadingHelper = stateNode => state => {
 
 // this requires that the stateNode follows the remoteData helper state shapes
 export const isNotFetchedHelper = stateNode => state => {
-  return stateNode && getNestedValue(stateNode, state).status === undefined
+  return (
+    stateNode &&
+    !stateNode.loading &&
+    getNestedValue(stateNode, state).status === undefined
+  )
 }
 
 // mutations
@@ -89,6 +93,7 @@ export const fetch = ({ url, slug }) => {
           type: mutationTypes.PENDING,
           value: false
         })
+        return data
       })
       .catch(error => {
         // there was an error. Commit the status code to the store.
