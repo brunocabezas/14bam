@@ -11,6 +11,7 @@ import Loader from '@/components/common/Loader'
 import store from '@/config/store'
 import { loadMarkersData } from '../../../../api/client'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import { mapGetters } from 'vuex'
 
 const MAPBOX_PUBLIC_TOKEN = process.env.VUE_APP_MAPBOX_PUBLIC_TOKEN || ''
 
@@ -30,6 +31,9 @@ const MAPBOX_PUBLIC_TOKEN = process.env.VUE_APP_MAPBOX_PUBLIC_TOKEN || ''
       if (!monthName) return monthName
       return monthName.substring(0, 3).toUpperCase()
     }
+  },
+  computed: {
+    ...mapGetters({ expositionsFromState: 'expositionsByDate' })
   }
 })
 class HomeMap extends Vue {
@@ -41,8 +45,8 @@ class HomeMap extends Vue {
   mapCenter = [-70.64827, -33.45694]
 
   get expositions () {
-    return this.$store.state.expositions
-      .filter(expo => expo.address)
+    // returning expositions with valid addresses
+    return this.expositionsFromState.filter(expo => expo.address)
   }
 
   get markers () {

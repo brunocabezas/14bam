@@ -1,5 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import {
+  state as asyncState,
+  asyncDataMutations
+} from '@/helpers/remoteDataHelper'
+import actions from './actions'
+import getters from './getters'
+import mutationTypes from './baseMutationTypes'
 
 Vue.use(Vuex)
 
@@ -8,14 +15,14 @@ export default new Vuex.Store({
     sponsors: [],
     calendar: [],
     // Expositions
-    expositions: [],
+    expositions: asyncState(),
     exposition: {
       id: -1,
       curators: [],
       artists: []
     },
     // Artits and curators
-    participants: [],
+    participants: asyncState(),
     participant: {
       id: -1,
       expo: {},
@@ -23,7 +30,7 @@ export default new Vuex.Store({
     },
     keywords: [],
     // Programs and sub-programs
-    programs: [],
+    main_programs: asyncState(),
     program: {
       id: -1,
       events: [],
@@ -37,24 +44,18 @@ export default new Vuex.Store({
     markersData: []
   },
   mutations: {
+    ...asyncDataMutations(mutationTypes.expositions),
+    ...asyncDataMutations(mutationTypes.participants),
+    ...asyncDataMutations(mutationTypes.mainPrograms),
     loadSponsors (state, data) {
       // mutate state
       state.sponsors = data
     },
-    loadExpositions (state, data) {
-      state.expositions = data
-    },
     loadExposition (state, data) {
       state.exposition = data
     },
-    loadParticipants (state, data) {
-      state.participants = data
-    },
     loadParticipant (state, data) {
       state.participant = data
-    },
-    loadMainPrograms (state, data) {
-      state.programs = data
     },
     loadProgram (state, data) {
       state.program = data
@@ -71,5 +72,7 @@ export default new Vuex.Store({
     loadMarkersData (state, data) {
       state.markersData = data
     }
-  }
+  },
+  actions: { ...actions },
+  getters: { ...getters }
 })

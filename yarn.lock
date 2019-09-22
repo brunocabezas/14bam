@@ -4003,6 +4003,11 @@ get-caller-file@^2.0.1:
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
   integrity sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
 
+get-nested-value@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/get-nested-value/-/get-nested-value-1.0.3.tgz#1740218c78a8f3e268f9c0ceab2d7bc06792ac51"
+  integrity sha512-qubbc5z39NyiZVif/TYS1l7PnGpAfEn/wYX5CzPXx6bpXHI9reMonIVXOgI7lZUjz/frNfRTbjZnNsnpRfIwpQ==
+
 get-own-enumerable-property-symbols@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-3.0.0.tgz#b877b49a5c16aefac3655f2ed2ea5b684df8d203"

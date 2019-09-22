@@ -19,8 +19,7 @@ const getAcfField = (results, fieldName, defaultValue = '') =>
   (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
 
 // Gets wordpress post title
-const getWPTitle = object =>
-  (object.title && object.title.rendered) || ''
+const getWPTitle = object => (object.title && object.title.rendered) || ''
 
 export const getSponsorsFromApi = sponsors =>
   sponsors.map(sponsor => ({
@@ -28,8 +27,8 @@ export const getSponsorsFromApi = sponsors =>
     name: getWPTitle(sponsor)
   }))
 
-export const getExpositionsFromApi = response =>
-  response.data.map(expo => ({
+export const getExpositionsFromApi = data =>
+  data.map(expo => ({
     id: expo.id,
     wpId: expo.id,
     slug: expo.slug,
@@ -48,23 +47,26 @@ export const getExpositionsFromApi = response =>
   }))
 
 export const getExpositionFromApi = (apiResponse = []) =>
-  Object.assign({}, {
-    id: apiResponse[0].id,
-    wpId: apiResponse[0].id,
-    slug: apiResponse[0].slug,
-    place: getAcfField(apiResponse[0], 'espacio'),
-    hour: getAcfField(apiResponse[0], 'horarios'),
-    hour2: getAcfField(apiResponse[0], 'horarios_2'),
-    web: getAcfField(apiResponse[0], 'web'),
-    webText: getAcfField(apiResponse[0], 'web_label'),
-    address: getAcfField(apiResponse[0], 'direccion'),
-    startDate: getAcfField(apiResponse[0], 'fecha_inicio'),
-    endDate: getAcfField(apiResponse[0], 'fecha_termino'),
-    description: getAcfField(apiResponse[0], 'texto_curatorial'),
-    artists: getAcfField(apiResponse[0], 'artistas', []),
-    curators: getAcfField(apiResponse[0], 'curadores', []),
-    name: getWPTitle(apiResponse[0])
-  })
+  Object.assign(
+    {},
+    {
+      id: apiResponse[0].id,
+      wpId: apiResponse[0].id,
+      slug: apiResponse[0].slug,
+      place: getAcfField(apiResponse[0], 'espacio'),
+      hour: getAcfField(apiResponse[0], 'horarios'),
+      hour2: getAcfField(apiResponse[0], 'horarios_2'),
+      web: getAcfField(apiResponse[0], 'web'),
+      webText: getAcfField(apiResponse[0], 'web_label'),
+      address: getAcfField(apiResponse[0], 'direccion'),
+      startDate: getAcfField(apiResponse[0], 'fecha_inicio'),
+      endDate: getAcfField(apiResponse[0], 'fecha_termino'),
+      description: getAcfField(apiResponse[0], 'texto_curatorial'),
+      artists: getAcfField(apiResponse[0], 'artistas', []),
+      curators: getAcfField(apiResponse[0], 'curadores', []),
+      name: getWPTitle(apiResponse[0])
+    }
+  )
 
 export const getParticipantsFromApi = participants =>
   participants.map(person => ({
@@ -74,55 +76,65 @@ export const getParticipantsFromApi = participants =>
     name: getWPTitle(person),
     img: getAcfField(person, 'fotos', [{ url: '' }])[0].url,
     images: getAcfField(person, 'fotos', [{ url: '' }]),
-    keywords: getAcfField(person, 'palabras_clave', []).map(keywords => keywords.name)
+    keywords: getAcfField(person, 'palabras_clave', []).map(
+      keywords => keywords.name
+    )
   }))
 
 // Loops trough participantes, getting a list of unique keywords
 export const getKeywordsFromParticipants = participants => {
-  const nestedKeywords = participants
-    .map(person => person.keywords.map(keyword => keyword))
+  const nestedKeywords = participants.map(person =>
+    person.keywords.map(keyword => keyword)
+  )
 
-  return flatten(nestedKeywords).filter(onlyUnique).map(key => ({
-    name: key,
-    id: key,
-    participants: participants.filter(p => p.keywords.includes(key))
-  }))
+  return flatten(nestedKeywords)
+    .filter(onlyUnique)
+    .map(key => ({
+      name: key,
+      id: key,
+      participants: participants.filter(p => p.keywords.includes(key))
+    }))
 }
 // Using first result of the respose
 // This route returns an array, the response could include more posts
 export const getParticipantFromApi = (apiResponse = []) =>
-  Object.assign({}, {
-    id: apiResponse[0].id,
-    wpId: apiResponse[0].id,
-    slug: apiResponse[0].slug,
-    name: getWPTitle(apiResponse[0]),
-    bio: getAcfField(apiResponse[0], 'bio'),
-    workTitle: getAcfField(apiResponse[0], 'work_title'),
-    workDescription: getAcfField(apiResponse[0], 'work_text'),
-    img: getAcfField(apiResponse[0], 'fotos', [{ url: '' }])[0].url,
-    // Filtering images with non valid url
-    images: getAcfField(apiResponse[0], 'fotos', [{ url: '' }])
-      .filter(img => img.url).map(img => img.url),
-    expo: getAcfField(apiResponse[0], 'exposicion', [])[0] || {},
-    // Related participants
-    related: getAcfField(apiResponse[0], 'relacionados', [])
-      .map(related => ({
+  Object.assign(
+    {},
+    {
+      id: apiResponse[0].id,
+      wpId: apiResponse[0].id,
+      slug: apiResponse[0].slug,
+      name: getWPTitle(apiResponse[0]),
+      bio: getAcfField(apiResponse[0], 'bio'),
+      workTitle: getAcfField(apiResponse[0], 'work_title'),
+      workDescription: getAcfField(apiResponse[0], 'work_text'),
+      img: getAcfField(apiResponse[0], 'fotos', [{ url: '' }])[0].url,
+      // Filtering images with non valid url
+      images: getAcfField(apiResponse[0], 'fotos', [{ url: '' }])
+        .filter(img => img.url)
+        .map(img => img.url),
+      expo: getAcfField(apiResponse[0], 'exposicion', [])[0] || {},
+      // Related participants
+      related: getAcfField(apiResponse[0], 'relacionados', []).map(related => ({
         id: related.ID,
         name: related.post_title,
         slug: related.post_name
       })),
-    // Arrays of Strings, keywords
-    keywords: getAcfField(apiResponse[0], 'palabras_clave', [])
-      .map(keyword => ({
-        id: keyword.term_id,
-        name: keyword.name,
-        slug: keyword.slug
-      }))
-  })
+      // Arrays of Strings, keywords
+      keywords: getAcfField(apiResponse[0], 'palabras_clave', []).map(
+        keyword => ({
+          id: keyword.term_id,
+          name: keyword.name,
+          slug: keyword.slug
+        })
+      )
+    }
+  )
 
 // Main program is not included
-export const getPrograms = ({ data }) => {
-  return data.filter(program => true)
+export const getMainPrograms = data => {
+  return data
+    .filter(program => true)
     .map(({ id, slug, ...others }) => ({
       id,
       slug,
@@ -135,14 +147,17 @@ export const getPrograms = ({ data }) => {
 export const getProgramFromApi = (apiResponse = []) => {
   // Getting the first program
   const firstProgram = apiResponse.data[0]
-  return Object.assign({}, {
-    id: firstProgram.id,
-    slug: firstProgram.slug,
-    name: getWPTitle(firstProgram),
-    text: getAcfField(firstProgram, 'texto'),
-    images: getAcfField(firstProgram, 'galeria', []),
-    events: getAcfField(firstProgram, 'programas', [])
-  })
+  return Object.assign(
+    {},
+    {
+      id: firstProgram.id,
+      slug: firstProgram.slug,
+      name: getWPTitle(firstProgram),
+      text: getAcfField(firstProgram, 'texto'),
+      images: getAcfField(firstProgram, 'galeria', []),
+      events: getAcfField(firstProgram, 'programas', [])
+    }
+  )
 }
 
 export const getCalendarFromApi = (apiResponse = []) => {
@@ -153,25 +168,25 @@ export const getCalendarFromApi = (apiResponse = []) => {
     .map(event => new Date(event.start.dateTime))
     .reduce(findCloseToToday)
 
-  const sortedEvents = events
-    .sort(sortByDate)
-    .map(event => ({
-      id: event.id,
-      name: event.summary,
-      dateTime: new Date(event.start.dateTime),
-      date: getDayOfDateTimeString(event.start.dateTime),
-      month: getMonthOfDateTimeString(event.start.dateTime),
-      time: getTimeOfDateTimeString(event.start.dateTime)
-    }))
+  const sortedEvents = events.sort(sortByDate).map(event => ({
+    id: event.id,
+    name: event.summary,
+    dateTime: new Date(event.start.dateTime),
+    date: getDayOfDateTimeString(event.start.dateTime),
+    month: getMonthOfDateTimeString(event.start.dateTime),
+    time: getTimeOfDateTimeString(event.start.dateTime)
+  }))
 
   // Find event with closest to today's date
-  const closestOnSortedEvents = sortedEvents
-    .find(event => event.dateTime &&
-      event.dateTime.getTime() === closestToToday.getTime())
+  const closestOnSortedEvents = sortedEvents.find(
+    event =>
+      event.dateTime && event.dateTime.getTime() === closestToToday.getTime()
+  )
 
   // Based on the found item index, ten events are displayed on the calendar
   const spliceIndex = closestOnSortedEvents
-    ? sortedEvents.indexOf(closestOnSortedEvents) : 0
+    ? sortedEvents.indexOf(closestOnSortedEvents)
+    : 0
 
   return sortedEvents.splice(spliceIndex, 10)
 }

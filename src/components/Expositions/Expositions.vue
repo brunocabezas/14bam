@@ -7,7 +7,7 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-import ExpositionsGrid from './ExpositionsGrid.vue'
+import ExpositionsGrid from './ExpositionsGrid/ExpositionsGrid.vue'
 
 @Component({
   components: {

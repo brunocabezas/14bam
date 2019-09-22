@@ -61,7 +61,6 @@ class Program extends Vue {
   }
 
   mounted () {
-    // console.log(this, this.type, this.$props.programType)
     if (this.$route.params.slug) {
       const doRequest = this.$route.params.slug !== this.program.slug
       if (doRequest) {

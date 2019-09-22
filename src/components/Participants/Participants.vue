@@ -7,7 +7,7 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-import ParticipantsGrid from '@/components/Participants/ParticipantsGrid'
+import ParticipantsGrid from '@/components/Participants/ParticipantsGrid/ParticipantsGrid.vue'
 
 @Component({
   components: {

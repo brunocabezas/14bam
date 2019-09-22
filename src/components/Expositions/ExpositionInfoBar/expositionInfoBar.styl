@@ -2,11 +2,13 @@
 @import "../../../styles/colors";
 
 .expositionInfoBar
+  position relative
   display flex
   padding 0
   border-top 3px solid $black
   border-bottom 3px solid $black
   vertical-align center
+  min-height 120px
 
   .expositionInfoBarItem
     flex 1
@@ -33,3 +35,5 @@
 
   .expositionInfoBarItem__link
     color $black
+  .loaderContainer--loading
+    top 40%

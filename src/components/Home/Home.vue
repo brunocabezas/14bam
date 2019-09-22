@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <div class="homeTop">
-      <img src="./home.gif" alt />
-    </div>
     <div class="sections">
+      <section class="homeTop">
+        <img src="./home.gif" alt />
+      </section>
       <section class="sponsors">
         <div
           class="sponsor"
