@@ -38,7 +38,6 @@ class ExpositionInfoBar extends Vue {
   }
 
   mounted () {
-    console.log(this.expositionsNotFetched)
     if (this.expositionsNotFetched) {
       this.loadExpositions()
     }

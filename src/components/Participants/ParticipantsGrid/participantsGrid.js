@@ -29,7 +29,6 @@ class ParticipantsGrid extends Vue {
   urls = this.$root.urls
 
   get participants () {
-    console.log(this.participantsProps, this.participantsFromState)
     return this.participantsProps || this.participantsFromState
   }
 
