@@ -22,6 +22,8 @@ const getMsgs = slug => ({
 
 // state
 // initializes the corersponseding state node with information regarding asynchronous data
+// the state node must be the same as the slug, but lowercased; using low dashes is recommended
+// for exampe, if the using the slug DATA_TYPE, the state param should be data_type
 export const state = (data = []) => ({
   responseData: data, // data from the API response
   status: undefined, // status code
@@ -49,6 +51,8 @@ export const isNotFetchedHelper = stateNode => state => {
 // mutations
 export const asyncDataMutations = slug => {
   const types = getMsgs(slug)
+  // State parameter must be the same as the slug, but lowercase
+  // using low dashes is recommended
   const getState = state => state[slug.toLowerCase()]
   return {
     [types.BASE]: (state, payload) => {

@@ -30,7 +30,7 @@ export default new Vuex.Store({
     },
     keywords: [],
     // Programs and sub-programs
-    programs: asyncState(),
+    main_programs: asyncState(),
     program: {
       id: -1,
       events: [],
@@ -46,7 +46,7 @@ export default new Vuex.Store({
   mutations: {
     ...asyncDataMutations(mutationTypes.expositions),
     ...asyncDataMutations(mutationTypes.participants),
-    ...asyncDataMutations(mutationTypes.programs),
+    ...asyncDataMutations(mutationTypes.mainPrograms),
     loadSponsors (state, data) {
       // mutate state
       state.sponsors = data
@@ -54,14 +54,8 @@ export default new Vuex.Store({
     loadExposition (state, data) {
       state.exposition = data
     },
-    loadParticipants (state, data) {
-      state.participants = data
-    },
     loadParticipant (state, data) {
       state.participant = data
-    },
-    loadMainPrograms (state, data) {
-      state.programs = data
     },
     loadProgram (state, data) {
       state.program = data

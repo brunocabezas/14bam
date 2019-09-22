@@ -1,5 +1,5 @@
 <template>
-  <Loader :loading="loadingData">
+  <Loader :loading="isLoading">
     <div class="mainPrograms">
       <div>
         <h2 class="programTitle">
@@ -29,47 +29,9 @@
   </Loader>
 </template>
 
-<script>
-import { Component, Vue } from 'vue-property-decorator'
-import { loadMainPrograms } from '../../../api/client'
-import Loader from '@/components/common/Loader.vue'
-import store from '@/config/store'
-
-@Component({
-  store,
-  components: {
-    Loader
-  },
-  data () {
-    return { loading: false }
-  }
-})
-class MainPrograms extends Vue {
-  // programs : Array =  '[]'
-  loadingData = false
-
-  get firstProgram () {
-    return this.$store.state.programs[0] || {}
-  }
-
-  get secondProgram () {
-    return this.$store.state.programs[1] || {}
-  }
-
-  urls = this.$root.urls
-
-  mounted () {
-    this.loadingData = true
-    loadMainPrograms().then(res => {
-      this.$store.commit('loadMainPrograms', res)
-      this.loadingData = false
-    })
-  }
-}
-export default MainPrograms
-</script>
+<script src="./mainPrograms.js"></script>
 <style scoped lang="stylus">
-@import '../../styles/colors';
+@import '../../../styles/colors';
 
 .mainPrograms
   display: inline-flex;
@@ -77,9 +39,10 @@ export default MainPrograms
 
   .programTitle
     text-decoration: underline;
+
     a
-      font-size 32px
+      font-size: 32px;
 
   .programAbstract
-    text-align left
+    text-align: left;
 </style>

@@ -3,7 +3,6 @@ import axios from 'axios'
 import routes from './routes'
 import {
   getProgramFromApi,
-  getPrograms,
   getCalendarFromApi
 } from '../src/helpers/apiHelpers'
 import { resolvedPromise } from '../src/helpers/promiseHelpers'
@@ -33,11 +32,6 @@ export const loadSponsors = () => Vue.axios.get(routes.sponsors)
 export const loadExposition = name => Vue.axios.get(routes.exposition(name))
 
 export const loadParticipant = name => Vue.axios.get(routes.participant(name))
-
-export const loadMainPrograms = () =>
-  Vue.axios
-    .get(routes.generalPrograms)
-    .then(res => resolvedPromise(getPrograms(res)))
 
 export const loadProgram = slug =>
   Vue.axios

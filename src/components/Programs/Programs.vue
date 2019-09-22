@@ -7,7 +7,7 @@
 
 <script>
 import { Component, Vue } from 'vue-property-decorator'
-import MainPrograms from './MainPrograms'
+import MainPrograms from './MainPrograms/MainPrograms.vue'
 
 @Component({
   components: {

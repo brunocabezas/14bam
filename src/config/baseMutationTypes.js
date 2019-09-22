@@ -3,6 +3,6 @@
 export default {
   expositions: 'EXPOSITIONS',
   participants: 'PARTICIPANTS',
-  mainPrograms: 'MAIN_PROGRAMS',
-  programs: 'PROGRAMS'
+  mainPrograms: 'MAIN_PROGRAMS'
+  // programs: 'PROGRAMS'
 }
