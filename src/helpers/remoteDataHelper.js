@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import getNestedValue from 'get-nested-value'
 //
 // remoteDataHelper
 // provides helpers to create different aspects to store information about
@@ -26,6 +27,15 @@ export const state = (data = []) => ({
   status: undefined, // status code
   loading: false // loading indicator
 })
+
+// isLoadingHelper
+// provides a simple way to declare a getter to a loading action
+// only stateNode parameter is required, it's a dot separated string
+// used to access a specific state node; e.g. 'expositions.single.accessor'
+// this requires that the stateNode follows the remoteData helper state shapes
+export const isLoadingHelper = stateNode => state => {
+  return stateNode && !!getNestedValue(stateNode, state).loading
+}
 
 // mutations
 export const asyncDataMutations = slug => {
