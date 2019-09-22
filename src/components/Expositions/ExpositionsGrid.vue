@@ -22,8 +22,7 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-import { loadExpositions } from '../../../api/client'
-import { dateStringToDate } from '@/helpers/dateHelpers'
+import { mapActions, mapGetters } from 'vuex'
 import Loader from '@/components/common/Loader'
 import store from '@/config/store'
 
@@ -31,23 +30,23 @@ import store from '@/config/store'
   store,
   components: {
     Loader
+  },
+  methods: {
+    ...mapActions(['loadExpositions'])
+  },
+  computed: {
+    ...mapGetters({ expositions: 'expositionsByDate' })
   }
 })
 class ExpositionsGrid extends Vue {
   urls = this.$root.urls
-  loadingData = false
 
-  get expositions () {
-    return this.$store.state.expositions.sort((a, b) =>
-      dateStringToDate(a.startDate) - dateStringToDate(b.startDate))
+  get loadingData () {
+    return this.$store.state.expositions.loading
   }
 
   mounted () {
-    this.loadingData = true
-    loadExpositions().then((response) => {
-      this.$store.commit('loadExpositions', response)
-      this.loadingData = false
-    })
+    this.loadExpositions()
   }
 }
 export default ExpositionsGrid

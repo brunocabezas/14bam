@@ -28,8 +28,8 @@ export const getSponsorsFromApi = sponsors =>
     name: getWPTitle(sponsor)
   }))
 
-export const getExpositionsFromApi = response =>
-  response.data.map(expo => ({
+export const getExpositionsFromApi = data =>
+  data.map(expo => ({
     id: expo.id,
     wpId: expo.id,
     slug: expo.slug,

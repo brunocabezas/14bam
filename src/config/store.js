@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { state as asyncState, asyncDataMutations } from './remoteData'
+import actions from './actions'
+import getters from './getters'
+import mutationTypes from './mutationTypes'
 
 Vue.use(Vuex)
 
@@ -8,7 +12,7 @@ export default new Vuex.Store({
     sponsors: [],
     calendar: [],
     // Expositions
-    expositions: [],
+    expositions: asyncState(),
     exposition: {
       id: -1,
       curators: [],
@@ -37,12 +41,10 @@ export default new Vuex.Store({
     markersData: []
   },
   mutations: {
+    ...asyncDataMutations(mutationTypes.expositions),
     loadSponsors (state, data) {
       // mutate state
       state.sponsors = data
-    },
-    loadExpositions (state, data) {
-      state.expositions = data
     },
     loadExposition (state, data) {
       state.exposition = data
@@ -71,5 +73,7 @@ export default new Vuex.Store({
     loadMarkersData (state, data) {
       state.markersData = data
     }
-  }
+  },
+  actions: { ...actions },
+  getters: { ...getters }
 })
