@@ -2,6 +2,7 @@
 // mutationTypes are used by vuex mutations to modify state data
 export default {
   expositions: 'EXPOSITIONS',
-  participats: 'PARTICIPANTS',
+  participants: 'PARTICIPANTS',
+  mainPrograms: 'MAIN_PROGRAMS',
   programs: 'PROGRAMS'
 }

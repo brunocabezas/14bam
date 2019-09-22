@@ -22,7 +22,7 @@ export default new Vuex.Store({
       artists: []
     },
     // Artits and curators
-    participants: [],
+    participants: asyncState(),
     participant: {
       id: -1,
       expo: {},
@@ -30,7 +30,7 @@ export default new Vuex.Store({
     },
     keywords: [],
     // Programs and sub-programs
-    programs: [],
+    programs: asyncState(),
     program: {
       id: -1,
       events: [],
@@ -45,6 +45,8 @@ export default new Vuex.Store({
   },
   mutations: {
     ...asyncDataMutations(mutationTypes.expositions),
+    ...asyncDataMutations(mutationTypes.participants),
+    ...asyncDataMutations(mutationTypes.programs),
     loadSponsors (state, data) {
       // mutate state
       state.sponsors = data

@@ -1,0 +1,25 @@
+
+@import '../../../styles/colors'
+
+.participants
+  margin-top 10px
+  display flex
+  flex-wrap wrap
+
+  .participant
+    min-height 150px
+    padding 10px
+    display flex
+    align-items center
+    flex 1 1 20%
+    max-width 20%
+    margin-bottom 10px
+    background-size  0 0
+    background-repeat no-repeat
+    background-position center center
+    transition .2s all
+    &:hover
+      background-size cover
+      background-color darken($purple, 30%)
+    .participantName
+      opacity 1

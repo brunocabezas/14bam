@@ -5,8 +5,8 @@ import {
   getProgramFromApi,
   getPrograms,
   // getExpositionsFromApi,
-  getCalendarFromApi,
-  getParticipantsFromApi
+  getCalendarFromApi
+  // getParticipantsFromApi
 } from '../src/helpers/apiHelpers'
 import { resolvedPromise } from '../src/helpers/promiseHelpers'
 
@@ -32,19 +32,13 @@ export const loadVideos = () => Vue.axios.get(routes.videos)
 
 export const loadSponsors = () => Vue.axios.get(routes.sponsors)
 
-export const loadExpositions = () => {}
-//   Vue.axios
-//     .get(routes.expositions)
-//     // Using api helpers to select data returning a promise
-//     .then(res => resolvedPromise(getExpositionsFromApi(res)))
-
 export const loadExposition = name => Vue.axios.get(routes.exposition(name))
 
-export const loadParticipants = () =>
-  Vue.axios
-    .get(routes.participants)
-    // Using api helpers to select data returning a promise
-    .then(res => resolvedPromise(getParticipantsFromApi(res.data)))
+// export const loadParticipants = () =>
+//   Vue.axios
+//     .get(routes.participants)
+//     // Using api helpers to select data returning a promise
+//     .then(res => resolvedPromise(getParticipantsFromApi(res.data)))
 
 export const loadParticipant = name => Vue.axios.get(routes.participant(name))
 

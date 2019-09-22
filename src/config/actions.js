@@ -6,5 +6,13 @@ export default {
   loadExpositions: fetchData({
     url: routes.expositions,
     slug: mutationTypes.expositions
+  }),
+  loadParticipants: fetchData({
+    url: routes.participants,
+    slug: mutationTypes.participants
+  }),
+  loadMainPrograms: fetchData({
+    url: routes.generalPrograms,
+    slug: mutationTypes.mainPrograms
   })
 }
