@@ -14,19 +14,18 @@ import store from '@/config/store'
   computed: {
     ...mapGetters({
       expositions: 'expositionsByDate',
-      loadingData: 'isLoadingExpositions'
+      loadingData: 'isLoadingExpositions',
+      expositionsNotFetched: 'expositionsNotFetched'
     })
   }
 })
 class ExpositionsGrid extends Vue {
   urls = this.$root.urls
 
-  // get loadingData () {
-  //   return this.$store.state.expositions.loading
-  // }
-
   mounted () {
-    this.loadExpositions()
+    if (this.expositionsNotFetched) {
+      this.loadExpositions()
+    }
   }
 }
 export default ExpositionsGrid

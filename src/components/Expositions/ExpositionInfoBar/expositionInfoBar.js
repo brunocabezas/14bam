@@ -1,13 +1,13 @@
 import { Vue, Component } from 'vue-property-decorator'
-// import Loader from '@/components/common/Loader'
+import Loader from '@/components/common/Loader'
 import store from '@/config/store'
 import { mapActions, mapGetters } from 'vuex'
 
 @Component({
   store,
-  // components: {
-  //   Loader
-  // },
+  components: {
+    Loader
+  },
   props: {
     expoId: {
       default: null,
@@ -16,25 +16,30 @@ import { mapActions, mapGetters } from 'vuex'
     expo: {
       default: null,
       type: Object
-    },
-    methods: {
-      ...mapActions(['loadExpositions'])
-    },
-    computed: {
-      ...mapGetters({
-        expositions: 'expositionsByDate',
-        loadingData: 'isLoadingExpositions'
-      })
     }
+  },
+
+  methods: {
+    ...mapActions(['loadExpositions'])
+  },
+  computed: {
+    ...mapGetters({
+      expositions: 'expositionsByDate',
+      loadingData: 'isLoadingExpositions',
+      expositionsNotFetched: 'expositionsNotFetched'
+    })
   }
 })
 class ExpositionInfoBar extends Vue {
   get exposition () {
-    return this.expo || this.expositions.find(expo => expo.id === this.expoId)
+    return (
+      this.expo || this.expositions.find(expo => expo.id === this.expoId) || {}
+    )
   }
 
   mounted () {
-    if (Object.keys(this.exposition).length === 0) {
+    console.log(this.expositionsNotFetched)
+    if (this.expositionsNotFetched) {
       this.loadExpositions()
     }
   }

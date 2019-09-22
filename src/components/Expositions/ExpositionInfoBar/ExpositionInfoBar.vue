@@ -1,5 +1,8 @@
 <template>
-  <ul v-if="Object.keys(this.exposition).length > 0" class="expositionInfoBar">
+  <ul v-if="loadingData" class="expositionInfoBar">
+    <Loader size="20px" :loading="loadingData" />
+  </ul>
+  <ul v-else class="expositionInfoBar">
     <li class="expositionInfoBarItem">
       {{ exposition.place }}
     </li>
@@ -24,9 +27,12 @@
       <span>
         {{ exposition.address }}
         <br />
-        <a target="_blank" class="expositionInfoBarItem__link" :href="exposition.web">{{
-          exposition.webText || exposition.web
-        }}</a>
+        <a
+          target="_blank"
+          class="expositionInfoBarItem__link"
+          :href="exposition.web"
+          >{{ exposition.webText || exposition.web }}</a
+        >
       </span>
     </li>
   </ul>

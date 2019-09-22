@@ -37,6 +37,11 @@ export const isLoadingHelper = stateNode => state => {
   return stateNode && !!getNestedValue(stateNode, state).loading
 }
 
+// this requires that the stateNode follows the remoteData helper state shapes
+export const isNotFetchedHelper = stateNode => state => {
+  return stateNode && getNestedValue(stateNode, state).status === undefined
+}
+
 // mutations
 export const asyncDataMutations = slug => {
   const types = getMsgs(slug)
