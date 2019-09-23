@@ -6,7 +6,7 @@ import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid/Exposition
 import MainPrograms from '@/components/Programs/MainPrograms/MainPrograms.vue'
 import Agenda from '@/components/FutureHome/HomeAgenda/HomeAgenda.vue'
 import Map from '@/components/FutureHome/HomeMap/HomeMap.vue'
-import Sponsors from '@/components/FutureHome/Sponsors.vue'
+import Sponsors from '@/components/FutureHome/Sponsors/Sponsors.vue'
 import store from '@/config/store'
 
 @Component({

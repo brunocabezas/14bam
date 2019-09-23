@@ -11,6 +11,7 @@ import {
   getSponsorsFromApi,
   getCategoriesFromApi
 } from '../helpers/apiHelpers'
+import { onlyUnique } from '../helpers/arrayHelpers'
 
 export default {
   // Expositions
@@ -58,15 +59,20 @@ export default {
   isLoadingSponsors: isLoadingHelper('sponsors'),
   sponsorsNotFetched: isNotFetchedHelper('sponsors'),
   categoriesFromSponsors: state => {
-    const sponsors = getSponsorsFromApi(state.sponsors.responseData)
-    const categories = getCategoriesFromApi(state.categories.responseData)
-    return categories
-      .filter(cat => sponsors.find(s => s.categoryId === cat.id))
-      // Appending sponsors
-      .map(cat => ({
-        ...cat,
-        sponsors: sponsors.filter(s => s.categoryId === cat.id)
-      }))
+    const sponsors = getSponsorsFromApi(state.sponsors.responseData).filter(
+      sp => sp.category
+    )
+    const categories = sponsors.map(sp => sp.category)
+    const categoriesIds = sponsors.map(sp => sp.category.id).filter(onlyUnique)
+    return (
+      categoriesIds
+        .filter(catId => sponsors.find(s => s.category.id === catId))
+        // Appending sponsors
+        .map(catId => ({
+          ...categories.find(cat => cat.id === catId),
+          sponsors: sponsors.filter(s => s.category.id === catId)
+        }))
+    )
   },
   isLoadingCategories: isLoadingHelper('categories'),
   categoriesNotFetched: isNotFetchedHelper('categories')

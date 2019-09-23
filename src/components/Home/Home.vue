@@ -4,7 +4,7 @@
       <section class="homeTop">
         <img src="./home.gif" alt />
       </section>
-      <Sponsors/>
+      <Sponsors displayNewSponsors />
     </div>
   </div>
 </template>

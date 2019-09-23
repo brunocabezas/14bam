@@ -24,7 +24,7 @@ const getWPTitle = object => (object.title && object.title.rendered) || ''
 export const getSponsorsFromApi = sponsors =>
   sponsors.map(sponsor => ({
     logo: getAcfField(sponsor, 'logo'),
-    categoryId: sponsor.categories ? sponsor.categories[0] : null,
+    category: getAcfField(sponsor, 'category', null),
     name: getWPTitle(sponsor)
   }))
 

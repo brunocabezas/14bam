@@ -2,7 +2,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { loadVideos } from '../../../api/client'
 import VideoPlayer from './VideoPlayer.vue'
-import Sponsors from '@/components/FutureHome/Sponsors.vue'
+import Sponsors from '@/components/FutureHome/Sponsors/Sponsors.vue'
 import store from '@/config/store'
 
 @Component({
