@@ -1,14 +1,16 @@
 
 import { Component, Vue } from 'vue-property-decorator'
-import { loadSponsors, loadVideos } from '../../../api/client'
+import { loadVideos } from '../../../api/client'
 import VideoPlayer from '../Home/VideoPlayer.vue'
 import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid/ExpositionsGrid.vue'
 import MainPrograms from '@/components/Programs/MainPrograms/MainPrograms.vue'
 import Agenda from '@/components/FutureHome/HomeAgenda/HomeAgenda.vue'
 import Map from '@/components/FutureHome/HomeMap/HomeMap.vue'
+import Sponsors from '@/components/FutureHome/Sponsors.vue'
 import store from '@/config/store'
 // import { getExpositionsFromApi, getSponsorsFromApi } from '@/helpers/apiHelpers'
-import { getSponsorsFromApi } from '@/helpers/apiHelpers'
+// import { getSponsorsFromApi } from '@/helpers/apiHelpers'
+// import { mapActions, mapGetters } from 'vuex'
 
 @Component({
   components: {
@@ -16,6 +18,7 @@ import { getSponsorsFromApi } from '@/helpers/apiHelpers'
     Agenda,
     ExpositionsGrid,
     Map,
+    Sponsors,
     MainPrograms
   },
   store
@@ -29,14 +32,7 @@ class FutureHome extends Vue {
   };
   urls = this.$root.urls
 
-  get sponsors () {
-    return this.$store.state.sponsors
-  }
-
   mounted () {
-    loadSponsors().then((response) => {
-      this.$store.commit('loadSponsors', getSponsorsFromApi(response.data))
-    })
     loadVideos().then((response) => {
       const { data } = response
       this.videos = data

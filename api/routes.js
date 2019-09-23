@@ -17,7 +17,9 @@ if (!GOOGLE_GEO_API) {
 
 export default {
   pages: '/pages',
+  taxonomy: id => `/tags`,
   posts: '/posts',
+  categories: '/categories',
   sponsors: '/sponsors?per_page=100',
   videos: '/videos?per_page=100',
   expositions: '/expositions?per_page=100',
@@ -34,7 +36,6 @@ export default {
   calendar: `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${CALENDAR_API_KEY}`,
   // Not used
   post: postId => `/post/${postId}`,
-  markerData: address => `https://maps.googleapis.com/maps/api/geocode/json?key=${GOOGLE_GEO_API}&address=${address}`,
-  taxonomy: id => `/tags`
+  markerData: address => `https://maps.googleapis.com/maps/api/geocode/json?key=${GOOGLE_GEO_API}&address=${address}`
   // taxonomy: id => '/participants?filter[post_tag]=chano'
 }

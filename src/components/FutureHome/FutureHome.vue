@@ -25,17 +25,7 @@
         <Map />
       </div>
     </section>
-    <section class="section sponsors">
-      <div
-        class="sponsor"
-        v-for="sponsor in sponsors"
-        v-bind:style="{
-          'background-image': `url(${sponsor.logo.url})`,
-          height: `${sponsor.logo.height}px`
-        }"
-        v-bind:key="sponsor.name"
-      ></div>
-    </section>
+    <Sponsors />
   </div>
 </template>
 

@@ -6,7 +6,7 @@ import {
 } from '@/helpers/apiHelpers'
 import { isLoadingHelper } from '@/helpers/remoteDataHelper'
 import { isNotFetchedHelper } from '../helpers/remoteDataHelper'
-import { getKeywordsFromParticipants } from '../helpers/apiHelpers'
+import { getKeywordsFromParticipants, getSponsorsFromApi } from '../helpers/apiHelpers'
 
 export default {
   // Expositions
@@ -38,5 +38,11 @@ export default {
     return getMainPrograms(state.main_programs.responseData)
   },
   isLoadingMainPrograms: isLoadingHelper('main_programs'),
-  mainProgramsNotFetched: isNotFetchedHelper('main_programs')
+  mainProgramsNotFetched: isNotFetchedHelper('main_programs'),
+  // Sponsors
+  sponsors: state => {
+    return getSponsorsFromApi(state.sponsors.responseData)
+  },
+  isLoadingSponsors: isLoadingHelper('sponsors'),
+  sponsorsNotFetched: isNotFetchedHelper('sponsors')
 }
