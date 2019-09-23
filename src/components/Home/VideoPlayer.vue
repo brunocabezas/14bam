@@ -1,20 +1,22 @@
 <template>
   <div class="videoPlayer">
-
-    <vimeo-player
-      v-if="url && isVimeo"
-      ref="player"
-      :video-id="getVideoId()"
-      player-width="100%"
-      player-height="100%">
-    </vimeo-player>
-    <youtube
-      v-if="url && !isVimeo"
-      height="100%"
-      width="100%"
-      :video-id="getVideoId()"
-      ref="youtube">
-    </youtube>
+    <Loader :loading="loading"></Loader>
+      <vimeo-player
+        v-if="url && isVimeo"
+        ref="player"
+        :video-id="getVideoId()"
+        player-width="100%"
+        player-height="100%">
+      </vimeo-player>
+      <youtube
+        :player-vars="playerVars"
+        @ready="onPlayerReady"
+        v-if="url && !isVimeo"
+        height="100%"
+        width="100%"
+        :video-id="getVideoId()"
+        ref="youtube">
+      </youtube>
   </div>
 </template>
 
@@ -23,19 +25,27 @@ import Vue from 'vue'
 import { Component, Prop, Watch } from 'vue-property-decorator'
 import vueVimeoPlayer from 'vue-vimeo-player'
 import VueYoutube from 'vue-youtube'
+import Loader from '@/components/common/Loader.vue'
 import { getVimeoId, getYoutubeId } from '@/helpers/urlHelpers'
 Vue.use(VueYoutube)
 Vue.use(vueVimeoPlayer)
 
 @Component({
   components: {
-    vueVimeoPlayer
+    vueVimeoPlayer,
+    Loader
   },
   data () {
     return { isVimeo: false }
   }
 })
 class VideoPlayer extends Vue {
+  loading = false
+  playerVars = {
+    controls: 0,
+    autoplay: 1
+  }
+
   @Prop({ default: '' })
   url
 
@@ -44,8 +54,20 @@ class VideoPlayer extends Vue {
     this.isVimeo = value.includes('vimeo')
   }
 
+  get player () {
+    return this.$refs.youtube.player
+  }
+
+  onPlayerReady () {
+    this.loading = false
+  }
+
   getVideoId () {
     return this.isVimeo ? getVimeoId(this.url) : getYoutubeId(this.url)
+  }
+
+  mounted () {
+    this.loading = true
   }
 }
 export default VideoPlayer
