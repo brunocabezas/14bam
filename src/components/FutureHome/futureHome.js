@@ -8,9 +8,6 @@ import Agenda from '@/components/FutureHome/HomeAgenda/HomeAgenda.vue'
 import Map from '@/components/FutureHome/HomeMap/HomeMap.vue'
 import Sponsors from '@/components/FutureHome/Sponsors.vue'
 import store from '@/config/store'
-// import { getExpositionsFromApi, getSponsorsFromApi } from '@/helpers/apiHelpers'
-// import { getSponsorsFromApi } from '@/helpers/apiHelpers'
-// import { mapActions, mapGetters } from 'vuex'
 
 @Component({
   components: {

@@ -25,7 +25,7 @@
         <Map />
       </div>
     </section>
-    <Sponsors />
+    <Sponsors displayNewSponsors />
   </div>
 </template>
 
