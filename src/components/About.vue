@@ -1,6 +1,6 @@
 <template>
   <Loader :loading="isLoading">
-    <h1>{{page.title.rendered}}</h1>
+    <h1 class="pageTitle">{{page.title.rendered}}</h1>
     <div class="aboutText" v-html="page.content.rendered"></div>
   </Loader>
 </template>
@@ -11,12 +11,6 @@ import store from '@/config/store'
 import { mapActions, mapGetters } from 'vuex'
 
 @Component({
-  props: {
-    displayNewSponsors: {
-      type: Boolean,
-      default: false
-    }
-  },
   store,
   methods: {
     ...mapActions(['loadWpPages'])
