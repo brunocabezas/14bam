@@ -78,12 +78,8 @@
         font-size: 14px;
         color: white;
         text-decoration: none;
+        font-family "Roboto Mono", monospace
 
         &:hover
           text-decoration: underline;
-
-.participant
-  .rightSection
-    p
-      color $white
 </style>

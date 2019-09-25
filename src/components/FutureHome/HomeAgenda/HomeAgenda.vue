@@ -8,7 +8,7 @@
       <div class="agendaEventTime">{{event.time}}hrs</div>
       <div class="agendaEventTitle">{{ event.name }}</div>
     </div>
-    <div class="agendaSubscribe">
+    <div class="agendaSuscribe">
       <a
         title="Ir al calendario de google"
         target="_blank"
@@ -44,12 +44,11 @@
         font-size 18px
       .agendaEventMonth
         font-size 14px
-  .agendaSubscribe
+  .agendaSuscribe
     margin-top 10px
     padding 10px 0
     text-align right
     a
-      font-family "News Cycle"
       font-weight bold
       text-transform uppercase
       font-size 36px

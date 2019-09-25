@@ -6,7 +6,12 @@ import {
 } from '@/helpers/apiHelpers'
 import { isLoadingHelper } from '@/helpers/remoteDataHelper'
 import { isNotFetchedHelper } from '../helpers/remoteDataHelper'
-import { getKeywordsFromParticipants } from '../helpers/apiHelpers'
+import {
+  getKeywordsFromParticipants,
+  getSponsorsFromApi,
+  getCategoriesFromApi
+} from '../helpers/apiHelpers'
+import { onlyUnique } from '../helpers/arrayHelpers'
 
 export default {
   // Expositions
@@ -38,5 +43,47 @@ export default {
     return getMainPrograms(state.main_programs.responseData)
   },
   isLoadingMainPrograms: isLoadingHelper('main_programs'),
-  mainProgramsNotFetched: isNotFetchedHelper('main_programs')
+  mainProgramsNotFetched: isNotFetchedHelper('main_programs'),
+  // Sponsors
+  oldSponsors: state => {
+    // For now filtering sponsors by author
+    return getSponsorsFromApi(state.sponsors.responseData).filter(
+      sponsor => sponsor.author === 1
+    )
+  },
+  sponsors: state => {
+    const sponsors = getSponsorsFromApi(state.sponsors.responseData)
+    const categories = getCategoriesFromApi(state.categories.responseData)
+
+    return (
+      sponsors
+        // For now, filtering sponsors created by the admin wp user
+        .filter(sponsor => sponsor.author !== 1)
+        .map(sponsor => ({
+          ...sponsor,
+          category: categories.find(cat => cat.id === sponsor.category.id)
+        }))
+    )
+  },
+  isLoadingSponsors: isLoadingHelper('sponsors'),
+  sponsorsNotFetched: isNotFetchedHelper('sponsors'),
+  categoriesFromSponsors: state => {
+    const sponsors = getSponsorsFromApi(state.sponsors.responseData)
+      .filter(sp => sp.category)
+      .filter(sponsor => sponsor.author !== 1)
+    const categories = sponsors.map(sp => sp.category)
+    const categoriesIds = sponsors
+      .map(sp => sp.category.term_id)
+      .filter(onlyUnique)
+
+    // Append sponsors
+    return categoriesIds.map(catId => ({
+      ...categories.find(cat => cat.term_id === catId),
+      id: catId,
+      // For now filtering sponsors by author
+      sponsors: sponsors.filter(s => s.category.term_id === catId)
+    }))
+  },
+  isLoadingCategories: isLoadingHelper('categories'),
+  categoriesNotFetched: isNotFetchedHelper('categories')
 }

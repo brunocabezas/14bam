@@ -1,13 +1,14 @@
 
 import { Component, Vue } from 'vue-property-decorator'
-import { loadSponsors, loadVideos } from '../../../api/client'
+import { loadVideos } from '../../../api/client'
 import VideoPlayer from './VideoPlayer.vue'
+import Sponsors from '@/components/FutureHome/Sponsors/Sponsors.vue'
 import store from '@/config/store'
-import { getSponsorsFromApi } from '@/helpers/apiHelpers'
 
 @Component({
   components: {
-    VideoPlayer
+    VideoPlayer,
+    Sponsors
   },
   store
 })
@@ -18,14 +19,7 @@ class Home extends Vue {
     url: ''
   };
 
-  get sponsors () {
-    return this.$store.state.sponsors
-  }
-
   mounted () {
-    loadSponsors().then((response) => {
-      this.$store.commit('loadSponsors', getSponsorsFromApi(response.data))
-    })
     loadVideos().then((response) => {
       const { data } = response
       this.videos = data

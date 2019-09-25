@@ -12,7 +12,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    sponsors: [],
+    sponsors: asyncState(),
     calendar: [],
     // Expositions
     expositions: asyncState(),
@@ -41,16 +41,20 @@ export default new Vuex.Store({
       id: -1
     },
     // Data fetched from google api to get lat,lon coordinates from an array of addresses
-    markersData: []
+    markersData: [],
+    // Wordpress data
+    categories: asyncState()
   },
   mutations: {
     ...asyncDataMutations(mutationTypes.expositions),
     ...asyncDataMutations(mutationTypes.participants),
     ...asyncDataMutations(mutationTypes.mainPrograms),
-    loadSponsors (state, data) {
-      // mutate state
-      state.sponsors = data
-    },
+    ...asyncDataMutations(mutationTypes.sponsors),
+    ...asyncDataMutations(mutationTypes.categories),
+    // loadSponsors (state, data) {
+    //   // mutate state
+    //   state.sponsors = data
+    // },
     loadExposition (state, data) {
       state.exposition = data
     },

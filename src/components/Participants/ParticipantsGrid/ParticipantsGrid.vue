@@ -5,7 +5,7 @@
         <div
           class="participant"
           v-for="person in participants"
-          v-bind:key="person.name"
+          v-bind:key="person.id"
           v-bind:style="{
             'background-image': person.img ? `url(${person.img})` : 'none'
           }"

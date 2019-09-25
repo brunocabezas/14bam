@@ -27,7 +27,7 @@ export const loadPost = postId =>
 // Custom posts
 export const loadVideos = () => Vue.axios.get(routes.videos)
 
-export const loadSponsors = () => Vue.axios.get(routes.sponsors)
+// export const loadSponsors = () => Vue.axios.get(routes.sponsors)
 
 export const loadExposition = name => Vue.axios.get(routes.exposition(name))
 

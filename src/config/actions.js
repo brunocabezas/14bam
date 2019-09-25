@@ -14,5 +14,13 @@ export default {
   loadMainPrograms: fetchData({
     url: routes.generalPrograms,
     slug: mutationTypes.mainPrograms
+  }),
+  loadSponsors: fetchData({
+    url: routes.sponsors,
+    slug: mutationTypes.sponsors
+  }),
+  loadWpCategories: fetchData({
+    url: routes.categories,
+    slug: mutationTypes.categories
   })
 }

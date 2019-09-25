@@ -23,7 +23,11 @@ const getWPTitle = object => (object.title && object.title.rendered) || ''
 
 export const getSponsorsFromApi = sponsors =>
   sponsors.map(sponsor => ({
-    logo: sponsor.acf_fields && sponsor.acf_fields.logo,
+    date: sponsor.date,
+    author: sponsor.author,
+    logo: getAcfField(sponsor, 'logo'),
+    category: getAcfField(sponsor, 'category'),
+    url: getAcfField(sponsor, 'url', null),
     name: getWPTitle(sponsor)
   }))
 
@@ -158,6 +162,14 @@ export const getProgramFromApi = (apiResponse = []) => {
       events: getAcfField(firstProgram, 'programas', [])
     }
   )
+}
+
+export const getCategoriesFromApi = data => {
+  return data
+    .map(category => ({
+      id: category.id,
+      name: category.name.split('-')[category.name.split('-').length - 1].replace(/\s+/g, '')
+    }))
 }
 
 export const getCalendarFromApi = (apiResponse = []) => {
