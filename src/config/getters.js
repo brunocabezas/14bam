@@ -44,6 +44,7 @@ export default {
   },
   isLoadingMainPrograms: isLoadingHelper('main_programs'),
   mainProgramsNotFetched: isNotFetchedHelper('main_programs'),
+
   // Sponsors
   oldSponsors: state => {
     // For now filtering sponsors by author
@@ -85,5 +86,11 @@ export default {
     }))
   },
   isLoadingCategories: isLoadingHelper('categories'),
-  categoriesNotFetched: isNotFetchedHelper('categories')
+  categoriesNotFetched: isNotFetchedHelper('categories'),
+
+  // Wordpress Pages
+  aboutPage: state => { return state.pages.responseData.find(page => page.slug.includes('sobre')) },
+  contestPage: state => { return state.pages.responseData.find(page => page.slug.includes('concurso')) },
+  isLoadingPages: isLoadingHelper('pages'),
+  pagesNotFetched: isNotFetchedHelper('pages')
 }

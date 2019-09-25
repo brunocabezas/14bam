@@ -43,7 +43,8 @@ export default new Vuex.Store({
     // Data fetched from google api to get lat,lon coordinates from an array of addresses
     markersData: [],
     // Wordpress data
-    categories: asyncState()
+    categories: asyncState(),
+    pages: asyncState()
   },
   mutations: {
     ...asyncDataMutations(mutationTypes.expositions),
@@ -51,10 +52,7 @@ export default new Vuex.Store({
     ...asyncDataMutations(mutationTypes.mainPrograms),
     ...asyncDataMutations(mutationTypes.sponsors),
     ...asyncDataMutations(mutationTypes.categories),
-    // loadSponsors (state, data) {
-    //   // mutate state
-    //   state.sponsors = data
-    // },
+    ...asyncDataMutations(mutationTypes.pages),
     loadExposition (state, data) {
       state.exposition = data
     },

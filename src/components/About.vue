@@ -1,15 +1,46 @@
 <template>
-  <div>about</div>
+  <Loader :loading="isLoading">
+    <h1>{{page.title.rendered}}</h1>
+    <div class="aboutText" v-html="page.content.rendered"></div>
+  </Loader>
 </template>
 
 <script>
-import { Vue } from 'vue-property-decorator'
-class About extends Vue {
+import { Component, Vue } from 'vue-property-decorator'
+import store from '@/config/store'
+import { mapActions, mapGetters } from 'vuex'
 
+@Component({
+  props: {
+    displayNewSponsors: {
+      type: Boolean,
+      default: false
+    }
+  },
+  store,
+  methods: {
+    ...mapActions(['loadWpPages'])
+  },
+  computed: {
+    ...mapGetters({
+      isLoading: 'isLoadingPages',
+      pagesNotFetched: 'pagesNotFetched',
+      page: 'aboutPage'
+    })
+  }
+})
+class About extends Vue {
+  mounted () {
+    if (this.pagesNotFetched) {
+      this.loadWpPages()
+    }
+  }
 }
 export default About
+
 </script>
 
-<style>
-
+<style lang="stylus">
+.aboutText p
+  color white
 </style>
