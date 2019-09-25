@@ -28,8 +28,10 @@ class ExpositionGallery extends Vue {
       artist => artist.ID
     )
 
-    const artistsImages = this.$store.state.participants
+    // console.log(expositionArtists, this.$store.state.participants.responseData)
+    const artistsImages = this.participants
       .filter(artist => expositionArtists.includes(artist.id))
+      .filter(artist => artist.images)
       .map(artist => artist.images)
 
     // returning array of urls
