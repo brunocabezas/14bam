@@ -30,8 +30,12 @@ class Sponsors extends Vue {
   }
 
   mounted () {
-    if (this.sponsorsNotFetched) {
-      this.loadSponsors()
+    if (this.categoriesNotFetched) {
+      this.loadWpCategories().then(res => {
+        if (this.sponsorsNotFetched) {
+          this.loadSponsors()
+        }
+      })
     }
   }
 }

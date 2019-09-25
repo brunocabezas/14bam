@@ -4,10 +4,10 @@
       <section class="homeTop">
         <img src="./home.gif" alt />
       </section>
-      <Sponsors displayNewSponsors />
+      <Sponsors />
     </div>
   </div>
 </template>
 
 <script src="./home.js" ></script>
-<style src="./home.styl" scoped lang="styl"></style>
+<style src="./home.styl" lang="styl"></style>
