@@ -25,17 +25,14 @@ class Participant extends Vue {
 
   @Watch('$route')
   onRouteChanged (route) {
-    // const { params } = route
     console.log(route)
     this.loadParticipant({ slug: route.params.slug })
-    // this.isVimeo = value.includes('vimeo')
   }
 
   mounted () {
     if (this.$route.params.slug) {
       const doRequest = this.$route.params.slug !== this.participant.slug
       if (doRequest) {
-        // this.loadingData = true
         this.loadParticipant({ slug: this.$route.params.slug })
       }
     }

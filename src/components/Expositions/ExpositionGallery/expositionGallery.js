@@ -13,6 +13,7 @@ import { mapActions, mapGetters } from 'vuex'
     ...mapGetters({
       loading: 'isLoadingParticipants',
       participants: 'participants',
+      exposition: 'exposition',
       participantsNotFetched: 'participantsNotFetched'
     })
   },
@@ -24,11 +25,10 @@ class ExpositionGallery extends Vue {
   // TODO add to getters
   get images () {
     // Array of ids
-    const expositionArtists = this.$store.state.exposition.artists.map(
+    const expositionArtists = this.exposition.artists.map(
       artist => artist.ID
     )
 
-    // console.log(expositionArtists, this.$store.state.participants.responseData)
     const artistsImages = this.participants
       .filter(artist => expositionArtists.includes(artist.id))
       .filter(artist => artist.images)

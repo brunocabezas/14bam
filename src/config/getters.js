@@ -1,6 +1,7 @@
 import { dateStringToDate } from '@/helpers/dateHelpers'
 import {
   getExpositionsFromApi,
+  getExpositionFromApi,
   getParticipantsFromApi,
   getParticipantFromApi,
   getMainPrograms
@@ -24,11 +25,15 @@ export default {
       (a, b) => dateStringToDate(a.startDate) - dateStringToDate(b.startDate)
     )
   },
-  exposition: state => expoId => {
-    return state.expositions.find(expo => expo.id === expoId) || {}
-  },
   isLoadingExpositions: isLoadingHelper('expositions'),
   expositionsNotFetched: isNotFetchedHelper('expositions'),
+
+  // Exposition
+  exposition: state => {
+    return getExpositionFromApi(state.exposition.responseData)
+  },
+  isLoadingExposition: isLoadingHelper('exposition'),
+  expositionNotFetched: isNotFetchedHelper('exposition'),
 
   // Participants
   participants: state => {

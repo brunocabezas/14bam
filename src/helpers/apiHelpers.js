@@ -50,27 +50,28 @@ export const getExpositionsFromApi = data =>
     name: getWPTitle(expo)
   }))
 
-export const getExpositionFromApi = (apiResponse = []) =>
-  Object.assign(
+export const getExpositionFromApi = (data = []) => {
+  return Object.assign(
     {},
     {
-      id: apiResponse[0].id,
-      wpId: apiResponse[0].id,
-      slug: apiResponse[0].slug,
-      place: getAcfField(apiResponse[0], 'espacio'),
-      hour: getAcfField(apiResponse[0], 'horarios'),
-      hour2: getAcfField(apiResponse[0], 'horarios_2'),
-      web: getAcfField(apiResponse[0], 'web'),
-      webText: getAcfField(apiResponse[0], 'web_label'),
-      address: getAcfField(apiResponse[0], 'direccion'),
-      startDate: getAcfField(apiResponse[0], 'fecha_inicio'),
-      endDate: getAcfField(apiResponse[0], 'fecha_termino'),
-      description: getAcfField(apiResponse[0], 'texto_curatorial'),
-      artists: getAcfField(apiResponse[0], 'artistas', []),
-      curators: getAcfField(apiResponse[0], 'curadores', []),
-      name: getWPTitle(apiResponse[0])
+      id: data[0].id,
+      wpId: data[0].id,
+      slug: data[0].slug,
+      place: getAcfField(data[0], 'espacio'),
+      hour: getAcfField(data[0], 'horarios'),
+      hour2: getAcfField(data[0], 'horarios_2'),
+      web: getAcfField(data[0], 'web'),
+      webText: getAcfField(data[0], 'web_label'),
+      address: getAcfField(data[0], 'direccion'),
+      startDate: getAcfField(data[0], 'fecha_inicio'),
+      endDate: getAcfField(data[0], 'fecha_termino'),
+      description: getAcfField(data[0], 'texto_curatorial'),
+      artists: getAcfField(data[0], 'artistas', []),
+      curators: getAcfField(data[0], 'curadores', []),
+      name: getWPTitle(data[0])
     }
   )
+}
 
 export const getParticipantsFromApi = participants =>
   participants.map(person => ({

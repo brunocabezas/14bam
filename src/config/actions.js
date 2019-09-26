@@ -7,6 +7,11 @@ export default {
     url: routes.expositions,
     slug: mutationTypes.expositions
   }),
+  loadExposition: (store, { slug }) =>
+    fetchData({
+      url: routes.exposition(slug),
+      slug: mutationTypes.exposition
+    })(store),
   loadParticipants: fetchData({
     url: routes.participants,
     slug: mutationTypes.participants

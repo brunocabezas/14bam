@@ -6,11 +6,12 @@
 // with the same name is defined
 export default {
   expositions: 'EXPOSITIONS',
+  exposition: 'EXPOSITION',
   participants: 'PARTICIPANTS',
+  participant: 'PARTICIPANT',
   mainPrograms: 'MAIN_PROGRAMS',
   sponsors: 'SPONSORS',
   pages: 'PAGES',
-  categories: 'CATEGORIES',
-  participant: 'PARTICIPANT'
+  categories: 'CATEGORIES'
   // programs: 'PROGRAMS'
 }

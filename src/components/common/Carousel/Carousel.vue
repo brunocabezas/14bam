@@ -10,34 +10,34 @@
           <div
             v-bind:class="{
               'imageLoaderContainer--loading': visible,
-              'imageLoaderContainer': true
+              imageLoaderContainer: true
             }"
             slot="content"
             slot-scope="{ visible }"
           >
             <Loader :loading="visible" />
+            <button
+              v-if="!visible && images.length > 1"
+              title="Imagen anterior"
+              class="carouselButton carouselButton--prev"
+              type="button"
+              @click="goToPrevItem"
+            >
+              <v-icon color="white" name="chevron-left" scale="1.5"> </v-icon>
+            </button>
+            <button
+              v-if="!visible && images.length > 1"
+              title="Imagen siguiente"
+              class="carouselButton carouselButton--next"
+              type="button"
+              @click="goToNextItem"
+            >
+              <v-icon color="white" name="chevron-right" scale="1.5"> </v-icon>
+            </button>
           </div>
         </progressive-background>
       </slide>
     </vue-carousel>
-    <button
-      v-if="images.length > 1"
-      title="Imagen anterior"
-      class="carouselButton carouselButton--prev"
-      type="button"
-      @click="goToPrevItem"
-    >
-      <v-icon color="white" name="chevron-left" scale="1.5"> </v-icon>
-    </button>
-    <button
-      v-if="images.length > 1"
-      title="Imagen siguiente"
-      class="carouselButton carouselButton--next"
-      type="button"
-      @click="goToNextItem"
-    >
-      <v-icon color="white" name="chevron-right" scale="1.5"> </v-icon>
-    </button>
   </div>
 </template>
 
@@ -85,10 +85,11 @@ $height = 300px;
   background-color: $purple;
 
   hr
-    display none
+    display: none;
 
-  .loaderContainer
-    top: calc((300px / 2));
+  .loaderContainer,
+  .carouselButton
+    top: calc((300px / 2) - 13px)
 
   .VueCarousel-wrapper, .carouselImage, .VueCarousel-inner
     height: $height !important;
