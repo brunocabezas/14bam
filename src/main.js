@@ -2,6 +2,7 @@
 // import './config/class-component-hooks'
 import Vue from 'vue'
 import Icon from '../node_modules/vue-awesome/components/Icon.vue'
+import VueProgressiveImage from 'vue-progressive-image'
 import axiosClient from '../api/client'
 import VueAxios from 'vue-axios'
 import router from '@/config/router'
@@ -20,6 +21,7 @@ import 'vue-awesome/icons/chevron-left'
 import 'vue-awesome/icons/chevron-right'
 
 Vue.use(vClickOutside)
+Vue.use(VueProgressiveImage)
 // globally (in your main .js file)
 Vue.component('v-icon', Icon)
 

@@ -16,18 +16,10 @@ export default new Vuex.Store({
     calendar: [],
     // Expositions
     expositions: asyncState(),
-    exposition: {
-      id: -1,
-      curators: [],
-      artists: []
-    },
+    exposition: asyncState([{ artists: [] }]),
     // Artits and curators
     participants: asyncState(),
-    participant: {
-      id: -1,
-      expo: {},
-      images: []
-    },
+    participant: asyncState([{}]),
     keywords: [],
     // Programs and sub-programs
     main_programs: asyncState(),
@@ -48,14 +40,13 @@ export default new Vuex.Store({
   },
   mutations: {
     ...asyncDataMutations(mutationTypes.expositions),
+    ...asyncDataMutations(mutationTypes.exposition),
     ...asyncDataMutations(mutationTypes.participants),
+    ...asyncDataMutations(mutationTypes.participant),
     ...asyncDataMutations(mutationTypes.mainPrograms),
     ...asyncDataMutations(mutationTypes.sponsors),
     ...asyncDataMutations(mutationTypes.categories),
     ...asyncDataMutations(mutationTypes.pages),
-    loadExposition (state, data) {
-      state.exposition = data
-    },
     loadParticipant (state, data) {
       state.participant = data
     },

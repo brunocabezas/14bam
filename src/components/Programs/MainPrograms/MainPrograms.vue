@@ -1,41 +1,66 @@
 <template>
   <Loader :loading="isLoading">
     <div class="mainPrograms">
-      <div>
-        <h2 class="programTitle">
-          <router-link :to="urls.program(firstProgram.slug)">{{
-            firstProgram.name
-          }}</router-link>
-        </h2>
-        <p class="programAbstract" v-html="firstProgram.shortDescription"></p>
+      <div class="firstProgram mainProgramContainer">
+        <div class="mainProgramContainerWrapper">
+          <h2 class="programTitle">
+            <router-link :to="urls.program(firstProgram.slug)">{{
+              firstProgram.name
+            }}</router-link>
+          </h2>
+          <p class="programAbstract" v-html="firstProgram.shortDescription"></p>
+        </div>
       </div>
-      <div style="width:300px">
-        <!-- <video
-          width="300"
-          height="600"
-          name="Video Name"
-          src="@/assets/programsGif.mov">
-        </video> -->
+      <div class="mainProgramsAnimation">
+        <img src="@/assets/mainPrograms.gif" alt="Animacion de logo" />
       </div>
-      <div>
-        <h2 class="programTitle">
-          <router-link :to="urls.program(secondProgram.slug)">{{
-            secondProgram.name
-          }}</router-link>
-        </h2>
-        <p class="programAbstract" v-html="secondProgram.shortDescription"></p>
+      <div class="mainProgramContainer">
+        <div class="mainProgramContainerWrapper">
+          <h2 class="programTitle">
+            <router-link :to="urls.program(secondProgram.slug)">{{
+              secondProgram.name
+            }}</router-link>
+          </h2>
+          <p class="programAbstract" v-html="secondProgram.shortDescription"></p>
+        </div>
       </div>
     </div>
   </Loader>
 </template>
 
 <script src="./mainPrograms.js"></script>
-<style scoped lang="stylus">
+<style lang="stylus">
 @import '../../../styles/colors';
 
 .mainPrograms
   display: inline-flex;
   padding: 15px;
+  height: 80%;
+
+  > div
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    &.mainProgramsAnimation
+      max-width: 360px;
+
+      img
+        width: 100%;
+
+    &.mainProgramContainer
+      min-width: 375px;
+      padding: 3em;
+      text-align: left;
+      display flex
+      align-items center
+
+      &.firstProgram
+        .programTitle
+          text-align: right;
+
+        .programAbstract
+          padding-left: 45px;
 
   .programTitle
     text-decoration: underline;
@@ -45,4 +70,7 @@
 
   .programAbstract
     text-align: left;
+
+    p
+      color: $white;
 </style>

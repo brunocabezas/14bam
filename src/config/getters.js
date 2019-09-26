@@ -1,7 +1,9 @@
 import { dateStringToDate } from '@/helpers/dateHelpers'
 import {
   getExpositionsFromApi,
+  getExpositionFromApi,
   getParticipantsFromApi,
+  getParticipantFromApi,
   getMainPrograms
 } from '@/helpers/apiHelpers'
 import { isLoadingHelper } from '@/helpers/remoteDataHelper'
@@ -23,11 +25,16 @@ export default {
       (a, b) => dateStringToDate(a.startDate) - dateStringToDate(b.startDate)
     )
   },
-  exposition: state => expoId => {
-    return state.expositions.find(expo => expo.id === expoId) || {}
-  },
   isLoadingExpositions: isLoadingHelper('expositions'),
   expositionsNotFetched: isNotFetchedHelper('expositions'),
+
+  // Exposition
+  exposition: state => {
+    return getExpositionFromApi(state.exposition.responseData)
+  },
+  isLoadingExposition: isLoadingHelper('exposition'),
+  expositionNotFetched: isNotFetchedHelper('exposition'),
+
   // Participants
   participants: state => {
     return getParticipantsFromApi(state.participants.responseData)
@@ -38,6 +45,14 @@ export default {
     getKeywordsFromParticipants(
       getParticipantsFromApi(state.participants.responseData)
     ),
+
+  // Participant
+  participant: state => {
+    return getParticipantFromApi(state.participant.responseData)
+  },
+  isLoadingParticipant: isLoadingHelper('participant'),
+  participantNotFetched: isNotFetchedHelper('participant'),
+
   // Main programs
   mainPrograms: state => {
     return getMainPrograms(state.main_programs.responseData)
@@ -89,8 +104,12 @@ export default {
   categoriesNotFetched: isNotFetchedHelper('categories'),
 
   // Wordpress Pages
-  aboutPage: state => { return state.pages.responseData.find(page => page.slug.includes('sobre')) },
-  contestPage: state => { return state.pages.responseData.find(page => page.slug.includes('concurso')) },
+  aboutPage: state => {
+    return state.pages.responseData.find(page => page.slug.includes('sobre'))
+  },
+  contestPage: state => {
+    return state.pages.responseData.find(page => page.slug.includes('concurso'))
+  },
   isLoadingPages: isLoadingHelper('pages'),
   pagesNotFetched: isNotFetchedHelper('pages')
 }

@@ -50,27 +50,28 @@ export const getExpositionsFromApi = data =>
     name: getWPTitle(expo)
   }))
 
-export const getExpositionFromApi = (apiResponse = []) =>
-  Object.assign(
+export const getExpositionFromApi = (data = []) => {
+  return Object.assign(
     {},
     {
-      id: apiResponse[0].id,
-      wpId: apiResponse[0].id,
-      slug: apiResponse[0].slug,
-      place: getAcfField(apiResponse[0], 'espacio'),
-      hour: getAcfField(apiResponse[0], 'horarios'),
-      hour2: getAcfField(apiResponse[0], 'horarios_2'),
-      web: getAcfField(apiResponse[0], 'web'),
-      webText: getAcfField(apiResponse[0], 'web_label'),
-      address: getAcfField(apiResponse[0], 'direccion'),
-      startDate: getAcfField(apiResponse[0], 'fecha_inicio'),
-      endDate: getAcfField(apiResponse[0], 'fecha_termino'),
-      description: getAcfField(apiResponse[0], 'texto_curatorial'),
-      artists: getAcfField(apiResponse[0], 'artistas', []),
-      curators: getAcfField(apiResponse[0], 'curadores', []),
-      name: getWPTitle(apiResponse[0])
+      id: data[0].id,
+      wpId: data[0].id,
+      slug: data[0].slug,
+      place: getAcfField(data[0], 'espacio'),
+      hour: getAcfField(data[0], 'horarios'),
+      hour2: getAcfField(data[0], 'horarios_2'),
+      web: getAcfField(data[0], 'web'),
+      webText: getAcfField(data[0], 'web_label'),
+      address: getAcfField(data[0], 'direccion'),
+      startDate: getAcfField(data[0], 'fecha_inicio'),
+      endDate: getAcfField(data[0], 'fecha_termino'),
+      description: getAcfField(data[0], 'texto_curatorial'),
+      artists: getAcfField(data[0], 'artistas', []),
+      curators: getAcfField(data[0], 'curadores', []),
+      name: getWPTitle(data[0])
     }
   )
+}
 
 export const getParticipantsFromApi = participants =>
   participants.map(person => ({
@@ -101,39 +102,38 @@ export const getKeywordsFromParticipants = participants => {
 }
 // Using first result of the respose
 // This route returns an array, the response could include more posts
-export const getParticipantFromApi = (apiResponse = []) =>
-  Object.assign(
+export const getParticipantFromApi = data => {
+  return Object.assign(
     {},
     {
-      id: apiResponse[0].id,
-      wpId: apiResponse[0].id,
-      slug: apiResponse[0].slug,
-      name: getWPTitle(apiResponse[0]),
-      bio: getAcfField(apiResponse[0], 'bio'),
-      workTitle: getAcfField(apiResponse[0], 'work_title'),
-      workDescription: getAcfField(apiResponse[0], 'work_text'),
-      img: getAcfField(apiResponse[0], 'fotos', [{ url: '' }])[0].url,
+      id: data[0].id,
+      wpId: data[0].id,
+      slug: data[0].slug,
+      name: getWPTitle(data[0]),
+      bio: getAcfField(data[0], 'bio'),
+      workTitle: getAcfField(data[0], 'work_title'),
+      workDescription: getAcfField(data[0], 'work_text'),
+      img: getAcfField(data[0], 'fotos', [{ url: '' }])[0].url,
       // Filtering images with non valid url
-      images: getAcfField(apiResponse[0], 'fotos', [{ url: '' }])
+      images: getAcfField(data[0], 'fotos', [{ url: '' }])
         .filter(img => img.url)
         .map(img => img.url),
-      expo: getAcfField(apiResponse[0], 'exposicion', [])[0] || {},
+      expo: getAcfField(data[0], 'exposicion', [])[0] || {},
       // Related participants
-      related: getAcfField(apiResponse[0], 'relacionados', []).map(related => ({
+      related: getAcfField(data[0], 'relacionados', []).map(related => ({
         id: related.ID,
         name: related.post_title,
         slug: related.post_name
       })),
       // Arrays of Strings, keywords
-      keywords: getAcfField(apiResponse[0], 'palabras_clave', []).map(
-        keyword => ({
-          id: keyword.term_id,
-          name: keyword.name,
-          slug: keyword.slug
-        })
-      )
+      keywords: getAcfField(data[0], 'palabras_clave', []).map(keyword => ({
+        id: keyword.term_id,
+        name: keyword.name,
+        slug: keyword.slug
+      }))
     }
   )
+}
 
 // Main program is not included
 export const getMainPrograms = data => {
@@ -165,11 +165,11 @@ export const getProgramFromApi = (apiResponse = []) => {
 }
 
 export const getCategoriesFromApi = data => {
-  return data
-    .map(category => ({
-      id: category.id,
-      name: category.name.split('-')[category.name.split('-').length - 1].replace(/\s+/g, '')
-    }))
+  return data.map(category => ({
+    id: category.id,
+    name: category.name
+      .split('-')[category.name.split('-').length - 1].replace(/\s+/g, '')
+  }))
 }
 
 export const getCalendarFromApi = (apiResponse = []) => {

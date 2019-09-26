@@ -1,38 +1,42 @@
-
-import { Component, Vue } from 'vue-property-decorator'
-import { loadExposition } from '../../../../api/client'
-import { getExpositionFromApi } from '../../../helpers/apiHelpers'
-import Loader from '@/components/common/Loader'
+import { Component, Vue, Watch } from 'vue-property-decorator'
+import Carousel from '@/components/common/Carousel/Carousel.vue'
+import Loader from '@/components/common/Loader.vue'
 import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/ExpositionInfoBar.vue'
 import ExpositionGallery from '@/components/Expositions/ExpositionGallery/ExpositionGallery.vue'
 import store from '@/config/store'
+import { mapActions, mapGetters } from 'vuex'
 
 @Component({
   store,
   components: {
-    Loader,
+    Carousel,
+    ExpositionGallery,
     ExpositionInfoBar,
-    ExpositionGallery
+    Loader
+  },
+  methods: {
+    ...mapActions(['loadExposition'])
+  },
+  computed: {
+    ...mapGetters({
+      exposition: 'exposition',
+      loadingData: 'isLoadingExposition'
+    })
   }
 })
 class Exposition extends Vue {
   urls = this.$root.urls
 
-  loadingData = false
-
-  get exposition () {
-    return this.$store.state.exposition
+  @Watch('$route')
+  onRouteChanged (route) {
+    this.loadExposition({ slug: route.params.slug })
   }
 
   mounted () {
     if (this.$route.params.slug) {
       const doRequest = this.$route.params.slug !== this.exposition.slug
       if (doRequest) {
-        this.loadingData = true
-        loadExposition(this.$route.params.slug).then(res => {
-          this.$store.commit('loadExposition', getExpositionFromApi(res.data))
-          this.loadingData = false
-        })
+        this.loadExposition({ slug: this.$route.params.slug })
       }
     }
   }

@@ -31,7 +31,7 @@ export const loadVideos = () => Vue.axios.get(routes.videos)
 
 export const loadExposition = name => Vue.axios.get(routes.exposition(name))
 
-export const loadParticipant = name => Vue.axios.get(routes.participant(name))
+// export const loadParticipant = name => Vue.axios.get(routes.participant(name))
 
 export const loadProgram = slug =>
   Vue.axios

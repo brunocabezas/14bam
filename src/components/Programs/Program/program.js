@@ -5,8 +5,8 @@ import {
   loadProgramCalendar
 } from '../../../../api/client'
 import store from '@/config/store'
-import Loader from '@/components/common/Loader'
-import Carousel from '@/components/common/Carousel'
+import Loader from '@/components/common/Loader.vue'
+import Carousel from '@/components/common/Carousel/Carousel.vue'
 
 @Component({
   store,
