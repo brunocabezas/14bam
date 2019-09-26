@@ -11,6 +11,11 @@ export default {
     url: routes.participants,
     slug: mutationTypes.participants
   }),
+  loadParticipant: (store, { slug }) =>
+    fetchData({
+      url: routes.participant(slug),
+      slug: mutationTypes.participant
+    })(store),
   loadMainPrograms: fetchData({
     url: routes.generalPrograms,
     slug: mutationTypes.mainPrograms
