@@ -32,7 +32,7 @@
     align-items center
     .agendaEventTitle
     .agendaEventTime
-      font-family "Roboto Mono"
+      font-family 'Roboto Mono', monospace
     .agendaEventTitle
     .agendaEventTime
     .agendaEventDate

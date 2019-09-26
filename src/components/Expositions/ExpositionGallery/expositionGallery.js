@@ -1,5 +1,5 @@
 import { Vue, Component } from 'vue-property-decorator'
-import Carousel from '@/components/common/Carousel.vue'
+import Carousel from '@/components/common/Carousel/Carousel.vue'
 import store from '@/config/store'
 import { flatten } from '../../../helpers/arrayHelpers'
 import { mapActions, mapGetters } from 'vuex'

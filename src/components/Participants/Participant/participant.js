@@ -1,5 +1,5 @@
 import { Component, Vue, Watch } from 'vue-property-decorator'
-import Carousel from '@/components/common/Carousel.vue'
+import Carousel from '@/components/common/Carousel/Carousel.vue'
 import Loader from '@/components/common/Loader.vue'
 import store from '@/config/store'
 import { mapActions, mapGetters } from 'vuex'

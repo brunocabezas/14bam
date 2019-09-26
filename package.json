@@ -23,6 +23,7 @@
     "vue-carousel": "^0.18.0",
     "vue-class-component": "^7.0.2",
     "vue-mapbox": "^0.4.1",
+    "vue-progressive-image": "^3.2.0",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.1.2",
     "vue-spinner": "^1.0.3",

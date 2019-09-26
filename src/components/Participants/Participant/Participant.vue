@@ -60,9 +60,11 @@
               v-for="(key, index) in participant.keywords"
               v-bind:key="key.id"
             >
-              <router-link :title="key.name" class="keywordLink" :to="urls.keyword(key.name)">{{
-                key.name
-              }}</router-link
+              <router-link
+                :title="key.name"
+                class="keywordLink"
+                :to="urls.keyword(key.name)"
+                >{{ key.name }}</router-link
               >{{ (index !== participant.keywords.length - 1 && ", ") || "" }}
             </p>
           </div>
