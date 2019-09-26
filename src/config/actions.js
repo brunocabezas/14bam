@@ -22,5 +22,9 @@ export default {
   loadWpCategories: fetchData({
     url: routes.categories,
     slug: mutationTypes.categories
+  }),
+  loadWpPages: fetchData({
+    url: routes.pages,
+    slug: mutationTypes.pages
   })
 }

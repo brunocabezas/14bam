@@ -51,12 +51,12 @@
       justify-content flex-start
 
       .sponsor
-        margin 0 10px
+        margin 2em 10px
+        max-height 100px
         box-sizing border-box
         display inline-block
         width: calc(20% - 20px);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
-
 </style>

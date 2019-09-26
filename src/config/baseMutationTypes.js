@@ -5,6 +5,7 @@ export default {
   participants: 'PARTICIPANTS',
   mainPrograms: 'MAIN_PROGRAMS',
   sponsors: 'SPONSORS',
+  pages: 'PAGES',
   categories: 'CATEGORIES'
   // programs: 'PROGRAMS'
 }
