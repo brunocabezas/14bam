@@ -65,7 +65,7 @@ export default {
   oldSponsors: state => {
     // For now filtering sponsors by author
     return getSponsorsFromApi(state.sponsors.responseData).filter(
-      sponsor => sponsor.author === 1
+      sponsor => sponsor.category.slug === 'uncategorized'
     )
   },
   sponsors: state => {
@@ -75,7 +75,7 @@ export default {
     return (
       sponsors
         // For now, filtering sponsors created by the admin wp user
-        .filter(sponsor => sponsor.author !== 1)
+        .filter(sponsor => sponsor.category.slug !== 'uncategorized')
         .map(sponsor => ({
           ...sponsor,
           category: categories.find(cat => cat.id === sponsor.category.id)
@@ -87,19 +87,33 @@ export default {
   categoriesFromSponsors: state => {
     const sponsors = getSponsorsFromApi(state.sponsors.responseData)
       .filter(sp => sp.category)
-      .filter(sponsor => sponsor.author !== 1)
+      .filter(sponsor => sponsor.category.slug !== 'uncategorized')
     const categories = sponsors.map(sp => sp.category)
     const categoriesIds = sponsors
       .map(sp => sp.category.term_id)
       .filter(onlyUnique)
 
     // Append sponsors
-    return categoriesIds.map(catId => ({
-      ...categories.find(cat => cat.term_id === catId),
-      id: catId,
-      // For now filtering sponsors by author
-      sponsors: sponsors.filter(s => s.category.term_id === catId)
-    }))
+    return categoriesIds
+      .map(catId => {
+        const category = categories.find(cat => cat.term_id === catId)
+        // Order is parsed from description, if contains
+        // 'order:1' or 'order:1 ', this string will represent
+        // a way to sort this item; if this is not found on description,
+        // order is equal to categories length, so item will show up last
+        const order =
+          category && category.description.includes('order:')
+            ? category.description.split('order:')[1].replace(' ', '')
+            : String(categories.length + 1)
+        return {
+          ...category,
+          id: catId,
+          order,
+          // For now filtering sponsors by author
+          sponsors: sponsors.filter(s => s.category.term_id === catId)
+        }
+      })
+      .sort((a, b) => a.order - b.order)
   },
   isLoadingCategories: isLoadingHelper('categories'),
   categoriesNotFetched: isNotFetchedHelper('categories'),

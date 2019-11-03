@@ -1,4 +1,3 @@
-
 import { Component, Vue } from 'vue-property-decorator'
 import Loader from '@/components/common/Loader.vue'
 import store from '@/config/store'
@@ -18,6 +17,11 @@ import { mapGetters, mapActions } from 'vuex'
   },
   methods: {
     ...mapActions(['loadMainPrograms'])
+  },
+  data () {
+    return {
+      publicPath: process.env.BASE_URL
+    }
   }
 })
 class MainPrograms extends Vue {

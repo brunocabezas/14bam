@@ -19,7 +19,7 @@ export default {
   pages: '/pages',
   taxonomy: id => `/tags`,
   posts: '/posts',
-  categories: '/categories',
+  categories: '/categories?per_page=100',
   sponsors: '/sponsors?per_page=100',
   videos: '/videos?per_page=100',
   expositions: '/expositions?per_page=100',

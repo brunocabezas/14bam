@@ -40,6 +40,7 @@ VUE_APP_GOOGLE_GEO_API // google geo api used to retrieve lat, lng values from a
 VUE_APP_MAPBOX_PUBLIC_TOKEN // token to be able to display map on home page
 VUE_APP_CALENDAR_ID // google calendar id to display on home page
 VUE_APP_CALENDAR_API_KEY // google calendar api key to be able to request data from calendars
+VUE_APP_ASSETS_URL // public assets url on production, for example: if it's set to '/assets/', will look for public assets at origin.com/assets/
 ```
 
 Start development server with hot reloading:

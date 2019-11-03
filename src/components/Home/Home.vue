@@ -2,7 +2,7 @@
   <div class="home">
     <div class="sections">
       <section class="homeTop">
-        <img src="@/assets/home.gif" alt />
+        <img :src="`${publicPath}home.gif`" alt="BAM Logo" />
       </section>
       <Sponsors />
     </div>

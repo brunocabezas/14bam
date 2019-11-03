@@ -10,7 +10,12 @@ import store from '@/config/store'
     VideoPlayer,
     Sponsors
   },
-  store
+  store,
+  data () {
+    return {
+      publicPath: process.env.BASE_URL
+    }
+  }
 })
 class Home extends Vue {
   videos = [];
