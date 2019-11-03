@@ -6,36 +6,27 @@
       :navigate-to="currentImage"
     >
       <slide v-bind:key="image.id" v-for="image in images">
-        <progressive-background :placeholder="image" :src="image">
-          <div
-            v-bind:class="{
-              'imageLoaderContainer--loading': visible,
-              imageLoaderContainer: true
-            }"
-            slot="content"
-            slot-scope="{ visible }"
+        <ProgressiveImage :src="image">
+          <button
+            v-if="images.length > 1"
+            title="Imagen anterior"
+            class="carouselButton carouselButton--prev"
+            type="button"
+            @click="goToPrevItem"
           >
-            <Loader :loading="visible" />
-            <button
-              v-if="!visible && images.length > 1"
-              title="Imagen anterior"
-              class="carouselButton carouselButton--prev"
-              type="button"
-              @click="goToPrevItem"
-            >
-              <v-icon color="white" name="chevron-left" scale="1.5"> </v-icon>
-            </button>
-            <button
-              v-if="!visible && images.length > 1"
-              title="Imagen siguiente"
-              class="carouselButton carouselButton--next"
-              type="button"
-              @click="goToNextItem"
-            >
-              <v-icon color="white" name="chevron-right" scale="1.5"> </v-icon>
-            </button>
-          </div>
-        </progressive-background>
+            <v-icon color="white" name="chevron-left" scale="1.5"> </v-icon>
+          </button>
+          <button
+            v-if="images.length > 1"
+            title="Siguiente imagen"
+            class="carouselButton carouselButton--next"
+            type="button"
+            @keyup.right="goToNextItem"
+            @click="goToNextItem"
+          >
+            <v-icon color="white" name="chevron-right" scale="1.5"> </v-icon>
+          </button>
+        </ProgressiveImage>
       </slide>
     </vue-carousel>
   </div>
@@ -87,9 +78,11 @@ $height = 300px;
   hr
     display: none;
 
-  .loaderContainer,
-  .carouselButton
-    top: calc((300px / 2) - 13px)
+  .loaderContainer, .carouselButton
+    top: calc((300px / 2) - 13px);
+
+  .VueCarousel-wrapper
+    position: relative;
 
   .VueCarousel-wrapper, .carouselImage, .VueCarousel-inner
     height: $height !important;

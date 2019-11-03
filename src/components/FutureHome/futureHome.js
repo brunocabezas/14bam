@@ -22,7 +22,7 @@ import { mapGetters } from 'vuex'
 
   computed: {
     ...mapGetters({
-      abstractText: 'abstractText'
+      abstractPage: 'abstractPage'
     })
   }
 })

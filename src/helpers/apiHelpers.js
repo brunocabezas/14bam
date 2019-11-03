@@ -4,24 +4,23 @@ import {
   getMonthOfDateTimeString,
   getDayOfDateTimeString,
   findCloseToToday,
-  sortByDate,
-  dateStringToDate,
-  isValidDate
+  sortByDate
 } from './dateHelpers'
 
 //
 // apiHelpers
 // All helpers defined here handle API responses and
+
 // This logic layer is ment to format the data as required
 // and should be placed before is stored on vuex store
 
 // Local Helpers
 // Gets advanced custom fields values from results
-const getAcfField = (results, fieldName, defaultValue = '') =>
+export const getAcfField = (results, fieldName, defaultValue = '') =>
   (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
 
 // Gets wordpress post title
-const getWPTitle = object => (object.title && object.title.rendered) || ''
+export const getWPTitle = object => (object.title && object.title.rendered) || ''
 
 export const getSponsorsFromApi = sponsors =>
   sponsors.map(sponsor => ({
@@ -151,7 +150,6 @@ export const getMainPrograms = data => {
       slug,
       shortDescription: getAcfField(others, 'abstract'),
       name: getWPTitle(others),
-      displayEventsGrid: slug.includes('magnetico'),
       text: getAcfField(others, 'texto'),
       events: getAcfField(others, 'programas', [])
     }))
@@ -210,47 +208,4 @@ export const getCalendarFromApi = (apiResponse = []) => {
     : 0
 
   return sortedEvents.splice(spliceIndex, 10)
-}
-
-export const getActivitiesFromApi = activities => {
-  const result = activities.map(act => {
-    // date comes as '7 de noviembre'
-    const dateString = getAcfField(act, 'date')
-    return ({
-      id: act.id,
-      name: getWPTitle(act),
-      slug: act.slug,
-      description: getAcfField(act, 'description'),
-      picture: getAcfField(act, 'image'),
-      participants: getAcfField(act, 'participant'),
-      limitedTickets: getAcfField(act, 'limited_tickets'),
-      program: getAcfField(act, 'program'),
-      place: getAcfField(act, 'place')[0],
-      date: {
-        jsDate: dateStringToDate(dateString),
-        day: dateString.split(' ')[0],
-        month: dateString.split('de ')[1],
-        time: getAcfField(act, 'time'),
-        dateString
-      }
-    })
-  }).sort((a, b) => a.date.jsDate - b.date.jsDate)
-
-  const closestToToday = result
-    .map(act => act.date.jsDate)
-    .filter(date => isValidDate(date))
-    .reduce(findCloseToToday, result[0])
-
-  // Find event with closest to today's date
-  const closestOnSortedEvents = result.find(
-    event =>
-      event.date.jsDate && event.date.jsDate.getTime() === closestToToday.getTime()
-  )
-
-  // Based on the found item index, ten events are displayed on the calendar
-  const spliceIndex = closestOnSortedEvents
-    ? result.indexOf(closestOnSortedEvents)
-    : 0
-
-  return result.slice(spliceIndex)
 }

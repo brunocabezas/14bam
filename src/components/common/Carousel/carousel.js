@@ -2,6 +2,7 @@ import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
 import VueTypes from 'vue-types'
 import Loader from '@/components/common/Loader'
+import ProgressiveImage from '@/components/common/ProgressiveImage.vue'
 import { Carousel as VueCarousel, Slide } from 'vue-carousel'
 import Icon from '../../../../node_modules/vue-awesome/components/Icon.vue'
 
@@ -10,6 +11,7 @@ import Icon from '../../../../node_modules/vue-awesome/components/Icon.vue'
     VueCarousel,
     Loader,
     Slide,
+    ProgressiveImage,
     'v-icon': Icon
   },
   props: {

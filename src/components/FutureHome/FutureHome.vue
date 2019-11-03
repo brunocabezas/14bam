@@ -5,10 +5,19 @@
       <VideoPlayer :url="video.url" />
     </section>
     <section class="section abstract">
-      <h1 class="sectionTitle">
-        <router-link :to="urls.abstract">El cuarto mundo</router-link>
-      </h1>
-      <p class="sectionText" v-html="abstractText"></p>
+      <div class="abstractWrapper">
+        <div class="abstractWrapperLeft">
+          <h1 class="abstractTitle">
+            <router-link :to="urls.abstract">{{
+              abstractPage.title
+            }}</router-link>
+          </h1>
+          <p class="abstractDates"> {{ abstractPage.dates }}</p>
+        </div>
+        <div class="abstractWrapperRight">
+          <p class="sectionText" v-html="abstractPage.abstract"></p>
+        </div>
+      </div>
     </section>
     <section class="section expositions">
       <h1 class="sectionTitle">
@@ -40,27 +49,27 @@
 <style src="../Home/home.styl" scoped lang="styl"></style>
 <style lang="stylus">
 .section.videos
-  position relative
+  position: relative;
 
   .loaderContainer
-    flex 0.1 1 0%
-    max-height 100%
+    flex: 0.1 1 0%;
+    max-height: 100%;
 
   .videoPlayer
-    display inline-block
+    display: inline-block;
 
     #vimeo-player-1
       &, iframe
-        width 100%
-        height 100%
+        width: 100%;
+        height: 100%;
 
   .videosOverlay
-    position absolute
-    z-index 2
-    width 100%
-    bottom 0
-    height 40%
-    left 0
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,0) 12%, rgba(52,66,132,1) 100%);
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    bottom: 0;
+    height: 40%;
+    left: 0;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 12%, rgba(52, 66, 132, 1) 100%);
 </style>

@@ -1,9 +1,10 @@
 <template>
   <Loader :loading="isLoading">
-    <ExpositionInfoBar v-if="event.place" :expoSlug="event.place.post_name"/>
+    <ExpositionInfoBar v-if="event.place" :expoSlug="event.place.post_name" />
     <div class="event pageLayout">
       <div class="pageLeft">
-        <!-- <div>media</div> -->
+        <ProgressiveImage v-if="event.image" :src="event.image" />
+        <VideoPlayer v-else-if="event.videoUrl" :url="event.videoUrl" />
         <div
           v-if="event.participants && event.participants.length > 0"
           class="pageList"
@@ -34,3 +35,12 @@
 </template>
 
 <script src="./event.js"></script>
+<style lang="stylus" scoped>
+.event
+  .eventImage
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+</style>

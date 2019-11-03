@@ -1,3 +1,5 @@
+import { getAcfField, getWPTitle } from '../apiHelpers'
+
 export function pageFromStateByLabel (label, state) {
   const pageFromState = state.pages.responseData.find(page =>
     page.slug.includes(label)
@@ -16,7 +18,10 @@ export function pageFromStateByLabel (label, state) {
   }
 
   return Object.assign({}, pageFromState, {
-    video: pageFromState.acf_fields.video,
-    gallery: pageFromState.acf_fields.gallery && pageFromState.acf_fields.gallery.map(img => img.sizes.medium)
+    title: getWPTitle(pageFromState),
+    video: getAcfField(pageFromState, 'video'),
+    abstract: getAcfField(pageFromState, 'short_description'),
+    dates: getAcfField(pageFromState, 'dates'),
+    gallery: getAcfField(pageFromState, 'gallery', []).map(img => img.sizes.medium)
   })
 }

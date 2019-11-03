@@ -10,10 +10,20 @@
     min-height 180px
     padding 1em
     flex: 1 1 33.3%;
-    max-width 33.3%
     transition .2s background-color
     text-decoration none
     background-size 0
+    max-width 33.3%
+    
+    @media(max-width 768px)
+      flex: 1 1 50% !important
+      max-width 50% !important
+      min-height auto
+      &:hover  
+        background-size 0
+    @media(max-width 470px)
+      flex: 1 1 100% !important
+      max-width 100% !important
 
     &:hover
       background-repeat no-repeat
@@ -26,7 +36,6 @@
     .expositionName
       margin: 0 0 5px 0;
       font-size 25px
-      
 
     .expositionText
       p

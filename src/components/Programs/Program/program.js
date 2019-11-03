@@ -30,6 +30,7 @@ class Program extends Vue {
   }
 
   get images () {
+    console.log(this.program)
     // Getting array of urls from program
     return (
       (this.program &&

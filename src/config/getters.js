@@ -11,11 +11,11 @@ import { isNotFetchedHelper } from '../helpers/remoteDataHelper'
 import {
   getKeywordsFromParticipants,
   getSponsorsFromApi,
-  getCategoriesFromApi,
-  getActivitiesFromApi
+  getCategoriesFromApi
 } from '../helpers/apiHelpers'
 import { onlyUnique, flatten } from '../helpers/arrayHelpers'
-import { pageFromStateByLabel } from '../helpers/pageHelpers'
+import { pageFromStateByLabel } from '../helpers/data/pageHelpers'
+import { getActivitiesFromApi } from '../helpers/data/eventHelpers'
 
 export default {
   // Expositions
@@ -37,7 +37,10 @@ export default {
   },
   isLoadingExposition: isLoadingHelper('exposition'),
   expositionNotFetched: isNotFetchedHelper('exposition'),
-  expositionGalleryBySlug: (state, { expositionBySlug, participants }) => expoSlug => {
+  expositionGalleryBySlug: (
+    state,
+    { expositionBySlug, participants }
+  ) => expoSlug => {
     const expositionArtists = expositionBySlug(expoSlug).artists.map(
       artist => artist.ID
     )
@@ -168,8 +171,6 @@ export default {
   aboutPage: state => pageFromStateByLabel('sobre', state),
   contestPage: state => pageFromStateByLabel('concurso', state),
   abstractPage: state => pageFromStateByLabel('mundo', state),
-  abstractText: (state, { abstractPage }) =>
-    abstractPage ? abstractPage.content.rendered : '',
   isLoadingPages: isLoadingHelper('pages'),
   pagesNotFetched: isNotFetchedHelper('pages')
 }

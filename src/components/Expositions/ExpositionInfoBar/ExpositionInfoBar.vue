@@ -29,6 +29,7 @@
         <br />
         <a
           target="_blank"
+          :title="exposition.web"
           class="expositionInfoBarItem__link"
           :href="exposition.web"
           >{{ exposition.webText || exposition.web }}</a

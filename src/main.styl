@@ -20,9 +20,28 @@ ul
 .page
   padding 2em
 
+  @media(max-width 768px)
+    padding-left 15px !important
+    padding-right 15px !important
+    .pageListTitle
+      margin 0
+    .pageLayout
+      padding 0 !important
+      flex-wrap wrap
+      flex-direction column
+      
+      .pageLeft
+      .pageRight
+        padding 0 !important
+
+      .pageLeft
+        order: 2
+      .pageRight
+        order: 1
+
   .pageTitle
     margin 0
-    font-size 46px
+    font-size 42px
     font-weight bold
 
   // Main page layout, two columns with tex on right
