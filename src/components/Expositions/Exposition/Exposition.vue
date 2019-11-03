@@ -1,15 +1,11 @@
 <template>
   <Loader :loading="loadingData">
     <div class="exposition">
+
       <ExpositionInfoBar :expo="exposition" />
 
-      <div class="expositionLayout">
-        <div class="leftSection">
-          <h1 class="expositionTitle">{{ exposition.name }}</h1>
-          <p class="expositionText" v-html="exposition.description"></p>
-        </div>
-
-        <div class="rightSection">
+      <div class="pageLayout">
+        <div class="pageLeft">
           <div class="expositionGallery">
             <ExpositionGallery />
           </div>
@@ -53,6 +49,12 @@
             </ul>
           </div>
         </div>
+
+        <div class="pageRight">
+          <h1 class="expositionTitle">{{ exposition.name }}</h1>
+          <p class="expositionText" v-html="exposition.description"></p>
+        </div>
+
       </div>
     </div>
   </Loader>

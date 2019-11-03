@@ -1,13 +1,13 @@
 <template>
   <Loader :loading="loadingData">
-    <div class="participant">
-      <div class="leftSection">
+    <div class="participant pageLayout">
+      <div class="pageLeft">
         <Carousel
           v-if="participant.images.length > 0"
           className="participanGallery"
           :images="participant.images"
         />
-        <div
+        <!-- <div
           v-if="participant.expo && participant.expo.post_title"
           class="pageList participantExpo"
         >
@@ -22,7 +22,8 @@
               </router-link>
             </li>
           </ul>
-        </div>
+        </div> -->
+        <!-- Related pariticpants -->
         <div
           v-if="participant.related.length > 0"
           class="pageList participantRelated"
@@ -43,9 +44,8 @@
             </li>
           </ul>
         </div>
-        <!-- <div>RELACIONADOS</div> -->
       </div>
-      <div class="rightSection">
+      <div class="pageRight">
         <h1 class="pageTitle">{{ participant.name }}</h1>
         <p v-html="participant.bio"></p>
 

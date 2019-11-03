@@ -19,11 +19,39 @@ ul
 // Main page styling
 .page
   padding 2em
+
   .pageTitle
     margin 0
     font-size 46px
     font-weight bold
 
+  // Main page layout, two columns with tex on right
+  .staticPageText
+    p
+      color $white
+      font-family 'Roboto Mono', monospace
+      span
+        font-family 'Roboto Mono', monospace
+
+  .pageLayout
+    display flex
+
+    .pageRight
+    .pageLeft
+      padding 15px
+      p
+        color $white
+        font-family 'Roboto Mono', monospace
+        span
+          font-family 'Roboto Mono', monospace
+
+    .pageLeft
+      flex 5
+    .pageRight
+      flex 7
+
+  // Listed items with links to other pages
+  // located normally on pageLeft
   .pageList
     .pageListTitle
       font-size 30px
@@ -48,21 +76,3 @@ ul
           transition color .2s
           &:hover
             color: darken($white, 25);
-
-.leftSection
-.rightSection
-  width 50%
-  
-.leftSection
-  padding 15px 35px 15px 15px
-
-.rightSection
-  padding 15px 15px 15px 35px
-
-.rightSection
-.leftSection
-  p
-    color $white
-    font-family 'Roboto Mono', monospace
-    span
-      font-family 'Roboto Mono', monospace

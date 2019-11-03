@@ -9,9 +9,9 @@ import Exposition from '@/components/Expositions/Exposition/Exposition.vue'
 import Programs from '@/components/Programs/Programs.vue'
 import Keyword from '@/components/Keywords/Keyword.vue'
 import Program from '@/components/Programs/Program/Program.vue'
-import Contest from '@/components/Contest.vue'
-import About from '@/components/About.vue'
-import Abstract from '@/components/Abstract.vue'
+import Contest from '@/components/StaticPages/Contest.vue'
+import About from '@/components/StaticPages/About.vue'
+import Abstract from '@/components/StaticPages/Abstract.vue'
 import paths from '@/config/urls'
 
 Vue.use(Router)

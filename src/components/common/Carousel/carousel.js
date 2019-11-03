@@ -12,8 +12,9 @@ import Icon from '../../../../node_modules/vue-awesome/components/Icon.vue'
     'v-icon': Icon
   },
   props: {
+    // Array of images urls
     images: {
-      type: Array,
+      type: Array(String),
       default: () => []
     },
     className: {

@@ -1,15 +1,12 @@
 <template>
-  <Loader :loading="isLoading">
-    <h1 v-if="page" class="pageTitle">{{page.title.rendered}}</h1>
-    <div v-if="page" class="AbstractText" v-html="page.content.rendered"></div>
-  </Loader>
+  <StaticPage :loading="isLoading" :page="page" />
 </template>
 
 <script>
 import { Component, Vue } from 'vue-property-decorator'
-import store from '@/config/store'
-import Loader from '@/components/common/Loader.vue'
 import { mapActions, mapGetters } from 'vuex'
+import store from '@/config/store'
+import StaticPage from '@/components/StaticPages/StaticPage.vue'
 
 @Component({
   store,
@@ -20,24 +17,19 @@ import { mapActions, mapGetters } from 'vuex'
     ...mapGetters({
       isLoading: 'isLoadingPages',
       pagesNotFetched: 'pagesNotFetched',
-      page: 'abstractPage'
+      page: 'contestPage'
     })
   },
   components: {
-    Loader
+    StaticPage
   }
 })
-class Abstract extends Vue {
+class Contest extends Vue {
   mounted () {
     if (this.pagesNotFetched) {
       this.loadWpPages()
     }
   }
 }
-export default Abstract
+export default Contest
 </script>
-
-<style lang="stylus">
-.AbstractText p
-  color white
-</style>

@@ -1,6 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { loadVideos } from '../../../api/client'
-import VideoPlayer from '../Home/VideoPlayer.vue'
+import VideoPlayer from '@/components/Home/VideoPlayer.vue'
 import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid/ExpositionsGrid.vue'
 import MainPrograms from '@/components/Programs/MainPrograms/MainPrograms.vue'
 import Agenda from '@/components/FutureHome/HomeAgenda/HomeAgenda.vue'

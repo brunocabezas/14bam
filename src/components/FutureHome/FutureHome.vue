@@ -8,7 +8,7 @@
       <h1 class="sectionTitle">
         <router-link :to="urls.abstract">El cuarto mundo</router-link>
       </h1>
-      <p v-html="abstractText"></p>
+      <p class="sectionText" v-html="abstractText"></p>
     </section>
     <section class="section expositions">
       <h1 class="sectionTitle">
@@ -41,14 +41,18 @@
 <style lang="stylus">
 .section.videos
   position relative
+
   .videoPlayer
     display inline-block
+
     #vimeo-player-1
       &, iframe
         width 100%
         height 100%
+
   .videosOverlay
     position absolute
+    z-index 2
     width 100%
     bottom 0
     height 40%

@@ -14,6 +14,7 @@ import {
   getCategoriesFromApi
 } from '../helpers/apiHelpers'
 import { onlyUnique } from '../helpers/arrayHelpers'
+import { pageFromStateByLabel } from '../helpers/pageHelpers'
 
 export default {
   // Expositions
@@ -104,17 +105,13 @@ export default {
   categoriesNotFetched: isNotFetchedHelper('categories'),
 
   // Wordpress static pages
-  aboutPage: state => {
-    return state.pages.responseData.find(page => page.slug.includes('sobre'))
-  },
-  contestPage: state => {
-    return state.pages.responseData.find(page => page.slug.includes('concurso'))
-  },
-  abstractPage: state => {
-    return state.pages.responseData.find(page => page.slug.includes('mundo'))
-  },
+  aboutPage: state => pageFromStateByLabel('sobre', state),
+  contestPage: state => pageFromStateByLabel('concurso', state),
+  abstractPage: state => pageFromStateByLabel('mundo', state),
   abstractText: state => {
-    const abstractPage = state.pages.responseData.find(page => page.slug.includes('mundo'))
+    const abstractPage = state.pages.responseData.find(page =>
+      page.slug.includes('mundo')
+    )
     return abstractPage ? abstractPage.content.rendered : ''
   },
   isLoadingPages: isLoadingHelper('pages'),
