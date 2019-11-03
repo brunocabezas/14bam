@@ -31,6 +31,7 @@ export default {
   generalProgram: slug => `/programaGeneral?slug=${slug}`,
   // Regular programs
   program: slug => `/programs?slug=${slug}`,
+  programActivities: '/activities?per_page=100',
   programCalendar: googleCalendarId =>
     `https://www.googleapis.com/calendar/v3/calendars/${googleCalendarId}/events?key=${CALENDAR_API_KEY}`,
   calendar: `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${CALENDAR_API_KEY}`,

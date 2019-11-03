@@ -40,6 +40,8 @@
 
 .map
   height: 100%;
+  .loaderContainer
+    height: 100%;
 
   .mapboxgl-popup-content
     background-color: $purple;

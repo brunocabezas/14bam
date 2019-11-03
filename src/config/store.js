@@ -28,6 +28,7 @@ export default new Vuex.Store({
       events: [],
       images: []
     },
+    activities: asyncState(),
     // An event is the same as a program but without events (programs)
     event: {
       id: -1
@@ -39,6 +40,7 @@ export default new Vuex.Store({
     pages: asyncState()
   },
   mutations: {
+    ...asyncDataMutations(mutationTypes.activities),
     ...asyncDataMutations(mutationTypes.expositions),
     ...asyncDataMutations(mutationTypes.exposition),
     ...asyncDataMutations(mutationTypes.participants),

@@ -11,7 +11,8 @@ import { isNotFetchedHelper } from '../helpers/remoteDataHelper'
 import {
   getKeywordsFromParticipants,
   getSponsorsFromApi,
-  getCategoriesFromApi
+  getCategoriesFromApi,
+  getActivitiesFromApi
 } from '../helpers/apiHelpers'
 import { onlyUnique } from '../helpers/arrayHelpers'
 import { pageFromStateByLabel } from '../helpers/pageHelpers'
@@ -30,8 +31,9 @@ export default {
   expositionsNotFetched: isNotFetchedHelper('expositions'),
 
   // Exposition
-  exposition: state => {
-    return getExpositionFromApi(state.exposition.responseData)
+  expositionBySlug: (state, { expositionsByDate }) => expoSlug => {
+    const isOnState = expositionsByDate.find(e => e.slug === expoSlug)
+    return isOnState || getExpositionFromApi(state.exposition.responseData)
   },
   isLoadingExposition: isLoadingHelper('exposition'),
   expositionNotFetched: isNotFetchedHelper('exposition'),
@@ -61,35 +63,46 @@ export default {
   isLoadingMainPrograms: isLoadingHelper('main_programs'),
   mainProgramsNotFetched: isNotFetchedHelper('main_programs'),
 
+  activities: st => {
+    return getActivitiesFromApi(st.activities.responseData)
+  },
+  activityBySlug: (st, getters) => eventSlug => {
+    return (
+      getters.activities.find(event => event.slug === eventSlug) || {
+        place: {},
+        participants: []
+      }
+    )
+  },
+  isLoadingActivities: isLoadingHelper('activities'),
+  activitiesNotFetched: isNotFetchedHelper('activities'),
+
   // Sponsors
-  oldSponsors: state => {
+  oldSponsors: (state, { sponsorsFromState }) => {
     // For now filtering sponsors by author
-    return getSponsorsFromApi(state.sponsors.responseData).filter(
+    return sponsorsFromState.filter(
       sponsor => sponsor.category.slug === 'uncategorized'
     )
   },
-  sponsors: state => {
-    const sponsors = getSponsorsFromApi(state.sponsors.responseData)
+  sponsorsFromState: state => getSponsorsFromApi(state.sponsors.responseData),
+  sponsors: (state, { sponsorsFromState }) => {
     const categories = getCategoriesFromApi(state.categories.responseData)
-
     return (
-      sponsors
+      sponsorsFromState
         // For now, filtering sponsors created by the admin wp user
         .filter(sponsor => sponsor.category.slug !== 'uncategorized')
         .map(sponsor => ({
           ...sponsor,
-          category: categories.find(cat => cat.id === sponsor.category.id)
+          category: categories.find(cat => cat.id === sponsor.category.term_id)
         }))
+        .filter(sp => sp.category)
     )
   },
   isLoadingSponsors: isLoadingHelper('sponsors'),
   sponsorsNotFetched: isNotFetchedHelper('sponsors'),
-  categoriesFromSponsors: state => {
-    const sponsors = getSponsorsFromApi(state.sponsors.responseData)
-      .filter(sp => sp.category)
-      .filter(sponsor => sponsor.category.slug !== 'uncategorized')
-    const categories = sponsors.map(sp => sp.category)
-    const categoriesIds = sponsors
+  categoriesFromSponsors: (state, { sponsorsFromState }) => {
+    const categories = sponsorsFromState.map(sp => sp.category)
+    const categoriesIds = sponsorsFromState
       .map(sp => sp.category.term_id)
       .filter(onlyUnique)
 
@@ -102,7 +115,9 @@ export default {
         // a way to sort this item; if this is not found on description,
         // order is equal to categories length, so item will show up last
         const order =
-          category && category.description.includes('order:')
+          category &&
+          category.description &&
+          category.description.includes('order:')
             ? category.description.split('order:')[1].replace(' ', '')
             : String(categories.length + 1)
         return {
@@ -110,9 +125,10 @@ export default {
           id: catId,
           order,
           // For now filtering sponsors by author
-          sponsors: sponsors.filter(s => s.category.term_id === catId)
+          sponsors: sponsorsFromState.filter(s => s.category.term_id === catId)
         }
       })
+      .filter(cat => !cat.slug.includes('uncategorized'))
       .sort((a, b) => a.order - b.order)
   },
   isLoadingCategories: isLoadingHelper('categories'),
@@ -122,12 +138,8 @@ export default {
   aboutPage: state => pageFromStateByLabel('sobre', state),
   contestPage: state => pageFromStateByLabel('concurso', state),
   abstractPage: state => pageFromStateByLabel('mundo', state),
-  abstractText: state => {
-    const abstractPage = state.pages.responseData.find(page =>
-      page.slug.includes('mundo')
-    )
-    return abstractPage ? abstractPage.content.rendered : ''
-  },
+  abstractText: (state, { abstractPage }) =>
+    abstractPage ? abstractPage.content.rendered : '',
   isLoadingPages: isLoadingHelper('pages'),
   pagesNotFetched: isNotFetchedHelper('pages')
 }

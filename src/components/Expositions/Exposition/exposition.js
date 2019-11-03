@@ -19,7 +19,7 @@ import { mapActions, mapGetters } from 'vuex'
   },
   computed: {
     ...mapGetters({
-      exposition: 'exposition',
+      expositionBySlug: 'expositionBySlug',
       loadingData: 'isLoadingExposition'
     })
   }
@@ -30,6 +30,10 @@ class Exposition extends Vue {
   @Watch('$route')
   onRouteChanged (route) {
     this.loadExposition({ slug: route.params.slug })
+  }
+
+  get exposition () {
+    return this.expositionBySlug(this.$route.params.slug)
   }
 
   mounted () {

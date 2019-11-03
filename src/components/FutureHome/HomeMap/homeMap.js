@@ -72,9 +72,8 @@ class HomeMap extends Vue {
   onPropertyChanged (value, oldValue) {
     // Do stuff with the watcher here.
     if (value.length > 0) {
-      this.fetchData(
-        value.filter(expo => expo.address).map(expo => expo.address)
-      )
+      const arrayOfAddresses = value.filter(expo => expo.address).map(expo => expo.address)
+      this.fetchData(arrayOfAddresses)
     }
   }
   // If exposition is defined; fetch lat, lng values as markers data
@@ -85,10 +84,10 @@ class HomeMap extends Vue {
   }
 
   // retrieves lan, lng data from google geo api
-  fetchData (data = null) {
+  fetchData (addresses = null) {
     this.loadingData = true
     const directions = this.expositions.map(expo => expo.address)
-    loadMarkersData(data || directions)
+    loadMarkersData(addresses || directions)
       .then(response => {
         this.$store.commit('loadMarkersData', response)
         this.loadingData = false

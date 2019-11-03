@@ -43,6 +43,10 @@ export const getMonthOfDateTimeString = (dateStr = '') => {
   return monthNames[date.getMonth()]
 }
 
+export const isValidDate = (d) => {
+  return d instanceof Date && !isNaN(d)
+}
+
 export const sortByDate = (a, b) => {
   // Turn your strings into dates, and then subtract them
   // to get a value that is either negative, positive, or zero.

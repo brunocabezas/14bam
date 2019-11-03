@@ -6,7 +6,8 @@ import Participants from '@/components/Participants/Participants.vue'
 import Participant from '@/components/Participants/Participant/Participant.vue'
 import Expositions from '@/components/Expositions/Expositions.vue'
 import Exposition from '@/components/Expositions/Exposition/Exposition.vue'
-import Programs from '@/components/Programs/Programs.vue'
+// import Programs from '@/components/Programs/Programs.vue'
+import Event from '@/components/Programs/Event/Event.vue'
 import Keyword from '@/components/Keywords/Keyword.vue'
 import Program from '@/components/Programs/Program/Program.vue'
 import Contest from '@/components/StaticPages/Contest.vue'
@@ -21,13 +22,11 @@ export default new Router({
   routes: [
     {
       path: paths.home,
-      publicPath: '/',
       name: 'home',
       component: Home
     },
     {
       path: paths.futureHome,
-      publicPath: '/',
       name: 'futureHome',
       component: FutureHome
     },
@@ -83,12 +82,6 @@ export default new Router({
       component: Keyword
     },
     // Programs
-    {
-      path: paths.programs,
-      publicPath: '/',
-      name: 'programs',
-      component: Programs
-    },
     // Following routes both use Program, which based on
     // programType property will display things accordingly
     {
@@ -104,10 +97,7 @@ export default new Router({
       path: paths.event(':slug'),
       publicPath: '/',
       name: 'event',
-      component: Program,
-      props: {
-        programType: 'event'
-      }
+      component: Event
     }
   ]
 })

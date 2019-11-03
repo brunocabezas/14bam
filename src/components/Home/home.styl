@@ -38,11 +38,12 @@
 
     &.halfSections
       display: flex;
+      height 100vh
 
       .sectionRight
         padding-left: 1em;
-        .loaderContainer
-          height: calc(100% - 62px - 80px);
+        display flex
+        flex-direction column
 
       .sectionLeft
         padding-right: 1em;
@@ -65,7 +66,7 @@
       .expositionsGrid
         margin 0
         padding 0
-    
+
     &.videos
       display flex
       margin 0

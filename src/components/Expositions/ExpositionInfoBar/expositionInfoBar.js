@@ -1,4 +1,4 @@
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component, Watch } from 'vue-property-decorator'
 import Loader from '@/components/common/Loader'
 import store from '@/config/store'
 import { mapActions, mapGetters } from 'vuex'
@@ -9,9 +9,9 @@ import { mapActions, mapGetters } from 'vuex'
     Loader
   },
   props: {
-    expoId: {
+    expoSlug: {
       default: null,
-      type: Number
+      type: String
     },
     expo: {
       default: null,
@@ -20,26 +20,42 @@ import { mapActions, mapGetters } from 'vuex'
   },
 
   methods: {
-    ...mapActions(['loadExpositions'])
+    ...mapActions(['loadExposition'])
   },
   computed: {
     ...mapGetters({
-      expositions: 'expositionsByDate',
-      loadingData: 'isLoadingExpositions',
-      expositionsNotFetched: 'expositionsNotFetched'
+      expositionBySlug: 'expositionBySlug',
+      isLoadingExpositions: 'isLoadingExpositions',
+      isLoadingExposition: 'isLoadingExposition',
+      expositionsNotFetched: 'expositionsNotFetched',
+      expositionNotFetched: 'expositionNotFetched'
     })
   }
 })
 class ExpositionInfoBar extends Vue {
   get exposition () {
     return (
-      this.expo || this.expositions.find(expo => expo.id === this.expoId) || {}
+      this.expo || this.expositionBySlug(this.expoSlug) || {}
     )
   }
 
+  get loadingData () {
+    return this.isLoadingExpositions || this.isLoadingExposition
+  }
+
+  @Watch('expoSlug')
+  onSlugChange (slug, oldVal) {
+    if (this.expositionsNotFetched && this.expositionNotFetched && slug) {
+      this.loadExposition({ slug })
+    } else if (this.exposition.slug !== slug) {
+      this.loadExposition({ slug })
+    }
+  }
   mounted () {
-    if (this.expositionsNotFetched) {
-      this.loadExpositions()
+    if (this.expositionsNotFetched && this.expositionNotFetched && this.expoSlug) {
+      this.loadExposition({ slug: this.expoSlug })
+    } else if (this.exposition.slug !== this.expoSlug) {
+      this.loadExposition({ slug: this.expoSlug })
     }
   }
 }

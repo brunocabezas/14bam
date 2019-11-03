@@ -12,6 +12,7 @@ export default {
   mainPrograms: 'MAIN_PROGRAMS',
   sponsors: 'SPONSORS',
   pages: 'PAGES',
+  activities: 'ACTIVITIES',
   categories: 'CATEGORIES'
   // programs: 'PROGRAMS'
 }

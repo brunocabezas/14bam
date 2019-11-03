@@ -3,7 +3,7 @@ import { loadVideos } from '../../../api/client'
 import VideoPlayer from '@/components/Home/VideoPlayer.vue'
 import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid/ExpositionsGrid.vue'
 import MainPrograms from '@/components/Programs/MainPrograms/MainPrograms.vue'
-import Agenda from '@/components/FutureHome/HomeAgenda/HomeAgenda.vue'
+import Agenda from '@/components/FutureHome/Agenda/Agenda.vue'
 import Map from '@/components/FutureHome/HomeMap/HomeMap.vue'
 import Sponsors from '@/components/FutureHome/Sponsors/Sponsors.vue'
 import store from '@/config/store'
@@ -27,7 +27,6 @@ import { mapGetters } from 'vuex'
   }
 })
 class FutureHome extends Vue {
-  expositions = []
   videos = []
   video = {
     id: 0,

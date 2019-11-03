@@ -22,7 +22,7 @@
       </h1>
       <MainPrograms />
     </section>
-    <section class="section halfSections agenda">
+    <section class="section halfSections agenda map">
       <div class="sectionLeft">
         <h1 class="sectionTitle">Agenda</h1>
         <Agenda />
@@ -41,6 +41,10 @@
 <style lang="stylus">
 .section.videos
   position relative
+
+  .loaderContainer
+    flex 0.1 1 0%
+    max-height 100%
 
   .videoPlayer
     display inline-block

@@ -29,6 +29,10 @@ export default {
     url: routes.sponsors,
     slug: mutationTypes.sponsors
   }),
+  loadActivities: fetchData({
+    url: routes.programActivities,
+    slug: mutationTypes.activities
+  }),
   loadWpCategories: fetchData({
     url: routes.categories,
     slug: mutationTypes.categories

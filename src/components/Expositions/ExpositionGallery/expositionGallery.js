@@ -13,9 +13,12 @@ import { mapActions, mapGetters } from 'vuex'
     ...mapGetters({
       loading: 'isLoadingParticipants',
       participants: 'participants',
-      exposition: 'exposition',
+      expositionBySlug: 'expositionBySlug',
       participantsNotFetched: 'participantsNotFetched'
     })
+  },
+  props: {
+    slug: String
   },
   methods: {
     ...mapActions(['loadParticipants'])
@@ -36,6 +39,10 @@ class ExpositionGallery extends Vue {
 
     // returning array of urls
     return flatten(artistsImages).map(img => img.url)
+  }
+
+  get exposition () {
+    return this.expositionBySlug(this.slug)
   }
 
   mounted () {
