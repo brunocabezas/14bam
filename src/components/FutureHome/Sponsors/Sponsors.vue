@@ -17,7 +17,7 @@
               sponsor.logo.url})`,
             height: `${sponsor.logo.height}px`
           }"
-          v-bind:key="sponsor.name"
+          v-bind:key="sponsor.id"
         >
         </a>
       </div>

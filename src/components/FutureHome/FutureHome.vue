@@ -4,6 +4,12 @@
       <div class="videosOverlay"></div>
       <VideoPlayer :url="video.url" />
     </section>
+    <section class="section abstract">
+      <h1 class="sectionTitle">
+        <router-link :to="urls.abstract">El cuarto mundo</router-link>
+      </h1>
+      <p v-html="abstractText"></p>
+    </section>
     <section class="section expositions">
       <h1 class="sectionTitle">
         <router-link :to="urls.expositions">Exposiciones</router-link>

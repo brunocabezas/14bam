@@ -1,7 +1,7 @@
 <template>
   <Loader :loading="isLoading">
     <h1 v-if="page" class="pageTitle">{{page.title.rendered}}</h1>
-    <div v-if="page" class="aboutText" v-html="page.content.rendered"></div>
+    <div v-if="page" class="AbstractText" v-html="page.content.rendered"></div>
   </Loader>
 </template>
 
@@ -20,24 +20,24 @@ import { mapActions, mapGetters } from 'vuex'
     ...mapGetters({
       isLoading: 'isLoadingPages',
       pagesNotFetched: 'pagesNotFetched',
-      page: 'aboutPage'
+      page: 'abstractPage'
     })
   },
   components: {
     Loader
   }
 })
-class About extends Vue {
+class Abstract extends Vue {
   mounted () {
     if (this.pagesNotFetched) {
       this.loadWpPages()
     }
   }
 }
-export default About
+export default Abstract
 </script>
 
 <style lang="stylus">
-.aboutText p
+.AbstractText p
   color white
 </style>

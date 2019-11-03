@@ -16,5 +16,6 @@ export default {
   // places: '/14/espacios',
   // place: placeName => `/14/espacios/${placeName}`,
   about: '/14/sobre-la-bienal',
+  abstract: '/14/el-cuarto-mundo',
   contest: '/14/concurso-juan-downey'
 }

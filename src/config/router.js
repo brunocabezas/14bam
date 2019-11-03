@@ -11,6 +11,7 @@ import Keyword from '@/components/Keywords/Keyword.vue'
 import Program from '@/components/Programs/Program/Program.vue'
 import Contest from '@/components/Contest.vue'
 import About from '@/components/About.vue'
+import Abstract from '@/components/Abstract.vue'
 import paths from '@/config/urls'
 
 Vue.use(Router)
@@ -30,6 +31,7 @@ export default new Router({
       name: 'futureHome',
       component: FutureHome
     },
+    // Static content pages
     {
       path: paths.about,
       publicPath: '/',
@@ -41,6 +43,12 @@ export default new Router({
       publicPath: '/',
       name: 'contest',
       component: Contest
+    },
+    {
+      path: paths.abstract,
+      publicPath: '/',
+      name: 'abstract',
+      component: Abstract
     },
     // Expositions
     {
