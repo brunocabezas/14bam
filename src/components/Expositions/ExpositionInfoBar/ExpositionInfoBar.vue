@@ -7,7 +7,7 @@
       {{ exposition.place }}
     </li>
     <li
-      v-if="exposition.startDate && exposition.endDate"
+      v-if="exposition.startDate || exposition.endDate"
       class="expositionInfoBarItem"
     >
       {{ exposition.startDate }}

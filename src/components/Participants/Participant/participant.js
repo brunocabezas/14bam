@@ -1,5 +1,6 @@
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import Carousel from '@/components/common/Carousel/Carousel.vue'
+import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/ExpositionInfoBar.vue'
 import Loader from '@/components/common/Loader.vue'
 import store from '@/config/store'
 import { mapActions, mapGetters } from 'vuex'
@@ -8,6 +9,7 @@ import { mapActions, mapGetters } from 'vuex'
   store,
   components: {
     Carousel,
+    ExpositionInfoBar,
     Loader
   },
   methods: {
@@ -25,7 +27,7 @@ class Participant extends Vue {
 
   @Watch('$route')
   onRouteChanged (route) {
-    console.log(route)
+    // console.log(route)
     this.loadParticipant({ slug: route.params.slug })
   }
 

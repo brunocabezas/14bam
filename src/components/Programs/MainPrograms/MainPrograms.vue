@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="mainProgramsAnimation">
-        <img src="@/assets/mainPrograms.gif" alt="Animacion de logo" />
+        <img src="./mainPrograms.gif" alt="Animacion de logo" />
       </div>
       <div class="mainProgramContainer">
         <div class="mainProgramContainerWrapper">

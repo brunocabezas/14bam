@@ -56,17 +56,18 @@
           </li>
           <li class="headerNavMenuItem">
             <router-link
-              title="Programa: Campos Magneticos"
+              title="Programa: Campos Magnéticos"
               :to="urls.program('campos-magneticos')"
             >
-              Campos Magneticos</router-link
+              Campos Magnéticos</router-link
             >
           </li>
-          <li class="headerNavMenuItem">
-            <router-link title="Concurso Juan Downey" :to="urls.contest">
+          <!-- TODO Add exposition when available -->
+          <!-- <li class="headerNavMenuItem"> -->
+            <!-- <router-link title="Concurso Juan Downey" :to="urls.contest">
               Concurso Juan Downey</router-link
-            >
-          </li>
+            > -->
+          <!-- </li> -->
 
           <li class="headerNavMenuItem">
             <a

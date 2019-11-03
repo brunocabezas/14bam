@@ -24,8 +24,8 @@
                   >{{ expositions[index].name }}</router-link
                 >
               </h1>
-              <p>{{ expositions[index].place }}</p>
-              <p>{{ expositions[index].address }}</p>
+              <p class="mapPopupText">{{ expositions[index].place }}</p>
+              <p class="mapPopupText">{{ expositions[index].address }}</p>
             </div>
           </MglPopup>
         </MglMarker>
@@ -46,4 +46,7 @@
 
     .mapPopupTitle
       margin: 0;
+
+    .mapPopupText
+      line-height 18px !important
 </style>

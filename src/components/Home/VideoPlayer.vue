@@ -38,9 +38,12 @@ Vue.use(vueVimeoPlayer)
     Loader
   },
   data () {
-    return { isVimeo: false, playerOpts: {
-      minHeight: 300
-    } }
+    return {
+      isVimeo: false,
+      playerOpts: {
+        minHeight: 300
+      }
+    }
   }
 })
 class VideoPlayer extends Vue {
@@ -55,7 +58,6 @@ class VideoPlayer extends Vue {
 
   @Watch('url')
   onUrlChanged (value, oldValue) {
-    console.log(value)
     this.isVimeo = value.includes('vimeo')
   }
 
