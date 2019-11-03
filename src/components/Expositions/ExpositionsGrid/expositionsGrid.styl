@@ -7,18 +7,26 @@
   padding-top: 15px
 
   .exposition
-    padding 0
+    min-height 180px
+    padding 1em
     flex: 1 1 33.3%;
-    margin-bottom 2em
     max-width 33.3%
+    transition .2s background-color
+    text-decoration none
+    background-size 0
 
+    &:hover
+      background-repeat no-repeat
+      background-position center center
+      background-size cover
+      background-color darken($purple, 30%)
+      .expositionName
+        text-decoration underline
+    
     .expositionName
       margin: 0 0 5px 0;
       font-size 25px
-      a
-        text-decoration none
-        &:hover
-          text-decoration underline
+      
 
     .expositionText
       p

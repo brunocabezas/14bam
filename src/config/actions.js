@@ -22,7 +22,7 @@ export default {
       slug: mutationTypes.participant
     })(store),
   loadMainPrograms: fetchData({
-    url: routes.generalPrograms,
+    url: routes.mainPrograms,
     slug: mutationTypes.mainPrograms
   }),
   loadSponsors: fetchData({

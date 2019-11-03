@@ -1,16 +1,11 @@
 <template>
-  <Loader :loading="loadingData">
-    <div class="program">
-      <div class="leftSection">
-        <h1>{{ program.name }}</h1>
-        <div v-html="program.text" class="programText"></div>
-      </div>
-      <div class="rightSection">
+  <Loader :loading="loading">
+    <div class="program pageLayout">
+      <div class="pageLeft">
         <div v-if="images.length > 0" class="programGallery">
           <Carousel :images="images" />
         </div>
-
-        <div
+         <div
           v-if="program.events && program.events.length > 0"
           class="pageList programEvents"
         >
@@ -30,6 +25,14 @@
             </li>
           </ul>
         </div>
+        <div v-if="program.displayEventsGrid">agenda</div>
+        <!-- <div v-if="!program.displayEventsGrid">display list with 3 activities?</div> -->
+      </div>
+      <div class="pageRight">
+        <h1>{{ program.name }}</h1>
+        <div v-html="program.text" class="programText"></div>
+
+        <div v-if="program.displayEventsGrid">events grid</div>
       </div>
     </div>
   </Loader>

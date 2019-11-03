@@ -5,7 +5,7 @@
       :perPage="1"
       :navigate-to="currentImage"
     >
-      <slide v-bind:key="image" v-for="image in images">
+      <slide v-bind:key="image.id" v-for="image in images">
         <progressive-background :placeholder="image" :src="image">
           <div
             v-bind:class="{

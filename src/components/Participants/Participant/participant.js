@@ -31,6 +31,9 @@ class Participant extends Vue {
     this.loadParticipant({ slug: route.params.slug })
   }
 
+  get expositionSlug () {
+    return (this.participant.expo && this.participant.expo.post_name) || ''
+  }
   mounted () {
     if (this.$route.params.slug) {
       const doRequest = this.$route.params.slug !== this.participant.slug

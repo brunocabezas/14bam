@@ -6,7 +6,6 @@ import Participants from '@/components/Participants/Participants.vue'
 import Participant from '@/components/Participants/Participant/Participant.vue'
 import Expositions from '@/components/Expositions/Expositions.vue'
 import Exposition from '@/components/Expositions/Exposition/Exposition.vue'
-// import Programs from '@/components/Programs/Programs.vue'
 import Event from '@/components/Programs/Event/Event.vue'
 import Keyword from '@/components/Keywords/Keyword.vue'
 import Program from '@/components/Programs/Program/Program.vue'
@@ -88,10 +87,7 @@ export default new Router({
       path: paths.program(':slug'),
       publicPath: '/',
       name: 'program',
-      component: Program,
-      props: {
-        programType: 'program'
-      }
+      component: Program
     },
     {
       path: paths.event(':slug'),

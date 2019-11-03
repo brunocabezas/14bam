@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import axios from 'axios'
 import routes from './routes'
-import {
-  getProgramFromApi,
-  getCalendarFromApi
-} from '../src/helpers/apiHelpers'
+// import {
+//   getProgramFromApi
+// } from '../src/helpers/apiHelpers'
 import { resolvedPromise } from '../src/helpers/promiseHelpers'
 
 const BASE_URL = 'http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2'
@@ -33,25 +32,20 @@ export const loadExposition = name => Vue.axios.get(routes.exposition(name))
 
 // export const loadParticipant = name => Vue.axios.get(routes.participant(name))
 
-export const loadProgram = slug =>
-  Vue.axios
-    .get(routes.generalProgram(slug))
-    .then(res => resolvedPromise(getProgramFromApi(res)))
+// export const loadProgram = slug =>
+//   Vue.axios
+//     .get(routes.generalProgram(slug))
+//     .then(res => resolvedPromise(getProgramFromApi(res)))
 
-export const loadEvent = slug =>
-  Vue.axios
-    .get(routes.program(slug))
-    .then(res => resolvedPromise(getProgramFromApi(res)))
+// export const loadEvent = slug =>
+//   Vue.axios
+//     .get(routes.program(slug))
+//     .then(res => resolvedPromise(getProgramFromApi(res)))
 
-export const loadCalendar = () =>
-  Vue.axios
-    .get(routes.calendar)
-    .then(res => resolvedPromise(getCalendarFromApi(res)))
-
-export const loadProgramCalendar = (googleCalendarId = '') =>
-  Vue.axios
-    .get(routes.programCalendar(googleCalendarId))
-    .then(res => resolvedPromise(res))
+// export const loadProgramCalendar = (googleCalendarId = '') =>
+//   Vue.axios
+//     .get(routes.programCalendar(googleCalendarId))
+//     .then(res => resolvedPromise(res))
 
 // directions is an array of strings representing valid addresses
 export const loadMarkersData = (directions = []) => {

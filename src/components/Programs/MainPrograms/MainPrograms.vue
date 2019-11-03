@@ -55,13 +55,6 @@
       display flex
       align-items center
 
-      &.firstProgram
-        .programTitle
-          text-align: right;
-
-        .programAbstract
-          padding-left: 45px;
-
   .programTitle
     text-decoration: underline;
 

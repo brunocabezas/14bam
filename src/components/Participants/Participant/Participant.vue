@@ -1,6 +1,6 @@
 <template>
   <Loader :loading="loadingData">
-    <ExpositionInfoBar :expoSlug="participant.expo && participant.expo.slug" />
+    <ExpositionInfoBar v-if="expositionSlug" :expoSlug="expositionSlug" />
     <div class="participant pageLayout">
       <div class="pageLeft">
         <Carousel

@@ -5,6 +5,7 @@ module.exports = {
   },
   'extends': [
     'plugin:vue/essential',
+    'plugin:vue-types/strongly-recommended',
     '@vue/standard'
   ],
   rules: {

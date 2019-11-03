@@ -7,7 +7,7 @@
       <div class="pageLayout">
         <div class="pageLeft">
           <div class="expositionGallery">
-            <ExpositionGallery :slug="expo.slug" />
+            <ExpositionGallery v-if="exposition && exposition.slug" :slug="exposition.slug" />
           </div>
           <div
             v-if="exposition.artists.length > 0"

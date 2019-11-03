@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
+import VueTypes from 'vue-types'
 import Loader from '@/components/common/Loader'
 import { Carousel as VueCarousel, Slide } from 'vue-carousel'
 import Icon from '../../../../node_modules/vue-awesome/components/Icon.vue'
@@ -12,15 +13,9 @@ import Icon from '../../../../node_modules/vue-awesome/components/Icon.vue'
     'v-icon': Icon
   },
   props: {
-    // Array of images urls
-    images: {
-      type: Array(String),
-      default: () => []
-    },
-    className: {
-      type: String,
-      default: ''
-    }
+    // Array of image urls
+    images: VueTypes.arrayOf(String).def([]),
+    className: VueTypes.string.def('')
   }
 })
 class Carousel extends Vue {

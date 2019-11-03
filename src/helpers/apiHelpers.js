@@ -38,6 +38,7 @@ export const getExpositionsFromApi = data =>
     id: expo.id,
     wpId: expo.id,
     slug: expo.slug,
+    img: getAcfField(expo, 'foto'),
     place: getAcfField(expo, 'espacio'),
     hour: getAcfField(expo, 'horarios'),
     hour2: getAcfField(expo, 'horarios_2'),
@@ -86,7 +87,7 @@ export const getParticipantsFromApi = participants =>
     slug: person.slug,
     name: getWPTitle(person),
     img: getAcfField(person, 'fotos', [{ url: '' }])[0].url,
-    images: getAcfField(person, 'fotos', [{ url: '' }]),
+    images: getAcfField(person, 'fotos', []),
     keywords: getAcfField(person, 'palabras_clave', []).map(
       keywords => keywords.name
     )
@@ -150,6 +151,8 @@ export const getMainPrograms = data => {
       slug,
       shortDescription: getAcfField(others, 'abstract'),
       name: getWPTitle(others),
+      displayEventsGrid: slug.includes('magnetico'),
+      text: getAcfField(others, 'texto'),
       events: getAcfField(others, 'programas', [])
     }))
 }

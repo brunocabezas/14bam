@@ -54,7 +54,7 @@ class ExpositionInfoBar extends Vue {
   mounted () {
     if (this.expositionsNotFetched && this.expositionNotFetched && this.expoSlug) {
       this.loadExposition({ slug: this.expoSlug })
-    } else if (this.exposition.slug !== this.expoSlug) {
+    } else if (this.exposition.slug !== this.expoSlug && this.expoSlug) {
       this.loadExposition({ slug: this.expoSlug })
     }
   }

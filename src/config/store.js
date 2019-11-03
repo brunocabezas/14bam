@@ -13,7 +13,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     sponsors: asyncState(),
-    calendar: [],
     // Expositions
     expositions: asyncState(),
     exposition: asyncState([{ artists: [] }]),
@@ -60,9 +59,6 @@ export default new Vuex.Store({
     },
     loadKeywords (state, data) {
       state.keywords = data
-    },
-    loadCalendar (state, data) {
-      state.calendar = data
     },
     loadMarkersData (state, data) {
       state.markersData = data

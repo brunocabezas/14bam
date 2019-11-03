@@ -21,7 +21,7 @@
         target="_blank"
         href="https://calendar.google.com/calendar/b/1?cid=Y2Nodi5jbF9jdGNlNWpxbnNucDVyazRxYWR1M2MxdXQya0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
       >
-        suscribete
+        suscríbete
       </a>
     </div>
   </Loader>
@@ -67,7 +67,7 @@
         font-size: 14px;
 
   .agendaSuscribe
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 10px 0;
     text-align: right;
 

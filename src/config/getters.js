@@ -14,7 +14,7 @@ import {
   getCategoriesFromApi,
   getActivitiesFromApi
 } from '../helpers/apiHelpers'
-import { onlyUnique } from '../helpers/arrayHelpers'
+import { onlyUnique, flatten } from '../helpers/arrayHelpers'
 import { pageFromStateByLabel } from '../helpers/pageHelpers'
 
 export default {
@@ -37,6 +37,19 @@ export default {
   },
   isLoadingExposition: isLoadingHelper('exposition'),
   expositionNotFetched: isNotFetchedHelper('exposition'),
+  expositionGalleryBySlug: (state, { expositionBySlug, participants }) => expoSlug => {
+    const expositionArtists = expositionBySlug(expoSlug).artists.map(
+      artist => artist.ID
+    )
+
+    // Getting images of participants off the exposition
+    const artistsImages = participants
+      .filter(person => expositionArtists.includes(person.id))
+      .filter(person => person.images && person.images.length > 0)
+      .map(person => person.images)
+
+    return flatten(artistsImages).map(img => img.url)
+  },
 
   // Participants
   participants: state => {
@@ -56,11 +69,13 @@ export default {
   isLoadingParticipant: isLoadingHelper('participant'),
   participantNotFetched: isNotFetchedHelper('participant'),
 
-  // Main programs
+  // Programs
   mainPrograms: state => {
     return getMainPrograms(state.main_programs.responseData)
   },
   isLoadingMainPrograms: isLoadingHelper('main_programs'),
+  programBySlug: (st, { mainPrograms }) => slug =>
+    mainPrograms.find(program => program.slug === slug) || {},
   mainProgramsNotFetched: isNotFetchedHelper('main_programs'),
 
   activities: st => {
@@ -107,7 +122,7 @@ export default {
       .filter(onlyUnique)
 
     // Append sponsors
-    return categoriesIds
+    const sortedCatgories = categoriesIds
       .map(catId => {
         const category = categories.find(cat => cat.term_id === catId)
         // Order is parsed from description, if contains
@@ -130,6 +145,21 @@ export default {
       })
       .filter(cat => !cat.slug.includes('uncategorized'))
       .sort((a, b) => a.order - b.order)
+
+    // First category should be labeled 'Organiza', if this is not the case
+    // Swap the first element with the second
+    const swapFirstCategory =
+      sortedCatgories[0] &&
+      sortedCatgories[0].name.toLowerCase().includes('financia')
+
+    if (swapFirstCategory) {
+      const firstElem = sortedCatgories.shift()
+      const secondElem = sortedCatgories.shift()
+      sortedCatgories.unshift(firstElem)
+      sortedCatgories.unshift(secondElem)
+    }
+
+    return sortedCatgories
   },
   isLoadingCategories: isLoadingHelper('categories'),
   categoriesNotFetched: isNotFetchedHelper('categories'),
