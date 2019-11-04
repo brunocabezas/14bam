@@ -17,7 +17,7 @@ import Carousel from '@/components/common/Carousel/Carousel.vue'
   components: {
     Loader,
     WebVideoPlayer,
-    Gallery: Carousel
+    Carousel
   }
 })
 class StaticPage extends Vue {

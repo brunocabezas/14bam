@@ -19,8 +19,13 @@ export const getProgramFromApi = (apiResponse = []) => {
   if (!firstProgram) {
     return {
       mainImg: { url: '', sizes: { medium: '' } },
-      images: [],
-      artists: []
+      id: -1,
+      events: [],
+      mainProgram: {},
+      date: {
+        jsDate: new Date()
+      },
+      images: []
     }
   }
   return Object.assign(
@@ -32,6 +37,7 @@ export const getProgramFromApi = (apiResponse = []) => {
       text: getAcfField(firstProgram, 'texto'),
       images: getAcfField(firstProgram, 'galeria', []),
       participants: getAcfField(firstProgram, 'participantes', []),
+      mainProgram: getAcfField(firstProgram, 'programa_general', [])[0],
       events: getAcfField(firstProgram, 'activities', [])
     }
   )

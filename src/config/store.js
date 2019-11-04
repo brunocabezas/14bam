@@ -25,6 +25,10 @@ export default new Vuex.Store({
     program: asyncState([{
       id: -1,
       events: [],
+      mainProgram: {},
+      date: {
+        jsDate: new Date()
+      },
       images: []
     }]),
     activities: asyncState(),

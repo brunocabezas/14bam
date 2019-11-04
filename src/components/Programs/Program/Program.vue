@@ -1,12 +1,56 @@
 <template>
   <Loader :loading="loading">
-    <div class="program pageLayout">
+    <div v-if="displayActivitiesInformation" class="program pageSingleLayout">
+      <div v-if="program.mainProgram" class="pageTitleLink">
+        <router-link
+          :title="`Volver a ${program.mainProgram.post_name}`"
+          :to="urls.mainProgram(program.mainProgram.post_name)"
+        >
+          <v-icon color="white" name="chevron-left" scale="1.4"></v-icon>
+          {{ program.mainProgram.post_title }}</router-link
+        >
+      </div>
+      <h1 class="pageTitle">{{ program.name }}</h1>
+      <div class="activityList">
+        <div
+          class="activity"
+          v-bind:key="event.id"
+          v-for="event in program.events"
+        >
+          <router-link
+            class="activityLink"
+            :title="event.post_title || event.name"
+            :to="urls.event(event.post_name || event.slug)"
+          >
+            <div class="activityName">
+              {{ event.post_title || event.name }}
+            </div>
+            <div v-if="event.date" class="activityInformation">
+              {{ event.date.dateString }} | {{ event.date.time }}
+              {{ event.place && "|" }}
+              {{ event.place && event.place.post_title }}
+            </div>
+          </router-link>
+        </div>
+      </div>
+    </div>
+    <div v-else class="program pageLayout">
       <div class="pageLeft">
         <div v-if="images.length > 0" class="programGallery">
           <Carousel :images="images" />
         </div>
 
-        <div
+        <div v-if="program.mainProgram" class="pageTitleLink">
+          <router-link
+            :title="`Volver a ${program.mainProgram.post_name}`"
+            :to="urls.mainProgram(program.mainProgram.post_name)"
+          >
+            <v-icon color="white" name="chevron-left" scale="1.4"></v-icon>
+            {{ program.mainProgram.post_title }}</router-link
+          >
+        </div>
+
+        <!-- <div
           v-if="program.events && program.events.length > 0"
           class="pageList programEvents"
         >
@@ -25,7 +69,7 @@
               </router-link>
             </li>
           </ul>
-        </div>
+        </div> -->
 
         <div
           v-if="program.participants && program.participants.length > 0"

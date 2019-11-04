@@ -8,11 +8,11 @@
           className="participanGallery"
           :images="participant.images"
         />
-        <!-- <div
+        <div
           v-if="participant.expo && participant.expo.post_title"
           class="pageList participantExpo"
         >
-          <h2 class="pageListTitle">Curatoria</h2>
+          <h2 class="pageListTitle">Curatoría</h2>
           <ul class="pageListWrapper">
             <li class="pageListItem">
               <router-link
@@ -23,7 +23,7 @@
               </router-link>
             </li>
           </ul>
-        </div> -->
+        </div>
         <!-- Related pariticpants -->
         <div
           v-if="participant.related.length > 0"

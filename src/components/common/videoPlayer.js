@@ -16,8 +16,9 @@ class VideoPlayer extends Vue {
   playerOptions = {
     language: 'es',
     autoplay: true,
-    responsive: true,
     preload: 'auto',
+    responsive: true,
+    crossOrigin: 'Anonymous',
     height: '100%',
     width: '100%',
     sources: [
@@ -28,5 +29,38 @@ class VideoPlayer extends Vue {
       }
     ]
   }
+
+  get player () {
+    return this.$refs.videoPlayer.player
+  }
+
+  // player is ready
+  playerReadied (player) {
+    player
+      .play()
+      .then(res => console.log(res))
+      .catch((err, as) => console.log(err, as, err.message))
+  }
+
+  // // player is ready
+  // mounted () {
+  //   // console.log('this is current player instance object', this.player)
+  //   setTimeout(() => {
+  //     console.log('dynamic change options', this.player)
+  //     // change src
+  //     // this.playerOptions.sources[0].src = 'https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm';
+  //     // change item
+  //     // this.$set(this.playerOptions.sources, 0, {
+  //     //   type: "video/mp4",
+  //     //   src: 'https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm',
+  //     // })
+  //     // change array
+  //     // this.playerOptions.sources = [{
+  //     //   type: "video/mp4",
+  //     //   src: 'https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm',
+  //     // }]
+  //     this.player.play()
+  //   }, 5000)
+  // }
 }
 export default VideoPlayer

@@ -34,7 +34,7 @@
 .agenda
   .agendaEvents
     border-top: 2px solid $black;
-    max-height: calc(100vh - 62px - 90px - 50px);
+    max-height: calc(100vh - 62px - 90px - 28px);
     overflow-y: scroll;
 
   .agendaEvent
@@ -69,7 +69,7 @@
   .agendaSuscribe
     margin-top: 15px;
     padding: 10px 0;
-    text-align: right;
+    text-align: left;
 
     a
       font-weight: bold;

@@ -1,8 +1,38 @@
-@import "../../../styles/colors";
+@import '../../../styles/colors';
 
 .program
-  display flex
-  .programText
-  .programText p
-    color $white
-      
+  display: flex;
+
+  &.pageSingleLayout
+    flex-direction: column;
+    .pageTitle
+      margin-top 15px
+
+  .programText, .programText p
+    color: $white;
+
+  .activityList
+    margin-top: 10px;
+
+    .activity
+      padding: 10px 0;
+      transition: background-color 0.2s;
+
+      &:hover
+        background-color: $darkpurple;
+
+        .activityInformation
+          color: $white;
+
+      .activityName
+        font-size: 26px;
+        padding-left: 10px;
+        margin-bottom: 5px;
+
+      .activityLink
+        text-decoration: none !important;
+
+      .activityInformation
+        padding-left: 10px;
+        font-size: 18px;
+        color: $black;

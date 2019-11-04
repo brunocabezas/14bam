@@ -1,6 +1,7 @@
 import { getAcfField, getWPTitle } from '../apiHelpers'
 
-const mapArrayOfImgUrls = img => img.sizes.medium || img.url
+// const mapArrayOfImgUrls = img => img.sizes.medium || img.url
+const mapArrayOfImgUrls = img => img.url
 
 export const getExpositionsFromApi = data =>
   data.map(expo => {
@@ -56,7 +57,7 @@ export const getExpositionFromApi = (data = []) => {
       artists: getAcfField(data[0], 'artistas', []),
       curators: getAcfField(data[0], 'curadores', []),
       // Adding mainImg at the beggining of the array
-      images: [mainImg.sizes.medium || mainImg.url, ...images],
+      images: [mainImg.url, ...images],
       mainImg,
       name: getWPTitle(data[0])
     }

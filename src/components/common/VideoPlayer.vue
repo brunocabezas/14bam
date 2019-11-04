@@ -2,9 +2,11 @@
   <div class="videoPlayer">
     <!-- <Loader :loading="loading"></Loader> -->
     <video-player
+      ref="videoPlayer"
+      :playsinline="true"
       class="video-player-box"
       :options="playerOptions"
-      :playsinline="true"
+      @ready="playerReadied"
     >
     </video-player>
   </div>
@@ -15,10 +17,10 @@
 @import '../../styles/colors';
 
 .vjs-playing.vjs-has-started .vjs-big-play-button
-  display none !important
+  display: none !important;
 
 .vjs-has-started .vjs-big-play-button
-  display block !important
+  display: block !important;
 
 .videoPlayer
   width: 100%;
@@ -28,12 +30,13 @@
   .video-player
     height: 100%;
     position: relative;
+
     .video-js
-      width 100%
+      width: 100%;
       height: 100%;
 
     .vjs-control-bar
-      display none
+      display: none;
 
     .video-js:hover .vjs-big-play-button
       border-color: white;

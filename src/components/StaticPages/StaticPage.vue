@@ -1,14 +1,15 @@
 <template>
   <Loader :loading="isLoading">
-    <h1 v-if="page && !hasMedia" class="pageTitle">{{ page.title }}</h1>
+    <h1 v-if="!hasMedia" class="pageTitle">{{ page.title }}</h1>
+    <!-- Disply two columns layout if page has media  -->
     <div
-      v-if="page && !hasMedia"
+      v-if="!hasMedia"
       class="staticPageText"
       v-html="page.content.rendered"
     ></div>
-    <div v-if="hasMedia" class="pageLayout">
+    <div else-if="hasMedia" class="pageLayout">
       <div class="pageLeft">
-        <Gallery
+        <Carousel
           v-if="page.gallery && page.gallery.length > 0"
           :images="page.gallery"
         />

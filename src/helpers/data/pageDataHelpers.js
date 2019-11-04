@@ -22,6 +22,6 @@ export function pageFromStateByLabel (label, state) {
     video: getAcfField(pageFromState, 'video'),
     abstract: getAcfField(pageFromState, 'short_description'),
     dates: getAcfField(pageFromState, 'dates'),
-    gallery: getAcfField(pageFromState, 'gallery', []).map(img => img.sizes.medium)
+    gallery: getAcfField(pageFromState, 'gallery', []).map(img => img.url)
   })
 }

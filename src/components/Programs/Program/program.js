@@ -11,12 +11,14 @@ import Carousel from '@/components/common/Carousel/Carousel.vue'
     Carousel
   },
   methods: {
-    ...mapActions(['loadProgram'])
+    ...mapActions(['loadProgram', 'loadActivities'])
   },
   computed: {
     ...mapGetters({
       loading: 'isLoadingProgram',
+      isLodingActivities: 'isLoadingActivities',
       dataNotFetched: 'programNotFetched',
+      activitiesNotFetched: 'activitiesNotFetched',
       program: 'programFromState'
     })
   }
@@ -35,11 +37,23 @@ class Program extends Vue {
     )
   }
 
+  get displayActivitiesInformation () {
+    return (
+      this.program &&
+      this.program.mainProgram &&
+      this.program.mainProgram.post_name.includes('magnet')
+    )
+  }
+
   mounted () {
     const skipFetch =
       !this.dataNotFetched && this.program.slug === this.$route.params.slug
     if (this.$route.params.slug && !skipFetch) {
       this.loadProgram({ slug: this.$route.params.slug })
+    }
+
+    if (this.activitiesNotFetched) {
+      this.loadActivities()
     }
   }
 }

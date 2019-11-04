@@ -19,6 +19,7 @@ import {
   getExpositionsFromApi,
   getExpositionFromApi
 } from '../helpers/data/expositionDataHelpers'
+import { isValidDate, findCloseToToday } from '../helpers/dateHelpers'
 
 export default {
   // Expositions
@@ -67,14 +68,46 @@ export default {
     mainPrograms.find(program => program.slug === slug) || {},
   mainProgramsNotFetched: isNotFetchedHelper('main_programs'),
 
-  programFromState: state => {
-    return getProgramFromApi(state.program.responseData)
+  programFromState: (state, { activities }) => {
+    // If there are no activities on state; doing nothing
+    const program = getProgramFromApi(state.program.responseData)
+    if (activities.length === 0) return program
+
+    // Replacing events with activities from state
+    return Object.assign({}, program, {
+      events: program.events
+        .map(event => activities.find(act => act.id === event.ID))
+        .filter(validItem => validItem)
+    })
   },
   isLoadingProgram: isLoadingHelper('program'),
   programNotFetched: isNotFetchedHelper('program'),
 
   activities: st => {
     return getActivitiesFromApi(st.activities.responseData)
+  },
+  // Gets activities starting today or after
+  acitiviesFromNow: (st, { activities }) => {
+    const closestToToday = activities
+      .map(act => act.date.jsDate)
+      .filter(date => isValidDate(date))
+      .reduce(findCloseToToday, activities[0])
+
+    // Find event with closest to today's date
+    const closestOnSortedEvents = activities.find(
+      event =>
+        event.date.jsDate &&
+    event.date.jsDate.getTime &&
+    event.date.jsDate.getTime() === closestToToday.getTime()
+    )
+
+    // Based on the found item index, ten events are displayed on the calendar
+    // eslint-disable-next-line no-unused-vars
+    const spliceIndex = closestOnSortedEvents
+      ? activities.indexOf(closestOnSortedEvents)
+      : 0
+
+    return activities.slice(spliceIndex)
   },
   activityBySlug: (st, getters) => eventSlug => {
     return (

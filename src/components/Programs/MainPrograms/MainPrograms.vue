@@ -16,7 +16,7 @@
       <div class="mainProgramsAnimation">
         <img :src="`${publicPath}mainPrograms.gif`" alt="Animacion de logo" />
       </div>
-      <div class="mainProgramContainer">
+      <div class="secondProgram mainProgramContainer">
         <div class="mainProgramContainerWrapper">
           <h2 class="programTitle">
             <router-link
@@ -44,6 +44,17 @@
   padding: 15px;
   height: 80%;
 
+  @media(max-width 768px)
+    padding 0
+    flex-direction column
+    .mainProgramsAnimation
+      display none
+    .mainProgramContainer
+      &.firstProgram
+        margin-right 0 !important
+      &.secondProgram
+        margin-left 0 !important
+
   > div
     flex: 1;
     justify-content: center;
@@ -51,16 +62,20 @@
 
     &.mainProgramsAnimation
       max-width: 360px;
+      min-width 100px
 
       img
         width: 100%;
 
     &.mainProgramContainer
       min-width: 375px;
-      padding: 3em;
       text-align: left;
       display: flex;
       align-items: center;
+      &.firstProgram
+        margin-right 3em
+      &.secondProgram
+        margin-left 3em
 
   .programTitle
     &:hover a

@@ -6,7 +6,6 @@
   background-color transparent
   justify-content center
   align-items center
-  padding 1rem
   height $footer_height
 
   @media (max-width: 760px)
@@ -27,12 +26,15 @@
       text-align center
   
   .footerRight
+    padding 1rem 2rem
     flex 7
     text-align right
     .contactText
       color $white
+      margin-bottom 0
 
   .footerLeft
+    padding 1rem 2rem
     flex 5
     display flex
 
@@ -40,7 +42,6 @@
       display flex
       flex-direction row
       align-items flex-end
-      padding-bottom 4px
       input
         background-color $purple
         border 3px solid $black
@@ -54,3 +55,4 @@
       width 290px
       text-transform uppercase
       color $black
+      line-height 40px
