@@ -131,36 +131,6 @@ export const getParticipantFromApi = data => {
   )
 }
 
-// Main program is not included
-export const getMainPrograms = data => {
-  return data
-    .filter(program => true)
-    .map(({ id, slug, ...others }) => ({
-      id,
-      slug,
-      shortDescription: getAcfField(others, 'abstract'),
-      name: getWPTitle(others),
-      text: getAcfField(others, 'texto'),
-      events: getAcfField(others, 'programas', [])
-    }))
-}
-
-export const getProgramFromApi = (apiResponse = []) => {
-  // Getting the first program
-  const firstProgram = apiResponse.data[0]
-  return Object.assign(
-    {},
-    {
-      id: firstProgram.id,
-      slug: firstProgram.slug,
-      name: getWPTitle(firstProgram),
-      text: getAcfField(firstProgram, 'texto'),
-      images: getAcfField(firstProgram, 'galeria', []),
-      events: getAcfField(firstProgram, 'programas', [])
-    }
-  )
-}
-
 export const getCategoriesFromApi = data => {
   return data.map(category => ({
     id: category.id,

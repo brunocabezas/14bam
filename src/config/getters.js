@@ -5,13 +5,16 @@ import {
   getParticipantsFromApi,
   getParticipantFromApi,
   getKeywordsFromParticipants,
-  getCategoriesFromApi,
-  getMainPrograms
+  getCategoriesFromApi
 } from '@/helpers/apiHelpers'
 import { isLoadingHelper, isNotFetchedHelper } from '@/helpers/remoteDataHelper'
 
 import { onlyUnique, flatten } from '@/helpers/arrayHelpers'
 import { pageFromStateByLabel } from '@/helpers/data/pageDataHelpers'
+import {
+  getMainPrograms,
+  getProgramFromApi
+} from '@/helpers/data/programDataHelpers'
 import { getSponsorsFromApi } from '@/helpers/data/sponsorDataHelper'
 import { getActivitiesFromApi } from '@/helpers/data/eventDataHelpers'
 
@@ -54,14 +57,14 @@ export default {
 
   // Participants
   participants: state => {
-    return getParticipantsFromApi(state.participants.responseData)
+    return getParticipantsFromApi(state.participants.responseData).sort(
+      (a, b) => a.name - b.name
+    )
   },
   isLoadingParticipants: isLoadingHelper('participants'),
   participantsNotFetched: isNotFetchedHelper('participants'),
-  keywordsFromParticipants: state =>
-    getKeywordsFromParticipants(
-      getParticipantsFromApi(state.participants.responseData)
-    ),
+  keywordsFromParticipants: (state, { participants }) =>
+    getKeywordsFromParticipants(participants),
 
   // Participant
   participant: state => {
@@ -75,9 +78,15 @@ export default {
     return getMainPrograms(state.main_programs.responseData)
   },
   isLoadingMainPrograms: isLoadingHelper('main_programs'),
-  programBySlug: (st, { mainPrograms }) => slug =>
+  mainProgramBySlug: (st, { mainPrograms }) => slug =>
     mainPrograms.find(program => program.slug === slug) || {},
   mainProgramsNotFetched: isNotFetchedHelper('main_programs'),
+
+  programFromState: state => {
+    return getProgramFromApi(state.program.responseData)
+  },
+  isLoadingProgram: isLoadingHelper('program'),
+  programNotFetched: isNotFetchedHelper('program'),
 
   activities: st => {
     return getActivitiesFromApi(st.activities.responseData)

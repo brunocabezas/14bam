@@ -22,11 +22,11 @@ export default new Vuex.Store({
     keywords: [],
     // Programs and sub-programs
     main_programs: asyncState(),
-    program: {
+    program: asyncState([{
       id: -1,
       events: [],
       images: []
-    },
+    }]),
     activities: asyncState(),
     // An event is the same as a program but without events (programs)
     event: {
@@ -45,18 +45,19 @@ export default new Vuex.Store({
     ...asyncDataMutations(mutationTypes.participants),
     ...asyncDataMutations(mutationTypes.participant),
     ...asyncDataMutations(mutationTypes.mainPrograms),
+    ...asyncDataMutations(mutationTypes.program),
     ...asyncDataMutations(mutationTypes.sponsors),
     ...asyncDataMutations(mutationTypes.categories),
     ...asyncDataMutations(mutationTypes.pages),
-    loadParticipant (state, data) {
-      state.participant = data
-    },
-    loadProgram (state, data) {
-      state.program = data
-    },
-    loadEvent (state, data) {
-      state.event = data
-    },
+    // loadParticipant (state, data) {
+    //   state.participant = data
+    // },
+    // loadProgram (state, data) {
+    //   state.program = data
+    // },
+    // loadEvent (state, data) {
+    //   state.event = data
+    // },
     loadKeywords (state, data) {
       state.keywords = data
     },

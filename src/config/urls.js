@@ -2,10 +2,9 @@
 export default {
   futureHome: '/14/futuro',
   home: '/14/',
-  programs: '/14/programas',
   program: programName => `/14/programas/${programName}`,
+  mainProgram: programName => `/14/programa/${programName}`,
   // Events belong to programs
-  // event: eventName => `/14/programa/${eventName}`,
   event: eventName => `/14/actividades/${eventName}`,
   // Expositions
   expositions: '/14/exposiciones',

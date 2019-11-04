@@ -50,14 +50,14 @@
           <li class="headerNavMenuItem">
             <router-link
               title="Programa: Escuela de la intuicion"
-              :to="urls.program('escuela-de-la-intuicion')"
+              :to="urls.mainProgram('escuela-de-la-intuicion')"
               >Escuela de la intuicion</router-link
             >
           </li>
           <li class="headerNavMenuItem">
             <router-link
               title="Programa: Campos Magnéticos"
-              :to="urls.program('campos-magneticos')"
+              :to="urls.mainProgram('campos-magneticos')"
             >
               Campos Magnéticos</router-link
             >

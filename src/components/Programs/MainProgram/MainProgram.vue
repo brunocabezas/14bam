@@ -5,12 +5,13 @@
         <div v-if="images.length > 0" class="programGallery">
           <Carousel :images="images" />
         </div>
-
         <div
           v-if="program.events && program.events.length > 0"
           class="pageList programEvents"
         >
-          <h2 class="pageListTitle">Actividades</h2>
+          <h2 class="pageListTitle">
+            {{ displayActivities ? "Actividades" : "Programas" }}
+          </h2>
           <ul class="pageListWrapper">
             <li
               class="pageListItem"
@@ -19,42 +20,25 @@
             >
               <router-link
                 :title="event.post_title"
-                :to="urls.event(event.post_name)"
+                :to="urls[false ? 'event' : 'program'](event.post_name)"
               >
                 {{ event.post_title }}
               </router-link>
             </li>
           </ul>
         </div>
-
-        <div
-          v-if="program.participants && program.participants.length > 0"
-          class="pageList programParticipants"
-        >
-          <h2 class="pageListTitle">Participantes</h2>
-          <ul class="pageListWrapper">
-            <li
-              class="pageListItem"
-              v-bind:key="person.id"
-              v-for="person in program.participants"
-            >
-              <router-link
-                :title="person.post_title"
-                :to="urls.participant(person.post_name)"
-              >
-                {{ person.post_title }}
-              </router-link>
-            </li>
-          </ul>
-        </div>
+        <!-- <div v-if="program.displayEventsGrid">agenda</div> -->
+        <!-- <div v-if="!program.displayEventsGrid">display list with 3 activities?</div> -->
       </div>
       <div class="pageRight">
         <h1 class="pageTitle">{{ program.name }}</h1>
         <div v-html="program.text" class="programText"></div>
+
+        <!-- <div v-if="program.displayEventsGrid">events grid</div> -->
       </div>
     </div>
   </Loader>
 </template>
 
-<script src="./program.js"></script>
-<style src="./program.styl" lang="stylus"></style>
+<script src="./mainProgram.js"></script>
+<style src="./mainProgram.styl" lang="stylus"></style>

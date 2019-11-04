@@ -4,7 +4,8 @@
       <div
         v-bind:class="{
           sponsorsCategory: true,
-          'sponsorsCategory--half-width': index < 2}"
+          'sponsorsCategory--half-width': index < 2
+        }"
         v-for="(category, index) in categories"
         v-bind:key="category.id"
       >
@@ -19,8 +20,11 @@
             :title="sponsor.name"
             v-for="sponsor in category.sponsors"
             v-bind:style="{
-              'background-image': `url(${sponsor.logo.sizes.medium ||
-                sponsor.logo.url})`,
+              'background-image': `url(${
+                index < 2
+                  ? sponsor.logo.url
+                  : sponsor.logo.sizes.medium
+              })`,
               height: `${sponsor.logo.height}px`
             }"
             v-bind:key="sponsor.id"

@@ -6,7 +6,7 @@
           <h2 class="programTitle">
             <router-link
               :title="firstProgram.name"
-              :to="urls.program(firstProgram.slug)"
+              :to="urls.mainProgram(firstProgram.slug)"
               >{{ firstProgram.name }}</router-link
             >
           </h2>
@@ -21,7 +21,7 @@
           <h2 class="programTitle">
             <router-link
               :title="secondProgram.name"
-              :to="urls.program(secondProgram.slug)"
+              :to="urls.mainProgram(secondProgram.slug)"
               >{{ secondProgram.name }}</router-link
             >
           </h2>

@@ -9,6 +9,7 @@ import Exposition from '@/components/Expositions/Exposition/Exposition.vue'
 import Event from '@/components/Programs/Event/Event.vue'
 import Keyword from '@/components/Keywords/Keyword.vue'
 import Program from '@/components/Programs/Program/Program.vue'
+import MainProgram from '@/components/Programs/MainProgram/MainProgram.vue'
 import Contest from '@/components/StaticPages/Contest.vue'
 import About from '@/components/StaticPages/About.vue'
 import Abstract from '@/components/StaticPages/Abstract.vue'
@@ -88,6 +89,12 @@ export default new Router({
       publicPath: '/',
       name: 'program',
       component: Program
+    },
+    {
+      path: paths.mainProgram(':slug'),
+      publicPath: '/',
+      name: 'mainProgram',
+      component: MainProgram
     },
     {
       path: paths.event(':slug'),

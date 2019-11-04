@@ -1,8 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator'
-import { mapActions, mapGetters } from 'vuex'
 import store from '@/config/store'
 import Loader from '@/components/common/Loader.vue'
 import Carousel from '@/components/common/Carousel/Carousel.vue'
+import { mapActions, mapGetters } from 'vuex'
 
 @Component({
   store,
@@ -11,19 +11,27 @@ import Carousel from '@/components/common/Carousel/Carousel.vue'
     Carousel
   },
   methods: {
-    ...mapActions(['loadProgram'])
+    ...mapActions(['loadMainPrograms'])
   },
   computed: {
     ...mapGetters({
-      loading: 'isLoadingProgram',
-      dataNotFetched: 'programNotFetched',
-      program: 'programFromState'
+      loading: 'isLoadingMainPrograms',
+      dataNotFetched: 'mainProgramsNotFetched',
+      programBySlug: 'mainProgramBySlug'
     })
   }
 })
 // Also displays an event
-class Program extends Vue {
+class MainProgram extends Vue {
   urls = this.$root.urls
+
+  get program () {
+    return this.programBySlug(this.$route.params.slug)
+  }
+
+  get displayActivities () {
+    return this.program && this.program.name && this.program.name.toLowerCase().includes('escuela')
+  }
 
   get images () {
     // Getting array of urls from program
@@ -36,11 +44,9 @@ class Program extends Vue {
   }
 
   mounted () {
-    const skipFetch =
-      !this.dataNotFetched && this.program.slug === this.$route.params.slug
-    if (this.$route.params.slug && !skipFetch) {
-      this.loadProgram({ slug: this.$route.params.slug })
+    if (this.$route.params.slug && this.dataNotFetched) {
+      this.loadMainPrograms()
     }
   }
 }
-export default Program
+export default MainProgram
