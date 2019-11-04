@@ -22,16 +22,6 @@ export const getAcfField = (results, fieldName, defaultValue = '') =>
 // Gets wordpress post title
 export const getWPTitle = object => (object.title && object.title.rendered) || ''
 
-export const getSponsorsFromApi = sponsors =>
-  sponsors.map(sponsor => ({
-    date: sponsor.date,
-    author: sponsor.author,
-    logo: getAcfField(sponsor, 'logo'),
-    category: getAcfField(sponsor, 'category'),
-    url: getAcfField(sponsor, 'url', null),
-    name: getWPTitle(sponsor)
-  }))
-
 export const getExpositionsFromApi = data =>
   data.map(expo => ({
     id: expo.id,

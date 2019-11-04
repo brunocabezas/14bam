@@ -4,7 +4,7 @@
     <div class="event pageLayout">
       <div class="pageLeft">
         <ProgressiveImage v-if="event.image" :src="event.image" />
-        <VideoPlayer v-else-if="event.videoUrl" :url="event.videoUrl" />
+        <WebVideoPlayer v-else-if="event.videoUrl" :url="event.videoUrl" />
         <div
           v-if="event.participants && event.participants.length > 0"
           class="pageList"

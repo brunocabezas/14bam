@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="headerLogo" v-if="displayElements">
+    <div class="headerLogo">
       <router-link title="Inicio" v-if="!isOnFutureHome" :to="urls.home">
         <img alt="Bienal Artes Mediales Logo" src="@/assets/logo.png" />
       </router-link>

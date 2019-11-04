@@ -1,7 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import VueTypes from 'vue-types'
 import Loader from '@/components/common/Loader.vue'
-import VideoPlayer from '@/components/Home/VideoPlayer.vue'
+import WebVideoPlayer from '@/components/common/WebVideoPlayer.vue'
 import Carousel from '@/components/common/Carousel/Carousel.vue'
 
 @Component({
@@ -16,7 +16,7 @@ import Carousel from '@/components/common/Carousel/Carousel.vue'
   },
   components: {
     Loader,
-    VideoPlayer,
+    WebVideoPlayer,
     Gallery: Carousel
   }
 })

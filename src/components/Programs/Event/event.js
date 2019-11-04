@@ -2,7 +2,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { mapActions, mapGetters } from 'vuex'
 import store from '@/config/store'
-import VideoPlayer from '@/components/Home/VideoPlayer.vue'
+import WebVideoPlayer from '@/components/common/WebVideoPlayer.vue'
 import Loader from '@/components/common/Loader.vue'
 import ProgressiveImage from '@/components/common/ProgressiveImage.vue'
 import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/ExpositionInfoBar.vue'
@@ -22,7 +22,7 @@ import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/Exposi
   components: {
     Loader,
     ProgressiveImage,
-    VideoPlayer,
+    WebVideoPlayer,
     ExpositionInfoBar
   }
 })

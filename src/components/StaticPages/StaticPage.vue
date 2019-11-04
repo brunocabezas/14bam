@@ -12,7 +12,7 @@
           v-if="page.gallery && page.gallery.length > 0"
           :images="page.gallery"
         />
-        <VideoPlayer v-else-if="page.video" :url="page.video" />
+        <WebVideoPlayer v-else-if="page.video" :url="page.video" />
       </div>
       <div class="pageRight">
         <h1 class="pageTitle">{{ page.title }}</h1>

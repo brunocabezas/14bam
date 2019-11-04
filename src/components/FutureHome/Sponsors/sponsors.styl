@@ -1,0 +1,56 @@
+
+.sponsors
+  margin-top: 4em;
+
+  .loaderContainer
+     // First two categories, have different logo restrictions
+    .sponsorsCategory:first-child
+      width: 50%;
+      flex: 1;
+
+  .sponsorsCategory
+    .sponsorsCategoryTitle
+        display: block;
+        text-align: left;
+
+      .sponsorsCategoryGrid
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        .sponsor
+          margin: 2em 15px;
+          max-height: 100px;
+          box-sizing: border-box;
+          display: inline-block;
+          width: calc(20% - 30px);
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: contain;
+    // First two categories, have different logo restrictions
+    // and use two columns layout
+    &.sponsorsCategory--half-width
+      padding: 10px;
+      width: 35%;
+      display: inline-block;
+
+      &:nth-child(2)
+        margin-left: 15%;
+
+      &:nth-child(3)
+        margin-right: 15%;
+        .sponsorsCategoryTitle
+          text-align: left;
+
+      &:nth-child(2),
+      &:nth-child(3)
+        .sponsor
+          margin 10px
+          min-height 200px
+
+      .sponsorsCategoryGrid .sponsor
+        display: block !important;
+        width: 100%;
+
+     

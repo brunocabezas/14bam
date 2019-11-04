@@ -18,7 +18,9 @@ import { mapActions, mapGetters } from 'vuex'
     ...mapGetters({
       isLoadingSponsors: 'isLoadingSponsors',
       isLoadingCategories: 'isLoadingCategories',
+      // TODO remove when stop displaying oldSponsors
       newSponsors: 'sponsors',
+      // TODO remove when stop displaying oldSponsors
       oldSponsors: 'oldSponsors',
       categories: 'categoriesFromSponsors',
       sponsorsNotFetched: 'sponsorsNotFetched',
@@ -30,6 +32,7 @@ import { mapActions, mapGetters } from 'vuex'
   }
 })
 class Sponsors extends Vue {
+  // TODO remove when stop displaying oldSponsors
   get sponsors () {
     return this.displayNewSponsors ? this.newSponsors : this.oldSponsors
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="videoPlayer">
+  <div class="WebvideoPlayer">
     <Loader :loading="loading"></Loader>
     <vimeo-player
       v-if="url && isVimeo"
@@ -46,7 +46,7 @@ Vue.use(vueVimeoPlayer)
     }
   }
 })
-class VideoPlayer extends Vue {
+class WebVideoPlayer extends Vue {
   loading = false
   playerVars = {
     controls: 0,
@@ -78,11 +78,11 @@ class VideoPlayer extends Vue {
     this.isVimeo = this.url.includes('vimeo')
   }
 }
-export default VideoPlayer
+export default WebVideoPlayer
 </script>
 
 <style lang="stylus">
-.videoPlayer
+.WebvideoPlayer
   width 100%
   min-height 300px
   position relative

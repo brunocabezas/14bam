@@ -12,6 +12,7 @@ import './registerServiceWorker'
 import store from '@/config/store'
 import urls from '@/config/urls'
 import 'es6-promise/auto'
+import '../node_modules/video.js/dist/video-js.css'
 
 // only import the icons you use to reduce bundle size
 import 'vue-awesome/icons/brands/facebook'

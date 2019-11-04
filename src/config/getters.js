@@ -4,18 +4,16 @@ import {
   getExpositionFromApi,
   getParticipantsFromApi,
   getParticipantFromApi,
+  getKeywordsFromParticipants,
+  getCategoriesFromApi,
   getMainPrograms
 } from '@/helpers/apiHelpers'
-import { isLoadingHelper } from '@/helpers/remoteDataHelper'
-import { isNotFetchedHelper } from '../helpers/remoteDataHelper'
-import {
-  getKeywordsFromParticipants,
-  getSponsorsFromApi,
-  getCategoriesFromApi
-} from '../helpers/apiHelpers'
-import { onlyUnique, flatten } from '../helpers/arrayHelpers'
-import { pageFromStateByLabel } from '../helpers/data/pageHelpers'
-import { getActivitiesFromApi } from '../helpers/data/eventHelpers'
+import { isLoadingHelper, isNotFetchedHelper } from '@/helpers/remoteDataHelper'
+
+import { onlyUnique, flatten } from '@/helpers/arrayHelpers'
+import { pageFromStateByLabel } from '@/helpers/data/pageDataHelpers'
+import { getSponsorsFromApi } from '@/helpers/data/sponsorDataHelper'
+import { getActivitiesFromApi } from '@/helpers/data/eventDataHelpers'
 
 export default {
   // Expositions
@@ -95,14 +93,18 @@ export default {
   isLoadingActivities: isLoadingHelper('activities'),
   activitiesNotFetched: isNotFetchedHelper('activities'),
 
-  // Sponsors
+  // TODO remove when FutureHome is Home
   oldSponsors: (state, { sponsorsFromState }) => {
     // For now filtering sponsors by author
     return sponsorsFromState.filter(
       sponsor => sponsor.category.slug === 'uncategorized'
     )
   },
+
+  // Sponsors
   sponsorsFromState: state => getSponsorsFromApi(state.sponsors.responseData),
+
+  // used on categoriesFromSponsors
   sponsors: (state, { sponsorsFromState }) => {
     const categories = getCategoriesFromApi(state.categories.responseData)
     return (
@@ -143,7 +145,21 @@ export default {
           id: catId,
           order,
           // For now filtering sponsors by author
-          sponsors: sponsorsFromState.filter(s => s.category.term_id === catId)
+          sponsors: sponsorsFromState
+            // Trasnform all sponsors with oreder zero to be the last,
+            // meaning with order equal or bigger than the total items
+            .map(sponsor =>
+              sponsor.order === 0
+                ? Object.assign({}, sponsor, {
+                  order: sponsorsFromState.length + 2
+                })
+                : sponsor
+            )
+            .filter(s => s.category.term_id === catId)
+            // Sorting by order
+            .sort((a, b) => {
+              return a.order - b.order
+            })
         }
       })
       .filter(cat => !cat.slug.includes('uncategorized'))
