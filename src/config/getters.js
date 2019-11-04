@@ -1,7 +1,5 @@
 import { dateStringToDate } from '@/helpers/dateHelpers'
 import {
-  getExpositionsFromApi,
-  getExpositionFromApi,
   getParticipantsFromApi,
   getParticipantFromApi,
   getKeywordsFromParticipants,
@@ -9,7 +7,7 @@ import {
 } from '@/helpers/apiHelpers'
 import { isLoadingHelper, isNotFetchedHelper } from '@/helpers/remoteDataHelper'
 
-import { onlyUnique, flatten } from '@/helpers/arrayHelpers'
+import { onlyUnique } from '@/helpers/arrayHelpers'
 import { pageFromStateByLabel } from '@/helpers/data/pageDataHelpers'
 import {
   getMainPrograms,
@@ -17,6 +15,10 @@ import {
 } from '@/helpers/data/programDataHelpers'
 import { getSponsorsFromApi } from '@/helpers/data/sponsorDataHelper'
 import { getActivitiesFromApi } from '@/helpers/data/eventDataHelpers'
+import {
+  getExpositionsFromApi,
+  getExpositionFromApi
+} from '../helpers/data/expositionDataHelpers'
 
 export default {
   // Expositions
@@ -38,23 +40,6 @@ export default {
   },
   isLoadingExposition: isLoadingHelper('exposition'),
   expositionNotFetched: isNotFetchedHelper('exposition'),
-  expositionGalleryBySlug: (
-    state,
-    { expositionBySlug, participants }
-  ) => expoSlug => {
-    const expositionArtists = expositionBySlug(expoSlug).artists.map(
-      artist => artist.ID
-    )
-
-    // Getting images of participants off the exposition
-    const artistsImages = participants
-      .filter(person => expositionArtists.includes(person.id))
-      .filter(person => person.images && person.images.length > 0)
-      .map(person => person.images)
-
-    return flatten(artistsImages).map(img => img.url)
-  },
-
   // Participants
   participants: state => {
     return getParticipantsFromApi(state.participants.responseData).sort(

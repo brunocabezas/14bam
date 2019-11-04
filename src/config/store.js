@@ -15,7 +15,7 @@ export default new Vuex.Store({
     sponsors: asyncState(),
     // Expositions
     expositions: asyncState(),
-    exposition: asyncState([{ artists: [] }]),
+    exposition: asyncState([{ mainImg: { url: '', sizes: { medium: '' } }, images: [], artists: [] }]),
     // Artits and curators
     participants: asyncState(),
     participant: asyncState([{}]),

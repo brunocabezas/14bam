@@ -8,7 +8,11 @@
         v-for="exposition in expositions"
         v-bind:key="exposition.name"
         v-bind:style="{
-          'background-image': exposition.img ? `url(${exposition.img})` : 'none'
+          'background-image':
+            exposition.mainImg.sizes.medium || exposition.mainImg.url
+              ? `url(${exposition.mainImg.sizes.medium ||
+                  exposition.mainImg.url})`
+              : 'none'
         }"
       >
         <div class="expositionOverlay">
