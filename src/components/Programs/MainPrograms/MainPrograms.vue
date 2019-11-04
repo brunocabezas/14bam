@@ -4,9 +4,11 @@
       <div class="firstProgram mainProgramContainer">
         <div class="mainProgramContainerWrapper">
           <h2 class="programTitle">
-            <router-link :to="urls.program(firstProgram.slug)">{{
-              firstProgram.name
-            }}</router-link>
+            <router-link
+              :title="firstProgram.name"
+              :to="urls.program(firstProgram.slug)"
+              >{{ firstProgram.name }}</router-link
+            >
           </h2>
           <p class="programAbstract" v-html="firstProgram.shortDescription"></p>
         </div>
@@ -17,11 +19,16 @@
       <div class="mainProgramContainer">
         <div class="mainProgramContainerWrapper">
           <h2 class="programTitle">
-            <router-link :to="urls.program(secondProgram.slug)">{{
-              secondProgram.name
-            }}</router-link>
+            <router-link
+              :title="secondProgram.name"
+              :to="urls.program(secondProgram.slug)"
+              >{{ secondProgram.name }}</router-link
+            >
           </h2>
-          <p class="programAbstract" v-html="secondProgram.shortDescription"></p>
+          <p
+            class="programAbstract"
+            v-html="secondProgram.shortDescription"
+          ></p>
         </div>
       </div>
     </div>
@@ -52,13 +59,15 @@
       min-width: 375px;
       padding: 3em;
       text-align: left;
-      display flex
-      align-items center
+      display: flex;
+      align-items: center;
 
   .programTitle
-    text-decoration: underline;
+    &:hover a
+      text-decoration: underline;
 
     a
+      text-decoration: none;
       font-size: 32px;
 
   .programAbstract

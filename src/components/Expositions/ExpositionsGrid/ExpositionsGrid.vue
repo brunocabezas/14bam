@@ -11,15 +11,17 @@
           'background-image': exposition.img ? `url(${exposition.img})` : 'none'
         }"
       >
-        <h3 class="expositionName">
-          {{ exposition.name }}
-        </h3>
-        <div class="expositionText">
-          <p>{{ exposition.place }}</p>
-          <p>
-            {{ exposition.startDate }} {{ exposition.endDate && "al" }}
-            {{ exposition.endDate }}
-          </p>
+        <div class="expositionOverlay">
+          <h3 class="expositionName">
+            {{ exposition.name }}
+          </h3>
+          <div class="expositionText">
+            <p>{{ exposition.place }}</p>
+            <p>
+              {{ exposition.startDate }} {{ exposition.endDate && "al" }}
+              {{ exposition.endDate }}
+            </p>
+          </div>
         </div>
       </router-link>
     </div>

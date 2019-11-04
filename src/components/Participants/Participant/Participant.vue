@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="pageRight">
-        <h1 class="pageTitle">{{ participant.name }}</h1>
+        <h1  v-html="participant.name" class="pageTitle"></h1>
         <p v-html="participant.bio"></p>
 
         <h1 class="pageTitle">{{ participant.workTitle }}</h1>

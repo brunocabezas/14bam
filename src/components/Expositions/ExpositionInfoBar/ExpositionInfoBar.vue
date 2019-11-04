@@ -21,12 +21,12 @@
       {{ exposition.hour2 }}
     </li>
     <li
-      v-if="exposition.address || exposition.web"
       class="expositionInfoBarItem"
     >
-      <span>
+      <div class="expositionInfoBarItem__linkWrapper">
+        <div class="expositionAddress">
         {{ exposition.address }}
-        <br />
+        </div>
         <a
           target="_blank"
           :title="exposition.web"
@@ -34,7 +34,7 @@
           :href="exposition.web"
           >{{ exposition.webText || exposition.web }}</a
         >
-      </span>
+      </div>
     </li>
   </ul>
 </template>

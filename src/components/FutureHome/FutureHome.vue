@@ -8,11 +8,11 @@
       <div class="abstractWrapper">
         <div class="abstractWrapperLeft">
           <h1 class="abstractTitle">
-            <router-link :to="urls.abstract">{{
+            <router-link :title="abstractPage.title" :to="urls.abstract">{{
               abstractPage.title
             }}</router-link>
           </h1>
-          <p class="abstractDates"> {{ abstractPage.dates }}</p>
+          <p class="abstractDates">{{ abstractPage.dates }}</p>
         </div>
         <div class="abstractWrapperRight">
           <p class="sectionText" v-html="abstractPage.abstract"></p>
@@ -21,14 +21,12 @@
     </section>
     <section class="section expositions">
       <h1 class="sectionTitle">
-        <router-link :to="urls.expositions">Exposiciones</router-link>
+        <!-- <router-link :to="urls.expositions">Exposiciones</router-link> -->
       </h1>
       <ExpositionsGrid />
     </section>
     <section class="section programs">
-      <h1 class="sectionTitle">
-        <router-link :to="urls.programs">Programas</router-link>
-      </h1>
+      <h1 class="sectionTitle">Programas</h1>
       <MainPrograms />
     </section>
     <section class="section halfSections agenda map">

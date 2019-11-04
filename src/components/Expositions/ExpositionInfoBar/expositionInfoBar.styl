@@ -9,17 +9,34 @@
       padding 15px !important
 
       &:nth-child(1)
+        justify-content flex-start !important
+      &:nth-child(1)
       &:nth-child(2)
         border-bottom 3px solid $black
-
-      &:nth-child(odd)
-        justify-content flex-start !important
-
-      &:nth-child(even)
+      &:nth-child(2)
+        text-align right
         justify-content flex-end !important
-      
+
+      // &:nth-child(3)
+      &:nth-child(4)
+      &:nth-child(3)
+        padding 0 !important
+        height 45px
+        display flex
+        width 100%
+        flex 1 1 100% !important
+        text-align right
+        justify-content flex-end !important
+
       &:last-child
-        align-items flex-end !important
+        position absolute
+        bottom 0
+        left 0
+        height 90px
+        text-align left !important
+        .expositionInfoBarItem__linkWrapper
+          .expositionInfoBarItem__link
+            left: 0
 
 .expositionInfoBar
   position relative

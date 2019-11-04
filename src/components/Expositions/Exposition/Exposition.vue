@@ -51,7 +51,7 @@
         </div>
 
         <div class="pageRight">
-          <h1 class="expositionTitle">{{ exposition.name }}</h1>
+          <h1 class="expositionTitle pageTitle">{{ exposition.name }}</h1>
           <p class="expositionText" v-html="exposition.description"></p>
         </div>
 
