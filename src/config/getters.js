@@ -44,7 +44,11 @@ export default {
   // Participants
   participants: state => {
     return getParticipantsFromApi(state.participants.responseData).sort(
-      (a, b) => a.name - b.name
+      (a, b) => {
+        if (a.name < b.name) { return -1 }
+        if (a.name > b.name) { return 1 }
+        return 0
+      }
     )
   },
   isLoadingParticipants: isLoadingHelper('participants'),
@@ -78,6 +82,10 @@ export default {
       events: program.events
         .map(event => activities.find(act => act.id === event.ID))
         .filter(validItem => validItem)
+        // Sorting activities by date
+        .sort((a, b) => {
+          return a.jsDate - b.jsDate
+        })
     })
   },
   isLoadingProgram: isLoadingHelper('program'),

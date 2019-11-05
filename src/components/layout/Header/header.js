@@ -13,8 +13,6 @@ import 'vue-burger-button/dist/vue-burger-button.css'
 class Header extends Vue {
   urls = this.$root.urls
 
-  isOnFutureHome = false
-
   isOnHome = false
 
   displayElements = true
@@ -24,10 +22,9 @@ class Header extends Vue {
   @Watch('$route')
   onPropertyChanged (to, from) {
     // If is on home and scroll passdown the first section, show header
-    this.isOnFutureHome = to.name === 'futureHome'
     this.isOnHome = to.name === 'home'
     this.displayElements =
-      to.name !== 'futureHome' ||
+      to.name !== 'home' ||
       window.scrollY > this.getViewportHeight() - 100
   }
 
@@ -39,11 +36,11 @@ class Header extends Vue {
   }
 
   created () {
-    const isOnFutureHome = this.$route.name === 'futureHome'
+    // const isOnFutureHome = this.$route.name === 'futureHome'
     this.isOnHome = this.$route.name === 'home'
-    this.isOnFutureHome = isOnFutureHome
+    // this.isOnFutureHome = isOnFutureHome
     this.displayElements =
-      !isOnFutureHome || window.scrollY > this.getViewportHeight() - 100
+      this.$route.name !== 'home' || window.scrollY > this.getViewportHeight() - 100
     document.addEventListener('scroll', this.handleScroll)
     document.addEventListener('keyup', this.closeMenuByKeyboard)
   }
@@ -66,7 +63,7 @@ class Header extends Vue {
       window.innerHeight || 0
     )
     // Only trigger header visibility changes on scroll at home
-    if (this.isOnFutureHome) {
+    if (this.isOnHome) {
       if (window.scrollY > viewportHeight - 100) {
         this.displayElements = true
       } else if (window.scrollY < viewportHeight - 100) {

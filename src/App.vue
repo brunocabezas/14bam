@@ -46,15 +46,15 @@ class App extends Vue {
       this.loadWpPages()
     }
 
-    if (this.$route.name === 'futureHome') {
+    if (this.$route.name === 'home') {
       this.isOnHome = true
     }
   }
 
   @Watch('$route')
   onPropertyChanged (to, from) {
-    // console.log(to.name === 'futureHome')
-    this.isOnHome = to.name === 'futureHome'
+    // console.log(to.name === 'home')
+    this.isOnHome = to.name === 'home'
   }
 }
 export default App

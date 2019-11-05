@@ -1,14 +1,9 @@
 <template>
   <div class="header">
     <div class="headerLogo">
-      <router-link title="Inicio" v-if="!isOnFutureHome" :to="urls.home">
+      <router-link title="Inicio" :to="urls.home">
         <img alt="Bienal Artes Mediales Logo" src="@/assets/logo.png" />
       </router-link>
-      <img
-        v-if="isOnFutureHome"
-        alt="Bienal Artes Mediales Logo"
-        src="@/assets/logo.png"
-      />
     </div>
     <div class="headerNav">
       <nav
@@ -23,7 +18,7 @@
           v-click-outside="clickOutsideMenu"
         >
           <li class="headerNavMenuItem">
-            <router-link title="Inicio" :to="urls.futureHome"
+            <router-link title="Inicio" :to="urls.home"
               >Inicio</router-link
             >
           </li>
@@ -51,7 +46,7 @@
             <router-link
               title="Programa: Escuela de la intuicion"
               :to="urls.mainProgram('escuela-de-la-intuicion')"
-              >Escuela de la intuicion</router-link
+              >Escuela de la intuición</router-link
             >
           </li>
           <li class="headerNavMenuItem">
@@ -85,7 +80,7 @@
         </div>
       </nav>
       <burger-button
-        v-if="displayElements && !isOnHome"
+        v-if="displayElements"
         class="burgerButton"
         :active="isOpen"
         :bar-color="isOpen ? 'white' : 'black'"

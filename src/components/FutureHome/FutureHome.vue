@@ -44,7 +44,7 @@
 </template>
 
 <script src="./futureHome.js" ></script>
-<style src="../Home/home.styl" scoped lang="styl"></style>
+<style src="./home.styl" lang="styl"></style>
 <style lang="stylus">
 .section.videos
   position: relative;

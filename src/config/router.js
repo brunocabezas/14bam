@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import FutureHome from '@/components/FutureHome/FutureHome.vue'
-import Home from '@/components/Home/Home.vue'
+// import Home from '@/components/Home/Home.vue'
 import Participants from '@/components/Participants/Participants.vue'
 import Participant from '@/components/Participants/Participant/Participant.vue'
 import Expositions from '@/components/Expositions/Expositions.vue'
@@ -20,14 +20,14 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
+    // {
+    //   path: paths.home,
+    //   name: 'home',
+    //   component: Home
+    // },
     {
       path: paths.home,
       name: 'home',
-      component: Home
-    },
-    {
-      path: paths.futureHome,
-      name: 'futureHome',
       component: FutureHome
     },
     // Static content pages

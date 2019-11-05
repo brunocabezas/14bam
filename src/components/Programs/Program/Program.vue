@@ -42,7 +42,7 @@
 
         <div v-if="program.mainProgram" class="pageTitleLink">
           <router-link
-            :title="`Volver a ${program.mainProgram.post_name}`"
+            :title="`Volver a ${program.mainProgram.post_title}`"
             :to="urls.mainProgram(program.mainProgram.post_name)"
           >
             <v-icon color="white" name="chevron-left" scale="1.4"></v-icon>
