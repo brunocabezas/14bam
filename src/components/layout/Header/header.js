@@ -19,20 +19,24 @@ class Header extends Vue {
 
   isOpen = false
 
+  get scrollBreakpoint () {
+    return this.$mq === 'sm' ? 300 : 100
+  }
+
+  get viewportHeight () {
+    return Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight || 0
+    )
+  }
+
   @Watch('$route')
   onPropertyChanged (to, from) {
     // If is on home and scroll passdown the first section, show header
     this.isOnHome = to.name === 'home'
     this.displayElements =
       to.name !== 'home' ||
-      window.scrollY > this.getViewportHeight() - 100
-  }
-
-  getViewportHeight () {
-    return Math.max(
-      document.documentElement.clientHeight,
-      window.innerHeight || 0
-    )
+      window.scrollY > this.viewportHeight - this.scrollBreakpoin
   }
 
   created () {
@@ -40,7 +44,8 @@ class Header extends Vue {
     this.isOnHome = this.$route.name === 'home'
     // this.isOnFutureHome = isOnFutureHome
     this.displayElements =
-      this.$route.name !== 'home' || window.scrollY > this.getViewportHeight() - 100
+      this.$route.name !== 'home' ||
+      window.scrollY > this.viewportHeight - this.scrollBreakpoin
     document.addEventListener('scroll', this.handleScroll)
     document.addEventListener('keyup', this.closeMenuByKeyboard)
   }
@@ -64,9 +69,9 @@ class Header extends Vue {
     )
     // Only trigger header visibility changes on scroll at home
     if (this.isOnHome) {
-      if (window.scrollY > viewportHeight - 100) {
+      if (window.scrollY > viewportHeight - this.scrollBreakpoint) {
         this.displayElements = true
-      } else if (window.scrollY < viewportHeight - 100) {
+      } else if (window.scrollY < viewportHeight - this.scrollBreakpoint) {
         this.displayElements = false
       }
     }

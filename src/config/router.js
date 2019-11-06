@@ -47,7 +47,8 @@ export default new Router({
       path: paths.exposition(':slug'),
       publicPath: '/',
       name: 'exposition',
-      component: () => import('@/components/Expositions/Exposition/Exposition.vue')
+      component: () =>
+        import('@/components/Expositions/Exposition/Exposition.vue')
     },
     // Participants
     {
@@ -60,7 +61,8 @@ export default new Router({
       path: paths.participant(':slug'),
       publicPath: '/',
       name: 'participant',
-      component: () => import('@/components/Participants/Participant/Participant.vue')
+      component: () =>
+        import('@/components/Participants/Participant/Participant.vue')
     },
     {
       path: paths.keyword(':slug'),
@@ -81,7 +83,8 @@ export default new Router({
       path: paths.mainProgram(':slug'),
       publicPath: '/',
       name: 'mainProgram',
-      component: () => import('@/components/Programs/MainProgram/MainProgram.vue')
+      component: () =>
+        import('@/components/Programs/MainProgram/MainProgram.vue')
     },
     {
       path: paths.event(':slug'),
@@ -89,5 +92,8 @@ export default new Router({
       name: 'event',
       component: () => import('@/components/Programs/Event/Event.vue')
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

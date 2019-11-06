@@ -46,7 +46,7 @@
 <script src='./carousel.js'></script>
 
 <style lang="stylus" scoped>
-@import '../../../styles/colors.styl';
+@import '../../../styles/constants.styl';
 
 $height = 300px;
 
@@ -92,9 +92,8 @@ $height = 300px;
 </style>
 
 <style lang="stylus">
-@import '../../../styles/colors';
-
-$height = 300px;
+@import '../../../styles/constants';
+$carousel_height = 300px
 
 .VueCarousel
   height: 100%;
@@ -118,7 +117,7 @@ $height = 300px;
     position: relative;
 
   .VueCarousel-wrapper, .carouselImage, .VueCarousel-inner
-    height: $height !important;
+    height: 300px !important;
     width: 100%;
     background-color: $purple;
 </style>

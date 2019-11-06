@@ -1,14 +1,15 @@
 <template>
   <Loader :loading="loadingData">
     <div class="exposition">
-
       <ExpositionInfoBar :expo="exposition" />
 
       <div class="pageLayout">
         <div class="pageLeft">
-          <div class="expositionGallery">
-            <Carousel :images="exposition.images" />
-          </div>
+          <mq-layout mq="lg">
+            <div class="expositionGallery">
+              <Carousel :images="exposition.images" />
+            </div>
+          </mq-layout>
           <div
             v-if="exposition.artists.length > 0"
             class="pageList expositionArtists"
@@ -22,9 +23,10 @@
               >
                 <router-link
                   :title="artist.post_title"
-                  :to="urls.participant(artist.post_name)">
+                  :to="urls.participant(artist.post_name)"
+                >
                   {{ artist.post_title }}
-                </router-link >
+                </router-link>
               </li>
             </ul>
           </div>
@@ -42,19 +44,25 @@
               >
                 <router-link
                   :title="curator.post_title"
-                  :to="urls.participant(curator.post_name)">
+                  :to="urls.participant(curator.post_name)"
+                >
                   {{ curator.post_title }}
-                </router-link >
+                </router-link>
               </li>
             </ul>
           </div>
         </div>
 
         <div class="pageRight">
+          <mq-layout :mq="['sm', 'md']">
+            <div class="expositionGallery">
+              <Carousel :images="exposition.images" />
+            </div>
+          </mq-layout>
+
           <h1 class="expositionTitle pageTitle">{{ exposition.name }}</h1>
           <p class="expositionText" v-html="exposition.description"></p>
         </div>
-
       </div>
     </div>
   </Loader>

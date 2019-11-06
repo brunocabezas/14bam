@@ -14,7 +14,7 @@
 
 <script src="./videoPlayer.js"></script>
 <style lang="stylus">
-@import '../../styles/colors';
+@import '../../styles/constants';
 
 .vjs-playing.vjs-has-started .vjs-big-play-button
   display: none !important;
@@ -39,7 +39,7 @@
       display: none;
 
     .video-js:hover .vjs-big-play-button
-      border-color: white;
+      border-color: $white;
       background-color: $purple;
 
     .vjs-big-play-button
@@ -51,7 +51,10 @@
       background-color: $purple;
       margin: 0 auto;
 
+      @media (max-width: $sm)
+        font-size 2em
+
       &:hover
-        border-color: white;
+        border-color: $white;
         background-color: $purple;
 </style>

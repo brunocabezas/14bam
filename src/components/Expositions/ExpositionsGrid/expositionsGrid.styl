@@ -1,5 +1,5 @@
 
-@import "../../../styles/colors";
+@import "../../../styles/constants";
 
 .expositionsGrid
   display: flex;
@@ -19,14 +19,14 @@
       height 100%
       display block
   
-    @media(max-width 768px)
+    @media(max-width $md)
       flex: 1 1 50% !important
       max-width 50% !important
       min-height auto
       &:hover  
         background-size 0
 
-    @media(max-width 470px)
+    @media(max-width $sm)
       flex: 1 1 100% !important
       max-width 100% !important
 

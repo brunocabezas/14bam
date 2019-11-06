@@ -1,4 +1,3 @@
-@import "../../../styles/colors";
 @import "../../../styles/constants";
 
 .footer
@@ -8,12 +7,18 @@
   align-items center
   height $footer_height
 
-  @media (max-width: 760px)
-    height initial
+  // The subscribe input and text have an specific breakpoint
+  @media (max-width: 625px)
+    .footerRight
+    .footerLeft
+      padding 0 !important
     .footerLeft
       flex-direction column
+      .suscribeInput
+        margin-top 1em
 
-  @media (max-width: 470px)
+  @media (max-width: 815px)
+    height initial 
     flex-direction column
     text-align center
     .suscribeInput

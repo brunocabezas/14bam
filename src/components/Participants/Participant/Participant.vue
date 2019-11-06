@@ -3,11 +3,13 @@
     <ExpositionInfoBar v-if="expositionSlug" :expoSlug="expositionSlug" />
     <div class="participant pageLayout">
       <div class="pageLeft">
-        <Carousel
-          v-if="participant.images.length > 0"
-          className="participanGallery"
-          :images="participant.images"
-        />
+        <mq-layout mq="lg">
+          <Carousel
+            v-if="participant.images.length > 0"
+            className="participanGallery"
+            :images="participant.images"
+          />
+        </mq-layout>
         <div
           v-if="participant.expo && participant.expo.post_title"
           class="pageList participantExpo"
@@ -47,7 +49,15 @@
         </div>
       </div>
       <div class="pageRight">
-        <h1  v-html="participant.name" class="pageTitle"></h1>
+        <mq-layout :mq="['sm', 'md']">
+          <Carousel
+            v-if="participant.images.length > 0"
+            className="participanGallery"
+            :images="participant.images"
+          />
+        </mq-layout>
+
+        <h1 v-html="participant.name" class="pageTitle"></h1>
         <p v-html="participant.bio"></p>
 
         <h1 class="pageTitle">{{ participant.workTitle }}</h1>
@@ -76,8 +86,7 @@
 </template>
 
 <script src="./participant.js"></script>
-<style src="./participant.styl" lang="stylus" scoped></style>
-<style lang="stylus">
+<style scoped lang="stylus">
 @import '../../../styles/colors';
 
 .keywords

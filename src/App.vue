@@ -60,4 +60,3 @@ class App extends Vue {
 export default App
 </script>
 <style lang="stylus" scoped src="./app.styl"></style>
-<style lang="stylus" src="./main.styl"></style>

@@ -1,5 +1,5 @@
 
-@import '../../../styles/colors'
+@import '../../../styles/constants'
 
 .participants
   margin-top 10px
@@ -19,7 +19,7 @@
     transition .2s all
     max-width 20%
     
-    @media(max-width 768px)
+    @media(max-width $md)
       flex: 1 1 50% !important
       max-width 50% !important
       min-height 100px !important
@@ -28,7 +28,7 @@
       &:hover  
         background-size 0 !important
 
-    @media(max-width 470px)
+    @media(max-width $sm)
       flex: 1 1 100% !important
       max-width 100% !important
 

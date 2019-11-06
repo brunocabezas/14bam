@@ -9,13 +9,22 @@
     ></div>
     <div else-if="hasMedia" class="pageLayout">
       <div class="pageLeft">
-        <Carousel
-          v-if="page.gallery && page.gallery.length > 0"
-          :images="page.gallery"
-        />
-        <WebVideoPlayer v-else-if="page.video" :url="page.video" />
+        <mq-layout mq="lg">
+          <Carousel
+            v-if="page.gallery && page.gallery.length > 0"
+            :images="page.gallery"
+          />
+          <WebVideoPlayer v-else-if="page.video" :url="page.video" />
+        </mq-layout>
       </div>
       <div class="pageRight">
+        <mq-layout :mq="['sm', 'md']">
+          <Carousel
+            v-if="page.gallery && page.gallery.length > 0"
+            :images="page.gallery"
+          />
+          <WebVideoPlayer v-else-if="page.video" :url="page.video" />
+        </mq-layout>
         <h1 class="pageTitle">{{ page.title }}</h1>
         <div class="staticPageText" v-html="page.content.rendered"></div>
       </div>

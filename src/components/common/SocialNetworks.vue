@@ -54,7 +54,7 @@ export default SocialNetworks
 </script>
 
 <style lang="stylus" scoped>
-@import "../../styles/colors";
+@import "../../styles/constants";
 
 .socialNetworks
   color $white
@@ -70,5 +70,5 @@ export default SocialNetworks
 
   &.isWhite
     .fa-icon
-      fill white
+      fill $white
 </style>

@@ -1,38 +1,39 @@
-@import "../../../styles/colors";
-@import "../../../styles/constants";
+@import '../../../styles/constants';
 
 .header
-  display flex
-  background-color transparent
-  justify-content center
-  align-items center
-  position fixed
-  top 0
-  left 0
-  width 100%
-  padding 1em 1.5em
-  height $header_height
-  line-height 24px
-  z-index 9
-  
-  .headerLog
-  .headerNav
-    text-align right
-    flex 1
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em 1.5em;
+  height: $header_height;
+  line-height: 24px;
+  z-index: 9;
+
+  @media (max-width: $sm)
+    padding: 1em 0.5em;
+
+  .headerLog, .headerNav
+    text-align: right;
+    flex: 1;
 
   .headerNav
-    display flex
-    justify-content flex-end
+    display: flex;
+    justify-content: flex-end;
 
     .burgerButton
-      z-index 9
-      margin-right 10px
-    
+      z-index: 9;
+      margin-right: 10px;
+
     .headerNavOverlay
-      position fixed
-      width 100%
-      height 100%
-      display none
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      display: none;
       position: fixed; /* Sit on top of the page content */
       display: none; /* Hidden by default */
       width: 100%; /* Full width (cover the whole page) */
@@ -41,41 +42,49 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+      background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
       z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
 
       &--open
-        display flex
-        justify-content center
-        align-items center
-        flex-direction column
-      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
       .headerNavMenu
-        padding 0
-        width 100%
-        text-align center
+        padding: 0;
+        width: 100%;
+        text-align: center;
 
         .headerNavMenuItem
-          margin-bottom 10px
-          line-height 50px
-          
+          line-height: 50px;
+          margin: 12px 0;
+
+          @media (max-width: $sm)
+            line-height: 30px;
+
           a
-            @media(max-width 768px)
-              font-size 24pt
-            font-size 30pt
-            display block
-            color $white
-            text-decoration none
-            text-transform uppercase
+            font-size: 30pt;
+            display: block;
+            color: $white;
+            text-decoration: none;
+            text-transform: uppercase;
+
             &:hover
-              text-decoration underline
+              text-decoration: underline;
+
+            @media (max-width: $md)
+              font-size: 24pt;
+
+            @media (max-width: $sm)
+              font-size: 28px;
 
       .headerNavContact
-        margin-top 15px
-        text-align center
-        p 
-          color $white
+        margin-top: 15px;
+        text-align: center;
 
+        @media (max-width: $md)
+          margin-top: 0;
 
-        
-
+        p
+          color: $white;

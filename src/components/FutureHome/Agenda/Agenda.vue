@@ -29,13 +29,16 @@
 
 <script src='./agenda.js'></script>
 <style lang="stylus" scoped>
-@import '../../../styles/colors';
+@import '../../../styles/constants';
 
 .agenda
   .agendaEvents
     border-top: 2px solid $black;
     max-height: calc(100vh - 62px - 90px - 28px);
     overflow-y: scroll;
+
+    @media (max-width $md)
+      max-height calc(80vh - 62px - 90px - 28px);
 
   .agendaEvent
     border-bottom: 2px solid $black;

@@ -1,28 +1,12 @@
-@import './styles/typography.styl';
-@import './styles/colors.styl';
-
-*
-  box-sizing: border-box;
-
-body, html
-  min-height: 100%;
-  height: 100%;
-
-body
-  background-color: $purple;
-  margin: 0;
-
-ul
-  list-style-type: none;
+@import './colors.styl';
+@import './constants.styl';
 
 // Main page styling
 .page
   padding: 2em;
 
-  @media (max-width: 768px)
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-
+  @media (max-width: $md)
+    padding 1em
     .pageListTitle
       margin: 0;
 
@@ -39,6 +23,8 @@ ul
 
       .pageRight
         order: 1;
+    .pageTitleLink
+      margin-bottom 10px
 
   .pageTitleLink
     height 50px
@@ -91,9 +77,11 @@ ul
 
     .pageLeft
       flex: 5;
+      padding-left 0
 
     .pageRight
       flex: 7;
+      padding-right 0
 
   // Listed items with links to other pages
   // located normally on pageLeft

@@ -1,42 +1,35 @@
 
-@import "../../../styles/colors";
+@import "../../../styles/constants";
 
-@media(max-width: 768px)
+@media(max-width: $sm)
+  .expositionInfoBar * 
+    font-size 20px !important
+
+@media(max-width: $md)
   .expositionInfoBar
     flex-wrap wrap
     .expositionInfoBarItem
-      flex 1 1 50% !important
-      padding 15px !important
+      &.expositionPlace
+      &.expositionPracticalInfo
+        padding-left 0
+        justify-content flex-start
+        text-align left
 
-      &:nth-child(1)
-        justify-content flex-start !important
-      &:nth-child(1)
-      &:nth-child(2)
+      &.expositionPlace
+      &.expositionDates
         border-bottom 3px solid $black
-      &:nth-child(2)
-        text-align right
-        justify-content flex-end !important
 
-      // &:nth-child(3)
-      &:nth-child(4)
-      &:nth-child(3)
-        padding 0 !important
-        height 45px
-        display flex
-        width 100%
-        flex 1 1 100% !important
+      &.expositionTimes
+        flex-direction column
+        align-items flex-end
+        justify-content center
+        padding-right 0
         text-align right
-        justify-content flex-end !important
 
-      &:last-child
-        position absolute
-        bottom 0
-        left 0
-        height 90px
-        text-align left !important
-        .expositionInfoBarItem__linkWrapper
-          .expositionInfoBarItem__link
-            left: 0
+      &.expositionDates
+        justify-content flex-end
+        padding-right 0
+        text-align right
 
 .expositionInfoBar
   position relative
@@ -57,19 +50,18 @@
     display flex
     align-items center
     justify-content center
+    
+    @media(max-width: $md)
+      min-width 50%
+      word-wrap anywhere
+      flex 1 1 50% !important
+      padding 15px 5px
 
     .link
       font-family 'News Cycle', sans-serif
 
-    &:first-child
-      text-align left
+    &.expositionPlace
       padding-left 0
-
-    &:last-child
-      text-align right
-      padding-right 0
-      flex-direction column
-      justify-content center
 
   .expositionInfoBarItem__link
     color $black

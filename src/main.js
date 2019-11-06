@@ -13,8 +13,10 @@ import './registerServiceWorker'
 import VueLazyLoad from 'vue-lazyload'
 import store from '@/config/store'
 import urls from '@/config/urls'
+import VueMq from 'vue-mq'
 import 'es6-promise/auto'
 import '../node_modules/video.js/dist/video-js.css'
+import './styles/main.styl'
 
 // only import the icons you use to reduce bundle size
 import 'vue-awesome/icons/brands/facebook'
@@ -22,6 +24,14 @@ import 'vue-awesome/icons/brands/instagram'
 import 'vue-awesome/icons/brands/youtube'
 import 'vue-awesome/icons/chevron-left'
 import 'vue-awesome/icons/chevron-right'
+
+Vue.use(VueMq, {
+  breakpoints: {
+    sm: 450,
+    md: 768,
+    lg: 1000
+  }
+})
 
 Vue.use(VueLazyLoad)
 
