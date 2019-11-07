@@ -48,7 +48,6 @@ class Carousel extends Vue {
   }
 
   openLightbox (index) {
-    console.log('openLightbox', index)
     this.$refs.lightbox.showImage(index)
   }
 }

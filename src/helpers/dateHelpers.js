@@ -61,7 +61,7 @@ export const sortByDate = (a, b) => {
 // 12 noviembre
 // and outputs the corresponding javascript date objects
 export const dateStringToDate = dateString => {
-  if (!dateString) return dateString
+  if (!dateString) return new Date()
 
   const day = dateString.split(' ')[0]
   const month = dateString
@@ -69,7 +69,7 @@ export const dateStringToDate = dateString => {
   const inMonthNames = monthNames.findIndex(m => m.toLowerCase() === month)
   const jsDate = new Date()
   if (!day || !inMonthNames) {
-    return dateString
+    return new Date()
   }
 
   jsDate.setDate(day)

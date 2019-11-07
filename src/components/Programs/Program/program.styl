@@ -15,8 +15,13 @@
     margin-top: 10px;
 
     .activity
+      position relative
+      min-height 85px
       padding: 10px 0;
       transition: background-color 0.2s;
+      
+      * 
+        text-align center
 
       &:hover
         background-color: $darkpurple;
@@ -30,7 +35,11 @@
         margin-bottom: 5px;
 
       .activityLink
-        text-decoration: none !important;
+        text-decoration: none !important;        
+
+        .loaderContainer
+          bottom 10px
+          top auto !important
 
       .activityInformation
         padding-left: 10px;

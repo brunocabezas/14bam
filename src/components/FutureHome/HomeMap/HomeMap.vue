@@ -3,7 +3,7 @@
     <div class="map">
       <MglMap
         :center="mapCenter"
-        :zoom="11"
+        :zoom="12"
         :accessToken="mapBoxAccessToken"
         :mapStyle="mapStyle"
       >

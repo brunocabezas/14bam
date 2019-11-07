@@ -1,3 +1,4 @@
+import sortBy from 'array-sort-by'
 import { getAcfField, getWPTitle } from '../apiHelpers'
 import { dateStringToDate } from '../dateHelpers'
 
@@ -27,6 +28,5 @@ export const getActivitiesFromApi = activities => {
         }
       }
     })
-    .sort((a, b) => a.date.jsDate - b.date.jsDate)
-  return result
+  return sortBy(result, s => -s.date.jsDate)
 }

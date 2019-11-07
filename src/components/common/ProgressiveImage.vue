@@ -36,8 +36,13 @@ export default ProgressiveImage
 .progressive-background-image
 .imageLoaderContainer
   position relative
-  height 300px
+  height 300px !important
+
+  .progressive-background-placeholder
+    background-position center center !important
+    background-size contain
 
   .loaderContainer
     top: calc((300px / 2) - 13px);
+
 </style>

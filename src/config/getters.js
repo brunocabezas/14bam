@@ -1,4 +1,6 @@
 import { dateStringToDate } from '@/helpers/dateHelpers'
+import sortBy from 'array-sort-by'
+
 import {
   getParticipantsFromApi,
   getParticipantFromApi,
@@ -79,13 +81,9 @@ export default {
 
     // Replacing events with activities from state
     return Object.assign({}, program, {
-      events: program.events
+      events: sortBy(program.events
         .map(event => activities.find(act => act.id === event.ID))
-        .filter(validItem => validItem)
-        // Sorting activities by date
-        .sort((a, b) => {
-          return a.jsDate - b.jsDate
-        })
+        .filter(validItem => validItem), e => e.date.jsDate)
     })
   },
   isLoadingProgram: isLoadingHelper('program'),
@@ -96,7 +94,7 @@ export default {
   },
   // Gets activities starting today or after
   acitiviesFromNow: (st, { activities }) => {
-    const closestToToday = activities
+    const closestToToday = [...activities]
       .map(act => act.date.jsDate)
       .filter(date => isValidDate(date))
       .reduce(findCloseToToday, activities[0])

@@ -26,7 +26,7 @@
       <ExpositionsGrid />
     </section>
     <section class="section programs">
-      <h1 class="sectionTitle">Programas</h1>
+      <h1 :style="{marginBottom: '10px' }" class="sectionTitle">Programas</h1>
       <MainPrograms />
     </section>
     <section class="section halfSections agenda map">

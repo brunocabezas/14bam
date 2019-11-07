@@ -1,18 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import FutureHome from '@/components/FutureHome/FutureHome.vue'
-// import Home from '@/components/Home/Home.vue'
-import Participants from '@/components/Participants/Participants.vue'
-import Participant from '@/components/Participants/Participant/Participant.vue'
-import Expositions from '@/components/Expositions/Expositions.vue'
-import Exposition from '@/components/Expositions/Exposition/Exposition.vue'
-import Event from '@/components/Programs/Event/Event.vue'
-import Keyword from '@/components/Keywords/Keyword.vue'
-import Program from '@/components/Programs/Program/Program.vue'
-import MainProgram from '@/components/Programs/MainProgram/MainProgram.vue'
-import Contest from '@/components/StaticPages/Contest.vue'
-import About from '@/components/StaticPages/About.vue'
-import Abstract from '@/components/StaticPages/Abstract.vue'
 import paths from '@/config/urls'
 
 Vue.use(Router)
@@ -23,63 +10,63 @@ export default new Router({
     // {
     //   path: paths.home,
     //   name: 'home',
-    //   component: Home
+    //   component: () => import(Home)
     // },
     {
       path: paths.home,
       name: 'home',
-      component: FutureHome
+      component: () => import('@/components/FutureHome/FutureHome.vue')
     },
     // Static content pages
     {
       path: paths.about,
       publicPath: '/',
       name: 'about',
-      component: About
+      component: () => import('@/components/StaticPages/About.vue')
     },
     {
       path: paths.contest,
       publicPath: '/',
       name: 'contest',
-      component: Contest
+      component: () => import('@/components/StaticPages/Contest.vue')
     },
     {
       path: paths.abstract,
       publicPath: '/',
       name: 'abstract',
-      component: Abstract
+      component: () => import('@/components/StaticPages/Abstract.vue')
     },
     // Expositions
     {
       path: paths.expositions,
       publicPath: '/',
       name: 'expositions',
-      component: Expositions
+      component: () => import('@/components/Expositions/Expositions.vue')
     },
     {
       path: paths.exposition(':slug'),
       publicPath: '/',
       name: 'exposition',
-      component: Exposition
+      component: () => import('@/components/Expositions/Exposition/Exposition.vue')
     },
     // Participants
     {
       path: paths.participants,
       publicPath: '/',
       name: 'participants',
-      component: Participants
+      component: () => import('@/components/Participants/Participants.vue')
     },
     {
       path: paths.participant(':slug'),
       publicPath: '/',
       name: 'participant',
-      component: Participant
+      component: () => import('@/components/Participants/Participant/Participant.vue')
     },
     {
       path: paths.keyword(':slug'),
       publicPath: '/',
       name: 'keyword',
-      component: Keyword
+      component: () => import('@/components/Keywords/Keyword.vue')
     },
     // Programs
     // Following routes both use Program, which based on
@@ -88,19 +75,19 @@ export default new Router({
       path: paths.program(':slug'),
       publicPath: '/',
       name: 'program',
-      component: Program
+      component: () => import('@/components/Programs/Program/Program.vue')
     },
     {
       path: paths.mainProgram(':slug'),
       publicPath: '/',
       name: 'mainProgram',
-      component: MainProgram
+      component: () => import('@/components/Programs/MainProgram/MainProgram.vue')
     },
     {
       path: paths.event(':slug'),
       publicPath: '/',
       name: 'event',
-      component: Event
+      component: () => import('@/components/Programs/Event/Event.vue')
     }
   ]
 })

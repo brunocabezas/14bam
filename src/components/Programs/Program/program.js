@@ -16,7 +16,7 @@ import Carousel from '@/components/common/Carousel/Carousel.vue'
   computed: {
     ...mapGetters({
       loading: 'isLoadingProgram',
-      isLodingActivities: 'isLoadingActivities',
+      isLoadingActivitiesData: 'isLoadingActivities',
       dataNotFetched: 'programNotFetched',
       activitiesNotFetched: 'activitiesNotFetched',
       program: 'programFromState'

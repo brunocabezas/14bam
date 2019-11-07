@@ -25,11 +25,12 @@
             <div class="activityName">
               {{ event.post_title || event.name }}
             </div>
-            <div v-if="event.date" class="activityInformation">
+            <div v-if="event.date && !isLoadingActivitiesData" class="activityInformation">
               {{ event.date.dateString }} | {{ event.date.time }}
               {{ event.place && "|" }}
               {{ event.place && event.place.post_title }}
             </div>
+            <Loader size="20px" :loading="isLoadingActivitiesData" />
           </router-link>
         </div>
       </div>
