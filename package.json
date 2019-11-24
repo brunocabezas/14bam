@@ -1,6 +1,12 @@
 {
-  "name": "bienal14",
-  "version": "0.1.0",
+  "name": "14_bam_site",
+  "description": "EL CUARTO MUNDO. En su decimocuarta edición, la Bienal de Artes Mediales propone un campo de convergencia entre artes, ciencias y tecnología, entre naturaleza, ciudad, ideas, palabras y acción colectiva.",
+  "version": "1.0.0",
+  "keywords": [
+    "vue",
+    "frontend",
+    "wordpress"
+  ],
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
