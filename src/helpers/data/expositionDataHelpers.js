@@ -24,6 +24,7 @@ export const getExpositionsFromApi = data =>
       description: getAcfField(expo, 'texto_curatorial'),
       artists: getAcfField(expo, 'artistas', []),
       curators: getAcfField(expo, 'curadores', []),
+      audioGuideSpotifyURL: getAcfField(expo, 'audioguide_link', ''),
       // Adding mainImg at the beggining of the array
       images: [mainImg.sizes.medium || mainImg.url, ...images],
       mainImg,
@@ -54,6 +55,7 @@ export const getExpositionFromApi = (data = []) => {
       startDate: getAcfField(data[0], 'fecha_inicio'),
       endDate: getAcfField(data[0], 'fecha_termino'),
       description: getAcfField(data[0], 'texto_curatorial'),
+      audioGuideSpotifyURL: getAcfField(data[0], 'audioguide_link', ''),
       artists: getAcfField(data[0], 'artistas', []),
       curators: getAcfField(data[0], 'curadores', []),
       // Adding mainImg at the beggining of the array

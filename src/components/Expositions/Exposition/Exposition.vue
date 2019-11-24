@@ -30,7 +30,7 @@
               </li>
             </ul>
           </div>
-
+          <!-- Curators -->
           <div
             v-if="exposition.curators.length > 0"
             class="pageList expositionCurators"
@@ -50,6 +50,20 @@
                 </router-link>
               </li>
             </ul>
+          </div>
+
+          <!-- Spotify Iframe -->
+          <div v-if="exposition.audioGuideSpotifyURL" class="pageList">
+            <h2 class="pageListTitle">Audioguía</h2>
+            <br>
+            <iframe
+              :src="exposition.audioGuideSpotifyURL"
+              width="300"
+              height="380"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
           </div>
         </div>
 

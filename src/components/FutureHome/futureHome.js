@@ -27,7 +27,6 @@ import { mapGetters } from 'vuex'
   }
 })
 class FutureHome extends Vue {
-  videos = []
   video = {
     id: 0,
     url: ''
@@ -38,11 +37,17 @@ class FutureHome extends Vue {
     loadVideos()
       .then(response => {
         const { data } = response
-        this.videos = data
+        // Only using data from the first video
         if (data[0]) {
           this.video = {
             id: data[0].id,
-            url: data[0].acf_fields && data[0].acf_fields.url
+            url: data[0].acf_fields && data[0].acf_fields.url,
+            hasBanner: !!(data[0].acf_fields && data[0].acf_fields.banner),
+            bannerUrl:
+              (data[0].acf_fields &&
+                data[0].acf_fields.banner &&
+                data[0].acf_fields.banner.url) ||
+              ''
           }
         }
       })

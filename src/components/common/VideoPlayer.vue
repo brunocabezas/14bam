@@ -1,14 +1,26 @@
 <template>
   <div class="videoPlayer">
     <!-- <Loader :loading="loading"></Loader> -->
+    <div v-if="bannerUrl" class="bannerContainer">
+      <img :src="bannerUrl" alt="" />
+    </div>
     <video-player
+      v-else
       ref="videoPlayer"
       :playsinline="true"
       class="video-player-box"
       :options="playerOptions"
-      @ready="playerReadied"
     >
     </video-player>
+    <button
+      v-if="!bannerUrl"
+      type="button"
+      :title="toggleAudioTitle"
+      class="videoPlayerVolumeButton"
+      @click="toggleAudio"
+    >
+      <v-icon color="white" :name="volumeIcon" scale="1.5"> </v-icon>
+    </button>
   </div>
 </template>
 
@@ -26,6 +38,12 @@
   width: 100%;
   min-height: 300px;
   position: relative;
+
+  .bannerContainer
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
   .video-player
     height: 100%;
@@ -52,9 +70,24 @@
       margin: 0 auto;
 
       @media (max-width: $sm)
-        font-size 2em
+        font-size: 2em;
 
       &:hover
         border-color: $white;
         background-color: $purple;
+
+  .videoPlayerVolumeButton
+    height: 47px;
+    position: absolute;
+    transition: background-color 0.2s;
+    right: 10px;
+    bottom: 10px;
+    z-index: 2;
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover
+      background-color: $darkpurple;
 </style>

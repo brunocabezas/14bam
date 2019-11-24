@@ -24,6 +24,8 @@ import 'vue-awesome/icons/brands/instagram'
 import 'vue-awesome/icons/brands/youtube'
 import 'vue-awesome/icons/chevron-left'
 import 'vue-awesome/icons/chevron-right'
+import 'vue-awesome/icons/volume-up'
+import 'vue-awesome/icons/volume-mute'
 
 Vue.use(VueMq, {
   breakpoints: {

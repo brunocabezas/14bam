@@ -2,7 +2,7 @@
   <div class="home">
     <section class="section videos">
       <div class="videosOverlay"></div>
-      <VideoPlayer :url="video.url" />
+      <VideoPlayer :bannerUrl="video.bannerUrl" :url="video.url" />
     </section>
     <section class="section abstract">
       <div class="abstractWrapper">
@@ -26,7 +26,7 @@
       <ExpositionsGrid />
     </section>
     <section class="section programs">
-      <h1 :style="{marginBottom: '10px' }" class="sectionTitle">Programas</h1>
+      <h1 :style="{ marginBottom: '10px' }" class="sectionTitle">Programas</h1>
       <MainPrograms />
     </section>
     <section class="section halfSections agenda map">
