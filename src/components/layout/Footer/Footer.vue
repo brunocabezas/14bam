@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="footerLeft">
-      <h1 class="suscribeText">suscribete a nuestro boletin</h1>
+      <h1 class="suscribeText">suscríbete a nuestro boletín</h1>
       <div class="suscribeInput">
         <!-- Begin Mailchimp Signup Form -->
         <div id="mc_embed_signup">

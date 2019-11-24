@@ -3,7 +3,7 @@
     <div class="map">
       <MglMap
         :center="mapCenter"
-        :zoom="11"
+        :zoom="12"
         :accessToken="mapBoxAccessToken"
         :mapStyle="mapStyle"
       >
@@ -24,8 +24,8 @@
                   >{{ expositions[index].name }}</router-link
                 >
               </h1>
-              <p>{{ expositions[index].place }}</p>
-              <p>{{ expositions[index].address }}</p>
+              <p class="mapPopupText">{{ expositions[index].place }}</p>
+              <p class="mapPopupText">{{ expositions[index].address }}</p>
             </div>
           </MglPopup>
         </MglMarker>
@@ -40,10 +40,15 @@
 
 .map
   height: 100%;
+  .loaderContainer
+    height: 100%;
 
   .mapboxgl-popup-content
     background-color: $purple;
 
     .mapPopupTitle
       margin: 0;
+
+    .mapPopupText
+      line-height 18px !important
 </style>

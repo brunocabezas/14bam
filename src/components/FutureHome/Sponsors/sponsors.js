@@ -1,5 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import store from '@/config/store'
+import Loader from '@/components/common/Loader.vue'
 import { mapActions, mapGetters } from 'vuex'
 
 @Component({
@@ -15,18 +16,30 @@ import { mapActions, mapGetters } from 'vuex'
   },
   computed: {
     ...mapGetters({
-      isLoading: 'isLoadingSponsors',
+      isLoadingSponsors: 'isLoadingSponsors',
+      isLoadingCategories: 'isLoadingCategories',
+      // TODO remove when stop displaying oldSponsors
       newSponsors: 'sponsors',
+      // TODO remove when stop displaying oldSponsors
       oldSponsors: 'oldSponsors',
       categories: 'categoriesFromSponsors',
       sponsorsNotFetched: 'sponsorsNotFetched',
       categoriesNotFetched: 'categoriesNotFetched'
     })
+  },
+  components: {
+    Loader
   }
 })
 class Sponsors extends Vue {
+  // TODO remove when stop displaying oldSponsors
   get sponsors () {
     return this.displayNewSponsors ? this.newSponsors : this.oldSponsors
+  }
+
+  get isLoading () {
+    return this.isLoadingCategories ||
+      this.isLoadingSponsors
   }
 
   mounted () {
@@ -36,6 +49,8 @@ class Sponsors extends Vue {
           this.loadSponsors()
         }
       })
+    } else if (this.sponsorsNotFetched) {
+      this.loadSponsors()
     }
   }
 }

@@ -3,16 +3,13 @@
     <div class="exposition">
       <ExpositionInfoBar :expo="exposition" />
 
-      <div class="expositionLayout">
-        <div class="leftSection">
-          <h1 class="expositionTitle">{{ exposition.name }}</h1>
-          <p class="expositionText" v-html="exposition.description"></p>
-        </div>
-
-        <div class="rightSection">
-          <div class="expositionGallery">
-            <ExpositionGallery />
-          </div>
+      <div class="pageLayout">
+        <div class="pageLeft">
+          <mq-layout mq="lg">
+            <div class="expositionGallery">
+              <Carousel :images="exposition.images" />
+            </div>
+          </mq-layout>
           <div
             v-if="exposition.artists.length > 0"
             class="pageList expositionArtists"
@@ -26,13 +23,14 @@
               >
                 <router-link
                   :title="artist.post_title"
-                  :to="urls.participant(artist.post_name)">
+                  :to="urls.participant(artist.post_name)"
+                >
                   {{ artist.post_title }}
-                </router-link >
+                </router-link>
               </li>
             </ul>
           </div>
-
+          <!-- Curators -->
           <div
             v-if="exposition.curators.length > 0"
             class="pageList expositionCurators"
@@ -46,12 +44,38 @@
               >
                 <router-link
                   :title="curator.post_title"
-                  :to="urls.participant(curator.post_name)">
+                  :to="urls.participant(curator.post_name)"
+                >
                   {{ curator.post_title }}
-                </router-link >
+                </router-link>
               </li>
             </ul>
           </div>
+
+          <!-- Spotify Iframe -->
+          <div v-if="exposition.audioGuideSpotifyURL" class="pageList">
+            <h2 class="pageListTitle">Audioguía</h2>
+            <br>
+            <iframe
+              :src="exposition.audioGuideSpotifyURL"
+              width="300"
+              height="380"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="pageRight">
+          <mq-layout :mq="['sm', 'md']">
+            <div class="expositionGallery">
+              <Carousel :images="exposition.images" />
+            </div>
+          </mq-layout>
+
+          <h1 class="expositionTitle pageTitle">{{ exposition.name }}</h1>
+          <p class="expositionText" v-html="exposition.description"></p>
         </div>
       </div>
     </div>

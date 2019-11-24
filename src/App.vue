@@ -1,13 +1,5 @@
 <template>
   <div id="app" class="app">
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Mono:500,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.goo/gleapis.com/css?family=News+Cycle:400,700&display=swap"
-      rel="stylesheet"
-    />
     <Header />
     <div
       v-bind:class="{
@@ -26,13 +18,22 @@
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import Header from '@/components/layout/Header/Header.vue'
 import Footer from '@/components/layout/Footer/Footer.vue'
-// import urls from '@/config/urls'
-// import { loadPages, loadPosts } from '../api/client.js'
+import store from '@/config/store'
+import { mapGetters, mapActions } from 'vuex'
 
 @Component({
+  store,
   components: {
     Header,
     Footer
+  },
+  computed: {
+    ...mapGetters({
+      pagesNotFetched: 'pagesNotFetched'
+    })
+  },
+  methods: {
+    ...mapActions(['loadWpPages'])
   }
 })
 class App extends Vue {
@@ -41,18 +42,21 @@ class App extends Vue {
 
   // Lifecycle hook
   mounted () {
-    if (this.$route.name === 'futureHome') {
+    if (this.pagesNotFetched) {
+      this.loadWpPages()
+    }
+
+    if (this.$route.name === 'home') {
       this.isOnHome = true
     }
   }
 
   @Watch('$route')
   onPropertyChanged (to, from) {
-    // console.log(to.name === 'futureHome')
-    this.isOnHome = to.name === 'futureHome'
+    // console.log(to.name === 'home')
+    this.isOnHome = to.name === 'home'
   }
 }
 export default App
 </script>
 <style lang="stylus" scoped src="./app.styl"></style>
-<style lang="stylus" src="./main.styl"></style>

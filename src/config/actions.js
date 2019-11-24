@@ -22,12 +22,21 @@ export default {
       slug: mutationTypes.participant
     })(store),
   loadMainPrograms: fetchData({
-    url: routes.generalPrograms,
+    url: routes.mainPrograms,
     slug: mutationTypes.mainPrograms
   }),
+  loadProgram: (store, { slug }) =>
+    fetchData({
+      url: routes.program(slug),
+      slug: mutationTypes.program
+    })(store),
   loadSponsors: fetchData({
     url: routes.sponsors,
     slug: mutationTypes.sponsors
+  }),
+  loadActivities: fetchData({
+    url: routes.programActivities,
+    slug: mutationTypes.activities
   }),
   loadWpCategories: fetchData({
     url: routes.categories,

@@ -1,5 +1,5 @@
 <template>
-  <div class="participants">
+  <div class="participantsPage">
     <h1 class="pageTitle">Participantes</h1>
     <ParticipantsGrid />
   </div>

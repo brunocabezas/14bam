@@ -1,24 +1,33 @@
 <template>
   <Loader :loading="loadingData">
     <div class="expositionsGrid">
-      <div
+      <router-link
+        :title="exposition.name"
+        :to="urls.exposition(exposition.slug)"
         class="exposition"
         v-for="exposition in expositions"
         v-bind:key="exposition.name"
+        v-bind:style="{
+          'background-image':
+            exposition.mainImg.sizes.medium || exposition.mainImg.url
+              ? `url(${exposition.mainImg.sizes.medium ||
+                  exposition.mainImg.url})`
+              : 'none'
+        }"
       >
-        <h3 class="expositionName">
-          <router-link :to="urls.exposition(exposition.slug)">
+        <div class="expositionOverlay">
+          <h3 class="expositionName">
             {{ exposition.name }}
-          </router-link>
-        </h3>
-        <div class="expositionText">
-          <p>{{ exposition.place }}</p>
-          <p>
-            {{ exposition.startDate }} {{ exposition.endDate && "al" }}
-            {{ exposition.endDate }}
-          </p>
+          </h3>
+          <div class="expositionText">
+            <p>{{ exposition.place }}</p>
+            <p>
+              {{ exposition.startDate }} {{ exposition.endDate && "al" }}
+              {{ exposition.endDate }}
+            </p>
+          </div>
         </div>
-      </div>
+      </router-link>
     </div>
   </Loader>
 </template>

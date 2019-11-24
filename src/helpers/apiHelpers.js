@@ -10,68 +10,17 @@ import {
 //
 // apiHelpers
 // All helpers defined here handle API responses and
+
 // This logic layer is ment to format the data as required
 // and should be placed before is stored on vuex store
 
 // Local Helpers
 // Gets advanced custom fields values from results
-const getAcfField = (results, fieldName, defaultValue = '') =>
+export const getAcfField = (results, fieldName, defaultValue = '') =>
   (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
 
 // Gets wordpress post title
-const getWPTitle = object => (object.title && object.title.rendered) || ''
-
-export const getSponsorsFromApi = sponsors =>
-  sponsors.map(sponsor => ({
-    date: sponsor.date,
-    author: sponsor.author,
-    logo: getAcfField(sponsor, 'logo'),
-    category: getAcfField(sponsor, 'category'),
-    url: getAcfField(sponsor, 'url', null),
-    name: getWPTitle(sponsor)
-  }))
-
-export const getExpositionsFromApi = data =>
-  data.map(expo => ({
-    id: expo.id,
-    wpId: expo.id,
-    slug: expo.slug,
-    place: getAcfField(expo, 'espacio'),
-    hour: getAcfField(expo, 'horarios'),
-    hour2: getAcfField(expo, 'horarios_2'),
-    web: getAcfField(expo, 'web'),
-    webText: getAcfField(expo, 'web_label'),
-    address: getAcfField(expo, 'direccion'),
-    startDate: getAcfField(expo, 'fecha_inicio'),
-    endDate: getAcfField(expo, 'fecha_termino'),
-    description: getAcfField(expo, 'texto_curatorial'),
-    artists: getAcfField(expo, 'artistas', []),
-    curators: getAcfField(expo, 'curadores', []),
-    name: getWPTitle(expo)
-  }))
-
-export const getExpositionFromApi = (data = []) => {
-  return Object.assign(
-    {},
-    {
-      id: data[0].id,
-      wpId: data[0].id,
-      slug: data[0].slug,
-      place: getAcfField(data[0], 'espacio'),
-      hour: getAcfField(data[0], 'horarios'),
-      hour2: getAcfField(data[0], 'horarios_2'),
-      web: getAcfField(data[0], 'web'),
-      webText: getAcfField(data[0], 'web_label'),
-      address: getAcfField(data[0], 'direccion'),
-      startDate: getAcfField(data[0], 'fecha_inicio'),
-      endDate: getAcfField(data[0], 'fecha_termino'),
-      description: getAcfField(data[0], 'texto_curatorial'),
-      artists: getAcfField(data[0], 'artistas', []),
-      curators: getAcfField(data[0], 'curadores', []),
-      name: getWPTitle(data[0])
-    }
-  )
-}
+export const getWPTitle = object => (object.title && object.title.rendered) || ''
 
 export const getParticipantsFromApi = participants =>
   participants.map(person => ({
@@ -80,7 +29,7 @@ export const getParticipantsFromApi = participants =>
     slug: person.slug,
     name: getWPTitle(person),
     img: getAcfField(person, 'fotos', [{ url: '' }])[0].url,
-    images: getAcfField(person, 'fotos', [{ url: '' }]),
+    images: getAcfField(person, 'fotos', []),
     keywords: getAcfField(person, 'palabras_clave', []).map(
       keywords => keywords.name
     )
@@ -131,35 +80,6 @@ export const getParticipantFromApi = data => {
         name: keyword.name,
         slug: keyword.slug
       }))
-    }
-  )
-}
-
-// Main program is not included
-export const getMainPrograms = data => {
-  return data
-    .filter(program => true)
-    .map(({ id, slug, ...others }) => ({
-      id,
-      slug,
-      shortDescription: getAcfField(others, 'abstract'),
-      name: getWPTitle(others),
-      events: getAcfField(others, 'programas', [])
-    }))
-}
-
-export const getProgramFromApi = (apiResponse = []) => {
-  // Getting the first program
-  const firstProgram = apiResponse.data[0]
-  return Object.assign(
-    {},
-    {
-      id: firstProgram.id,
-      slug: firstProgram.slug,
-      name: getWPTitle(firstProgram),
-      text: getAcfField(firstProgram, 'texto'),
-      images: getAcfField(firstProgram, 'galeria', []),
-      events: getAcfField(firstProgram, 'programas', [])
     }
   )
 }

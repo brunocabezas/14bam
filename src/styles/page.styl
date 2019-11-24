@@ -1,0 +1,115 @@
+@import './colors.styl';
+@import './constants.styl';
+
+// Main page styling
+.page
+  padding: 2em;
+
+  @media (max-width: $md)
+    padding 1em
+    .pageListTitle
+      margin: 0;
+
+    .pageLayout
+      padding: 0 !important;
+      flex-wrap: wrap;
+      flex-direction: column;
+
+      .pageLeft, .pageRight
+        padding: 0 !important;
+
+      .pageLeft
+        order: 2;
+
+      .pageRight
+        order: 1;
+    .pageTitleLink
+      margin-bottom 10px
+
+  .pageTitleLink
+    height 50px
+    display flex
+    align-items center
+    a
+      margin: 0;
+      font-size: 42px;
+      color: $white;
+      text-decoration: none;
+      font-size: 30px;
+      font-family: 'News Cycle', sans-serif;
+      font-weight: bold;
+
+      &, .fa-icon
+        transition: color 0.2s;
+
+      &:hover
+        color: darken($white, 25);
+
+        .fa-icon
+          color: darken($white, 25);
+
+  .pageTitle
+    margin: 0;
+    font-size: 42px;
+    font-weight: bold;
+
+  // Main page layout, two columns with tex on right
+  .staticPageText
+    p
+      color: $white;
+      font-family: 'Roboto Mono', monospace;
+
+      span
+        font-family: 'Roboto Mono', monospace;
+
+  .pageLayout
+    display: flex;
+
+    .pageRight, .pageLeft
+      padding: 15px;
+
+      p
+        color: $white;
+        font-family: 'Roboto Mono', monospace;
+
+        span
+          font-family: 'Roboto Mono', monospace;
+
+    .pageLeft
+      flex: 5;
+      padding-left 0
+
+    .pageRight
+      flex: 7;
+      padding-right 0
+
+  // Listed items with links to other pages
+  // located normally on pageLeft
+  .pageList
+    .pageListTitle
+      font-size: 30px;
+      color: $black;
+      margin-bottom: 0;
+      text-decoration: underline;
+      font-weight: bold;
+
+    // <ul/> element
+    .pageListWrapper
+      padding: 0;
+      margin-top: 5px;
+
+      .pageListItem
+        font-weight: bold;
+        line-height: 32px;
+        color: $white;
+
+        a
+          color: $white;
+          text-decoration: none;
+          font-size: 30px;
+          font-family: 'News Cycle', sans-serif;
+          font-weight: bold;
+          transition: color 0.2s;
+
+          &:hover
+            color: darken($white, 25);

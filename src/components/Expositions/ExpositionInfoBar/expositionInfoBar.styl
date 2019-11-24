@@ -1,5 +1,35 @@
 
-@import "../../../styles/colors";
+@import "../../../styles/constants";
+
+@media(max-width: $sm)
+  .expositionInfoBar * 
+    font-size 20px !important
+
+@media(max-width: $md)
+  .expositionInfoBar
+    flex-wrap wrap
+    .expositionInfoBarItem
+      &.expositionPlace
+      &.expositionPracticalInfo
+        padding-left 0
+        justify-content flex-start
+        text-align left
+
+      &.expositionPlace
+      &.expositionDates
+        border-bottom 3px solid $black
+
+      &.expositionTimes
+        flex-direction column
+        align-items flex-end
+        justify-content center
+        padding-right 0
+        text-align right
+
+      &.expositionDates
+        justify-content flex-end
+        padding-right 0
+        text-align right
 
 .expositionInfoBar
   position relative
@@ -10,6 +40,7 @@
   vertical-align center
   min-height 120px
 
+
   .expositionInfoBarItem
     flex 1
     padding 0.8em 10px
@@ -19,19 +50,18 @@
     display flex
     align-items center
     justify-content center
+    
+    @media(max-width: $md)
+      min-width 50%
+      word-wrap anywhere
+      flex 1 1 50% !important
+      padding 15px 5px
 
     .link
       font-family 'News Cycle', sans-serif
 
-    &:first-child
-      text-align left
+    &.expositionPlace
       padding-left 0
-
-    &:last-child
-      text-align right
-      padding-right 0
-      flex-direction column
-      justify-content center
 
   .expositionInfoBarItem__link
     color $black

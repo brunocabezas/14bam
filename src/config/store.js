@@ -13,21 +13,25 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     sponsors: asyncState(),
-    calendar: [],
     // Expositions
     expositions: asyncState(),
-    exposition: asyncState([{ artists: [] }]),
+    exposition: asyncState([{ mainImg: { url: '', sizes: { medium: '' } }, images: [], artists: [] }]),
     // Artits and curators
     participants: asyncState(),
     participant: asyncState([{}]),
     keywords: [],
     // Programs and sub-programs
     main_programs: asyncState(),
-    program: {
+    program: asyncState([{
       id: -1,
       events: [],
+      mainProgram: {},
+      date: {
+        jsDate: new Date()
+      },
       images: []
-    },
+    }]),
+    activities: asyncState(),
     // An event is the same as a program but without events (programs)
     event: {
       id: -1
@@ -39,28 +43,27 @@ export default new Vuex.Store({
     pages: asyncState()
   },
   mutations: {
+    ...asyncDataMutations(mutationTypes.activities),
     ...asyncDataMutations(mutationTypes.expositions),
     ...asyncDataMutations(mutationTypes.exposition),
     ...asyncDataMutations(mutationTypes.participants),
     ...asyncDataMutations(mutationTypes.participant),
     ...asyncDataMutations(mutationTypes.mainPrograms),
+    ...asyncDataMutations(mutationTypes.program),
     ...asyncDataMutations(mutationTypes.sponsors),
     ...asyncDataMutations(mutationTypes.categories),
     ...asyncDataMutations(mutationTypes.pages),
-    loadParticipant (state, data) {
-      state.participant = data
-    },
-    loadProgram (state, data) {
-      state.program = data
-    },
-    loadEvent (state, data) {
-      state.event = data
-    },
+    // loadParticipant (state, data) {
+    //   state.participant = data
+    // },
+    // loadProgram (state, data) {
+    //   state.program = data
+    // },
+    // loadEvent (state, data) {
+    //   state.event = data
+    // },
     loadKeywords (state, data) {
       state.keywords = data
-    },
-    loadCalendar (state, data) {
-      state.calendar = data
     },
     loadMarkersData (state, data) {
       state.markersData = data

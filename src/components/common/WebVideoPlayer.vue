@@ -1,22 +1,24 @@
 <template>
-  <div class="videoPlayer">
+  <div class="WebvideoPlayer">
     <Loader :loading="loading"></Loader>
-      <vimeo-player
-        v-if="url && isVimeo"
-        ref="player"
-        :video-id="getVideoId()"
-        player-width="100%"
-        player-height="100%">
-      </vimeo-player>
-      <youtube
-        :player-vars="playerVars"
-        @ready="onPlayerReady"
-        v-if="url && !isVimeo"
-        height="100%"
-        width="100%"
-        :video-id="getVideoId()"
-        ref="youtube">
-      </youtube>
+    <vimeo-player
+      v-if="url && isVimeo"
+      ref="player"
+      :playerOptions="playerOpts"
+      :video-id="getVideoId()"
+      player-width="100%"
+      @ready="onPlayerReady"
+    >
+    </vimeo-player>
+    <youtube
+      :player-vars="playerVars"
+      @ready="onPlayerReady"
+      v-if="url && !isVimeo"
+      min-height="100%"
+      width="100%"
+      :video-id="getVideoId()"
+      ref="youtube">
+    </youtube>
   </div>
 </template>
 
@@ -36,10 +38,15 @@ Vue.use(vueVimeoPlayer)
     Loader
   },
   data () {
-    return { isVimeo: false }
+    return {
+      isVimeo: false,
+      playerOpts: {
+        minHeight: 300
+      }
+    }
   }
 })
-class VideoPlayer extends Vue {
+class WebVideoPlayer extends Vue {
   loading = false
   playerVars = {
     controls: 0,
@@ -50,7 +57,7 @@ class VideoPlayer extends Vue {
   url
 
   @Watch('url')
-  onPropertyChanged (value, oldValue) {
+  onUrlChanged (value, oldValue) {
     this.isVimeo = value.includes('vimeo')
   }
 
@@ -68,13 +75,18 @@ class VideoPlayer extends Vue {
 
   mounted () {
     this.loading = true
+    this.isVimeo = this.url.includes('vimeo')
   }
 }
-export default VideoPlayer
+export default WebVideoPlayer
 </script>
 
-<style lang="stylus" scoped>
-.videoPlayer
+<style lang="stylus">
+.WebvideoPlayer
   width 100%
-  // max-width 650px
+  min-height 300px
+  position relative
+  iframe
+    width 100%
+    min-height 100%
 </style>

@@ -1,31 +1,58 @@
 
-@import "../../../styles/colors";
+@import "../../../styles/constants";
 
 .expositionsGrid
   display: flex;
   flex-wrap: wrap;
+  padding-top: 15px
 
   .exposition
-    padding 0 20px
     flex: 1 1 33.3%;
-    margin-bottom 2em
+    min-height 180px
+    transition .2s background-color, background-image
+    text-decoration none
+    background-size 0
     max-width 33.3%
+  
+    .expositionOverlay
+      padding 1em
+      height 100%
+      display block
+  
+    @media(max-width $md)
+      flex: 1 1 50% !important
+      max-width 50% !important
+      min-height auto
+      &:hover  
+        background-size 0
 
+    @media(max-width $sm)
+      flex: 1 1 100% !important
+      max-width 100% !important
+
+    &:hover
+      background-repeat no-repeat
+      background-position center center
+      background-size cover
+      background-color $darkpurple
+      
+      .expositionOverlay
+        background-color alpha($darkpurple, 0.7)
+
+      .expositionName
+        text-decoration underline
+      .expositionText p
+        color $white
+    
     .expositionName
       margin: 0 0 5px 0;
       font-size 25px
-      a
-        text-decoration none
-        &:hover
-          text-decoration underline
 
     .expositionText
       p
-        color: $black;
         line-height 30px
         font-family "News Cycle", sans-serif
-        font-size 25px
+        font-size 18px
         font-weight bold
-
       *
         margin: 0;

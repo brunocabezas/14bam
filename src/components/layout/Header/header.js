@@ -13,37 +13,39 @@ import 'vue-burger-button/dist/vue-burger-button.css'
 class Header extends Vue {
   urls = this.$root.urls
 
-  isOnFutureHome = false
-
   isOnHome = false
 
   displayElements = true
 
   isOpen = false
 
-  @Watch('$route')
-  onPropertyChanged (to, from) {
-    // If is on home and scroll passdown the first section, show header
-    this.isOnFutureHome = to.name === 'futureHome'
-    this.isOnHome = to.name === 'home'
-    this.displayElements =
-      to.name !== 'futureHome' ||
-      window.scrollY > this.getViewportHeight() - 100
+  get scrollBreakpoint () {
+    return this.$mq === 'sm' ? 300 : 100
   }
 
-  getViewportHeight () {
+  get viewportHeight () {
     return Math.max(
       document.documentElement.clientHeight,
       window.innerHeight || 0
     )
   }
 
-  created () {
-    const isOnFutureHome = this.$route.name === 'futureHome'
-    this.isOnHome = this.$route.name === 'home'
-    this.isOnFutureHome = isOnFutureHome
+  @Watch('$route')
+  onPropertyChanged (to, from) {
+    // If is on home and scroll passdown the first section, show header
+    this.isOnHome = to.name === 'home'
     this.displayElements =
-      !isOnFutureHome || window.scrollY > this.getViewportHeight() - 100
+      to.name !== 'home' ||
+      window.scrollY > this.viewportHeight - this.scrollBreakpoin
+  }
+
+  created () {
+    // const isOnFutureHome = this.$route.name === 'futureHome'
+    this.isOnHome = this.$route.name === 'home'
+    // this.isOnFutureHome = isOnFutureHome
+    this.displayElements =
+      this.$route.name !== 'home' ||
+      window.scrollY > this.viewportHeight - this.scrollBreakpoin
     document.addEventListener('scroll', this.handleScroll)
     document.addEventListener('keyup', this.closeMenuByKeyboard)
   }
@@ -66,10 +68,10 @@ class Header extends Vue {
       window.innerHeight || 0
     )
     // Only trigger header visibility changes on scroll at home
-    if (this.isOnFutureHome) {
-      if (window.scrollY > viewportHeight - 100) {
+    if (this.isOnHome) {
+      if (window.scrollY > viewportHeight - this.scrollBreakpoint) {
         this.displayElements = true
-      } else if (window.scrollY < viewportHeight - 100) {
+      } else if (window.scrollY < viewportHeight - this.scrollBreakpoint) {
         this.displayElements = false
       }
     }

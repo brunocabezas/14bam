@@ -1,16 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import FutureHome from '@/components/FutureHome/FutureHome.vue'
-import Home from '@/components/Home/Home.vue'
-import Participants from '@/components/Participants/Participants.vue'
-import Participant from '@/components/Participants/Participant/Participant.vue'
-import Expositions from '@/components/Expositions/Expositions.vue'
-import Exposition from '@/components/Expositions/Exposition/Exposition.vue'
-import Programs from '@/components/Programs/Programs.vue'
-import Keyword from '@/components/Keywords/Keyword.vue'
-import Program from '@/components/Programs/Program/Program.vue'
-import Contest from '@/components/Contest.vue'
-import About from '@/components/About.vue'
 import paths from '@/config/urls'
 
 Vue.use(Router)
@@ -18,88 +7,93 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
+    // {
+    //   path: paths.home,
+    //   name: 'home',
+    //   component: () => import(Home)
+    // },
     {
       path: paths.home,
-      publicPath: '/',
       name: 'home',
-      component: Home
+      component: () => import('@/components/FutureHome/FutureHome.vue')
     },
-    {
-      path: paths.futureHome,
-      publicPath: '/',
-      name: 'futureHome',
-      component: FutureHome
-    },
+    // Static content pages
     {
       path: paths.about,
       publicPath: '/',
       name: 'about',
-      component: About
+      component: () => import('@/components/StaticPages/About.vue')
     },
     {
       path: paths.contest,
       publicPath: '/',
       name: 'contest',
-      component: Contest
+      component: () => import('@/components/StaticPages/Contest.vue')
+    },
+    {
+      path: paths.abstract,
+      publicPath: '/',
+      name: 'abstract',
+      component: () => import('@/components/StaticPages/Abstract.vue')
     },
     // Expositions
     {
       path: paths.expositions,
       publicPath: '/',
       name: 'expositions',
-      component: Expositions
+      component: () => import('@/components/Expositions/Expositions.vue')
     },
     {
       path: paths.exposition(':slug'),
       publicPath: '/',
       name: 'exposition',
-      component: Exposition
+      component: () =>
+        import('@/components/Expositions/Exposition/Exposition.vue')
     },
     // Participants
     {
       path: paths.participants,
       publicPath: '/',
       name: 'participants',
-      component: Participants
+      component: () => import('@/components/Participants/Participants.vue')
     },
     {
       path: paths.participant(':slug'),
       publicPath: '/',
       name: 'participant',
-      component: Participant
+      component: () =>
+        import('@/components/Participants/Participant/Participant.vue')
     },
     {
       path: paths.keyword(':slug'),
       publicPath: '/',
       name: 'keyword',
-      component: Keyword
+      component: () => import('@/components/Keywords/Keyword.vue')
     },
     // Programs
-    {
-      path: paths.programs,
-      publicPath: '/',
-      name: 'programs',
-      component: Programs
-    },
     // Following routes both use Program, which based on
     // programType property will display things accordingly
     {
       path: paths.program(':slug'),
       publicPath: '/',
       name: 'program',
-      component: Program,
-      props: {
-        programType: 'program'
-      }
+      component: () => import('@/components/Programs/Program/Program.vue')
+    },
+    {
+      path: paths.mainProgram(':slug'),
+      publicPath: '/',
+      name: 'mainProgram',
+      component: () =>
+        import('@/components/Programs/MainProgram/MainProgram.vue')
     },
     {
       path: paths.event(':slug'),
       publicPath: '/',
       name: 'event',
-      component: Program,
-      props: {
-        programType: 'event'
-      }
+      component: () => import('@/components/Programs/Event/Event.vue')
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

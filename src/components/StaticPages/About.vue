@@ -1,14 +1,12 @@
 <template>
-  <Loader :loading="isLoading">
-    <h1 class="pageTitle">{{page.title.rendered}}</h1>
-    <div class="aboutText" v-html="page.content.rendered"></div>
-  </Loader>
+  <StaticPage :loading="isLoading" :page="page" />
 </template>
 
 <script>
 import { Component, Vue } from 'vue-property-decorator'
-import store from '@/config/store'
 import { mapActions, mapGetters } from 'vuex'
+import store from '@/config/store'
+import StaticPage from '@/components/StaticPages/StaticPage.vue'
 
 @Component({
   store,
@@ -21,6 +19,9 @@ import { mapActions, mapGetters } from 'vuex'
       pagesNotFetched: 'pagesNotFetched',
       page: 'aboutPage'
     })
+  },
+  components: {
+    StaticPage
   }
 })
 class About extends Vue {
@@ -31,10 +32,4 @@ class About extends Vue {
   }
 }
 export default About
-
 </script>
-
-<style lang="stylus">
-.aboutText p
-  color white
-</style>

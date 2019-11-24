@@ -1,5 +1,5 @@
 
-@import '../../../styles/colors'
+@import '../../../styles/constants'
 
 .participants
   margin-top 10px
@@ -8,18 +8,37 @@
 
   .participant
     min-height 150px
-    padding 10px
+    padding 15px
     display flex
     align-items center
     flex 1 1 20%
-    max-width 20%
     margin-bottom 10px
-    background-size  0 0
+    background-size 0
     background-repeat no-repeat
     background-position center center
     transition .2s all
+    max-width 20%
+    
+    @media(max-width $md)
+      flex: 1 1 50% !important
+      max-width 50% !important
+      min-height 100px !important
+      .participantName a
+        font-size: 28px
+      &:hover  
+        background-size 0 !important
+
+    @media(max-width $sm)
+      flex: 1 1 100% !important
+      max-width 100% !important
+
     &:hover
       background-size cover
-      background-color darken($purple, 30%)
+      background-color $darkpurple
+      .participantName a
+        text-decoration underline
     .participantName
       opacity 1
+      a
+        text-decoration none
+        

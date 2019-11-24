@@ -10,8 +10,10 @@ export default {
   participants: 'PARTICIPANTS',
   participant: 'PARTICIPANT',
   mainPrograms: 'MAIN_PROGRAMS',
+  program: 'PROGRAM',
   sponsors: 'SPONSORS',
   pages: 'PAGES',
+  activities: 'ACTIVITIES',
   categories: 'CATEGORIES'
   // programs: 'PROGRAMS'
 }

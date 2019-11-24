@@ -1,13 +1,18 @@
-# bienal14
+# 14 Bienal Artes Mediales site
 
-vue Frontend for a wordpress as backend.
+VueJS application using wordpress as backend.
 
 ## Project setup
+
+All project dependencies an be installed by either npm or yarn:
+
 ```
 yarn install
 ```
+
 ### Wordpress ENV
-Wordpress installation should follow [this template's](https://github.com/gilbitron/wp-rest-theme) structure. This features a global `wp` object available for use of the frontend application:
+
+This application relies on a wordpress API. This [Wordpress installation template](https://github.com/gilbitron/wp-rest-theme) structure is suggested, it makes available a global `wp` object available for use on `index.php`:
 
 ```javascript
  {
@@ -31,36 +36,33 @@ Wordpress installation should follow [this template's](https://github.com/gilbit
 }
 ```
 
-[This file](src/wpObjectMock.js) is used to mock this on development.
+All this variables can be used and injected to the VueJS application, if needed.
+
+For testing purposes, [src/wpObjectMock.js](src/wpObjectMock.js) is used.
 
 ### Development
-Some environment flags are needed in order to have some features:
+
+Environment flags are needed to enable specific features:
+
 ```
 VUE_APP_GOOGLE_GEO_API // google geo api used to retrieve lat, lng values from addresses
 VUE_APP_MAPBOX_PUBLIC_TOKEN // token to be able to display map on home page
-VUE_APP_CALENDAR_ID // google calendar id to display on home page
-VUE_APP_CALENDAR_API_KEY // google calendar api key to be able to request data from calendars
+VUE_APP_ASSETS_URL // public assets url on production, for example: if it's set to '/assets/', will look for public assets at origin.com/assets/
+VUE_APP_GOOGLE_ANALYTICS // google analytics trackingId
 ```
 
-Start development server with hot reloading:
+They should be preferably defined on an `.env` file at the root folder. To start development server with hot reloading:
+
 ```
 yarn run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 yarn run build
 ```
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
