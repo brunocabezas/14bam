@@ -23,44 +23,7 @@ import {
 } from '../helpers/data/expositionDataHelpers'
 import { isValidDate, findCloseToToday } from '../helpers/dateHelpers'
 import { GetterTree } from 'vuex'
-
-// interfaces to create
-// Exposition
-interface Exposition {
-  slug: string,
-  startDate: string,
-}
-
-interface Participant {
-  name: string,
-}
-
-interface WPEvent {
-  ID: number,
-}
-
-interface Event {
-  id: number,
-  slug: string,
-  date: {
-    jsDate: Date
-  }
-}
-
-interface Program {
-  slug: string,
-}
-
-interface Category {
-  slug: string,
-  term_id: number,
-  id: number,
-}
-
-interface Sponsor {
-  order: number,
-  category: Category
-}
+import { Participant, Exposition, Program, WPEvent, Event, Sponsor, Category } from './types'
 
 let getters: GetterTree<any, any> = {
   // Expositions

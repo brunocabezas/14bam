@@ -1,52 +1,54 @@
 import { fetch as fetchData } from '../helpers/remoteDataHelper'
-import TYPES from './types'
-import { ActionTree } from 'vuex'
+import TYPES from './mutationTypes'
 import routes from '../../api/routes'
+import { State, Participant, Program, Exposition, Store } from './types'
+import { ActionTree } from 'vuex'
 
-let actions : ActionTree<any,any> = {
-  loadExpositions: fetchData({
+const actions: ActionTree<State, any> = {
+  loadExpositions: (store) => fetchData(store, {
     url: routes.expositions,
     slug: TYPES.EXPOSITIONS
   }),
-  loadExposition: (store, { slug }) =>
-    fetchData({
-      url: routes.exposition(slug),
+  loadExposition: (store, expo: Exposition) =>
+    fetchData(store, {
+      url: routes.exposition(expo.slug),
       slug: TYPES.EXPOSITION
-    })(store),
-  loadParticipants: fetchData({
+    }),
+  loadParticipants: (store) => fetchData(store, {
     url: routes.participants,
     slug: TYPES.PARTICIPANTS
   }),
-  loadParticipant: (store, { slug }) =>
-    fetchData({
-      url: routes.participant(slug),
+  loadParticipant: (store, participant: Participant) =>
+    fetchData(store, {
+      url: routes.participant(participant.slug),
       slug: TYPES.PARTICIPANT
-    })(store),
-  loadMainPrograms: fetchData({
+    }),
+  loadMainPrograms: (store) => fetchData(store, {
     url: routes.mainPrograms,
     slug: TYPES.MAIN_PROGRAMS
   }),
-  loadProgram: (store, { slug }) =>
-    fetchData({
-      url: routes.program(slug),
+  loadProgram: (store: any, program: Program) =>
+    fetchData(store, {
+      url: routes.program(program.slug),
       slug: TYPES.PROGRAM
-    })(store),
-  loadSponsors: fetchData({
+      // payload: program
+    }),
+  loadSponsors: (store) => fetchData(store, {
     url: routes.sponsors,
     slug: TYPES.SPONSORS
   }),
-  loadActivities: fetchData({
+  loadActivities: (store) => fetchData(store, {
     url: routes.programActivities,
     slug: TYPES.ACTIVITIES
   }),
-  loadWpCategories: fetchData({
+  loadWpCategories: (store) => fetchData(store, {
     url: routes.categories,
     slug: TYPES.CATEGORIES
   }),
-  loadWpPages: fetchData({
+  loadWpPages: (store) => fetchData(store, {
     url: routes.pages,
     slug: TYPES.PAGES
   })
 }
 
-export default actions;
+export default actions

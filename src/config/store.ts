@@ -6,36 +6,21 @@ import {
 } from '@/helpers/remoteDataHelper'
 import actions from './actions'
 import getters from './getters'
-import types from './types'
+import types from './mutationTypes'
+import { State, Program } from './types'
 
 Vue.use(Vuex)
 
-interface Store {
-  state: State
+const initialProgram : Program = {
+  id: -1,
+  slug: '',
+  events: [],
+  mainProgram: {},
+  date: {
+    jsDate: new Date()
+  },
+  images: []
 }
-
-interface AsyncData {
-  responseData: any, // data from the API response
-  status: any, // status code
-  loading: Boolean // loading indicator
-}
-
-interface State {
-  sponsors: AsyncData,
-  expositions: AsyncData,
-  exposition: AsyncData,
-  participants: AsyncData,
-  participant: AsyncData,
-  main_programs: AsyncData,
-  keywords: any,
-  activities: AsyncData,
-  program: AsyncData,
-  markersData: any,
-  event: any,
-  categories: AsyncData,
-  pages: AsyncData
-}
-
 let state: State = {
   sponsors: asyncState(),
   // Expositions
@@ -47,15 +32,7 @@ let state: State = {
   keywords: [],
   // Programs and sub-programs
   main_programs: asyncState(),
-  program: asyncState([{
-    id: -1,
-    events: [],
-    mainProgram: {},
-    date: {
-      jsDate: new Date()
-    },
-    images: []
-  }]),
+  program: asyncState([initialProgram]),
   activities: asyncState(),
   // An event is the same as a program but without events (programs)
   event: {
@@ -68,7 +45,7 @@ let state: State = {
   pages: asyncState()
 }
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state,
   // TODO add mutations: https://github.com/SimonZhangITer/vue-typescript-dpapp-demo/blob/master/src/store/mutations.ts
   mutations: {
@@ -91,13 +68,14 @@ export default new Vuex.Store({
     // loadEvent (state, data) {
     //   state.event = data
     // },
-    loadKeywords (state, data) {
+    loadKeywords (state: State, data: []) {
       state.keywords = data
     },
-    loadMarkersData (state, data) {
+    loadMarkersData (state: State, data: []) {
       state.markersData = data
     }
   },
   actions: { ...actions },
   getters: { ...getters }
 })
+export default store
