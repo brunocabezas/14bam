@@ -11,7 +11,6 @@ import App from './App.vue'
 import VueAnalytics from 'vue-ua'
 import './registerServiceWorker'
 import VueLazyLoad from 'vue-lazyload'
-import store from '@/config/store'
 import urls from '@/config/urls'
 import VueMq from 'vue-mq'
 import 'es6-promise/auto'
@@ -59,15 +58,11 @@ if (trackingId && process.env.NODE_ENV === 'production') {
 }
 Vue.config.productionTip = false
 Vue.use(VueAxios, axiosClient)
+
 // eslint-disable-next-line no-new
 new Vue({
-  store: store.state,
-  data () {
-    return {
-      urls
-    }
-  },
   el: '#app',
+  data () { return { urls } },
   render: h => h(App),
   router
 })

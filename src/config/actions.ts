@@ -1,49 +1,52 @@
 import { fetch as fetchData } from '../helpers/remoteDataHelper'
-import mutationTypes from './baseMutationTypes'
+import TYPES from './types'
+import { ActionTree } from 'vuex'
 import routes from '../../api/routes'
 
-export default {
+let actions : ActionTree<any,any> = {
   loadExpositions: fetchData({
     url: routes.expositions,
-    slug: mutationTypes.expositions
+    slug: TYPES.EXPOSITIONS
   }),
   loadExposition: (store, { slug }) =>
     fetchData({
       url: routes.exposition(slug),
-      slug: mutationTypes.exposition
+      slug: TYPES.EXPOSITION
     })(store),
   loadParticipants: fetchData({
     url: routes.participants,
-    slug: mutationTypes.participants
+    slug: TYPES.PARTICIPANTS
   }),
   loadParticipant: (store, { slug }) =>
     fetchData({
       url: routes.participant(slug),
-      slug: mutationTypes.participant
+      slug: TYPES.PARTICIPANT
     })(store),
   loadMainPrograms: fetchData({
     url: routes.mainPrograms,
-    slug: mutationTypes.mainPrograms
+    slug: TYPES.MAIN_PROGRAMS
   }),
   loadProgram: (store, { slug }) =>
     fetchData({
       url: routes.program(slug),
-      slug: mutationTypes.program
+      slug: TYPES.PROGRAM
     })(store),
   loadSponsors: fetchData({
     url: routes.sponsors,
-    slug: mutationTypes.sponsors
+    slug: TYPES.SPONSORS
   }),
   loadActivities: fetchData({
     url: routes.programActivities,
-    slug: mutationTypes.activities
+    slug: TYPES.ACTIVITIES
   }),
   loadWpCategories: fetchData({
     url: routes.categories,
-    slug: mutationTypes.categories
+    slug: TYPES.CATEGORIES
   }),
   loadWpPages: fetchData({
     url: routes.pages,
-    slug: mutationTypes.pages
+    slug: TYPES.PAGES
   })
 }
+
+export default actions;
