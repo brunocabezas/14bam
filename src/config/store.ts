@@ -70,6 +70,7 @@ let state: State = {
 
 export default new Vuex.Store({
   state,
+  // TODO add mutations: https://github.com/SimonZhangITer/vue-typescript-dpapp-demo/blob/master/src/store/mutations.ts
   mutations: {
     ...asyncDataMutations(types.ACTIVITIES),
     ...asyncDataMutations(types.EXPOSITIONS),

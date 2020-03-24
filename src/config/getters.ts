@@ -22,23 +22,62 @@ import {
   getExpositionFromApi
 } from '../helpers/data/expositionDataHelpers'
 import { isValidDate, findCloseToToday } from '../helpers/dateHelpers'
+import { GetterTree } from 'vuex'
 
-export default {
+// interfaces to create
+// Exposition
+interface Exposition {
+  slug: string,
+  startDate: string,
+}
+
+interface Participant {
+  name: string,
+}
+
+interface WPEvent {
+  ID: number,
+}
+
+interface Event {
+  id: number,
+  slug: string,
+  date: {
+    jsDate: Date
+  }
+}
+
+interface Program {
+  slug: string,
+}
+
+interface Category {
+  slug: string,
+  term_id: number,
+  id: number,
+}
+
+interface Sponsor {
+  order: number,
+  category: Category
+}
+
+let getters: GetterTree<any, any> = {
   // Expositions
   expositionsByDate: state => {
     if (!state.expositions || !state.expositions.responseData) {
       return []
     }
     return getExpositionsFromApi(state.expositions.responseData).sort(
-      (a, b) => dateStringToDate(a.startDate) - dateStringToDate(b.startDate)
+      (a: Exposition, b: Exposition) => dateStringToDate(a.startDate).valueOf() - dateStringToDate(b.startDate).valueOf()
     )
   },
   isLoadingExpositions: isLoadingHelper('expositions'),
   expositionsNotFetched: isNotFetchedHelper('expositions'),
 
   // Exposition
-  expositionBySlug: (state, { expositionsByDate }) => expoSlug => {
-    const isOnState = expositionsByDate.find(e => e.slug === expoSlug)
+  expositionBySlug: (state, { expositionsByDate }) => (expoSlug: string) => {
+    const isOnState = expositionsByDate.find((e: Exposition) => e.slug === expoSlug)
     return isOnState || getExpositionFromApi(state.exposition.responseData)
   },
   isLoadingExposition: isLoadingHelper('exposition'),
@@ -46,7 +85,7 @@ export default {
   // Participants
   participants: state => {
     return getParticipantsFromApi(state.participants.responseData).sort(
-      (a, b) => {
+      (a: Participant, b: Participant) => {
         if (a.name < b.name) { return -1 }
         if (a.name > b.name) { return 1 }
         return 0
@@ -70,8 +109,8 @@ export default {
     return getMainPrograms(state.main_programs.responseData)
   },
   isLoadingMainPrograms: isLoadingHelper('main_programs'),
-  mainProgramBySlug: (st, { mainPrograms }) => slug =>
-    mainPrograms.find(program => program.slug === slug) || {},
+  mainProgramBySlug: (st, { mainPrograms }) => (slug: string) =>
+    mainPrograms.find((program: Program) => program.slug === slug) || {},
   mainProgramsNotFetched: isNotFetchedHelper('main_programs'),
 
   programFromState: (state, { activities }) => {
@@ -82,8 +121,8 @@ export default {
     // Replacing events with activities from state
     return Object.assign({}, program, {
       events: sortBy(program.events
-        .map(event => activities.find(act => act.id === event.ID))
-        .filter(validItem => validItem), e => e.date.jsDate)
+        .map((event: WPEvent) => activities.find((act: Event) => act.id === event.ID))
+        .filter((validItem: Event) => validItem), (e: Event) => e.date.jsDate)
     })
   },
   isLoadingProgram: isLoadingHelper('program'),
@@ -101,10 +140,10 @@ export default {
 
     // Find event with closest to today's date
     const closestOnSortedEvents = activities.find(
-      event =>
+      (event: Event) =>
         event.date.jsDate &&
-    event.date.jsDate.getTime &&
-    event.date.jsDate.getTime() === closestToToday.getTime()
+        event.date.jsDate.getTime &&
+        event.date.jsDate.getTime() === closestToToday.getTime()
     )
 
     // Based on the found item index, ten events are displayed on the calendar
@@ -115,9 +154,9 @@ export default {
 
     return activities.slice(spliceIndex)
   },
-  activityBySlug: (st, getters) => eventSlug => {
+  activityBySlug: (st, getters) => (eventSlug: string) => {
     return (
-      getters.activities.find(event => event.slug === eventSlug) || {
+      getters.activities.find((event: Event) => event.slug === eventSlug) || {
         place: {},
         participants: []
       }
@@ -130,7 +169,7 @@ export default {
   oldSponsors: (state, { sponsorsFromState }) => {
     // For now filtering sponsors by author
     return sponsorsFromState.filter(
-      sponsor => sponsor.category.slug === 'uncategorized'
+      (sponsor: Sponsor) => sponsor.category.slug === 'uncategorized'
     )
   },
 
@@ -143,34 +182,34 @@ export default {
     return (
       sponsorsFromState
         // For now, filtering sponsors created by the admin wp user
-        .filter(sponsor => sponsor.category.slug !== 'uncategorized')
-        .map(sponsor => ({
+        .filter((sponsor: Sponsor) => sponsor.category.slug !== 'uncategorized')
+        .map((sponsor: Sponsor) => ({
           ...sponsor,
-          category: categories.find(cat => cat.id === sponsor.category.term_id)
+          category: categories.find((cat: Category) => cat.id === sponsor.category.term_id)
         }))
-        .filter(sp => sp.category)
+        .filter((sponsor: Sponsor) => sponsor.category)
     )
   },
   isLoadingSponsors: isLoadingHelper('sponsors'),
   sponsorsNotFetched: isNotFetchedHelper('sponsors'),
   categoriesFromSponsors: (state, { sponsorsFromState }) => {
-    const categories = sponsorsFromState.map(sp => sp.category)
+    const categories = sponsorsFromState.map((sp: Sponsor) => sp.category)
     const categoriesIds = sponsorsFromState
-      .map(sp => sp.category.term_id)
+      .map((sp: Sponsor) => sp.category.term_id)
       .filter(onlyUnique)
 
     // Append sponsors
     const sortedCatgories = categoriesIds
-      .map(catId => {
-        const category = categories.find(cat => cat.term_id === catId)
+      .map((catId: number) => {
+        const category = categories.find((cat: Category) => cat.term_id === catId)
         // Order is parsed from description, if contains
         // 'order:1' or 'order:1 ', this string will represent
         // a way to sort this item; if this is not found on description,
         // order is equal to categories length, so item will show up last
         const order =
           category &&
-          category.description &&
-          category.description.includes('order:')
+            category.description &&
+            category.description.includes('order:')
             ? category.description.split('order:')[1].replace(' ', '')
             : String(categories.length + 1)
         return {
@@ -181,22 +220,22 @@ export default {
           sponsors: sponsorsFromState
             // Trasnform all sponsors with oreder zero to be the last,
             // meaning with order equal or bigger than the total items
-            .map(sponsor =>
+            .map((sponsor: Sponsor) =>
               sponsor.order === 0
                 ? Object.assign({}, sponsor, {
                   order: sponsorsFromState.length + 2
                 })
                 : sponsor
             )
-            .filter(s => s.category.term_id === catId)
+            .filter((s: Sponsor) => s.category.term_id === catId)
             // Sorting by order
-            .sort((a, b) => {
+            .sort((a: Sponsor, b: Sponsor) => {
               return a.order - b.order
             })
         }
       })
-      .filter(cat => !cat.slug.includes('uncategorized'))
-      .sort((a, b) => a.order - b.order)
+      .filter((cat: Category) => !cat.slug.includes('uncategorized'))
+      .sort((a: Sponsor, b: Sponsor) => a.order - b.order)
 
     // First category should be labeled 'Organiza', if this is not the case
     // Swap the first element with the second
@@ -223,3 +262,5 @@ export default {
   isLoadingPages: isLoadingHelper('pages'),
   pagesNotFetched: isNotFetchedHelper('pages')
 }
+
+export default getters
