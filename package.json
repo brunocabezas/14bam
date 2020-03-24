@@ -1,18 +1,13 @@
 {
   "name": "14_bam_site",
-  "description": "EL CUARTO MUNDO. En su decimocuarta edición, la Bienal de Artes Mediales propone un campo de convergencia entre artes, ciencias y tecnología, entre naturaleza, ciudad, ideas, palabras y acción colectiva.",
   "version": "1.0.0",
-  "keywords": [
-    "vue",
-    "frontend",
-    "wordpress"
-  ],
   "private": true,
+  "description": "EL CUARTO MUNDO. En su decimocuarta edición, la Bienal de Artes Mediales propone un campo de convergencia entre artes, ciencias y tecnología, entre naturaleza, ciudad, ideas, palabras y acción colectiva.",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "serve:build": "npx serve -s dist",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "serve:build": "npx serve -s dist"
   },
   "dependencies": {
     "array-sort-by": "^1.2.1",
@@ -30,13 +25,13 @@
     "vue-axios": "^2.1.4",
     "vue-burger-button": "^0.1.2",
     "vue-carousel": "^0.18.0",
-    "vue-class-component": "^7.0.2",
+    "vue-class-component": "^7.2.2",
     "vue-image-lightbox": "^6.4.0",
     "vue-lazyload": "^1.3.3",
     "vue-mapbox": "^0.4.1",
     "vue-mq": "^1.0.1",
     "vue-progressive-image": "^3.2.0",
-    "vue-property-decorator": "^8.1.0",
+    "vue-property-decorator": "^8.3.0",
     "vue-router": "^3.1.2",
     "vue-spinner": "^1.0.3",
     "vue-types": "^1.6.0",
@@ -49,8 +44,10 @@
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-plugin-pwa": "^3.11.0",
+    "@vue/cli-plugin-typescript": "^4.2.3",
     "@vue/cli-service": "^3.11.0",
     "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/eslint-config-typescript": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^6.3.0",
@@ -59,7 +56,13 @@
     "prettier": "^1.18.2",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
+    "typescript": "~3.7.5",
     "vue-template-compiler": "^2.6.10",
     "vue-ua": "^1.7.0"
-  }
+  },
+  "keywords": [
+    "vue",
+    "frontend",
+    "wordpress"
+  ]
 }
