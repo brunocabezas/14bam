@@ -21,7 +21,7 @@ export type State = {
   exposition: AsyncData,
   participants: AsyncData,
   participant: AsyncData,
-  main_programs: AsyncData,
+  Mainmain_programs: AsyncData,
   keywords: any,
   activities: AsyncData,
   program: AsyncData,
@@ -80,14 +80,31 @@ export type Event = {
 export type Program = {
   id: number,
   slug: string,
+  text: string,
+  name: string,
   date: {
     jsDate: Date
   },
-  mainProgram: object
+  mainProgram: object,
   // images: Array()
+  images: any,
+  events: any,
+  participants: any,
+}
+
+export type MainProgram = {
+  id: number,
+  slug: string,
+  text: string,
+  name: string,
+  shortDescription: string
   images: any
   events: any
 }
+
+export type Programs = Program[]
+
+export type MainPrograms = MainProgram[]
 
 export type Category = {
   name: string
@@ -96,10 +113,12 @@ export type Category = {
 
 export type Categories = Category[]
 
+export type Sponsors = Sponsor[]
+
 export type Sponsor = {
   name: string,
   logo: string,
-  author: string,
+  author: number,
   order: number,
   category: SponsorCategory,
   url?: string,

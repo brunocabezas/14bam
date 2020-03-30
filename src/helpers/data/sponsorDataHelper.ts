@@ -1,6 +1,8 @@
 import { getAcfField, getWPTitle } from '../apiHelpers'
+import { WPResponse } from '@/config/types/wordpressTypes'
+import { Sponsors } from '@/config/types/types'
 
-export const getSponsorsFromApi = sponsors =>
+export const getSponsorsFromApi = (sponsors: WPResponse): Sponsors =>
   sponsors.map(sponsor => ({
     date: sponsor.date,
     author: sponsor.author,
