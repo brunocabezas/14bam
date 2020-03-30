@@ -23,7 +23,8 @@ import {
 } from '../helpers/data/expositionDataHelpers'
 import { isValidDate, findCloseToToday } from '../helpers/dateHelpers'
 import { GetterTree } from 'vuex'
-import { Participant, Exposition, Program, WPEvent, Event, Sponsor, Category } from './types'
+import { Participant, Exposition, Program, Event, Sponsor, Category, SponsorCategory } from './types/types'
+import { WPEvent } from './types/wordpressTypes'
 
 let getters: GetterTree<any, any> = {
   // Expositions
@@ -164,7 +165,7 @@ let getters: GetterTree<any, any> = {
     // Append sponsors
     const sortedCatgories = categoriesIds
       .map((catId: number) => {
-        const category = categories.find((cat: Category) => cat.term_id === catId)
+        const category = categories.find((cat: SponsorCategory) => cat.term_id === catId)
         // Order is parsed from description, if contains
         // 'order:1' or 'order:1 ', this string will represent
         // a way to sort this item; if this is not found on description,
@@ -197,7 +198,7 @@ let getters: GetterTree<any, any> = {
             })
         }
       })
-      .filter((cat: Category) => !cat.slug.includes('uncategorized'))
+      .filter((cat: SponsorCategory) => !cat.slug.includes('uncategorized'))
       .sort((a: Sponsor, b: Sponsor) => a.order - b.order)
 
     // First category should be labeled 'Organiza', if this is not the case

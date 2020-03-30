@@ -1,21 +1,21 @@
 
-export interface Store {
+export type Store = {
   state: State
 }
 
-export interface AsyncData {
+export type AsyncData = {
   responseData: any, // data from the API response
   status: any, // status code
   loading: boolean // loading indicator
 }
 
-export interface AsyncPayload {
+export type AsyncPayload = {
   data: any, // data from the API response
   statusCode: number, // status code
   value: any, // status code
   type: string
 }
-export interface State {
+export type State = {
   sponsors: AsyncData,
   expositions: AsyncData,
   exposition: AsyncData,
@@ -31,32 +31,53 @@ export interface State {
   pages: AsyncData
 }
 
-
-// interfaces to create
+// types = to create
 // Exposition
-export interface Exposition {
+export type Exposition = {
   slug: string,
   startDate: string,
 }
 
-export interface Participant {
+export type SingleParticipant = {
   name: string,
   slug: string,
+  id: number,
+  wpId: number,
+  img: string,
+  images: any,
+  keywords: any,
+  bio: string,
+  workTitle: string,
+  workDescription: string,
+  expo: any,
+  related: any,
 }
 
-export interface WPEvent {
-  ID: number,
+export type Participant = {
+  name: string,
+  slug: string,
+  id: number,
+  wpId: number,
+  img: string,
+  images: any,
+  keywords: any,
 }
 
-export interface Event {
+export type Participants = Participant[]
+
+export type Event = {
   id: number,
   slug: string,
   date: {
     jsDate: Date
-  }
+  },
+  start: {
+    dateTime: any
+  },
+  summary: string,
 }
 
-export interface Program {
+export type Program = {
   id: number,
   slug: string,
   date: {
@@ -68,13 +89,23 @@ export interface Program {
   events: any
 }
 
-export interface Category {
-  slug: string,
-  term_id: number,
+export type Category = {
+  name: string
   id: number,
 }
 
-export interface Sponsor {
+export type Categories = Category[]
+
+export type Sponsor = {
+  name: string,
+  logo: string,
+  author: string,
   order: number,
-  category: Category
+  category: SponsorCategory,
+  url?: string,
+}
+
+export type SponsorCategory = {
+  term_id: number,
+  slug: string,
 }

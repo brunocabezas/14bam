@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import { Store, StoreOptions, ActionContext } from 'vuex'
+import { ActionContext } from 'vuex'
 import getNestedValue from 'get-nested-value'
-import { AsyncData, AsyncPayload, State } from '@/config/types'
+import { AsyncData, AsyncPayload, State } from '@/config/types/types'
 //
 // remoteDataHelper
 // provides helpers to create different aspects to store information about

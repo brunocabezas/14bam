@@ -7,7 +7,7 @@ import {
 import actions from './actions'
 import getters from './getters'
 import types from './mutationTypes'
-import { State, Program } from './types'
+import { State, Program } from './types/types'
 
 Vue.use(Vuex)
 

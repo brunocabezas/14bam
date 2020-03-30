@@ -5,6 +5,6 @@ export function onlyUnique (value: string, index: number, self: string[]) {
   return self.indexOf(value) === index
 }
 
-export function flatten (arr : []) {
+export function flatten (arr : any[]) {
   return [].concat(...arr)
 }

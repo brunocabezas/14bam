@@ -1,7 +1,7 @@
 import { fetch as fetchData } from '../helpers/remoteDataHelper'
 import TYPES from './mutationTypes'
 import routes from '../../api/routes'
-import { State, Participant, Program, Exposition, Store } from './types'
+import { State, Participant, Program, Exposition } from './types/types'
 import { ActionTree } from 'vuex'
 
 const actions: ActionTree<State, any> = {

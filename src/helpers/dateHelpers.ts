@@ -1,5 +1,7 @@
+import { Event } from '@/config/types/types'
+
 // Add leading zeros to single numbers
-const addZeros = number => ('0' + number).slice(-2)
+const addZeros = (number: number): string => ('0' + number).slice(-2)
 
 const monthNames = [
   'Enero',
@@ -16,7 +18,7 @@ const monthNames = [
   'Diciembre'
 ]
 
-export const getTimeOfDateTimeString = (dateStr = '') => {
+export const getTimeOfDateTimeString = (dateStr: string = ''): string => {
   if (!dateStr) {
     return dateStr
   }
@@ -25,7 +27,7 @@ export const getTimeOfDateTimeString = (dateStr = '') => {
   return `${addZeros(date.getHours())}:${addZeros(date.getMinutes())}`
 }
 
-export const getDayOfDateTimeString = (dateStr = '') => {
+export const getDayOfDateTimeString = (dateStr: string = ''): string => {
   if (!dateStr) {
     return dateStr
   }
@@ -34,7 +36,7 @@ export const getDayOfDateTimeString = (dateStr = '') => {
   return `${addZeros(date.getDate())}`
 }
 
-export const getMonthOfDateTimeString = (dateStr = '') => {
+export const getMonthOfDateTimeString = (dateStr: string = '') : string=> {
   if (!dateStr) {
     return dateStr
   }
@@ -43,14 +45,14 @@ export const getMonthOfDateTimeString = (dateStr = '') => {
   return monthNames[date.getMonth()]
 }
 
-export const isValidDate = (d) => {
-  return d instanceof Date && !isNaN(d)
+export const isValidDate = (d: any) : boolean => {
+  return d instanceof Date
 }
 
-export const sortByDate = (a, b) => {
+export const sortEventsByDate = (a: Event, b: Event) => {
   // Turn your strings into dates, and then subtract them
   // to get a value that is either negative, positive, or zero.
-  return new Date(a.start.dateTime) - new Date(b.start.dateTime)
+  return new Date(a.start.dateTime).valueOf() - new Date(b.start.dateTime).valueOf()
 }
 
 // dateStringToDate
@@ -60,7 +62,7 @@ export const sortByDate = (a, b) => {
 // 12 Noviembre
 // 12 noviembre
 // and outputs the corresponding javascript date objects
-export const dateStringToDate = dateString => {
+export const dateStringToDate = (dateString: string) : Date=> {
   if (!dateString) return new Date()
 
   const day = dateString.split(' ')[0]
@@ -72,7 +74,7 @@ export const dateStringToDate = dateString => {
     return new Date()
   }
 
-  jsDate.setDate(day)
+  jsDate.setDate(parseInt(day, 10))
   jsDate.setMonth(inMonthNames)
 
   return jsDate
@@ -80,5 +82,5 @@ export const dateStringToDate = dateString => {
 
 // Receives array of dates, and returns the closer to today
 const today = new Date()
-export const findCloseToToday = (a, b) =>
-  Math.abs(a - today) < Math.abs(b - today) ? a : b
+export const findCloseToToday = (a: Date, b: Date) =>
+  Math.abs(a.valueOf() - today.valueOf()) < Math.abs(b.valueOf() - today.valueOf()) ? a : b
