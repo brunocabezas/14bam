@@ -1,40 +1,28 @@
-import { dateStringToDate } from '@/helpers/dateHelpers'
-import {
-  getParticipantsFromApi,
-  getParticipantFromApi,
-  getKeywordsFromParticipants,
-  getCategoriesFromApi
-} from '@/helpers/apiHelpers'
 import { isLoadingHelper, isNotFetchedHelper } from '@/helpers/remoteDataHelper'
-import { onlyUnique } from '@/helpers/arrayHelpers'
 import { pageFromStateByLabel, WPStaticPageSlug } from '@/config/getters/page'
 import {
   getMainPrograms,
   getProgram
 } from '@/config/getters/program'
-import { getSponsorsFromApi } from '@/config/getters/sponsors'
+import { getSponsors } from '@/config/getters/sponsors'
 import { getActivitiesFromApi } from '@/config/getters/activity'
 import {
-  getExpositionsFromApi,
-  getExpositionFromApi
+  getExpositionFromApi,
+  expositionsSortedByDate
 } from './getters/exposition'
-import { isValidDate, findCloseToToday } from '../helpers/dateHelpers'
 import { GetterTree } from 'vuex'
-import { Participant, Exposition, Program, Event, Sponsor, Category, SponsorCategory } from './types/types'
+import { Exposition, Program, Event } from './types/types'
+import {
+  getParticipants, getKeywordsFromParticipants,
+  getParticipantFromApi
+} from './getters/participants'
+import { getCategoriesFromApi, getCategoriesFromSponsors } from './getters/categories'
 
 let getters: GetterTree<any, any> = {
   // Expositions
-  expositionsByDate: (state) => {
-    if (!state.expositions || !state.expositions.responseData) {
-      return []
-    }
-    return getExpositionsFromApi(state.expositions.responseData).sort(
-      (a: Exposition, b: Exposition) => dateStringToDate(a.startDate).valueOf() - dateStringToDate(b.startDate).valueOf()
-    )
-  },
+  expositionsByDate: expositionsSortedByDate,
   isLoadingExpositions: isLoadingHelper('expositions'),
   expositionsNotFetched: isNotFetchedHelper('expositions'),
-
   // Exposition
   expositionBySlug: (state, { expositionsByDate }) => (expoSlug: string) => {
     const isOnState = expositionsByDate.find((e: Exposition) => e.slug === expoSlug)
@@ -42,16 +30,9 @@ let getters: GetterTree<any, any> = {
   },
   isLoadingExposition: isLoadingHelper('exposition'),
   expositionNotFetched: isNotFetchedHelper('exposition'),
+
   // Participants
-  participants: state => {
-    return getParticipantsFromApi(state.participants.responseData).sort(
-      (a: Participant, b: Participant) => {
-        if (a.name < b.name) { return -1 }
-        if (a.name > b.name) { return 1 }
-        return 0
-      }
-    )
-  },
+  participants: getParticipants,
   isLoadingParticipants: isLoadingHelper('participants'),
   participantsNotFetched: isNotFetchedHelper('participants'),
   keywordsFromParticipants: (state, { participants }) =>
@@ -75,30 +56,8 @@ let getters: GetterTree<any, any> = {
   isLoadingProgram: isLoadingHelper('program'),
   programNotFetched: isNotFetchedHelper('program'),
 
+  // Activities
   activities: st => getActivitiesFromApi(st.activities.responseData),
-  // Gets activities starting today or after
-  acitiviesFromNow: (st, { activities }) => {
-    const closestToToday = [...activities]
-      .map(act => act.date.jsDate)
-      .filter(date => isValidDate(date))
-      .reduce(findCloseToToday, activities[0])
-
-    // Find event with closest to today's date
-    const closestOnSortedEvents = activities.find(
-      (event: Event) =>
-        event.date.jsDate &&
-        event.date.jsDate.getTime &&
-        event.date.jsDate.getTime() === closestToToday.getTime()
-    )
-
-    // Based on the found item index, ten events are displayed on the calendar
-    // eslint-disable-next-line no-unused-vars
-    const spliceIndex = closestOnSortedEvents
-      ? activities.indexOf(closestOnSortedEvents)
-      : 0
-
-    return activities.slice(spliceIndex)
-  },
   activityBySlug: (st, getters) => (eventSlug: string) => {
     return (
       getters.activities.find((event: Event) => event.slug === eventSlug) || {
@@ -110,93 +69,13 @@ let getters: GetterTree<any, any> = {
   isLoadingActivities: isLoadingHelper('activities'),
   activitiesNotFetched: isNotFetchedHelper('activities'),
 
-  // TODO remove when FutureHome is Home
-  oldSponsors: (state, { sponsorsFromState }) => {
-    // For now filtering sponsors by author
-    return sponsorsFromState.filter(
-      (sponsor: Sponsor) => sponsor.category.slug === 'uncategorized'
-    )
-  },
-
-  // Sponsors
-  sponsorsFromState: state => getSponsorsFromApi(state.sponsors.responseData),
-
+  // Sponsors - Categories
   // used on categoriesFromSponsors
-  sponsors: (state, { sponsorsFromState }) => {
-    const categories = getCategoriesFromApi(state.categories.responseData)
-    return (
-      sponsorsFromState
-        // For now, filtering sponsors created by the admin wp user
-        .filter((sponsor: Sponsor) => sponsor.category.slug !== 'uncategorized')
-        .map((sponsor: Sponsor) => ({
-          ...sponsor,
-          category: categories.find((cat: Category) => cat.id === sponsor.category.term_id)
-        }))
-        .filter((sponsor: Sponsor) => sponsor.category)
-    )
-  },
+  sponsors: (state) =>
+    getSponsors(state.sponsors.responseData, getCategoriesFromApi(state.categories.responseData)),
   isLoadingSponsors: isLoadingHelper('sponsors'),
   sponsorsNotFetched: isNotFetchedHelper('sponsors'),
-  categoriesFromSponsors: (state, { sponsorsFromState }) => {
-    const categories = sponsorsFromState.map((sp: Sponsor) => sp.category)
-    const categoriesIds = sponsorsFromState
-      .map((sp: Sponsor) => sp.category.term_id)
-      .filter(onlyUnique)
-
-    // Append sponsors
-    const sortedCatgories = categoriesIds
-      .map((catId: number) => {
-        const category = categories.find((cat: SponsorCategory) => cat.term_id === catId)
-        // Order is parsed from description, if contains
-        // 'order:1' or 'order:1 ', this string will represent
-        // a way to sort this item; if this is not found on description,
-        // order is equal to categories length, so item will show up last
-        const order =
-          category &&
-            category.description &&
-            category.description.includes('order:')
-            ? category.description.split('order:')[1].replace(' ', '')
-            : String(categories.length + 1)
-        return {
-          ...category,
-          id: catId,
-          order,
-          // For now filtering sponsors by author
-          sponsors: sponsorsFromState
-            // Trasnform all sponsors with oreder zero to be the last,
-            // meaning with order equal or bigger than the total items
-            .map((sponsor: Sponsor) =>
-              sponsor.order === 0
-                ? Object.assign({}, sponsor, {
-                  order: sponsorsFromState.length + 2
-                })
-                : sponsor
-            )
-            .filter((s: Sponsor) => s.category.term_id === catId)
-            // Sorting by order
-            .sort((a: Sponsor, b: Sponsor) => {
-              return a.order - b.order
-            })
-        }
-      })
-      .filter((cat: SponsorCategory) => !cat.slug.includes('uncategorized'))
-      .sort((a: Sponsor, b: Sponsor) => a.order - b.order)
-
-    // First category should be labeled 'Organiza', if this is not the case
-    // Swap the first element with the second
-    const swapFirstCategory =
-      sortedCatgories[0] &&
-      sortedCatgories[0].name.toLowerCase().includes('financia')
-
-    if (swapFirstCategory) {
-      const firstElem = sortedCatgories.shift()
-      const secondElem = sortedCatgories.shift()
-      sortedCatgories.unshift(firstElem)
-      sortedCatgories.unshift(secondElem)
-    }
-
-    return sortedCatgories
-  },
+  categoriesFromSponsors: (state, { sponsors }) => getCategoriesFromSponsors(sponsors),
   isLoadingCategories: isLoadingHelper('categories'),
   categoriesNotFetched: isNotFetchedHelper('categories'),
 

@@ -1,5 +1,5 @@
-export const getVimeoId = (vimeoUrl: string) =>
+export const getVimeoId = (vimeoUrl: string) : string =>
   vimeoUrl.split('/')[vimeoUrl.split('/').length - 1]
 
-export const getYoutubeId = (ytUrl: string) =>
+export const getYoutubeId = (ytUrl: string) : string =>
   ytUrl.split('=')[ytUrl.split('=').length - 1]

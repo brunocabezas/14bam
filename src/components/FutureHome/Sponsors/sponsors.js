@@ -4,12 +4,6 @@ import Loader from '@/components/common/Loader.vue'
 import { mapActions, mapGetters } from 'vuex'
 
 @Component({
-  props: {
-    displayNewSponsors: {
-      type: Boolean,
-      default: false
-    }
-  },
   store,
   methods: {
     ...mapActions(['loadSponsors', 'loadWpCategories'])
@@ -18,10 +12,7 @@ import { mapActions, mapGetters } from 'vuex'
     ...mapGetters({
       isLoadingSponsors: 'isLoadingSponsors',
       isLoadingCategories: 'isLoadingCategories',
-      // TODO remove when stop displaying oldSponsors
-      newSponsors: 'sponsors',
-      // TODO remove when stop displaying oldSponsors
-      oldSponsors: 'oldSponsors',
+      sponsors: 'sponsors',
       categories: 'categoriesFromSponsors',
       sponsorsNotFetched: 'sponsorsNotFetched',
       categoriesNotFetched: 'categoriesNotFetched'
@@ -32,11 +23,6 @@ import { mapActions, mapGetters } from 'vuex'
   }
 })
 class Sponsors extends Vue {
-  // TODO remove when stop displaying oldSponsors
-  get sponsors () {
-    return this.displayNewSponsors ? this.newSponsors : this.oldSponsors
-  }
-
   get isLoading () {
     return this.isLoadingCategories ||
       this.isLoadingSponsors

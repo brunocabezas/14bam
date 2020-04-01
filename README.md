@@ -70,4 +70,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO
 
-- [ ] remove use of any
+- [ ] check use of any on types
+- [x] remove oldSponsors from store state
+- [ ] remove comments from apiHelpers
+- [ ] use type variants on remote data helper

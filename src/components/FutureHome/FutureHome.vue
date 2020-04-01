@@ -39,7 +39,7 @@
         <Map />
       </div>
     </section>
-    <Sponsors displayNewSponsors />
+    <Sponsors />
   </div>
 </template>
 

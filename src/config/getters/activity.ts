@@ -1,12 +1,12 @@
 import sortBy from 'array-sort-by'
 import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
 import { dateStringToDate } from '../../helpers/dateHelpers'
-import { WPRoot, WPResponse } from '../types/wordpressTypes'
+import { WPResponseItem, WPResponse } from '../types/wordpressTypes'
 import { Activities, Activity } from '../types/types'
 
 export const getActivitiesFromApi = (activities : WPResponse) : Activities => {
   const result = activities
-    .map((act : WPRoot) => {
+    .map((act : WPResponseItem) => {
       // date comes as '7 de noviembre'
       const dateString = getAcfField(act, 'date')
       const image = getAcfField(act, 'image', '')

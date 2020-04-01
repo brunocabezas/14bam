@@ -8,23 +8,9 @@ import actions from './actions'
 import getters from './getters'
 import types from './mutationTypes'
 import { State, Program } from './types/types'
-import { exposition } from './initialState'
+import { exposition, program } from './initialState'
 
 Vue.use(Vuex)
-
-const initialProgram: Program = {
-  id: -1,
-  slug: '',
-  text: '',
-  name: '',
-  events: [],
-  mainProgram: {},
-  date: {
-    jsDate: new Date()
-  },
-  images: [],
-  participants: []
-}
 
 let state: State = {
   sponsors: asyncState(),
@@ -37,7 +23,7 @@ let state: State = {
   keywords: [],
   // Programs and sub-programs
   main_programs: asyncState(),
-  program: asyncState([initialProgram]),
+  program: asyncState([program]),
   activities: asyncState(),
   // Data fetched from google api to get lat,lon coordinates from an array of addresses
   markersData: [],
@@ -50,16 +36,16 @@ const store = new Vuex.Store({
   state,
   // TODO add mutations: https://github.com/SimonZhangITer/vue-typescript-dpapp-demo/blob/master/src/store/mutations.ts
   mutations: {
-    ...asyncDataMutations (types.ACTIVITIES),
-    ...asyncDataMutations (types.EXPOSITIONS),
-    ...asyncDataMutations (types.EXPOSITION),
-    ...asyncDataMutations (types.PARTICIPANTS),
-    ...asyncDataMutations (types.PARTICIPANTS),
-    ...asyncDataMutations (types.MAIN_PROGRAMS),
-    ...asyncDataMutations (types.PROGRAM),
-    ...asyncDataMutations (types.SPONSORS),
-    ...asyncDataMutations (types.CATEGORIES),
-    ...asyncDataMutations (types.PAGES),
+    ...asyncDataMutations(types.ACTIVITIES),
+    ...asyncDataMutations(types.EXPOSITIONS),
+    ...asyncDataMutations(types.EXPOSITION),
+    ...asyncDataMutations(types.PARTICIPANTS),
+    ...asyncDataMutations(types.PARTICIPANTS),
+    ...asyncDataMutations(types.MAIN_PROGRAMS),
+    ...asyncDataMutations(types.PROGRAM),
+    ...asyncDataMutations(types.SPONSORS),
+    ...asyncDataMutations(types.CATEGORIES),
+    ...asyncDataMutations(types.PAGES),
     loadKeywords (state: State, data: []) {
       state.keywords = data
     },
@@ -70,4 +56,5 @@ const store = new Vuex.Store({
   actions: { ...actions },
   getters: { ...getters }
 })
+
 export default store

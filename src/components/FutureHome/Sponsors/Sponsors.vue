@@ -1,5 +1,5 @@
 <template>
-  <section class="section sponsors" v-if="displayNewSponsors">
+  <section class="section sponsors">
     <Loader :loading="isLoading">
       <div
         v-bind:class="{
@@ -32,19 +32,6 @@
           </a>
         </div>
       </div>
-    </Loader>
-  </section>
-  <section class="section sponsors" v-else>
-    <Loader :loading="isLoading">
-      <div
-        class="sponsor"
-        v-for="sponsor in sponsors"
-        v-bind:style="{
-          'background-image': `url(${sponsor.logo.url})`,
-          height: `${sponsor.logo.height}px`
-        }"
-        v-bind:key="sponsor.name"
-      ></div>
     </Loader>
   </section>
 </template>

@@ -12,9 +12,9 @@ export type WPGuid = {
   rendered: string,
 }
 
-export type WPResponse = WPRoot[]
+export type WPResponse = WPResponseItem[]
 
-export type WPRoot = {
+export type WPResponseItem = {
   id: number,
   date: string,
   date_gmt: string,
@@ -144,6 +144,7 @@ export type WPCategory = {
   id: number,
   term_id: number,
   name: string
+  description? : string
 }
 
 export type WPCategories = WPCategory[];

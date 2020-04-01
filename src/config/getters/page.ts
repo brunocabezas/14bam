@@ -1,6 +1,6 @@
 import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
 import { Page, PageGalleryImg, State } from '@/config/types/types'
-import { WPRoot } from '@/config/types/wordpressTypes'
+import { WPResponseItem } from '@/config/types/wordpressTypes'
 
 export enum WPStaticPageSlug {
   About = 'sobre',
@@ -9,7 +9,7 @@ export enum WPStaticPageSlug {
 }
 
 export function pageFromStateByLabel (slug: WPStaticPageSlug, state: State) : Page {
-  const pageFromState = state.pages.responseData.find((page : WPRoot) =>
+  const pageFromState = state.pages.responseData.find((page : WPResponseItem) =>
     page.slug.includes(slug)
   )
   if (!pageFromState || !slug) {

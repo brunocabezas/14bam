@@ -28,8 +28,10 @@ export type Programs = Program[]
 export type MainPrograms = MainProgram[]
 export type Categories = Category[]
 export type Sponsors = Sponsor[]
+export type SponsorCategories = SponsorCategory[]
 export type Activities = Activity[]
 export type Expositions = Exposition[]
+export type Keywords = Keyword[]
 
 // Exposition
 export type Exposition = {
@@ -78,7 +80,6 @@ export type Participant = {
 }
 
 // Activities/Events
-
 export type Activity = {
   id: number,
   slug: string,
@@ -98,7 +99,6 @@ export type Activity = {
   },
   summary: string,
 }
-
 
 export type Event = {
   id: number,
@@ -142,6 +142,8 @@ export type MainProgram = {
 export type Category = {
   name: string
   id: number,
+  order: string,
+  sponsors: Sponsors
 }
 
 // Sponsors
@@ -155,8 +157,11 @@ export type Sponsor = {
 }
 
 export type SponsorCategory = {
-  term_id: number,
-  slug: string,
+  name: string
+  id: number,
+  // slug: string,
+  // order: string,
+  // sponsors: Sponsors
 }
 
 // Page
@@ -170,4 +175,11 @@ export type Page = {
 
 export type PageGalleryImg = {
   url: string
+}
+
+// Keywords
+export type Keyword = { 
+  id: string,
+  name: string,
+  participants: Participants
 }
