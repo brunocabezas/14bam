@@ -1,43 +1,57 @@
+import { AsyncData } from './asyncDataTypes'
+import { WpImage } from './wordpressTypes'
 
+// Root store object
 export type Store = {
   state: State
 }
 
-export type AsyncData = {
-  responseData: any, // data from the API response
-  status: any, // status code
-  loading: boolean // loading indicator
-}
-
-export type AsyncPayload = {
-  data: any, // data from the API response
-  statusCode: number, // status code
-  value: any, // status code
-  type: string
-}
 export type State = {
   sponsors: AsyncData,
   expositions: AsyncData,
   exposition: AsyncData,
   participants: AsyncData,
   participant: AsyncData,
-  Mainmain_programs: AsyncData,
+  main_programs: AsyncData,
   keywords: any,
   activities: AsyncData,
   program: AsyncData,
   markersData: any,
-  event: any,
+  // event: any,
   categories: AsyncData,
   pages: AsyncData
 }
 
-// types = to create
+// Arrays 
+export type Participants = Participant[]
+export type Programs = Program[]
+export type MainPrograms = MainProgram[]
+export type Categories = Category[]
+export type Sponsors = Sponsor[]
+export type Activities = Activity[]
+export type Expositions = Exposition[]
+
 // Exposition
 export type Exposition = {
   slug: string,
+  name: string,
+  description: string,
+  web: string,
+  webText: string,
+  place: string,
+  hour: string,
+  hour2: string,
   startDate: string,
+  endDate: string,
+  images: any,
+  artists: any,
+  curators: any,
+  audioGuideSpotifyURL: string
+  mainImg: WpImage,
+
 }
 
+// Participants
 export type SingleParticipant = {
   name: string,
   slug: string,
@@ -63,7 +77,28 @@ export type Participant = {
   keywords: any,
 }
 
-export type Participants = Participant[]
+// Activities/Events
+
+export type Activity = {
+  id: number,
+  slug: string,
+  title: string,
+  description: string,
+  image: any,
+  place: any,
+  limitedTickets: any,
+  participants: any,
+  videoUrl: string,
+  date: {
+    day: any,
+    jsDate: Date,
+    month: any,
+    dateString: string,
+    dateTime: any
+  },
+  summary: string,
+}
+
 
 export type Event = {
   id: number,
@@ -77,6 +112,7 @@ export type Event = {
   summary: string,
 }
 
+// Program
 export type Program = {
   id: number,
   slug: string,
@@ -102,19 +138,13 @@ export type MainProgram = {
   events: any
 }
 
-export type Programs = Program[]
-
-export type MainPrograms = MainProgram[]
-
+// Categories
 export type Category = {
   name: string
   id: number,
 }
 
-export type Categories = Category[]
-
-export type Sponsors = Sponsor[]
-
+// Sponsors
 export type Sponsor = {
   name: string,
   logo: string,
@@ -127,4 +157,17 @@ export type Sponsor = {
 export type SponsorCategory = {
   term_id: number,
   slug: string,
+}
+
+// Page
+export type Page = {
+  title: string,
+  video: any,
+  abstract: any, // string?
+  dates: any, // string?
+  gallery: string[]
+}
+
+export type PageGalleryImg = {
+  url: string
 }

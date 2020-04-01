@@ -1,6 +1,4 @@
 import { dateStringToDate } from '@/helpers/dateHelpers'
-import sortBy from 'array-sort-by'
-
 import {
   getParticipantsFromApi,
   getParticipantFromApi,
@@ -8,27 +6,25 @@ import {
   getCategoriesFromApi
 } from '@/helpers/apiHelpers'
 import { isLoadingHelper, isNotFetchedHelper } from '@/helpers/remoteDataHelper'
-
 import { onlyUnique } from '@/helpers/arrayHelpers'
-import { pageFromStateByLabel } from '@/helpers/data/pageDataHelpers'
+import { pageFromStateByLabel, WPStaticPageSlug } from '@/config/getters/page'
 import {
   getMainPrograms,
-  getProgramFromApi
-} from '@/helpers/data/programDataHelpers'
-import { getSponsorsFromApi } from '@/helpers/data/sponsorDataHelper'
-import { getActivitiesFromApi } from '@/helpers/data/eventDataHelpers'
+  getProgram
+} from '@/config/getters/program'
+import { getSponsorsFromApi } from '@/config/getters/sponsors'
+import { getActivitiesFromApi } from '@/config/getters/activity'
 import {
   getExpositionsFromApi,
   getExpositionFromApi
-} from '../helpers/data/expositionDataHelpers'
+} from './getters/exposition'
 import { isValidDate, findCloseToToday } from '../helpers/dateHelpers'
 import { GetterTree } from 'vuex'
 import { Participant, Exposition, Program, Event, Sponsor, Category, SponsorCategory } from './types/types'
-import { WPEvent } from './types/wordpressTypes'
 
 let getters: GetterTree<any, any> = {
   // Expositions
-  expositionsByDate: state => {
+  expositionsByDate: (state) => {
     if (!state.expositions || !state.expositions.responseData) {
       return []
     }
@@ -69,32 +65,17 @@ let getters: GetterTree<any, any> = {
   participantNotFetched: isNotFetchedHelper('participant'),
 
   // Programs
-  mainPrograms: state => {
-    return getMainPrograms(state.main_programs.responseData)
-  },
+  mainPrograms: state => getMainPrograms(state.main_programs.responseData),
   isLoadingMainPrograms: isLoadingHelper('main_programs'),
   mainProgramBySlug: (st, { mainPrograms }) => (slug: string) =>
     mainPrograms.find((program: Program) => program.slug === slug) || {},
   mainProgramsNotFetched: isNotFetchedHelper('main_programs'),
 
-  programFromState: (state, { activities }) => {
-    // If there are no activities on state; doing nothing
-    const program = getProgramFromApi(state.program.responseData)
-    if (activities.length === 0) return program
-
-    // Replacing events with activities from state
-    return Object.assign({}, program, {
-      events: sortBy(program.events
-        .map((event: WPEvent) => activities.find((act: Event) => act.id === event.ID))
-        .filter((validItem: Event) => validItem), (e: Event) => e.date.jsDate)
-    })
-  },
+  programFromState: getProgram,
   isLoadingProgram: isLoadingHelper('program'),
   programNotFetched: isNotFetchedHelper('program'),
 
-  activities: st => {
-    return getActivitiesFromApi(st.activities.responseData)
-  },
+  activities: st => getActivitiesFromApi(st.activities.responseData),
   // Gets activities starting today or after
   acitiviesFromNow: (st, { activities }) => {
     const closestToToday = [...activities]
@@ -220,9 +201,9 @@ let getters: GetterTree<any, any> = {
   categoriesNotFetched: isNotFetchedHelper('categories'),
 
   // Wordpress static pages
-  aboutPage: state => pageFromStateByLabel('sobre', state),
-  contestPage: state => pageFromStateByLabel('concurso', state),
-  abstractPage: state => pageFromStateByLabel('mundo', state),
+  aboutPage: state => pageFromStateByLabel(WPStaticPageSlug.About, state),
+  contestPage: state => pageFromStateByLabel(WPStaticPageSlug.Contest, state),
+  abstractPage: state => pageFromStateByLabel(WPStaticPageSlug.AboutExposition, state),
   isLoadingPages: isLoadingHelper('pages'),
   pagesNotFetched: isNotFetchedHelper('pages')
 }

@@ -1,4 +1,4 @@
-import { getAcfField, getWPTitle } from '../apiHelpers'
+import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
 import { WPResponse } from '@/config/types/wordpressTypes'
 import { Sponsors } from '@/config/types/types'
 

@@ -8,24 +8,29 @@ import actions from './actions'
 import getters from './getters'
 import types from './mutationTypes'
 import { State, Program } from './types/types'
+import { exposition } from './initialState'
 
 Vue.use(Vuex)
 
-const initialProgram : Program = {
+const initialProgram: Program = {
   id: -1,
   slug: '',
+  text: '',
+  name: '',
   events: [],
   mainProgram: {},
   date: {
     jsDate: new Date()
   },
-  images: []
+  images: [],
+  participants: []
 }
+
 let state: State = {
   sponsors: asyncState(),
   // Expositions
   expositions: asyncState(),
-  exposition: asyncState([{ mainImg: { url: '', sizes: { medium: '' } }, images: [], artists: [] }]),
+  exposition: asyncState([exposition]),
   // Artits and curators
   participants: asyncState(),
   participant: asyncState([{}]),
@@ -34,10 +39,6 @@ let state: State = {
   main_programs: asyncState(),
   program: asyncState([initialProgram]),
   activities: asyncState(),
-  // An event is the same as a program but without events (programs)
-  event: {
-    id: -1
-  },
   // Data fetched from google api to get lat,lon coordinates from an array of addresses
   markersData: [],
   // Wordpress data
@@ -49,25 +50,16 @@ const store = new Vuex.Store({
   state,
   // TODO add mutations: https://github.com/SimonZhangITer/vue-typescript-dpapp-demo/blob/master/src/store/mutations.ts
   mutations: {
-    ...asyncDataMutations(types.ACTIVITIES),
-    ...asyncDataMutations(types.EXPOSITIONS),
-    ...asyncDataMutations(types.EXPOSITION),
-    ...asyncDataMutations(types.PARTICIPANTS),
-    ...asyncDataMutations(types.PARTICIPANTS),
-    ...asyncDataMutations(types.MAIN_PROGRAMS),
-    ...asyncDataMutations(types.PROGRAM),
-    ...asyncDataMutations(types.SPONSORS),
-    ...asyncDataMutations(types.CATEGORIES),
-    ...asyncDataMutations(types.PAGES),
-    // loadParticipant (state, data) {
-    //   state.participant = data
-    // },
-    // loadProgram (state, data) {
-    //   state.program = data
-    // },
-    // loadEvent (state, data) {
-    //   state.event = data
-    // },
+    ...asyncDataMutations (types.ACTIVITIES),
+    ...asyncDataMutations (types.EXPOSITIONS),
+    ...asyncDataMutations (types.EXPOSITION),
+    ...asyncDataMutations (types.PARTICIPANTS),
+    ...asyncDataMutations (types.PARTICIPANTS),
+    ...asyncDataMutations (types.MAIN_PROGRAMS),
+    ...asyncDataMutations (types.PROGRAM),
+    ...asyncDataMutations (types.SPONSORS),
+    ...asyncDataMutations (types.CATEGORIES),
+    ...asyncDataMutations (types.PAGES),
     loadKeywords (state: State, data: []) {
       state.keywords = data
     },

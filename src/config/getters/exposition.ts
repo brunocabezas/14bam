@@ -1,9 +1,12 @@
-import { getAcfField, getWPTitle } from '../apiHelpers'
+import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
+import { WpImage, WPResponse } from '../types/wordpressTypes'
+import { Expositions, Exposition } from '../types/types'
+import { exposition } from '../initialState'
 
 // const mapArrayOfImgUrls = img => img.sizes.medium || img.url
-const mapArrayOfImgUrls = img => img.url
+const mapArrayOfImgUrls = (img: WpImage) => img.url
 
-export const getExpositionsFromApi = data =>
+export const getExpositionsFromApi = (data: WPResponse): Expositions =>
   data.map(expo => {
     const images = getAcfField(expo, 'galeria', []).map(
       mapArrayOfImgUrls
@@ -32,9 +35,9 @@ export const getExpositionsFromApi = data =>
     })
   })
 
-export const getExpositionFromApi = (data = []) => {
+export const getExpositionFromApi = (data: WPResponse = []): Exposition => {
   if (!data[0]) {
-    return undefined
+    return { ...exposition }
   }
   const images = getAcfField(data[0], 'galeria', []).map(
     mapArrayOfImgUrls

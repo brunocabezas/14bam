@@ -103,8 +103,12 @@ export type WPKeyword = {
   slug: string,
   term_id: number,
 }
+
 export type WpImage = {
-  url: string
+  url: string,
+  sizes : { 
+    medium : string
+  }
 }
 
 export interface WPPost {
