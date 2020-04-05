@@ -1,8 +1,9 @@
 import sortBy from 'array-sort-by'
 import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
-import { WPResponse, WPEvent } from '@/config/types/wordpressTypes'
-import { MainPrograms, Program, State, Event, Programs, Activity, Activities } from '@/config/types/types'
+import { WPResponse, WPPost } from '@/config/types/wordpressTypes'
+import { MainPrograms, Program, State, Activity } from '@/config/types/types'
 import { getActivitiesFromApi } from '@/config/getters/activities'
+import { program, date } from '../state/initialState'
 
 // Main program is not included
 export const getMainPrograms = (dataArray: WPResponse): MainPrograms => {
@@ -21,20 +22,7 @@ const getProgramFromApi = (apiResponse: WPResponse = []): Program => {
   // Getting the first program
   const firstProgram = apiResponse[0]
   if (!firstProgram) {
-    return {
-      // mainImg: { url: '', sizes: { medium: '' } },
-      id: -1,
-      slug: '',
-      text: '',
-      name: '',
-      events: [],
-      mainProgram: {},
-      date: {
-        jsDate: new Date()
-      },
-      images: [],
-      participants: []
-    }
+    return program
   }
   return Object.assign(
     {},
@@ -47,23 +35,20 @@ const getProgramFromApi = (apiResponse: WPResponse = []): Program => {
       participants: getAcfField(firstProgram, 'participantes', []),
       mainProgram: getAcfField(firstProgram, 'programa_general', [])[0],
       events: getAcfField(firstProgram, 'activities', []),
-      date: {
-        jsDate: new Date()
-      }
+      date
     }
   )
 }
 
-export const getProgram = (state: State) : Program => {
+export const getProgram = (state: State): Program => {
   const activities = getActivitiesFromApi(state.activities.responseData)
   // If there are no activities on state; doing nothing
   const program = getProgramFromApi(state.program.responseData)
   if (activities.length === 0) return program
-
   // Replacing events with activities from state
   return Object.assign({}, program, {
     events: sortBy(program.events
-      .map((event: WPEvent) => activities.find((act: Activity) => act.id === event.ID))
-      .filter((validItem: Activity) => validItem), (e: Activity) => e.date.jsDate)
+      .map((event: WPPost) => activities.find((act: Activity) => act.id === event.ID))
+      .filter((validItem?: Activity) => validItem), (e: Activity) => e.date.jsDate)
   })
 }

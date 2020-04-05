@@ -2,7 +2,7 @@ import { WPCategories, WPCategory, WPResponse } from '../types/wordpressTypes'
 import { Categories, Sponsor, Category, SponsorCategory, Sponsors } from '../types/types'
 import { onlyUnique } from '@/helpers/arrayHelpers'
 import { getSponsorsFromAPI, SponsorFromAPI } from './sponsors'
-import { wpCategory } from '../initialState'
+import { wpCategory } from '../state/initialWordpressState'
 
 export const getCategoriesFromApi = (data: WPCategories): SponsorCategory[] => {
   return data.map((category: WPCategory) => ({

@@ -20,7 +20,7 @@ export const getActivitiesFromApi = (activities: WPResponse): Activities => {
         participants: getAcfField(act, 'participant'),
         limitedTickets: getAcfField(act, 'limited_tickets'),
         program: getAcfField(act, 'program'),
-        place: getAcfField(act, 'place')[0],
+        place: getAcfField(act, 'place'),
         date: {
           jsDate: dateStringToDate(dateString),
           day: dateString.split(' ')[0],

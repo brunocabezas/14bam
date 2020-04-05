@@ -8,7 +8,7 @@ import actions from './actions'
 import getters from './getters'
 import { DataType } from './mutationTypes'
 import { State } from './types/types'
-import { exposition, program } from './initialState'
+import { exposition, program } from './state/initialState'
 
 Vue.use(Vuex)
 
@@ -23,8 +23,8 @@ let state: State = {
   [DataType.Participant]: asyncState([{}]),
   keywords: [],
   // Programs and sub-programs
-  [DataType.MainPrograms]: asyncState(),
-  [DataType.Program]: asyncState([program]),
+  [DataType.MainPrograms]: asyncState(), // Main program contain programs
+  [DataType.Program]: asyncState([program]), // Program contains activities
   [DataType.Activities]: asyncState(),
   // Data fetched from google api to get lat,lon coordinates from an array of addresses
   markersData: [],
@@ -34,13 +34,13 @@ let state: State = {
 }
 
 const mutations = {
-  ...asyncDataMutations(DataType.Activities),
   ...asyncDataMutations(DataType.Expositions),
   ...asyncDataMutations(DataType.Exposition),
   ...asyncDataMutations(DataType.Participants),
   ...asyncDataMutations(DataType.Participant),
   ...asyncDataMutations(DataType.MainPrograms),
   ...asyncDataMutations(DataType.Program),
+  ...asyncDataMutations(DataType.Activities),
   ...asyncDataMutations(DataType.Sponsors),
   ...asyncDataMutations(DataType.Categories),
   ...asyncDataMutations(DataType.Pages),

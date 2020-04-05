@@ -1,6 +1,7 @@
 import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
 import { Page, PageGalleryImg, State } from '@/config/types/types'
 import { WPResponseItem } from '@/config/types/wordpressTypes'
+import { page } from '../state/initialState'
 
 export enum WPStaticPageSlug {
   About = 'sobre',
@@ -13,25 +14,14 @@ export function pageFromStateByLabel (slug: WPStaticPageSlug, state: State) : Pa
     page.slug.includes(slug)
   )
   if (!pageFromState || !slug) {
-    return {
-      title: '',
-      gallery: [],
-      video: '',
-      abstract: '',
-      dates: ''
-      // content: { rendered: '' },
-      // acf_fields: {
-      // gallery: [],
-      // video: ''
-      // }
-    }
+    return page
+  } else {
+    return Object.assign({}, pageFromState, {
+      title: getWPTitle(pageFromState),
+      video: getAcfField(pageFromState, 'video'),
+      abstract: getAcfField(pageFromState, 'short_description'),
+      dates: getAcfField(pageFromState, 'dates'),
+      gallery: getAcfField(pageFromState, 'gallery', []).map((img: PageGalleryImg) => img.url)
+    })
   }
-
-  return Object.assign({}, pageFromState, {
-    title: getWPTitle(pageFromState),
-    video: getAcfField(pageFromState, 'video'),
-    abstract: getAcfField(pageFromState, 'short_description'),
-    dates: getAcfField(pageFromState, 'dates'),
-    gallery: getAcfField(pageFromState, 'gallery', []).map((img: PageGalleryImg) => img.url)
-  })
 }

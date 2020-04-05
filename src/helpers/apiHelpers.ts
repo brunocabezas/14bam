@@ -10,7 +10,7 @@ import { WPResponseItem, WPCategories, WPCategory } from '@/config/types/wordpre
 
 // Local Helpers
 // Gets advanced custom fields values from results
-export const getAcfField = (results: WPResponseItem, fieldName: string, defaultValue?: any): any =>
+export const getAcfField = (results: WPResponseItem, fieldName: string, defaultValue: any = undefined): any =>
   (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
 
 // Gets wordpress post title

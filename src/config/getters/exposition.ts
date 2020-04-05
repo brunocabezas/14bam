@@ -1,7 +1,7 @@
 import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
 import { WpImage, WPResponse } from '../types/wordpressTypes'
 import { Expositions, Exposition, State } from '../types/types'
-import { exposition } from '../initialState'
+import { exposition } from '../state/initialState'
 import { dateStringToDate } from '@/helpers/dateHelpers'
 
 // const mapArrayOfImgUrls = img => img.sizes.medium || img.url
@@ -69,7 +69,6 @@ export const getExpositionFromApi = (data: WPResponse = []): Exposition => {
     }
   )
 }
-
 
 export const expositionsSortedByDate = (state: State) => {
   if (!state.expositions || !state.expositions.responseData) {

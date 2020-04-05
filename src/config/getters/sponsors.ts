@@ -1,7 +1,7 @@
 import { getAcfField, getWPTitle } from '@/helpers/apiHelpers'
 import { WPResponse, WPCategory } from '@/config/types/wordpressTypes'
 import { Sponsors, Sponsor, SponsorCategories } from '@/config/types/types'
-import { category } from '../initialState'
+import { category } from '../state/initialState'
 
 export type SponsorFromAPI = {
   name: string,

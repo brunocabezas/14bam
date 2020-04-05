@@ -11,7 +11,7 @@ import {
   expositionsSortedByDate
 } from './getters/exposition'
 import { GetterTree } from 'vuex'
-import { Exposition, Program, Event } from './types/types'
+import { Exposition, Program, Event, MainProgram } from './types/types'
 import {
   getParticipants, getKeywordsFromParticipants,
   getParticipantFromApi
@@ -49,7 +49,7 @@ let getters: GetterTree<any, any> = {
   mainPrograms: state => getMainPrograms(state.main_programs.responseData),
   isLoadingMainPrograms: isLoadingHelper(DataType.MainPrograms),
   mainProgramBySlug: (st, { mainPrograms }) => (slug: string) =>
-    mainPrograms.find((program: Program) => program.slug === slug) || {},
+    mainPrograms.find((program: MainProgram) => program.slug === slug) || {},
   mainProgramsNotFetched: isNotFetchedHelper(DataType.MainPrograms),
 
   // Program

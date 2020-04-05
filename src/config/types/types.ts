@@ -1,6 +1,6 @@
 import { AsyncData } from './asyncDataTypes'
-import { WpImage, WPPost } from './wordpressTypes'
-import mutationTypes, { DataType } from '../mutationTypes'
+import { WpImage, WPPost, WPLinks, WPContent, WPGuid, WPExcerpt, WPAcfFields } from './wordpressTypes'
+import { DataType } from '../mutationTypes'
 
 // Root store object
 export interface Store {
@@ -97,47 +97,59 @@ export interface Activity {
   slug: string,
   title: string,
   description: string,
-  image: any,
-  place: any,
+  image: string,
+  place: WPPost[],
   limitedTickets: any,
   participants: any,
   videoUrl: string,
-  date: {
-    day: any,
-    jsDate: Date,
-    month: any,
-    dateString: string,
-    dateTime: any
-  },
+  date: DateObject,
+  program: WPPost[],
   summary: string,
 }
 
 export interface Event {
   id: number,
   slug: string,
-  date: {
-    jsDate: Date
-  },
+  date: DateObject,
   start: {
     dateTime: any
   },
   summary: string,
 }
 
+export interface DateObject {
+  day: string,
+  jsDate: Date,
+  month: string,
+  dateString: string,
+  time: any
+}
+
 // Program
 export interface Program {
-  id: number,
-  slug: string,
-  text: string,
-  name: string,
-  date: {
-    jsDate: Date
-  },
-  mainProgram: object,
-  // images: Array()
-  images: any,
-  events: any,
-  participants: any,
+  id: number;
+  slug: string;
+  name: string;
+  text: string;
+  images: any[];
+  participants: any[];
+  mainProgram: WPPost;
+  events: WPPost[];
+  date: DateObject;
+}
+
+export interface ProgramEvent {
+  id: number;
+  name: string;
+  slug: string;
+  description: string;
+  image: string;
+  videoUrl: string;
+  participants: string;
+  limitedTickets: string;
+  program: WPPost[];
+  place: WPPost[];
+  date: Date;
 }
 
 export interface MainProgram {
@@ -146,8 +158,8 @@ export interface MainProgram {
   text: string,
   name: string,
   shortDescription: string
-  images: any
-  events: any
+  images: WpImage[]
+  events: WPPost[]
 }
 
 // Categories
@@ -178,11 +190,34 @@ export interface SponsorCategory {
 
 // Page
 export interface Page {
-  title: string,
-  video: any,
-  abstract: any, // string?
-  dates: any, // string?
-  gallery: string[]
+  id: number;
+  date: string;
+  date_gmt: string;
+  guid: WPGuid;
+  modified: string;
+  modified_gmt: string;
+  slug: string;
+  status: string;
+  type: string;
+  link: string;
+  content: WPContent;
+  excerpt: WPExcerpt;
+  author: number;
+  featured_media: number;
+  parent: number;
+  menu_order: number;
+  comment_status: string;
+  ping_status: string;
+  template: string;
+  meta: any[];
+  acf_fields: WPAcfFields;
+  _links: WPLinks;
+  // Added by selector
+  video: string;
+  abstract: string;
+  title: string;
+  dates: string;
+  gallery: string[];
 }
 
 export interface PageGalleryImg {

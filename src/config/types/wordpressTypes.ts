@@ -15,27 +15,97 @@ export type WPGuid = {
 export type WPResponse = WPResponseItem[]
 
 export type WPResponseItem = {
-  id: number,
-  date: string,
-  date_gmt: string,
-  guid: WPGuid,
-  modified: string,
-  modified_gmt: string,
-  slug: string,
-  status: string,
-  type:  string,
-  link: string,
+  id: number;
+  date: string;
+  date_gmt: string;
+  guid: WPGuid;
+  modified: string;
+  modified_gmt: string;
+  slug: string;
+  status: string;
+  type: string;
+  link: string;
   title: WPTitle,
-  author: number,
-  featured_media: number,
-  parent: number,
-  template: string,
-  categories: any[],
-  acf_fields: WPAcfFields,
-  _links: WPLinks,
+  content: WPContent;
+  excerpt: WPExcerpt;
+  author: number;
+  featured_media: number;
+  parent: number;
+  menu_order: number;
+  comment_status: string;
+  ping_status: string;
+  template: string;
+  meta: any[];
+  acf_fields: WPAcfFields;
+  _links: WPLinks;
 }
 
-export type WPParticipant = {
+export interface WPContent {
+  rendered: string;
+  protected: boolean;
+}
+
+export interface WPExcerpt {
+  rendered: string;
+  protected: boolean;
+}
+
+
+export  interface AcfFields {
+  video: string;
+  gallery: WpImage[];
+  short_description: string;
+  dates: string;
+}
+
+export interface WPLinks {
+  self: Link[];
+  collection: Link[];
+  about: Link[];
+  author: Author[];
+  replies: Reply[];
+  "version-history": VersionHistory[];
+  "predecessor-version": PredecessorVersion[];
+  "wp:attachment": WpAttachment[];
+  curies: Cury[];
+}
+
+
+interface Author {
+  embeddable: boolean;
+  href: string;
+}
+
+interface Reply {
+  embeddable: boolean;
+  href: string;
+}
+
+interface VersionHistory {
+  count: number;
+  href: string;
+}
+
+interface PredecessorVersion {
+  id: number;
+  href: string;
+}
+
+interface WpAttachment {
+  href: string;
+}
+
+interface Cury {
+  name: string;
+  href: string;
+  templated: boolean;
+}
+
+interface Link {
+  href: string;
+}
+
+type WPParticipant = {
   img: string,
   images: any[],
   keywords: string[]
@@ -66,20 +136,6 @@ type ExpositionAcfFields = {
   fecha_termino: string,
 }
 
-type Link =  {
-  href: string;
-}
-
-type WPLinks = {
-  self: Link[];
-  collection: Link[];
-  about: Link[];
-  author: WPAuthor[];
-  "wp:attachment": Link[];
-  "wp:term": WpTerm[];
-  curies: Cury[];
-}
-
 type WPAuthor = {
   embeddable: boolean;
   href: string;
@@ -90,12 +146,6 @@ type WpTerm = {
   taxonomy: string;
   embeddable: boolean;
   href: string;
-}
-
-type Cury = {
-  name: string;
-  href: string;
-  templated: boolean;
 }
 
 export type WPKeyword = {
