@@ -2,7 +2,7 @@ import sortBy from 'array-sort-by'
 import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
 import { WPResponse, WPEvent } from '@/config/types/wordpressTypes'
 import { MainPrograms, Program, State, Event, Programs, Activity, Activities } from '@/config/types/types'
-import { getActivitiesFromApi } from '@/config/getters/activity'
+import { getActivitiesFromApi } from '@/config/getters/activities'
 
 // Main program is not included
 export const getMainPrograms = (dataArray: WPResponse): MainPrograms => {

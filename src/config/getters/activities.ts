@@ -4,9 +4,9 @@ import { dateStringToDate } from '../../helpers/dateHelpers'
 import { WPResponseItem, WPResponse } from '../types/wordpressTypes'
 import { Activities, Activity } from '../types/types'
 
-export const getActivitiesFromApi = (activities : WPResponse) : Activities => {
+export const getActivitiesFromApi = (activities: WPResponse): Activities => {
   const result = activities
-    .map((act : WPResponseItem) => {
+    .map((act: WPResponseItem) => {
       // date comes as '7 de noviembre'
       const dateString = getAcfField(act, 'date')
       const image = getAcfField(act, 'image', '')
@@ -32,3 +32,9 @@ export const getActivitiesFromApi = (activities : WPResponse) : Activities => {
     })
   return sortBy(result, (s: Activity) => -s.date.jsDate)
 }
+
+export const getActivityBySlug = (activities: Activities, eventSlug: string) =>
+  activities.find((event: Activity) => event.slug === eventSlug) || ({
+    place: {},
+    participants: []
+  })

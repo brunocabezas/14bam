@@ -1,5 +1,5 @@
 import { fetch as fetchData } from '../helpers/remoteDataHelper'
-import TYPES from './mutationTypes'
+import { DataType } from './mutationTypes'
 import routes from '../../api/routes'
 import { State, Participant, Program, Exposition } from './types/types'
 import { ActionTree } from 'vuex'
@@ -7,47 +7,47 @@ import { ActionTree } from 'vuex'
 const actions: ActionTree<State, any> = {
   loadExpositions: (store) => fetchData(store, {
     url: routes.expositions,
-    slug: TYPES.EXPOSITIONS
+    slug: DataType.Expositions
   }),
   loadExposition: (store, expo: Exposition) =>
     fetchData(store, {
       url: routes.exposition(expo.slug),
-      slug: TYPES.EXPOSITION
+      slug: DataType.Exposition
     }),
   loadParticipants: (store) => fetchData(store, {
     url: routes.participants,
-    slug: TYPES.PARTICIPANTS
+    slug: DataType.Participants
   }),
   loadParticipant: (store, participant: Participant) =>
     fetchData(store, {
       url: routes.participant(participant.slug),
-      slug: TYPES.PARTICIPANT
+      slug: DataType.Participant
     }),
   loadMainPrograms: (store) => fetchData(store, {
     url: routes.mainPrograms,
-    slug: TYPES.MAIN_PROGRAMS
+    slug: DataType.MainPrograms
   }),
   loadProgram: (store: any, program: Program) =>
     fetchData(store, {
       url: routes.program(program.slug),
-      slug: TYPES.PROGRAM
+      slug: DataType.Program
       // payload: program
     }),
   loadSponsors: (store) => fetchData(store, {
     url: routes.sponsors,
-    slug: TYPES.SPONSORS
+    slug: DataType.Sponsors
   }),
   loadActivities: (store) => fetchData(store, {
     url: routes.programActivities,
-    slug: TYPES.ACTIVITIES
+    slug: DataType.Activities
   }),
   loadWpCategories: (store) => fetchData(store, {
     url: routes.categories,
-    slug: TYPES.CATEGORIES
+    slug: DataType.Categories
   }),
   loadWpPages: (store) => fetchData(store, {
     url: routes.pages,
-    slug: TYPES.PAGES
+    slug: DataType.Pages
   })
 }
 

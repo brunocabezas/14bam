@@ -104,11 +104,40 @@ export type WPKeyword = {
   term_id: number,
 }
 
-export type WpImage = {
-  url: string,
-  sizes : { 
-    medium : string
-  }
+export interface WpImage {
+  ID: number;
+  id: number;
+  title: string;
+  filename: string;
+  url: string;
+  alt: string;
+  author: string;
+  description: string;
+  caption: string;
+  name: string;
+  date: string;
+  modified: string;
+  mime_type: string;
+  type: string;
+  icon: string;
+  width: number;
+  height: number;
+  sizes: WpImageSizes;
+}
+
+export interface WpImageSizes {
+  thumbnail: string;
+  "thumbnail-width": number;
+  "thumbnail-height": number;
+  medium: string;
+  "medium-width": number;
+  "medium-height": number;
+  medium_large: string;
+  "medium_large-width": number;
+  "medium_large-height": number;
+  large: string;
+  "large-width": number;
+  "large-height": number;
 }
 
 export interface WPPost {

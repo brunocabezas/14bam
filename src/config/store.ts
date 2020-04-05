@@ -6,53 +6,56 @@ import {
 } from '@/helpers/remoteDataHelper'
 import actions from './actions'
 import getters from './getters'
-import types from './mutationTypes'
-import { State, Program } from './types/types'
+import { DataType } from './mutationTypes'
+import { State } from './types/types'
 import { exposition, program } from './initialState'
 
 Vue.use(Vuex)
 
 let state: State = {
-  sponsors: asyncState(),
+  [DataType.Sponsors]: asyncState(),
+  // sponsors: asyncState(),
   // Expositions
-  expositions: asyncState(),
-  exposition: asyncState([exposition]),
+  [DataType.Expositions]: asyncState(),
+  [DataType.Exposition]: asyncState([exposition]),
   // Artits and curators
-  participants: asyncState(),
-  participant: asyncState([{}]),
+  [DataType.Participants]: asyncState(),
+  [DataType.Participant]: asyncState([{}]),
   keywords: [],
   // Programs and sub-programs
-  main_programs: asyncState(),
-  program: asyncState([program]),
-  activities: asyncState(),
+  [DataType.MainPrograms]: asyncState(),
+  [DataType.Program]: asyncState([program]),
+  [DataType.Activities]: asyncState(),
   // Data fetched from google api to get lat,lon coordinates from an array of addresses
   markersData: [],
   // Wordpress data
-  categories: asyncState(),
-  pages: asyncState()
+  [DataType.Categories]: asyncState(),
+  [DataType.Pages]: asyncState()
+}
+
+const mutations = {
+  ...asyncDataMutations(DataType.Activities),
+  ...asyncDataMutations(DataType.Expositions),
+  ...asyncDataMutations(DataType.Exposition),
+  ...asyncDataMutations(DataType.Participants),
+  ...asyncDataMutations(DataType.Participant),
+  ...asyncDataMutations(DataType.MainPrograms),
+  ...asyncDataMutations(DataType.Program),
+  ...asyncDataMutations(DataType.Sponsors),
+  ...asyncDataMutations(DataType.Categories),
+  ...asyncDataMutations(DataType.Pages),
+  loadKeywords (state: State, data: []) {
+    state.keywords = data
+  },
+  loadMarkersData (state: State, data: []) {
+    state.markersData = data
+  }
 }
 
 const store = new Vuex.Store({
   state,
   // TODO add mutations: https://github.com/SimonZhangITer/vue-typescript-dpapp-demo/blob/master/src/store/mutations.ts
-  mutations: {
-    ...asyncDataMutations(types.ACTIVITIES),
-    ...asyncDataMutations(types.EXPOSITIONS),
-    ...asyncDataMutations(types.EXPOSITION),
-    ...asyncDataMutations(types.PARTICIPANTS),
-    ...asyncDataMutations(types.PARTICIPANTS),
-    ...asyncDataMutations(types.MAIN_PROGRAMS),
-    ...asyncDataMutations(types.PROGRAM),
-    ...asyncDataMutations(types.SPONSORS),
-    ...asyncDataMutations(types.CATEGORIES),
-    ...asyncDataMutations(types.PAGES),
-    loadKeywords (state: State, data: []) {
-      state.keywords = data
-    },
-    loadMarkersData (state: State, data: []) {
-      state.markersData = data
-    }
-  },
+  mutations,
   actions: { ...actions },
   getters: { ...getters }
 })

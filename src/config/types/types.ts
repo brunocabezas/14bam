@@ -1,25 +1,25 @@
 import { AsyncData } from './asyncDataTypes'
-import { WpImage } from './wordpressTypes'
+import { WpImage, WPPost } from './wordpressTypes'
+import mutationTypes, { DataType } from '../mutationTypes'
 
 // Root store object
-export type Store = {
+export interface Store {
   state: State
 }
 
-export type State = {
-  sponsors: AsyncData,
-  expositions: AsyncData,
-  exposition: AsyncData,
-  participants: AsyncData,
-  participant: AsyncData,
-  main_programs: AsyncData,
+export interface State {
+  [DataType.Sponsors]: AsyncData,
+  [DataType.Expositions]: AsyncData,
+  [DataType.Exposition]: AsyncData,
+  [DataType.Participant]: AsyncData,
+  [DataType.Participants]: AsyncData,
+  [DataType.MainPrograms]: AsyncData,
+  [DataType.Program]: AsyncData,
+  [DataType.Pages]: AsyncData,
+  [DataType.Activities]: AsyncData,
+  [DataType.Categories]: AsyncData,
   keywords: any,
-  activities: AsyncData,
-  program: AsyncData,
   markersData: any,
-  // event: any,
-  categories: AsyncData,
-  pages: AsyncData
 }
 
 // Arrays 
@@ -34,7 +34,7 @@ export type Expositions = Exposition[]
 export type Keywords = Keyword[]
 
 // Exposition
-export type Exposition = {
+export interface Exposition {
   slug: string,
   name: string,
   description: string,
@@ -45,42 +45,54 @@ export type Exposition = {
   hour2: string,
   startDate: string,
   endDate: string,
-  images: any,
-  artists: any,
-  curators: any,
+  images: string[],
+  artists: WPPost[],
+  curators: WPPost[],
   audioGuideSpotifyURL: string
   mainImg: WpImage,
-
 }
 
 // Participants
-export type SingleParticipant = {
+// From the participant wordpress endpoint
+export interface SingleParticipant {
   name: string,
   slug: string,
   id: number,
   wpId: number,
   img: string,
-  images: any,
-  keywords: any,
+  images: string[],
+  keywords: ParticipantKeyWords,
   bio: string,
   workTitle: string,
   workDescription: string,
-  expo: any,
-  related: any,
+  expo: WPPost,
+  related: ParticipantRelated,
 }
 
-export type Participant = {
+export interface ParticipantKeyWords {
+  id: number;
+  name: string;
+  slug: string;
+}
+
+export interface ParticipantRelated {
+  id: number;
+  name: string;
+  slug: string;
+}
+
+export interface Participant {
   name: string,
   slug: string,
   id: number,
   wpId: number,
   img: string,
-  images: any,
-  keywords: any,
+  images: WpImage[],
+  keywords: string[],
 }
 
 // Activities/Events
-export type Activity = {
+export interface Activity {
   id: number,
   slug: string,
   title: string,
@@ -100,7 +112,7 @@ export type Activity = {
   summary: string,
 }
 
-export type Event = {
+export interface Event {
   id: number,
   slug: string,
   date: {
@@ -113,7 +125,7 @@ export type Event = {
 }
 
 // Program
-export type Program = {
+export interface Program {
   id: number,
   slug: string,
   text: string,
@@ -128,7 +140,7 @@ export type Program = {
   participants: any,
 }
 
-export type MainProgram = {
+export interface MainProgram {
   id: number,
   slug: string,
   text: string,
@@ -139,7 +151,7 @@ export type MainProgram = {
 }
 
 // Categories
-export type Category = {
+export interface Category {
   name: string
   id: number,
   order: string,
@@ -147,7 +159,7 @@ export type Category = {
 }
 
 // Sponsors
-export type Sponsor = {
+export interface Sponsor {
   name: string,
   logo: string,
   author: number,
@@ -156,7 +168,7 @@ export type Sponsor = {
   url?: string,
 }
 
-export type SponsorCategory = {
+export interface SponsorCategory {
   name: string
   id: number,
   // slug: string,
@@ -165,7 +177,7 @@ export type SponsorCategory = {
 }
 
 // Page
-export type Page = {
+export interface Page {
   title: string,
   video: any,
   abstract: any, // string?
@@ -173,12 +185,12 @@ export type Page = {
   gallery: string[]
 }
 
-export type PageGalleryImg = {
+export interface PageGalleryImg {
   url: string
 }
 
 // Keywords
-export type Keyword = { 
+export interface Keyword {
   id: string,
   name: string,
   participants: Participants

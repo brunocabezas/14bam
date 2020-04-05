@@ -4,7 +4,8 @@
 // important:
 // the mutation type will work only if a state node
 // with the same name is defined
-export default {
+
+const mutationTypes = {
   EXPOSITIONS: 'EXPOSITIONS',
   EXPOSITION: 'EXPOSITION',
   PARTICIPANTS: 'PARTICIPANTS',
@@ -16,3 +17,18 @@ export default {
   ACTIVITIES: 'ACTIVITIES',
   CATEGORIES: 'CATEGORIES'
 }
+
+export enum DataType {
+  Expositions = 'expositions',
+  Exposition = 'exposition',
+  Participants = 'participants',
+  Participant = 'participant',
+  MainPrograms = 'main_programs',
+  Program = 'program',
+  Sponsors = 'sponsors',
+  Pages = 'pages',
+  Activities = 'activities',
+  Categories = 'categories'
+}
+
+export default mutationTypes
