@@ -43,7 +43,7 @@
   </div>
 </template>
 
-<script src='./carousel.js'></script>
+<script src='./carousel.ts'></script>
 
 <style lang="stylus" scoped>
 @import '../../../styles/constants.styl';

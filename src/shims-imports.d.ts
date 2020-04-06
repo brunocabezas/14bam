@@ -1,6 +1,11 @@
-declare module 'vue-progressive-image';
-declare module 'v-click-outside';
-declare module 'vue-ua';
-declare module 'vue-mq';
-declare module 'array-sort-by';
-declare module 'get-nested-value';
+declare module 'vue-progressive-image'
+declare module 'v-click-outside'
+declare module 'vue-ua'
+declare module 'vue-mq'
+declare module 'array-sort-by'
+declare module 'get-nested-value'
+declare module 'vue-carousel'
+declare module 'vue-image-lightbox'
+declare module 'vue-video-player'
+declare module 'vue-vimeo-player'
+declare module 'vue-youtube'

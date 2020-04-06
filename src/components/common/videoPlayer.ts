@@ -1,32 +1,48 @@
 import Vue from 'vue'
-import { Component } from 'vue-property-decorator'
-import VueTypes from 'vue-types'
+import { Component, Prop } from 'vue-property-decorator'
 import { videoPlayer } from 'vue-video-player'
+
+interface PlayerOptions {
+  language: string;
+  autoplay: boolean;
+  muted: boolean;
+  preload: string;
+  responsive: boolean;
+  crossOrigin: string;
+  height: string;
+  width: string;
+  sources: VideoSource[];
+}
+
+interface VideoSource {
+  withCredentials: boolean;
+  type: string;
+  src: string
+}
 
 @Component({
   components: {
     videoPlayer
-  },
-  props: {
-    url: VueTypes.string.def(''),
-    bannerUrl: VueTypes.string.def('')
   }
 })
 class VideoPlayer extends Vue {
-  loading = false
+  @Prop() public url: string = '';
+  @Prop() public bannerUrl: string = '';
+
+  loading : boolean = false
 
   volumeIconName = 'volume-mute'
   toggleAudioTitle = 'Subir Volumen'
 
   get player () {
-    return this.$refs.videoPlayer && this.$refs.videoPlayer.player
+    return this.$refs.videoPlayer && (this.$refs.videoPlayer as any).player
   }
 
   get volumeIcon () {
     return this.volumeIconName
   }
 
-  get playerOptions () {
+  get playerOptions () : PlayerOptions {
     return {
       language: 'es',
       autoplay: true,
@@ -49,7 +65,7 @@ class VideoPlayer extends Vue {
     }
   }
 
-  toggleAudio () {
+  toggleAudio () : void {
     const isMuted = this.player.muted()
     this.player.muted(!isMuted)
     this.volumeIconName = isMuted ? 'volume-up' : 'volume-mute'

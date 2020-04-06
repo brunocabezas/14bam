@@ -1,12 +1,18 @@
 import Vue from 'vue'
-import { Component } from 'vue-property-decorator'
-import VueTypes from 'vue-types'
-import Loader from '@/components/common/Loader'
+import { Component, Prop } from 'vue-property-decorator'
+import Loader from '@/components/common/Loader.vue'
 import LightBox from 'vue-image-lightbox'
-import ProgressiveImage from '@/components/common/ProgressiveImage.vue'
 import { Carousel as VueCarousel, Slide } from 'vue-carousel'
+import ProgressiveImage from '@/components/common/ProgressiveImage.vue'
 import Icon from '../../../../node_modules/vue-awesome/components/Icon.vue'
 import 'vue-image-lightbox/dist/vue-image-lightbox.min.css'
+
+type Images = CarouselImage[]
+
+interface CarouselImage {
+  src: string,
+  thumb: string
+}
 
 @Component({
   components: {
@@ -16,22 +22,21 @@ import 'vue-image-lightbox/dist/vue-image-lightbox.min.css'
     Slide,
     ProgressiveImage,
     'v-icon': Icon
-  },
-  props: {
-    // Array of image urls
-    images: VueTypes.arrayOf(String).def([]),
-    className: VueTypes.string.def('')
   }
 })
-class Carousel extends Vue {
-  currentImage = 0
 
-  get lightBoxData () {
+class Carousel extends Vue {
+  @Prop() public className: string = '';
+  @Prop() public images: string[] = [];
+
+  currentImage: number = 0
+
+  get lightBoxData (): Images {
     if (!this.images) return []
     return this.images.map(img => ({ src: img, thumb: img }))
   }
 
-  goToNextItem () {
+  goToNextItem (): void {
     if (this.currentImage === this.images.length - 1) {
       this.currentImage = 0
     } else {
@@ -39,7 +44,7 @@ class Carousel extends Vue {
     }
   }
 
-  goToPrevItem () {
+  goToPrevItem (): void {
     if (this.currentImage === 0) {
       this.currentImage = this.images.length - 1
     } else {
@@ -47,8 +52,8 @@ class Carousel extends Vue {
     }
   }
 
-  openLightbox (index) {
-    this.$refs.lightbox.showImage(index)
+  openLightbox (index: number) {
+    (this.$refs.lightbox as any).showImage(index)
   }
 }
 export default Carousel

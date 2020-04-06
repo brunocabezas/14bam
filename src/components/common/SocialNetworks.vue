@@ -36,21 +36,20 @@
   </div>
 </template>
 
-<script>
-import { Vue, Component } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator'
 import Icon from '../../../node_modules/vue-awesome/components/Icon.vue'
 
 @Component({
   components: {
     'v-icon': Icon
-  },
-  props: {
-    isWhite: Boolean
   }
 })
-class SocialNetworks extends Vue {}
-export default SocialNetworks
 
+class SocialNetworks extends Vue {
+  @Prop() public isWhite: boolean = false;
+}
+export default SocialNetworks
 </script>
 
 <style lang="stylus" scoped>
