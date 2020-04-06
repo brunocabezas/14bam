@@ -3,7 +3,7 @@ import { Event } from '@/config/types/types'
 // Add leading zeros to single numbers
 const addZeros = (number: number): string => ('0' + number).slice(-2)
 
-const monthNames = [
+const monthNames : string[] = [
   'Enero',
   'Febrero',
   'Marzo',
@@ -36,7 +36,7 @@ export const getDayOfDateTimeString = (dateStr: string = ''): string => {
   return `${addZeros(date.getDate())}`
 }
 
-export const getMonthOfDateTimeString = (dateStr: string = '') : string=> {
+export const getMonthOfDateTimeString = (dateStr: string = '') : string => {
   if (!dateStr) {
     return dateStr
   }
@@ -62,7 +62,7 @@ export const sortEventsByDate = (a: Event, b: Event) => {
 // 12 Noviembre
 // 12 noviembre
 // and outputs the corresponding javascript date objects
-export const dateStringToDate = (dateString: string) : Date=> {
+export const dateStringToDate = (dateString: string) : Date => {
   if (!dateString) return new Date()
 
   const day = dateString.split(' ')[0]
@@ -84,3 +84,9 @@ export const dateStringToDate = (dateString: string) : Date=> {
 const today = new Date()
 export const findCloseToToday = (a: Date, b: Date) =>
   Math.abs(a.valueOf() - today.valueOf()) < Math.abs(b.valueOf() - today.valueOf()) ? a : b
+
+// january => JAN
+export const shortenMonth = (monthName : string) : string => {
+  if (!monthName) return monthName
+  return monthName.substring(0, 3).toUpperCase()
+}

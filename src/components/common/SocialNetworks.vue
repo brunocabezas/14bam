@@ -45,10 +45,10 @@ import Icon from '../../../node_modules/vue-awesome/components/Icon.vue'
     'v-icon': Icon
   }
 })
-
 class SocialNetworks extends Vue {
-  @Prop() public isWhite: boolean = false;
+  @Prop({ default: false }) readonly isWhite!: boolean;
 }
+
 export default SocialNetworks
 </script>
 

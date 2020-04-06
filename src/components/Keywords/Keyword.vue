@@ -12,4 +12,4 @@
   </div>
 </template>
 
-<script src='./keyword.js'></script>
+<script src='./keyword.ts'></script>

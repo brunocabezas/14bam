@@ -1,16 +1,15 @@
 import { Component, Vue } from 'vue-property-decorator'
+import { mapGetters, mapActions } from 'vuex'
 import store from '@/config/store'
 import Loader from '@/components/common/Loader.vue'
-import { mapGetters, mapActions } from 'vuex'
+import urls, { AppUrls } from '@/config/urls'
+import { Activities } from '@/config/types/types'
+import { shortenMonth } from '@/helpers/dateHelpers'
 
 @Component({
   store,
   filters: {
-    // january => JAN
-    shortMonth: function (monthName) {
-      if (!monthName) return monthName
-      return monthName.substring(0, 3).toUpperCase()
-    }
+    shortMonth: shortenMonth
   },
   computed: {
     ...mapGetters({
@@ -27,7 +26,13 @@ import { mapGetters, mapActions } from 'vuex'
   }
 })
 class Agenda extends Vue {
-  urls = this.$root.urls
+  urls: AppUrls = urls
+
+  loadActivities!: () => void
+  // Computed
+  activitiesNotFetched!: boolean
+  isLoading!: boolean
+  events!: Activities
 
   mounted () {
     if (this.activitiesNotFetched) {

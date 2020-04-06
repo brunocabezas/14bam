@@ -1,8 +1,11 @@
 import { Vue, Component } from 'vue-property-decorator'
-import Loader from '@/components/common/Loader'
+import { mapGetters } from 'vuex'
+import { Route } from 'vue-router'
+import Loader from '@/components/common/Loader.vue'
 import ParticpantsGrid from '@/components/Participants/ParticipantsGrid/ParticipantsGrid.vue'
 import store from '@/config/store'
-import { mapGetters } from 'vuex'
+import { Keywords, Keyword } from '@/config/types/types'
+import { keyword } from '@/config/state/initialState'
 
 @Component({
   store,
@@ -14,19 +17,26 @@ import { mapGetters } from 'vuex'
     ...mapGetters({
       isLoading: 'isLoadingParticipants',
       keywords: 'keywordsFromParticipants',
-      noStoreData: 'participantsNotFetched'
+      participantsNotFetched: 'participantsNotFetched'
     })
   }
 })
-class Keyword extends Vue {
+class KeywordComponent extends Vue {
+  $route!: Route
+
+  participantsNotFetched!: boolean
+  isLoading!: boolean
+  keywords!: Keywords
+
   // TODO move to getters
-  get keyword () {
+  get keyword (): Keyword {
     // Using route paraments to set name
     const defaultKeyword = {
       name: this.$route.params.slug || '',
-      participants: []
+      ...keyword
     }
-    if (this.noStoreData) {
+
+    if (this.participantsNotFetched) {
       return { ...defaultKeyword }
     } else {
       return (
@@ -37,4 +47,4 @@ class Keyword extends Vue {
     }
   }
 }
-export default Keyword
+export default KeywordComponent

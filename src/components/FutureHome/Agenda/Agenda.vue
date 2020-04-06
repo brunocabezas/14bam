@@ -27,7 +27,7 @@
   </Loader>
 </template>
 
-<script src='./agenda.js'></script>
+<script src='./agenda.ts'></script>
 <style lang="stylus" scoped>
 @import '../../../styles/constants';
 

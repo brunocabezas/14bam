@@ -48,6 +48,7 @@ const mutations = {
     state.keywords = data
   },
   loadMarkersData (state: State, data: []) {
+    console.log(data)
     state.markersData = data
   }
 }

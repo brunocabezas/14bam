@@ -64,7 +64,7 @@ class WebVideoPlayer extends Vue {
     autoplay: 1
   }
 
-  @Prop() public url: string = '';
+  @Prop({ default: '' }) readonly url!: string;
 
   @Watch('url')
   onUrlChanged (value : string, oldValue: string) {

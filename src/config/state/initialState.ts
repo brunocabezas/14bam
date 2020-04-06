@@ -1,9 +1,8 @@
-import { Exposition, Program, Category, DateObject, Page } from '../types/types'
+import { Exposition, Program, Category, DateObject, Page, Keyword } from '../types/types'
 import { WPCategory } from '../types/wordpressTypes'
 import { wpPost } from './initialWordpressState'
 
 // Fallback states are declared in this file
-
 export const exposition: Exposition = {
   slug: '',
   name: '',
@@ -13,6 +12,7 @@ export const exposition: Exposition = {
   hour2: '',
   web: '',
   webText: '',
+  address: '',
   startDate: '',
   endDate: '',
   mainImg: {
@@ -79,6 +79,12 @@ export const category: Category = {
   name: '',
   order: '',
   sponsors: []
+}
+
+export const keyword : Keyword = {
+  id: 0,
+  name: '',
+  participants: []
 }
 
 export const page: Page = {

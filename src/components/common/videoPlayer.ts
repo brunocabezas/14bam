@@ -26,8 +26,8 @@ interface VideoSource {
   }
 })
 class VideoPlayer extends Vue {
-  @Prop() public url: string = '';
-  @Prop() public bannerUrl: string = '';
+  @Prop({ default: '' }) readonly url!: string
+  @Prop({ default: '' }) readonly bannerUrl!: string
 
   loading : boolean = false
 

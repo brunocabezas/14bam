@@ -23,8 +23,8 @@ import { Exposition } from '@/config/types/types'
   }
 })
 class ExpositionInfoBar extends Vue {
-  @Prop() readonly expoSlug: string = ''
-  @Prop() readonly expo: Exposition | null = null
+  @Prop({ default: '' }) readonly expoSlug!: string
+  @Prop({ default: null }) readonly expo!: Exposition | null
   // Methods
   loadExposition!: (expositionSlug: string) => void
   // Computed

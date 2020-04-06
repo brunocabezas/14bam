@@ -24,7 +24,7 @@ import Loader from '@/components/common/Loader.vue'
   }
 })
 class ProgressiveImage extends Vue {
-  @Prop() public src: string = '';
+  @Prop({ default: '' }) readonly src!: string;
 }
 export default ProgressiveImage
 </script>

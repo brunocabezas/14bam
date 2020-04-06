@@ -22,9 +22,9 @@ import BounceLoader from 'vue-spinner/src/BounceLoader.vue'
   }
 })
 class Loader extends Vue {
-  @Prop() public color: string = '#26305f';
-  @Prop() public loading: boolean = false;
-  @Prop() public size: string = '30px';
+  @Prop({ default: '#26305f' }) readonly color!: string
+  @Prop({ default: false }) readonly loading!: boolean
+  @Prop({ default: '30px' }) readonly size!: string
 }
 export default Loader
 </script>

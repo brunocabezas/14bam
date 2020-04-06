@@ -26,8 +26,8 @@ interface CarouselImage {
 })
 
 class Carousel extends Vue {
-  @Prop() public className: string = '';
-  @Prop() public images: string[] = [];
+  @Prop({ default: '' }) readonly className!: string
+  @Prop({ default: [] }) readonly images!: string[]
 
   currentImage: number = 0
 

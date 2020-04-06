@@ -32,6 +32,7 @@ export type SponsorCategories = SponsorCategory[]
 export type Activities = Activity[]
 export type Expositions = Exposition[]
 export type Keywords = Keyword[]
+export type MapMarkers = MapMarker[]
 
 // Exposition
 export interface Exposition {
@@ -40,6 +41,7 @@ export interface Exposition {
   description: string,
   web: string,
   webText: string,
+  address: string,
   place: string,
   hour: string,
   hour2: string,
@@ -226,7 +228,12 @@ export interface PageGalleryImg {
 
 // Keywords
 export interface Keyword {
-  id: string,
+  id: number,
   name: string,
   participants: Participants
+}
+
+// MapMarker
+export interface MapMarker {
+  [as : string]: any
 }
