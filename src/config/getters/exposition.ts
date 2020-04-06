@@ -70,7 +70,7 @@ export const getExpositionFromApi = (data: WPResponse = []): Exposition => {
   )
 }
 
-export const expositionsSortedByDate = (state: State) => {
+export const expositionsSortedByDate = (state: State) : Expositions => {
   if (!state.expositions || !state.expositions.responseData) {
     return []
   }

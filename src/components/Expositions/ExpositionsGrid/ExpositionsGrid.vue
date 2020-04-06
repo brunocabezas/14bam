@@ -1,5 +1,5 @@
 <template>
-  <Loader :loading="loadingData">
+  <Loader :loading="isLoadingData">
     <div class="expositionsGrid">
       <router-link
         :title="exposition.name"
@@ -32,5 +32,5 @@
   </Loader>
 </template>
 
-<script src="./expositionsGrid.js"></script>
+<script src="./expositionsGrid.ts"></script>
 <style scoped src="./expositionsGrid.styl" lang="stylus"></style>

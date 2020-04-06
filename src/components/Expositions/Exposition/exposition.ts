@@ -4,6 +4,9 @@ import Loader from '@/components/common/Loader.vue'
 import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/ExpositionInfoBar.vue'
 import store from '@/config/store'
 import { mapActions, mapGetters } from 'vuex'
+import urls, { AppUrls } from '@/config/urls'
+import { Route } from 'vue-router'
+import { Exposition } from '@/config/types/types'
 
 @Component({
   store,
@@ -17,30 +20,38 @@ import { mapActions, mapGetters } from 'vuex'
   },
   computed: {
     ...mapGetters({
-      expositionBySlug: 'expositionBySlug',
-      loadingData: 'isLoadingExposition'
+      getExpositionBySlug: 'expositionBySlug',
+      isLoadingData: 'isLoadingExposition'
     })
   }
 })
-class Exposition extends Vue {
-  urls = this.$root.urls
+class ExpositionComponent extends Vue {
+  urls : AppUrls = urls
+
+  $route!: Route
+
+  // Methods
+  loadExposition!: (expositionSlug: string) => void;
+  // Computed
+  isLoadingData!: boolean;
+  getExpositionBySlug!: (expositionSlug: string) => Exposition;
 
   @Watch('$route')
-  onRouteChanged (route) {
-    this.loadExposition({ slug: route.params.slug })
+  onRouteChanged (route: Route) {
+    this.loadExposition(route.params.slug)
   }
 
-  get exposition () {
-    return this.expositionBySlug(this.$route.params.slug)
+  get exposition () : Exposition {
+    return this.getExpositionBySlug(this.$route.params.slug)
   }
 
   mounted () {
     if (this.$route.params.slug) {
       const doRequest = this.$route.params.slug !== this.exposition.slug
       if (doRequest) {
-        this.loadExposition({ slug: this.$route.params.slug })
+        this.loadExposition(this.$route.params.slug)
       }
     }
   }
 }
-export default Exposition
+export default ExpositionComponent

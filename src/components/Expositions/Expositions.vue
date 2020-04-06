@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import ExpositionsGrid from './ExpositionsGrid/ExpositionsGrid.vue'
 

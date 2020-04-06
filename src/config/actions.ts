@@ -9,9 +9,9 @@ const actions: ActionTree<State, any> = {
     url: routes.expositions,
     slug: DataType.Expositions
   }),
-  loadExposition: (store, expo: Exposition) =>
+  loadExposition: (store, expositionSlug: string) =>
     fetchData(store, {
-      url: routes.exposition(expo.slug),
+      url: routes.exposition(expositionSlug),
       slug: DataType.Exposition
     }),
   loadParticipants: (store) => fetchData(store, {
