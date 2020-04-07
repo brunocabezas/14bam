@@ -1,6 +1,7 @@
 import { AsyncData } from './asyncDataTypes'
 import { WpImage, WPPost, WPLinks, WPContent, WPGuid, WPExcerpt, WPAcfFields } from './wordpressTypes'
 import { DataType } from '../mutationTypes'
+import { GoogleMapMarker } from './googleMapsTypes'
 
 // Root store object
 export interface Store {
@@ -19,7 +20,7 @@ export interface State {
   [DataType.Activities]: AsyncData,
   [DataType.Categories]: AsyncData,
   keywords: any,
-  markersData: any,
+  markersData: GoogleMapMarker[],
 }
 
 // Arrays 

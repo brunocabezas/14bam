@@ -9,6 +9,7 @@ import getters from './getters'
 import { DataType } from './mutationTypes'
 import { State } from './types/types'
 import { exposition, program } from './state/initialState'
+import { GoogleMapMarker } from './types/googleMapsTypes'
 
 Vue.use(Vuex)
 
@@ -47,8 +48,7 @@ const mutations = {
   loadKeywords (state: State, data: []) {
     state.keywords = data
   },
-  loadMarkersData (state: State, data: []) {
-    console.log(data)
+  loadMarkersData (state: State, data: GoogleMapMarker[]) {
     state.markersData = data
   }
 }

@@ -2,6 +2,7 @@
   <Loader :loading="loadingData">
     <div class="map">
       <MglMap
+        :mapboxGl="mapbox-gl"
         :center="mapCenter"
         :zoom="12"
         :accessToken="mapBoxAccessToken"
@@ -34,7 +35,7 @@
   </Loader>
 </template>
 
-<script src='./homeMap.js'></script>
+<script src='./homeMap.ts'></script>
 <style lang="stylus">
 @import '../../../styles/colors';
 
