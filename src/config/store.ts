@@ -55,7 +55,7 @@ const mutations = {
 
 const store = new Vuex.Store({
   state,
-  // TODO add mutations: https://github.com/SimonZhangITer/vue-typescript-dpapp-demo/blob/master/src/store/mutations.ts
+  // TODO add typed mutations: https://github.com/SimonZhangITer/vue-typescript-dpapp-demo/blob/master/src/store/mutations.ts
   mutations,
   actions: { ...actions },
   getters: { ...getters }

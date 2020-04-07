@@ -1,7 +1,7 @@
-import { WPCategories, WPCategory, WPResponse } from '../types/wordpressTypes'
-import { Categories, Sponsor, Category, SponsorCategory, Sponsors } from '../types/types'
+import { WPCategories, WPCategory } from '../types/wordpressTypes'
+import { Categories, Sponsor, Category, SponsorCategory } from '../types/types'
 import { onlyUnique } from '@/helpers/arrayHelpers'
-import { getSponsorsFromAPI, SponsorFromAPI } from './sponsors'
+import { SponsorFromAPI } from './sponsors'
 import { wpCategory } from '../state/initialWordpressState'
 
 export const getCategoriesFromApi = (data: WPCategories): SponsorCategory[] => {
@@ -12,19 +12,21 @@ export const getCategoriesFromApi = (data: WPCategories): SponsorCategory[] => {
   }))
 }
 
-export const getCategoriesFromSponsors = (sponsorsResponse : WPResponse) : Categories => {
-  const sponsors = getSponsorsFromAPI(sponsorsResponse)
+// Categories sorted by the order attribute
+export const getCategoriesFromSponsors = (sponsors : SponsorFromAPI[]) : Categories => {
   const categories = sponsors.map((sp: SponsorFromAPI) => sp.category)
   const categoriesIds : number[] = sponsors
-    .map((sp: SponsorFromAPI) => String(sp.category.term_id))
+    // Only using categories with id defined
+    .filter(s => s.category && s.category.id)
+    .map((sp: SponsorFromAPI) => String(sp.category.id))
     .filter(onlyUnique)
     .map(catId => parseInt(catId, 10))
 
   // Append sponsors
-  const sortedCatgories : Categories = categoriesIds
+  const sortedCategories : Categories = categoriesIds
     .map((catId: number) : Category => {
       const category : WPCategory = categories
-        .find((cat) => cat.term_id === catId) || wpCategory
+        .find((cat) => cat.id === catId) || wpCategory
       // Order is parsed from description, if contains
       // 'order:1' or 'order:1 ', this string will represent
       // a way to sort this item; if this is not found on description,
@@ -50,7 +52,7 @@ export const getCategoriesFromSponsors = (sponsorsResponse : WPResponse) : Categ
               })
               : sponsor
           )
-          .filter((s: SponsorFromAPI) => s.category && s.category.term_id === catId)
+          .filter((s: SponsorFromAPI) => s.category && s.category.id === catId)
           // Sorting by order
           .sort((a: Sponsor, b: Sponsor) => {
             return a.order - b.order
@@ -63,16 +65,16 @@ export const getCategoriesFromSponsors = (sponsorsResponse : WPResponse) : Categ
   // First category should be labeled 'Organiza', if this is not the case
   // Swap the first element with the second
   const swapFirstCategory =
-    sortedCatgories[0] &&
-    sortedCatgories[0].name.toLowerCase().includes('financia')
+    sortedCategories[0] &&
+    sortedCategories[0].name.toLowerCase().includes('financia')
 
   if (swapFirstCategory) {
-    const firstElem = sortedCatgories.shift()
-    const secondElem = sortedCatgories.shift()
+    const firstElem = sortedCategories.shift()
+    const secondElem = sortedCategories.shift()
     if (firstElem && secondElem) {
-      sortedCatgories.unshift(firstElem)
-      sortedCatgories.unshift(secondElem)
+      sortedCategories.unshift(firstElem)
+      sortedCategories.unshift(secondElem)
     }
   }
-  return sortedCatgories
+  return sortedCategories
 }

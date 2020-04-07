@@ -15,14 +15,17 @@ import { mapGetters } from 'vuex'
 import { shortenMonth } from '@/helpers/dateHelpers'
 import urls, { AppUrls } from '@/config/urls'
 import { Expositions, MapMarker } from '@/config/types/types'
-import { GoogleMapMarker, GoogleMapResponse } from '@/config/types/googleMapsTypes'
+import {
+  GoogleMapMarker,
+  GoogleMapResponse
+} from '@/config/types/googleMapsTypes'
 
 const MAPBOX_PUBLIC_TOKEN = process.env.VUE_APP_MAPBOX_PUBLIC_TOKEN || ''
 const MAPBOX_THEME = 'mapbox://styles/mapbox/dark-v9'
+const SANTIAGO_COORDINATES = [-70.64827, -33.45694]
 
 // next steps
 // check console warning regarding mapbox gl
-// fix sponsors not being displayed on home
 @Component({
   store,
   components: {
@@ -46,10 +49,10 @@ class HomeMap extends Vue {
   mapBoxAccessToken: string = MAPBOX_PUBLIC_TOKEN
   mapStyle: string = MAPBOX_THEME
   // Map centered in Santiago, Chile
-  mapCenter = [-70.64827, -33.45694]
-
+  mapCenter = SANTIAGO_COORDINATES
+  // Computed
   expositionsFromState!: Expositions
-
+  // Mapbox reference
   mapbox!: any | null
 
   get expositions (): Expositions {
@@ -62,10 +65,7 @@ class HomeMap extends Vue {
       .map((marker: GoogleMapMarker, ix: number) => {
         return {
           id: ix,
-          coordinates:
-            ( marker.geometry &&
-              marker.geometry.location) ||
-            null
+          coordinates: (marker.geometry && marker.geometry.location) || null
         }
       })
       // Removing nulled coordinates items
@@ -73,16 +73,18 @@ class HomeMap extends Vue {
     return markers
   }
 
-  @Watch ('expositions')
-  onPropertyChanged(value: Expositions): void {
+  @Watch('expositions')
+  onPropertyChanged (value: Expositions): void {
     // Do stuff with the watcher here.
     if (value.length > 0) {
-      const arrayOfAddresses = value.filter(expo => expo.address).map(expo => expo.address)
+      const arrayOfAddresses = value
+        .filter(expo => expo.address)
+        .map(expo => expo.address)
       this.fetchData(arrayOfAddresses)
     }
   }
   // If exposition is defined; fetch lat, lng values as markers data
-  mounted () {
+  mounted (): void {
     if (this.expositions.length > 0) {
       this.fetchData()
     }
@@ -92,8 +94,11 @@ class HomeMap extends Vue {
   fetchData (addresses?: string[]): void {
     this.loadingData = true
     const directions = this.expositions.map(expo => expo.address)
-    loadMarkersData (addresses || directions).then((response: any) => {
-        const markers : GoogleMapMarker[]= response.map((r: GoogleMapResponse) => r.data.results[0])
+    loadMarkersData(addresses || directions)
+      .then((response: any) => {
+        const markers: GoogleMapMarker[] = response.map(
+          (r: GoogleMapResponse) => r.data.results[0]
+        )
         this.$store.commit('loadMarkersData', markers)
         this.loadingData = false
       })

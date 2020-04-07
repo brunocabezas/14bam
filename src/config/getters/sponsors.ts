@@ -4,13 +4,13 @@ import { Sponsors, Sponsor, SponsorCategories } from '@/config/types/types'
 import { category } from '../state/initialState'
 
 export type SponsorFromAPI = {
-  name: string,
-  logo: string,
-  date: string,
-  author: number,
-  order: number,
-  category: WPCategory,
-  url?: string,
+  name: string
+  logo: string
+  date: string
+  author: number
+  order: number
+  category: WPCategory
+  url?: string
 }
 
 export const getSponsorsFromAPI = (sponsors: WPResponse): SponsorFromAPI[] =>
@@ -24,18 +24,26 @@ export const getSponsorsFromAPI = (sponsors: WPResponse): SponsorFromAPI[] =>
     url: getAcfField(sponsor, 'url', null)
   }))
 
-export const getSponsors = (response: WPResponse, categories: SponsorCategories): Sponsors => {
-  const parsedSponsors = getSponsorsFromAPI(response)
+export const getSponsors = (
+  parsedSponsors: SponsorFromAPI[],
+  categories: SponsorCategories
+): Sponsors => {
   const sponsors: Sponsors = parsedSponsors
     // For now, filtering sponsors created by the admin wp user
-    .filter((sponsor: SponsorFromAPI) => sponsor.category && sponsor.category.slug !== 'uncategorized')
-    .map((sponsor: SponsorFromAPI): Sponsor => ({
-      ...sponsor,
-      category: categories
-        .find(cat => sponsor.category && cat.id === sponsor.category.term_id) || category
-    }))
-  return (
-    sponsors
-      .filter((sponsor: Sponsor) => sponsor.category && sponsor.category.id)
+    .filter(
+      (sponsor: SponsorFromAPI) =>
+        sponsor.category && sponsor.category.slug !== 'uncategorized'
+    )
+    .map(
+      (sponsor: SponsorFromAPI): Sponsor => ({
+        ...sponsor,
+        category:
+          categories.find(
+            cat => sponsor.category && cat.id === sponsor.category.term_id
+          ) || category
+      })
+    )
+  return sponsors.filter(
+    (sponsor: Sponsor) => sponsor.category && sponsor.category.id
   )
 }

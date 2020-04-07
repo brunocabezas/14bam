@@ -1,11 +1,11 @@
 import { isLoadingHelper, isNotFetchedHelper } from '@/helpers/remoteDataHelper'
 import { pageFromStateByLabel, WPStaticPageSlug } from '@/config/getters/pages'
+import { getMainPrograms, getProgram } from '@/config/getters/programs'
+import { getSponsors, getSponsorsFromAPI } from '@/config/getters/sponsors'
 import {
-  getMainPrograms,
-  getProgram
-} from '@/config/getters/programs'
-import { getSponsors } from '@/config/getters/sponsors'
-import { getActivitiesFromApi, getActivityBySlug } from '@/config/getters/activities'
+  getActivitiesFromApi,
+  getActivityBySlug
+} from '@/config/getters/activities'
 import {
   getExpositionFromApi,
   expositionsSortedByDate
@@ -13,10 +13,14 @@ import {
 import { GetterTree } from 'vuex'
 import { Exposition, Program, Event, MainProgram } from './types/types'
 import {
-  getParticipants, getKeywordsFromParticipants,
+  getParticipants,
+  getKeywordsFromParticipants,
   getParticipantFromApi
 } from './getters/participants'
-import { getCategoriesFromApi, getCategoriesFromSponsors } from './getters/categories'
+import {
+  getCategoriesFromApi,
+  getCategoriesFromSponsors
+} from './getters/categories'
 import { DataType } from './mutationTypes'
 
 let getters: GetterTree<any, any> = {
@@ -27,7 +31,9 @@ let getters: GetterTree<any, any> = {
 
   // Exposition
   expositionBySlug: (state, { expositionsByDate }) => (expoSlug: string) => {
-    const isOnState = expositionsByDate.find((e: Exposition) => e.slug === expoSlug)
+    const isOnState = expositionsByDate.find(
+      (e: Exposition) => e.slug === expoSlug
+    )
     return isOnState || getExpositionFromApi(state.exposition.responseData)
   },
   isLoadingExposition: isLoadingHelper(DataType.Exposition),
@@ -59,24 +65,30 @@ let getters: GetterTree<any, any> = {
 
   // Activities
   activities: st => getActivitiesFromApi(st.activities.responseData),
-  activityBySlug: (st, { activities }) => (eventSlug: string) => getActivityBySlug(activities, eventSlug),
+  activityBySlug: (st, { activities }) => (eventSlug: string) =>
+    getActivityBySlug(activities, eventSlug),
   isLoadingActivities: isLoadingHelper(DataType.Activities),
   activitiesNotFetched: isNotFetchedHelper(DataType.Activities),
 
   // Sponsors - Categories
   // used on categoriesFromSponsors
-  sponsors: (state) =>
-    getSponsors(state.sponsors.responseData, getCategoriesFromApi(state.categories.responseData)),
+  sponsors: state => {
+    const parsedSponsors = getSponsorsFromAPI(state.sponsors.responseData)
+    const parsedCategories = getCategoriesFromApi(state.categories.responseData)
+    return getSponsors(parsedSponsors, parsedCategories)
+  },
   isLoadingSponsors: isLoadingHelper(DataType.Sponsors),
   sponsorsNotFetched: isNotFetchedHelper(DataType.Sponsors),
-  categoriesFromSponsors: (state, { sponsors }) => getCategoriesFromSponsors(sponsors),
+  categoriesFromSponsors: (state, { sponsors }) =>
+    getCategoriesFromSponsors(sponsors),
   isLoadingCategories: isLoadingHelper(DataType.Categories),
   categoriesNotFetched: isNotFetchedHelper(DataType.Categories),
 
   // Wordpress static pages
   aboutPage: state => pageFromStateByLabel(WPStaticPageSlug.About, state),
   contestPage: state => pageFromStateByLabel(WPStaticPageSlug.Contest, state),
-  abstractPage: state => pageFromStateByLabel(WPStaticPageSlug.AboutExposition, state),
+  abstractPage: state =>
+    pageFromStateByLabel(WPStaticPageSlug.AboutExposition, state),
   isLoadingPages: isLoadingHelper(DataType.Pages),
   pagesNotFetched: isNotFetchedHelper(DataType.Pages)
 }
