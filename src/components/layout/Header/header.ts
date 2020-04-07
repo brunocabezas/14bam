@@ -3,6 +3,14 @@ import { Component, Watch } from 'vue-property-decorator'
 import BurgerButton from 'vue-burger-button'
 import SocialNetworks from '../../common/SocialNetworks.vue'
 import 'vue-burger-button/dist/vue-burger-button.css'
+import urls, { AppUrls } from '@/config/urls'
+import { Route } from 'vue-router'
+
+enum VueMqMediaQuery {
+  SM = "sm",
+  LG = "lg",
+  MD = "md",
+} 
 
 @Component({
   components: {
@@ -11,16 +19,17 @@ import 'vue-burger-button/dist/vue-burger-button.css'
   }
 })
 class Header extends Vue {
-  urls = this.$root.urls
+  programURL = 'http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/programa14bienal.pdf'
+  urls : AppUrls = urls;
+  isOnHome : boolean = false
+  displayElements : boolean = true
+  isOpen : boolean = false
 
-  isOnHome = false
-
-  displayElements = true
-
-  isOpen = false
-
+  // Global media query object available by vue-mq
+  $mq!: VueMqMediaQuery
+  
   get scrollBreakpoint () {
-    return this.$mq === 'sm' ? 300 : 100
+    return this.$mq === VueMqMediaQuery.SM ? 300 : 100
   }
 
   get viewportHeight () {
@@ -31,12 +40,12 @@ class Header extends Vue {
   }
 
   @Watch('$route')
-  onPropertyChanged (to, from) {
+  onPropertyChanged (to : Route, from : Route) {
     // If is on home and scroll passdown the first section, show header
     this.isOnHome = to.name === 'home'
     this.displayElements =
       to.name !== 'home' ||
-      window.scrollY > this.viewportHeight - this.scrollBreakpoin
+      window.scrollY > this.viewportHeight - this.scrollBreakpoint
   }
 
   created () {
@@ -45,7 +54,7 @@ class Header extends Vue {
     // this.isOnFutureHome = isOnFutureHome
     this.displayElements =
       this.$route.name !== 'home' ||
-      window.scrollY > this.viewportHeight - this.scrollBreakpoin
+      window.scrollY > this.viewportHeight - this.scrollBreakpoint
     document.addEventListener('scroll', this.handleScroll)
     document.addEventListener('keyup', this.closeMenuByKeyboard)
   }
@@ -55,14 +64,14 @@ class Header extends Vue {
     document.removeEventListener('keyup', this.closeMenuByKeyboard)
   }
 
-  closeMenuByKeyboard (event) {
+  closeMenuByKeyboard (event : KeyboardEvent) {
     if (event.keyCode === 27 && this.isOpen) {
       // esc key pressed
       this.toggleMenu()
     }
   }
 
-  handleScroll (evt, el) {
+  handleScroll () : void {
     const viewportHeight = Math.max(
       document.documentElement.clientHeight,
       window.innerHeight || 0
@@ -77,10 +86,11 @@ class Header extends Vue {
     }
   }
 
-  clickOutsideMenu (event) {
+  // TODO improve type definition of event
+  clickOutsideMenu (event: MouseEvent | any) {
     if (this.isOpen) {
-      const isBurgerButton = event.target.className.includes('burgerButton')
-      const isBarElement = event.target.className.includes('bar')
+      const isBurgerButton = event.target && event.target.className.includes('burgerButton')
+      const isBarElement = event.target && event.target.className.includes('bar')
       // Closing overlay by toggling the state
       if (!isBurgerButton && !isBarElement) {
         this.toggleMenu()

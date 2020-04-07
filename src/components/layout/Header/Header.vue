@@ -57,17 +57,10 @@
               Campos Magnéticos</router-link
             >
           </li>
-          <!-- TODO Add exposition when available -->
-          <!-- <li class="headerNavMenuItem"> -->
-            <!-- <router-link title="Concurso Juan Downey" :to="urls.contest">
-              Concurso Juan Downey</router-link
-            > -->
-          <!-- </li> -->
-
           <li class="headerNavMenuItem">
             <a
               target="_blank"
-              href="http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/programa14bienal.pdf"
+              :href="programURL"
               title="Descargar programa en PDF"
               :to="urls.about"
               >Descargar Programa</a
@@ -93,5 +86,5 @@
   </div>
 </template>
 
-<script src="./header.js"></script>
+<script src="./header.ts"></script>
 <style src="./header.styl" scoped lang="styl"></style>
