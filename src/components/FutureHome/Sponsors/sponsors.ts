@@ -2,6 +2,7 @@ import { Component, Vue } from 'vue-property-decorator'
 import store from '@/config/store'
 import Loader from '@/components/common/Loader.vue'
 import { mapActions, mapGetters } from 'vuex'
+import { Categories } from '@/config/types/types'
 
 @Component({
   store,
@@ -10,19 +11,29 @@ import { mapActions, mapGetters } from 'vuex'
   },
   computed: {
     ...mapGetters({
-      isLoadingSponsors: 'isLoadingSponsors',
-      isLoadingCategories: 'isLoadingCategories',
-      sponsors: 'sponsors',
       categories: 'categoriesFromSponsors',
       sponsorsNotFetched: 'sponsorsNotFetched',
-      categoriesNotFetched: 'categoriesNotFetched'
+      categoriesNotFetched: 'categoriesNotFetched',
+      isLoadingSponsors: 'isLoadingSponsors',
+      isLoadingCategories: 'isLoadingCategories'
     })
   },
   components: {
     Loader
   }
 })
-class Sponsors extends Vue {
+class SponsorsComponent extends Vue {
+  // Methods
+  loadSponsors!: () => void
+  loadWpCategories!: () => Promise<void>
+
+  // Computed
+  categories!: Categories
+  isLoadingSponsors!: boolean
+  isLoadingCategories!: boolean
+  sponsorsNotFetched!: boolean
+  categoriesNotFetched!: boolean
+
   get isLoading () {
     return this.isLoadingCategories ||
       this.isLoadingSponsors
@@ -40,4 +51,4 @@ class Sponsors extends Vue {
     }
   }
 }
-export default Sponsors
+export default SponsorsComponent

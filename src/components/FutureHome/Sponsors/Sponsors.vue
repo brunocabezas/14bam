@@ -36,5 +36,5 @@
   </section>
 </template>
 
-<script src="./sponsors.js"></script>
+<script src="./sponsors.ts"></script>
 <style lang="stylus" scoped src="./sponsors.styl"></style>

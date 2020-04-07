@@ -43,7 +43,7 @@
   </div>
 </template>
 
-<script src="./futureHome.js" ></script>
+<script src="./futureHome.ts" ></script>
 <style src="./home.styl" lang="styl"></style>
 <style lang="stylus">
 .section.videos

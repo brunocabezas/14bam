@@ -7,7 +7,16 @@ import Agenda from '@/components/FutureHome/Agenda/Agenda.vue'
 import Map from '@/components/FutureHome/HomeMap/HomeMap.vue'
 import Sponsors from '@/components/FutureHome/Sponsors/Sponsors.vue'
 import store from '@/config/store'
+import urls, { AppUrls } from '@/config/urls'
 import { mapGetters } from 'vuex'
+import { Page } from '@/config/types/types'
+
+type HomeVideo = {
+  id: number,
+  url: string,
+  hasBanner: boolean,
+  bannerUrl: string,
+}
 
 @Component({
   components: {
@@ -19,7 +28,6 @@ import { mapGetters } from 'vuex'
     MainPrograms
   },
   store,
-
   computed: {
     ...mapGetters({
       abstractPage: 'abstractPage'
@@ -27,11 +35,16 @@ import { mapGetters } from 'vuex'
   }
 })
 class FutureHome extends Vue {
-  video = {
+  urls : AppUrls = urls;
+  video : HomeVideo= {
     id: 0,
-    url: ''
+    url: '',
+    hasBanner: false,
+    bannerUrl: ''
   }
-  urls = this.$root.urls
+
+  // Computed
+  abstractPage!: Page;
 
   mounted () {
     loadVideos()

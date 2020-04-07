@@ -71,7 +71,7 @@ let getters: GetterTree<any, any> = {
   activitiesNotFetched: isNotFetchedHelper(DataType.Activities),
 
   // Sponsors - Categories
-  // used on categoriesFromSponsors
+  // used only on another getter: categoriesFromSponsors
   sponsors: state => {
     const parsedSponsors = getSponsorsFromAPI(state.sponsors.responseData)
     const parsedCategories = getCategoriesFromApi(state.categories.responseData)
@@ -79,6 +79,7 @@ let getters: GetterTree<any, any> = {
   },
   isLoadingSponsors: isLoadingHelper(DataType.Sponsors),
   sponsorsNotFetched: isNotFetchedHelper(DataType.Sponsors),
+  // used on Sponsors component
   categoriesFromSponsors: (state, { sponsors }) =>
     getCategoriesFromSponsors(sponsors),
   isLoadingCategories: isLoadingHelper(DataType.Categories),
