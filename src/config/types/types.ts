@@ -19,7 +19,6 @@ export interface State {
   [DataType.Pages]: AsyncData,
   [DataType.Activities]: AsyncData,
   [DataType.Categories]: AsyncData,
-  keywords: any,
   markersData: GoogleMapMarker[],
 }
 

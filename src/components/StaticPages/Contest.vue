@@ -13,7 +13,7 @@ import { WPStaticPageSlug } from '../../config/getters/pages'
 @Component({
   store,
   methods: {
-    ...mapActions(['loadWpPages'])
+    ...mapActions(['loadPages'])
   },
   computed: {
     ...mapGetters({
@@ -28,7 +28,7 @@ import { WPStaticPageSlug } from '../../config/getters/pages'
 })
 class Contest extends Vue {
   // Actions
-  loadWpPages!: () => void
+  loadPages!: () => void
   // Computed
   page!: Page
   isLoading!: boolean
@@ -36,7 +36,7 @@ class Contest extends Vue {
 
   mounted () {
     if (this.pagesNotFetched) {
-      this.loadWpPages()
+      this.loadPages()
     }
   }
 }

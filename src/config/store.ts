@@ -22,7 +22,6 @@ let state: State = {
   // Artits and curators
   [DataType.Participants]: asyncState(),
   [DataType.Participant]: asyncState([{}]),
-  keywords: [],
   // Programs and sub-programs
   [DataType.MainPrograms]: asyncState(), // Main program contain programs
   [DataType.Program]: asyncState([program]), // Program contains activities
@@ -45,9 +44,6 @@ const mutations = {
   ...asyncDataMutations(DataType.Sponsors),
   ...asyncDataMutations(DataType.Categories),
   ...asyncDataMutations(DataType.Pages),
-  loadKeywords (state: State, data: []) {
-    state.keywords = data
-  },
   loadMarkersData (state: State, data: GoogleMapMarker[]) {
     state.markersData = data
   }

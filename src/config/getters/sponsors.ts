@@ -37,8 +37,6 @@ export const getSponsors = (
   parsedSponsors: SponsorFromAPI[],
   categories: SponsorCategories
 ): Sponsors => {
-  console.log(parsedSponsors)
-
   const sponsors: Sponsors = parsedSponsors
     // For now, filtering sponsors created by the admin wp user
     .filter(

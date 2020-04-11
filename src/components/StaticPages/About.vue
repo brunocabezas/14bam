@@ -13,7 +13,7 @@ import { Page } from '../../config/types/types'
 @Component({
   store,
   methods: {
-    ...mapActions(['loadWpPages'])
+    ...mapActions(['loadPages'])
   },
   computed: {
     ...mapGetters({
@@ -28,7 +28,7 @@ import { Page } from '../../config/types/types'
 })
 class About extends Vue {
   // Actions
-  loadWpPages!: () => void
+  loadPages!: () => void
   // Computed
   page!: Page
   isLoading!: boolean
@@ -36,7 +36,7 @@ class About extends Vue {
 
   mounted () {
     if (this.pagesNotFetched) {
-      this.loadWpPages()
+      this.loadPages()
     }
   }
 }
