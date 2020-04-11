@@ -1,5 +1,5 @@
 <template>
-  <Loader :loading="loading">
+  <Loader :loading="isLoading">
     <div v-if="displayActivitiesInformation" class="program pageSingleLayout">
       <div v-if="program.mainProgram" class="pageTitleLink">
         <router-link
@@ -26,14 +26,14 @@
               {{ event.post_title || event.name }}
             </div>
             <div
-              v-if="event.date && !isLoadingActivitiesData"
+              v-if="event.date && !isLoadingEvents"
               class="activityInformation"
             >
               {{ event.date.dateString }} | {{ event.date.time }}
               {{ event.place && "|" }}
               {{ event.place && event.place.post_title }}
             </div>
-            <Loader size="20px" :loading="isLoadingActivitiesData" />
+            <Loader size="20px" :loading="isLoadingEvents" />
           </router-link>
         </div>
       </div>
@@ -100,5 +100,5 @@
   </Loader>
 </template>
 
-<script src="./program.js"></script>
+<script src="./program.ts"></script>
 <style src="./program.styl" lang="stylus"></style>

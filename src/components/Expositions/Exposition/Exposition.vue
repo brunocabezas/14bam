@@ -1,5 +1,5 @@
 <template>
-  <Loader :loading="loadingData">
+  <Loader :loading="isLoadingData">
     <div class="exposition">
       <ExpositionInfoBar :expo="exposition" />
 
@@ -82,5 +82,5 @@
   </Loader>
 </template>
 
-<script src="./exposition.js"></script>
+<script src="./exposition.ts"></script>
 <style src="./exposition.styl" lang="stylus"></style>

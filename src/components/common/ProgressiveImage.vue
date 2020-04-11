@@ -14,20 +14,18 @@
   </progressive-background>
 </template>
 
-<script>
-import VueTypes from 'vue-types'
-import { Component, Vue } from 'vue-property-decorator'
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator'
 import Loader from '@/components/common/Loader.vue'
 
 @Component({
   components: {
     Loader
-  },
-  props: {
-    src: VueTypes.string.def('')
   }
 })
-class ProgressiveImage extends Vue {}
+class ProgressiveImage extends Vue {
+  @Prop({ default: '' }) readonly src!: string;
+}
 export default ProgressiveImage
 </script>
 

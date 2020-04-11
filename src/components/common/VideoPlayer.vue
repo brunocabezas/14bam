@@ -24,7 +24,7 @@
   </div>
 </template>
 
-<script src="./videoPlayer.js"></script>
+<script src="./videoPlayer.ts"></script>
 <style lang="stylus">
 @import '../../styles/constants';
 

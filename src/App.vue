@@ -14,12 +14,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import Header from '@/components/layout/Header/Header.vue'
 import Footer from '@/components/layout/Footer/Footer.vue'
 import store from '@/config/store'
 import { mapGetters, mapActions } from 'vuex'
+import { Route } from 'vue-router'
+import { HOME_URL_NAME } from './config/router'
 
 @Component({
   store,
@@ -33,28 +35,31 @@ import { mapGetters, mapActions } from 'vuex'
     })
   },
   methods: {
-    ...mapActions(['loadWpPages'])
+    ...mapActions(['loadPages'])
   }
 })
 class App extends Vue {
-  // Header and footer are hidden on temporaryHome
-  isOnHome = false
+  isOnHome : boolean= false
+
+  // Actions
+  loadPages!: () => void
+  // Computed
+  pagesNotFetched!: boolean
 
   // Lifecycle hook
   mounted () {
     if (this.pagesNotFetched) {
-      this.loadWpPages()
+      this.loadPages()
     }
 
-    if (this.$route.name === 'home') {
+    if (this.$route.name === HOME_URL_NAME) {
       this.isOnHome = true
     }
   }
 
   @Watch('$route')
-  onPropertyChanged (to, from) {
-    // console.log(to.name === 'home')
-    this.isOnHome = to.name === 'home'
+  onPropertyChanged (to: Route, from: Route) {
+    this.isOnHome = to.name === HOME_URL_NAME
   }
 }
 export default App

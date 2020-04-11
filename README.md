@@ -1,6 +1,11 @@
-# 14 Bienal Artes Mediales site
+# 14 Bienal Artes Mediales web
 
-VueJS application using wordpress as backend.
+[VueJS application](http://www.bienaldeartesmediales.cl/14/) written with typescript using wordpress as backend.
+
+![Navigation](14-bam-navigation.png)
+
+![Expositions](14-bam-expositions.png)
+
 
 ## Project setup
 
@@ -45,6 +50,7 @@ For testing purposes, [src/wpObjectMock.js](src/wpObjectMock.js) is used.
 Environment flags are needed to enable specific features:
 
 ```
+VUE_APP_BASE_URL // base url of the API
 VUE_APP_GOOGLE_GEO_API // google geo api used to retrieve lat, lng values from addresses
 VUE_APP_MAPBOX_PUBLIC_TOKEN // token to be able to display map on home page
 VUE_APP_ASSETS_URL // public assets url on production, for example: if it's set to '/assets/', will look for public assets at origin.com/assets/
@@ -66,3 +72,9 @@ yarn run build
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Next Steps
+
+- [ ] check the use of vue-mq strings on views, maybe we can use enums?
+- [ ] fix download program button

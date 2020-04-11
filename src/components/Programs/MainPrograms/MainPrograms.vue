@@ -14,7 +14,7 @@
         </div>
       </div>
       <div mq="lg" class="mainProgramsAnimation">
-        <img :src="`${publicPath}mainPrograms.gif`" alt="Animacion de logo" />
+        <img :src="`${baseUrl}mainPrograms.gif`" alt="Animacion de logo" />
       </div>
       <div class="secondProgram mainProgramContainer">
         <div class="mainProgramContainerWrapper">
@@ -35,5 +35,5 @@
   </Loader>
 </template>
 
-<script src="./mainPrograms.js"></script>
+<script src="./mainPrograms.ts"></script>
 <style lang="stylus" src="./mainPrograms.styl"></style>

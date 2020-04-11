@@ -1,5 +1,5 @@
 <template>
-  <div class="WebvideoPlayer">
+  <div class="WebVideoPlayer">
     <Loader :loading="loading"></Loader>
     <vimeo-player
       v-if="url && isVimeo"
@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
 import { Component, Prop, Watch } from 'vue-property-decorator'
 import vueVimeoPlayer from 'vue-vimeo-player'
@@ -32,44 +32,54 @@ import { getVimeoId, getYoutubeId } from '@/helpers/urlHelpers'
 Vue.use(VueYoutube)
 Vue.use(vueVimeoPlayer)
 
+interface WebVideoPlayerVariables{
+  controls: number,
+  autoplay: number
+}
+
+interface WebVideoPlayerOptions {
+  minHeight: number,
+}
+
+interface WebVideoStat {
+  isVimeo: false
+}
+
 @Component({
   components: {
     vueVimeoPlayer,
     Loader
-  },
-  data () {
-    return {
-      isVimeo: false,
-      playerOpts: {
-        minHeight: 300
-      }
-    }
   }
 })
 class WebVideoPlayer extends Vue {
-  loading = false
-  playerVars = {
+  loading : boolean = false
+  isVimeo : boolean = false
+
+  playerOpts : WebVideoPlayerOptions = {
+    minHeight: 300
+  }
+
+  playerVars : WebVideoPlayerVariables = {
     controls: 0,
     autoplay: 1
   }
 
-  @Prop({ default: '' })
-  url
+  @Prop({ default: '' }) readonly url!: string;
 
   @Watch('url')
-  onUrlChanged (value, oldValue) {
+  onUrlChanged (value : string, oldValue: string) {
     this.isVimeo = value.includes('vimeo')
   }
 
   get player () {
-    return this.$refs.youtube.player
+    return (this.$refs.youtube as any).player
   }
 
   onPlayerReady () {
     this.loading = false
   }
 
-  getVideoId () {
+  getVideoId () : string {
     return this.isVimeo ? getVimeoId(this.url) : getYoutubeId(this.url)
   }
 
@@ -82,7 +92,7 @@ export default WebVideoPlayer
 </script>
 
 <style lang="stylus">
-.WebvideoPlayer
+.WebVideoPlayer
   width 100%
   min-height 300px
   position relative

@@ -32,4 +32,4 @@
   </Loader>
 </template>
 
-<script src="./staticPage.js"></script>
+<script src="./staticPage.ts"></script>

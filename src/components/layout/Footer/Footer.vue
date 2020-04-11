@@ -6,7 +6,7 @@
         <!-- Begin Mailchimp Signup Form -->
         <div id="mc_embed_signup">
           <form
-            action="https://bienaldeartesmediales.us11.list-manage.com/subscribe/post?u=21121cf28dc5ae821ecbf30c9&amp;id=4459a2b85e"
+            :action="subscribeURL"
             method="post"
             id="mc-embedded-subscribe-form"
             name="mc-embedded-subscribe-form"
@@ -63,5 +63,5 @@
   </div>
 </template>
 
-<script src="./footer.js"></script>
+<script src="./footer.ts"></script>
 <style src="./footer.styl" scoped lang="styl"></style>

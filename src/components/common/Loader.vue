@@ -12,30 +12,20 @@
   </div>
 </template>
 
-<script>
-import { Component, Vue } from 'vue-property-decorator'
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator'
 import BounceLoader from 'vue-spinner/src/BounceLoader.vue'
 
 @Component({
   components: {
     BounceLoader
-  },
-  props: {
-    color: {
-      type: String,
-      default: '#26305f'
-    },
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    size: {
-      type: String,
-      default: '30px'
-    }
   }
 })
-class Loader extends Vue {}
+class Loader extends Vue {
+  @Prop({ default: '#26305f' }) readonly color!: string
+  @Prop({ default: false }) readonly loading!: boolean
+  @Prop({ default: '30px' }) readonly size!: string
+}
 export default Loader
 </script>
 

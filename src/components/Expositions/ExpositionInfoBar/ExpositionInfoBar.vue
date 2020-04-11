@@ -65,5 +65,5 @@
   </ul>
 </template>
 
-<script src="./expositionInfoBar.js"></script>
+<script src="./expositionInfoBar.ts"></script>
 <style scoped lang="stylus" src="./expositionInfoBar.styl"></style>
