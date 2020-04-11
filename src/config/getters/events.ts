@@ -21,7 +21,8 @@ export const getEventsFromApi = (events: WPResponse): Events => {
         participants: getAcfField(act, 'participant'),
         limitedTickets: getAcfField(act, 'limited_tickets'),
         program: getAcfField(act, 'program'),
-        place: getAcfField(act, 'place'),
+        // If place is defined, pick the first array item
+        place: getAcfField(act, 'place') ? getAcfField(act, 'place')[0] : event.place,
         date: {
           jsDate: dateStringToDate(dateString),
           day: dateString.split(' ')[0],

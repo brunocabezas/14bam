@@ -100,7 +100,7 @@ export interface Event {
   title: string,
   description: string,
   videoUrl: string,
-  place: WPPost[],
+  place: WPPost,
   limitedTickets: boolean,
   date: DateObject,
   image: string,

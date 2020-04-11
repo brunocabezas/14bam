@@ -1,12 +1,12 @@
 import { WPCategory, WPPost } from '../types/wordpressTypes'
 
 export const wpPost: WPPost = {
-  ID: 638,
-  post_author: '2',
+  ID: 0,
+  post_author: '',
   post_date: '2019-10-01 15:23:57',
   post_date_gmt: '2019-10-01 15:23:57',
   post_content: '',
-  post_title: 'Conversatorios',
+  post_title: '',
   post_excerpt: '',
   post_status: 'publish',
   comment_status: 'closed',
@@ -21,7 +21,7 @@ export const wpPost: WPPost = {
   post_parent: 0,
   guid: 'http://www.bienaldeartesmediales.cl/14/?post_type=programa&#038;p=638',
   menu_order: 0,
-  post_type: 'programa',
+  post_type: '',
   post_mime_type: '',
   comment_count: '0',
   filter: 'raw'

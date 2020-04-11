@@ -78,7 +78,7 @@ export const event: Event = {
   title: '',
   description: '',
   image: '',
-  place: [],
+  place: wpPost,
   limitedTickets: false,
   participants: [],
   videoUrl: '',
