@@ -3,7 +3,7 @@ import store from '@/config/store'
 import Loader from '@/components/common/Loader.vue'
 import Carousel from '@/components/common/Carousel/Carousel.vue'
 import { mapActions, mapGetters } from 'vuex'
-import { Program } from '@/config/types/types'
+import { Program, MainProgram } from '@/config/types/types'
 import urls, { AppUrls } from '@/config/urls'
 
 @Component({
@@ -25,16 +25,16 @@ import urls, { AppUrls } from '@/config/urls'
 })
 
 // Also displays an event
-class MainProgram extends Vue {
+class MainProgramComponent extends Vue {
   urls: AppUrls = urls
   // Actions
   loadMainPrograms!: () => void
   // Computed
-  getProgramBySlug!: (eventSlug: string) => Program
+  getProgramBySlug!: (eventSlug: string) => MainProgram
   isLoading!: boolean
   dataNotFetched!: boolean
 
-  get program (): Program {
+  get program (): MainProgram {
     return this.getProgramBySlug(this.$route.params.slug)
   }
 
@@ -62,4 +62,4 @@ class MainProgram extends Vue {
     }
   }
 }
-export default MainProgram
+export default MainProgramComponent

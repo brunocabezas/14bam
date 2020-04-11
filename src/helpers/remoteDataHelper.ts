@@ -4,7 +4,6 @@ import getNestedValue from 'get-nested-value'
 import { State } from '@/config/types/types'
 import { AsyncData, AsyncPayload } from '@/config/types/asyncDataTypes'
 import { DataType } from '@/config/mutationTypes'
-//
 // remoteDataHelper
 // provides helpers to create different aspects to store information about
 // async data on vuex:
@@ -12,12 +11,29 @@ import { DataType } from '@/config/mutationTypes'
 // - Vuex async actions available through fetch
 // - Vuex mutations through asyncDataMutations
 // - Vuex message/mutations types thorugh getMutationMessages
+const INITIAL_STATUS_CODE = undefined
+// Attributes of async data state
+const DATA_FIELD_NAME = 'responseData'
+const STATUS_FIELD_NAME = 'status'
+const LOADING_FIELD_NAME = 'loading'
 
+// Types
+interface FetchParams {
+  url: string
+  slug: DataType
+}
+
+interface MutationMessages {
+  BASE: string
+  SUCCESS: string
+  FAILURE: string
+  PENDING: string
+}
 // getMutationMessages
 // SUCCESS => request has succeeded and data is submitted
 // FAILURE => request has failed, only visible in the error code for now
 // PENDING => loading indicator
-const getMutationMessages = (slug: DataType) => ({
+const getMutationMessages = (slug: DataType): MutationMessages => ({
   BASE: slug,
   SUCCESS: `${slug}_SUCCESS`,
   FAILURE: `${slug}_FAILURE`,
@@ -29,9 +45,9 @@ const getMutationMessages = (slug: DataType) => ({
 // the state node must be the same as the slug, but lowercased; using low dashes is recommended
 // for exampe, if the using the slug DATA_TYPE, the state param should be data_type
 export const state = (data: any = []): AsyncData => ({
-  responseData: data, // data from the API response
-  status: undefined, // status code
-  loading: false // loading indicator
+  [DATA_FIELD_NAME]: data, // data from the API response
+  [STATUS_FIELD_NAME]: INITIAL_STATUS_CODE, // status code
+  [LOADING_FIELD_NAME]: false // loading indicator
 })
 
 // isLoadingHelper
@@ -39,22 +55,31 @@ export const state = (data: any = []): AsyncData => ({
 // only stateNode parameter is required, it's a dot separated string
 // used to access a specific state node; e.g. 'expositions.single.accessor'
 // this requires that the stateNode follows the remoteData helper state shapes
-export const isLoadingHelper = (stateNode: DataType) => (state: State): boolean => {
-  return (stateNode && !!getNestedValue(stateNode, state).loading) || false
+export const isLoadingHelper = (stateNode: DataType) => (
+  state: State
+): boolean => {
+  return (
+    (stateNode && !!getNestedValue(stateNode, state)[LOADING_FIELD_NAME]) ||
+    false
+  )
 }
 
 // this requires that the stateNode follows the remoteData helper state shapes
-export const isNotFetchedHelper = (stateNode: DataType) => (state: State): boolean => {
+export const isNotFetchedHelper = (stateNode: DataType) => (
+  state: State
+): boolean => {
   return (
-    stateNode &&
-    !getNestedValue(stateNode, state).loading &&
-    getNestedValue(stateNode, state).status === undefined
-  ) || false
+    (stateNode &&
+      !getNestedValue(stateNode, state)[LOADING_FIELD_NAME] &&
+      getNestedValue(stateNode, state)[STATUS_FIELD_NAME] ===
+        INITIAL_STATUS_CODE) ||
+    false
+  )
 }
 
-// mutations
+// generates mutations to handle async data based on a slug
 export const asyncDataMutations = (slug: DataType) => {
-  const mutations = getMutationMessages(slug)
+  const mutations: MutationMessages = getMutationMessages(slug)
   // State parameter must be the same as the slug, but lowercase
   // using low dashes is recommended
   const getState = (state: State) => state[slug]
@@ -63,26 +88,25 @@ export const asyncDataMutations = (slug: DataType) => {
       const stateNode = getState(state)
       switch (payload.type) {
         case mutations.PENDING:
-          return Vue.set(stateNode, 'loading', payload.value)
+          return Vue.set(stateNode, LOADING_FIELD_NAME, payload.value)
         case mutations.SUCCESS:
           // When request succeeds, set loading and status
-          Vue.set(stateNode, 'status', payload.statusCode)
-          return Vue.set(stateNode, 'responseData', payload.data)
+          Vue.set(stateNode, STATUS_FIELD_NAME, payload.statusCode)
+          return Vue.set(stateNode, DATA_FIELD_NAME, payload.data)
         case mutations.FAILURE:
-          return Vue.set(stateNode, 'status', payload.statusCode)
+          return Vue.set(stateNode, STATUS_FIELD_NAME, payload.statusCode)
       }
     }
   }
 }
 
-// action
-interface FetchParams { url: string, slug: DataType }
-
-export const fetch = ({ commit }: ActionContext<State, any>, params: FetchParams) => {
+export const fetch = (
+  { commit }: ActionContext<State, any>,
+  params: FetchParams
+) => {
   const { url, slug } = params
   // Getting mutationTypes
   const mutations = getMutationMessages(slug)
-  // return (store: Store<State>) : any => {
   // Send the pending flag. Useful for showing a spinner,
   commit(mutations.BASE, {
     type: mutations.PENDING,
@@ -119,5 +143,4 @@ export const fetch = ({ commit }: ActionContext<State, any>, params: FetchParams
         value: false
       })
     })
-  // }
 }

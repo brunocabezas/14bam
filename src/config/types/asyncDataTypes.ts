@@ -2,7 +2,7 @@ import { WPResponse } from './wordpressTypes'
 
 export type AsyncData = {
   responseData: WPResponse, // data from the API response
-  status: any, // status code
+  status: number | undefined, // status code
   loading: boolean // loading indicator
 }
 

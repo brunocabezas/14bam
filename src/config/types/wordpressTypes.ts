@@ -1,5 +1,5 @@
 
-// Wordrpess
+// Wordrpess data types
 export type WPEvent = {
   ID: number,
 }
@@ -50,8 +50,7 @@ export interface WPExcerpt {
   protected: boolean;
 }
 
-
-export  interface AcfFields {
+export interface AcfFields {
   video: string;
   gallery: WpImage[];
   short_description: string;
@@ -64,12 +63,11 @@ export interface WPLinks {
   about: Link[];
   author: Author[];
   replies: Reply[];
-  "version-history": VersionHistory[];
-  "predecessor-version": PredecessorVersion[];
-  "wp:attachment": WpAttachment[];
+  'version-history': VersionHistory[];
+  'predecessor-version': PredecessorVersion[];
+  'wp:attachment': WpAttachment[];
   curies: Cury[];
 }
-
 
 interface Author {
   embeddable: boolean;
@@ -119,7 +117,7 @@ type AcfGenericField = {
 
 export type WPAcfFields = AcfGenericField | ExpositionAcfFields;
 
-type ExpositionAcfFields = { 
+type ExpositionAcfFields = {
   [string: string]: any,
   web: string,
   direccion: string,
@@ -140,7 +138,6 @@ type WPAuthor = {
   embeddable: boolean;
   href: string;
 }
-
 
 type WpTerm = {
   taxonomy: string;
@@ -177,17 +174,17 @@ export interface WpImage {
 
 export interface WpImageSizes {
   thumbnail: string;
-  "thumbnail-width": number;
-  "thumbnail-height": number;
+  'thumbnail-width': number;
+  'thumbnail-height': number;
   medium: string;
-  "medium-width": number;
-  "medium-height": number;
+  'medium-width': number;
+  'medium-height': number;
   medium_large: string;
-  "medium_large-width": number;
-  "medium_large-height": number;
+  'medium_large-width': number;
+  'medium_large-height': number;
   large: string;
-  "large-width": number;
-  "large-height": number;
+  'large-width': number;
+  'large-height': number;
 }
 
 export interface WPPost {
@@ -216,7 +213,6 @@ export interface WPPost {
   comment_count: string;
   filter: string;
 }
-
 
 export type WPCategory = {
   slug: string,

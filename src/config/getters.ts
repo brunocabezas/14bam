@@ -1,6 +1,6 @@
 import { GetterTree } from 'vuex'
 import { isLoadingHelper, isNotFetchedHelper } from '@/helpers/remoteDataHelper'
-import { MainProgram, Participants } from './types/types'
+import { MainProgram, Participants, MainPrograms } from './types/types'
 import { DataType } from './mutationTypes'
 // Getters
 import { pageFromStateByLabel, WPStaticPageSlug } from '@/config/getters/pages'
@@ -53,7 +53,7 @@ let getters: GetterTree<any, any> = {
   // Programs
   mainPrograms: state => getMainPrograms(state.main_programs.responseData),
   isLoadingMainPrograms: isLoadingHelper(DataType.MainPrograms),
-  mainProgramBySlug: (st, { mainPrograms }) => (slug: string) =>
+  mainProgramBySlug: (st, { mainPrograms }) => (slug: string) : MainProgram =>
     mainPrograms.find((program: MainProgram) => program.slug === slug) || {},
   mainProgramsNotFetched: isNotFetchedHelper(DataType.MainPrograms),
 
