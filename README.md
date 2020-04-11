@@ -1,6 +1,11 @@
-# 14 Bienal Artes Mediales site
+# 14 Bienal Artes Mediales web
 
-VueJS application using wordpress as backend.
+[VueJS application](http://www.bienaldeartesmediales.cl/14/) written with typescript using wordpress as backend.
+
+![Navigation](14-bam-navigation.png)
+
+![Expositions](14-bam-expositions.png)
+
 
 ## Project setup
 
@@ -71,15 +76,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Next Steps
 
-- [ ] check use of any on types
-- [x] remove oldSponsors from store state
-- [x] remove comments from apiHelpers
-- [x] api/ with typescript
-- [x] use type variants on remote data helper. Make remote data helper an interface itself
 - [ ] check the use of vue-mq strings on views, maybe we can use enums?
-- [x] use event instead of activity
-- [x] remove vue-types
-- [x] use env variables to define base_url
-- [x] remove console logs
-- [ ] remove console errors
 - [ ] fix download program button
