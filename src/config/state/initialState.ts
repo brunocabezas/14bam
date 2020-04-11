@@ -1,4 +1,4 @@
-import { Exposition, Program, Category, DateObject, Page, Keyword } from '../types/types'
+import { Exposition, Program, Category, DateObject, Page, Keyword, Activity } from '../types/types'
 import { WPCategory } from '../types/wordpressTypes'
 import { wpPost } from './initialWordpressState'
 
@@ -60,6 +60,21 @@ export const date: DateObject = {
   month: 'monthName',
   dateString: 'dateString',
   time: ''
+}
+
+export const activity: Activity = {
+  id: 0,
+  slug: '',
+  title: '',
+  description: '',
+  image: '',
+  place: [],
+  limitedTickets: '',
+  participants: [],
+  videoUrl: '',
+  date,
+  program: [],
+  summary: ''
 }
 
 export const program: Program = {

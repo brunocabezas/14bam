@@ -24,7 +24,7 @@ import store from '@/config/store'
 class ExpositionsGrid extends Vue {
   urls : AppUrls = urls
 
-  // Methods
+  // Actions
   loadExpositions!: () => void;
   // Computed
   expositionsNotFetched!: boolean;

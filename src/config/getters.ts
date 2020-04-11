@@ -65,12 +65,12 @@ let getters: GetterTree<any, any> = {
   isLoadingProgram: isLoadingHelper(DataType.Program),
   programNotFetched: isNotFetchedHelper(DataType.Program),
 
-  // Activities
+  // Activities/Events
   activities: st => getActivitiesFromApi(st.activities.responseData),
-  activityBySlug: (st, { activities }) => (eventSlug: string) =>
+  eventBySlug: (st, { activities }) => (eventSlug: string) =>
     getActivityBySlug(activities, eventSlug),
-  isLoadingActivities: isLoadingHelper(DataType.Activities),
-  activitiesNotFetched: isNotFetchedHelper(DataType.Activities),
+  isLoadingEvents: isLoadingHelper(DataType.Activities),
+  eventsNotFetched: isNotFetchedHelper(DataType.Activities),
 
   // Sponsors - Categories
   // used only on another getter: categoriesFromSponsors

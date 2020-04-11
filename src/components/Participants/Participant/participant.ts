@@ -27,7 +27,7 @@ import { Route } from 'vue-router'
 })
 class ParticipantComponent extends Vue {
   urls: AppUrls = urls
-  // Methods
+  // Actions
   loadParticipant!: (slug: string) => void
   // Computed
   participant!: SingleParticipant

@@ -1,5 +1,5 @@
 <template>
-  <Loader :loading="loading">
+  <Loader :loading="isLoading">
     <div class="program pageLayout">
       <div class="pageLeft">
         <mq-layout mq="lg">
@@ -29,8 +29,6 @@
             </li>
           </ul>
         </div>
-        <!-- <div v-if="program.displayEventsGrid">agenda</div> -->
-        <!-- <div v-if="!program.displayEventsGrid">display list with 3 activities?</div> -->
       </div>
       <div class="pageRight">
         <mq-layout :mq="['sm', 'md']">
@@ -41,11 +39,10 @@
         <h1 class="pageTitle">{{ program.name }}</h1>
         <div v-html="program.text" class="programText"></div>
 
-        <!-- <div v-if="program.displayEventsGrid">events grid</div> -->
       </div>
     </div>
   </Loader>
 </template>
 
-<script src="./mainProgram.js"></script>
+<script src="./mainProgram.ts"></script>
 <style src="./mainProgram.styl" lang="stylus"></style>

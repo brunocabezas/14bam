@@ -3,6 +3,8 @@ import store from '@/config/store'
 import Loader from '@/components/common/Loader.vue'
 import Carousel from '@/components/common/Carousel/Carousel.vue'
 import { mapActions, mapGetters } from 'vuex'
+import { Program } from '@/config/types/types'
+import urls, { AppUrls } from '@/config/urls'
 
 @Component({
   store,
@@ -15,25 +17,36 @@ import { mapActions, mapGetters } from 'vuex'
   },
   computed: {
     ...mapGetters({
-      loading: 'isLoadingMainPrograms',
+      isLoading: 'isLoadingMainPrograms',
       dataNotFetched: 'mainProgramsNotFetched',
-      programBySlug: 'mainProgramBySlug'
+      getProgramBySlug: 'mainProgramBySlug'
     })
   }
 })
+
 // Also displays an event
 class MainProgram extends Vue {
-  urls = this.$root.urls
+  urls: AppUrls = urls
+  // Actions
+  loadMainPrograms!: () => void
+  // Computed
+  getProgramBySlug!: (eventSlug: string) => Program
+  isLoading!: boolean
+  mainProgramsNotFetched!: boolean
 
-  get program () {
-    return this.programBySlug(this.$route.params.slug)
+  get program (): Program {
+    return this.getProgramBySlug(this.$route.params.slug)
   }
 
-  get displayActivities () {
-    return this.program && this.program.name && this.program.name.toLowerCase().includes('escuela')
+  get displayActivities (): boolean {
+    return !!(
+      this.program &&
+      this.program.name &&
+      this.program.name.toLowerCase().includes('escuela')
+    )
   }
 
-  get images () {
+  get images (): string[] {
     // Getting array of urls from program
     return (
       (this.program &&
@@ -44,7 +57,7 @@ class MainProgram extends Vue {
   }
 
   mounted () {
-    if (this.$route.params.slug && this.dataNotFetched) {
+    if (this.$route.params.slug && this.mainProgramsNotFetched) {
       this.loadMainPrograms()
     }
   }

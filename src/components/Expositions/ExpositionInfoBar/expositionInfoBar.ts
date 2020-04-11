@@ -25,7 +25,7 @@ import { Exposition } from '@/config/types/types'
 class ExpositionInfoBar extends Vue {
   @Prop({ default: '' }) readonly expoSlug!: string
   @Prop({ default: null }) readonly expo!: Exposition | null
-  // Methods
+  // Actions
   loadExposition!: (expositionSlug: string) => void
   // Computed
   expositionBySlug!: (expositionSlug: string) => Exposition

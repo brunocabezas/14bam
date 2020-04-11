@@ -6,17 +6,19 @@ import WebVideoPlayer from '@/components/common/WebVideoPlayer.vue'
 import Loader from '@/components/common/Loader.vue'
 import ProgressiveImage from '@/components/common/ProgressiveImage.vue'
 import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/ExpositionInfoBar.vue'
+import urls, { AppUrls } from '@/config/urls'
+import { Activity } from '@/config/types/types'
 
 @Component({
   store,
   methods: {
-    ...mapActions(['loadActivities'])
+    ...mapActions(['loadEvents'])
   },
   computed: {
     ...mapGetters({
-      isLoading: 'isLoadingActivities',
-      dataNotFetched: 'activitiesNotFetched',
-      eventBySlug: 'activityBySlug'
+      isLoading: 'isLoadingEvents',
+      dataNotFetched: 'eventsNotFetched',
+      getEventBySlug: 'eventBySlug'
     })
   },
   components: {
@@ -26,18 +28,24 @@ import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/Exposi
     ExpositionInfoBar
   }
 })
-class Event extends Vue {
-  urls = this.$root.urls
+class EventComponent extends Vue {
+  urls: AppUrls = urls
+  // Actions
+  loadEvents!: () => void
+  // Computed
+  getEventBySlug!: (eventSlug: string) => Activity
+  isLoading!: boolean
+  dataNotFetched!: boolean
 
   mounted () {
     if (this.dataNotFetched) {
-      this.loadActivities()
+      this.loadEvents()
     }
   }
 
-  get event () {
+  get event () : Activity {
     const { slug } = this.$route.params
-    return this.eventBySlug(slug)
+    return this.getEventBySlug(slug)
   }
 }
-export default Event
+export default EventComponent

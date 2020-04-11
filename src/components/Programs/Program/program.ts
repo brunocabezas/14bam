@@ -3,6 +3,8 @@ import { mapActions, mapGetters } from 'vuex'
 import store from '@/config/store'
 import Loader from '@/components/common/Loader.vue'
 import Carousel from '@/components/common/Carousel/Carousel.vue'
+import urls, { AppUrls } from '@/config/urls'
+import { Program } from '@/config/types/types'
 
 @Component({
   store,
@@ -11,23 +13,32 @@ import Carousel from '@/components/common/Carousel/Carousel.vue'
     Carousel
   },
   methods: {
-    ...mapActions(['loadProgram', 'loadActivities'])
+    ...mapActions(['loadProgram', 'loadEvents'])
   },
   computed: {
     ...mapGetters({
-      loading: 'isLoadingProgram',
-      isLoadingActivitiesData: 'isLoadingActivities',
+      isLoading: 'isLoadingProgram',
+      isLoadingEvents: 'isLoadingEvents',
       dataNotFetched: 'programNotFetched',
-      activitiesNotFetched: 'activitiesNotFetched',
+      eventsNotFetched: 'eventsNotFetched',
       program: 'programFromState'
     })
   }
 })
 // Also displays an event
-class Program extends Vue {
-  urls = this.$root.urls
+class ProgramComponent extends Vue {
+  urls: AppUrls = urls
+  // Actions
+  loadProgram!: (programSlug: string) => void
+  loadEvents!: () => void
+  // Computed
+  isLoading!: boolean
+  isLoadingEvents!: boolean
+  dataNotFetched!: boolean
+  eventsNotFetched!: boolean
+  program!: Program
 
-  get images () {
+  get images (): string[] {
     // Getting array of urls from program
     return (
       (this.program &&
@@ -37,7 +48,7 @@ class Program extends Vue {
     )
   }
 
-  get displayActivitiesInformation () {
+  get displayActivitiesInformation (): boolean {
     return (
       this.program &&
       this.program.mainProgram &&
@@ -46,15 +57,15 @@ class Program extends Vue {
   }
 
   mounted () {
-    const skipFetch =
+    const skipFetch : boolean =
       !this.dataNotFetched && this.program.slug === this.$route.params.slug
     if (this.$route.params.slug && !skipFetch) {
-      this.loadProgram({ slug: this.$route.params.slug })
+      this.loadProgram(this.$route.params.slug)
     }
 
-    if (this.activitiesNotFetched) {
-      this.loadActivities()
+    if (this.eventsNotFetched) {
+      this.loadEvents()
     }
   }
 }
-export default Program
+export default ProgramComponent

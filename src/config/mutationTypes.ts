@@ -29,6 +29,7 @@ export enum DataType {
   Program = 'program',
   Sponsors = 'sponsors',
   Pages = 'pages',
+  // TODO update string to 'events'
   Activities = 'activities',
   Categories = 'categories'
 }

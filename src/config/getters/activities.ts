@@ -3,6 +3,7 @@ import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
 import { dateStringToDate } from '../../helpers/dateHelpers'
 import { WPResponseItem, WPResponse } from '../types/wordpressTypes'
 import { Activities, Activity } from '../types/types'
+import { activity } from '../state/initialState'
 
 export const getActivitiesFromApi = (activities: WPResponse): Activities => {
   const result = activities
@@ -33,8 +34,5 @@ export const getActivitiesFromApi = (activities: WPResponse): Activities => {
   return sortBy(result, (s: Activity) => -s.date.jsDate)
 }
 
-export const getActivityBySlug = (activities: Activities, eventSlug: string) =>
-  activities.find((event: Activity) => event.slug === eventSlug) || ({
-    place: {},
-    participants: []
-  })
+export const getActivityBySlug = (activities: Activities, eventSlug: string) : Activity =>
+  activities.find((event: Activity) => event.slug === eventSlug) || activity

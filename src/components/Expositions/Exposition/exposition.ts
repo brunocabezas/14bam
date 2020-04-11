@@ -30,7 +30,7 @@ class ExpositionComponent extends Vue {
 
   $route!: Route
 
-  // Methods
+  // Actions
   loadExposition!: (expositionSlug: string) => void;
   // Computed
   isLoadingData!: boolean;

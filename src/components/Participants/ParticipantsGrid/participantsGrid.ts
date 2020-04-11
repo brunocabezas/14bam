@@ -25,7 +25,7 @@ class ParticipantsGrid extends Vue {
   @Prop({ default: null }) readonly participantsProps!: Participants
 
   urls : AppUrls = urls
-  // Methods
+  // Actions
   loadParticipants!: () => void
   // Computed
   participantsFromState!: Participants

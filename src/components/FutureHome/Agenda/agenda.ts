@@ -14,12 +14,12 @@ import { shortenMonth } from '@/helpers/dateHelpers'
   computed: {
     ...mapGetters({
       events: 'activities',
-      isLoading: 'isLoadingActivities',
-      activitiesNotFetched: 'activitiesNotFetched'
+      isLoading: 'isLoadingEvents',
+      eventsNotFetched: 'eventsNotFetched'
     })
   },
   methods: {
-    ...mapActions(['loadActivities'])
+    ...mapActions(['loadEvents'])
   },
   components: {
     Loader
@@ -28,15 +28,15 @@ import { shortenMonth } from '@/helpers/dateHelpers'
 class Agenda extends Vue {
   urls: AppUrls = urls
 
-  loadActivities!: () => void
+  loadEvents!: () => void
   // Computed
-  activitiesNotFetched!: boolean
+  eventsNotFetched!: boolean
   isLoading!: boolean
   events!: Activities
 
   mounted () {
-    if (this.activitiesNotFetched) {
-      this.loadActivities()
+    if (this.eventsNotFetched) {
+      this.loadEvents()
     }
   }
 }

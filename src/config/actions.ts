@@ -1,7 +1,7 @@
 import { fetch as fetchData } from '../helpers/remoteDataHelper'
 import { DataType } from './mutationTypes'
 import routes from '../../api/routes'
-import { State, Program } from './types/types'
+import { State } from './types/types'
 import { ActionTree } from 'vuex'
 
 // Actions of vuex, that handle async data stored on AppState
@@ -28,16 +28,16 @@ const actions: ActionTree<State, any> = {
     url: routes.mainPrograms,
     slug: DataType.MainPrograms
   }),
-  loadProgram: (store: any, program: Program) =>
+  loadProgram: (store: any, programSlug: string) =>
     fetchData(store, {
-      url: routes.program(program.slug),
+      url: routes.program(programSlug),
       slug: DataType.Program
     }),
   loadSponsors: (store) => fetchData(store, {
     url: routes.sponsors,
     slug: DataType.Sponsors
   }),
-  loadActivities: (store) => fetchData(store, {
+  loadEvents: (store) => fetchData(store, {
     url: routes.programActivities,
     slug: DataType.Activities
   }),

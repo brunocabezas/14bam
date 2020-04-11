@@ -34,7 +34,7 @@
   </Loader>
 </template>
 
-<script src="./event.js"></script>
+<script src="./event.ts"></script>
 <style lang="stylus" scoped>
 .event
   .eventImage

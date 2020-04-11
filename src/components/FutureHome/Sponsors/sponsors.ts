@@ -23,7 +23,7 @@ import { Categories } from '@/config/types/types'
   }
 })
 class SponsorsComponent extends Vue {
-  // Methods
+  // Actions
   loadSponsors!: () => void
   loadWpCategories!: () => Promise<void>
 
