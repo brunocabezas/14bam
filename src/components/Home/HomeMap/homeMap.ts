@@ -9,7 +9,7 @@ import {
 } from 'vue-mapbox'
 import Loader from '@/components/common/Loader.vue'
 import store from '@/config/store'
-import { loadMarkersData } from '../../../../api/client'
+import { loadMarkersData } from '../../../../api/apiClient'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { mapGetters } from 'vuex'
 import { shortenMonth } from '@/helpers/dateHelpers'

@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator'
-import { getVideos } from '../../../api/client'
+import { getVideos } from '../../../api/apiClient'
 import VideoPlayer from '@/components/common/VideoPlayer.vue'
 import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid/ExpositionsGrid.vue'
 import MainPrograms from '@/components/Programs/MainPrograms/MainPrograms.vue'

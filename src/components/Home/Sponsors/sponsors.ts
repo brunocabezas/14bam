@@ -7,7 +7,7 @@ import { Categories } from '@/config/types/types'
 @Component({
   store,
   methods: {
-    ...mapActions(['loadSponsors', 'loadWpCategories'])
+    ...mapActions(['loadSponsors', 'loadCategories'])
   },
   computed: {
     ...mapGetters({
@@ -25,7 +25,7 @@ import { Categories } from '@/config/types/types'
 class SponsorsComponent extends Vue {
   // Actions
   loadSponsors!: () => void
-  loadWpCategories!: () => Promise<void>
+  loadCategories!: () => Promise<void>
 
   // Computed
   categories!: Categories
@@ -41,7 +41,7 @@ class SponsorsComponent extends Vue {
 
   mounted () {
     if (this.categoriesNotFetched) {
-      this.loadWpCategories().then(res => {
+      this.loadCategories().then(res => {
         if (this.sponsorsNotFetched) {
           this.loadSponsors()
         }

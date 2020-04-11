@@ -59,10 +59,8 @@
           </li>
           <li class="headerNavMenuItem">
             <a
-              target="_blank"
-              :href="programURL"
               title="Descargar programa en PDF"
-              :to="urls.about"
+              :download="PDF_PROGRAM_URL"
               >Descargar Programa</a
             >
           </li>

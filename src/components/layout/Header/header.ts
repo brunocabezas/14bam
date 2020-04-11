@@ -20,7 +20,7 @@ enum VueMqMediaQuery {
   }
 })
 class Header extends Vue {
-  programURL = 'http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/programa14bienal.pdf'
+  PDF_PROGRAM_URL = 'http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/programa14bienal.pdf'
   urls : AppUrls = urls;
   isOnHome : boolean = false
   displayElements : boolean = true

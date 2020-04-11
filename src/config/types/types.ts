@@ -170,25 +170,24 @@ export interface Category {
   name: string
   id: number,
   order: string,
+  description: string,
   sponsors: Sponsors
 }
 
 // Sponsors
 export interface Sponsor {
   name: string,
-  logo: string,
+  logo: WpImage,
   author: number,
   order: number,
   category: SponsorCategory,
-  url?: string,
+  url: string,
 }
 
 export interface SponsorCategory {
   name: string
   id: number,
-  // slug: string,
-  // order: string,
-  // sponsors: Sponsors
+  description: string,
 }
 
 // Page

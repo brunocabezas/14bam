@@ -15,7 +15,8 @@ export interface AppUrls {
 }
 
 const urls: AppUrls = {
-  // futureHome: '/14/futuro',
+  // TODO Change home url based on dev environment
+  // On production, application will be licated at `${VUE_APP_BASE_URL}/14/`
   home: '/14/',
   // Program
   program: (programName: string) => `/14/programas/${programName}`,

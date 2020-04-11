@@ -3,9 +3,12 @@ import axios from 'axios'
 import routes from './routes'
 import { resolvedPromise } from '../src/helpers/promiseHelpers'
 
-// TODO Add base url on as env variable
-const BASE_URL : string = 'http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2'
+const BASE_URL: string =
+  process.env.VUE_APP_BASE_URL || 'http://localhost'
 
+if (!process.env.VUE_APP_BASE_URL) {
+  console.warn(`API base url is not defined, it will default to ${BASE_URL}`)
+}
 // Not used
 // export const loadPosts = () =>
 //   Vue.axios.get(routes.posts).then(response => {
@@ -21,7 +24,7 @@ const BASE_URL : string = 'http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2'
 export const getVideos = () => Vue.axios.get(routes.videos)
 
 // directions is an array of strings representing valid addresses
-export const loadMarkersData = (directions : string[] = []) => {
+export const loadMarkersData = (directions: string[] = []) => {
   let promiseArray = directions.map(address => {
     return Vue.axios.get(routes.markerData(address))
   })

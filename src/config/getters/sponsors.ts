@@ -1,16 +1,16 @@
 import { getAcfField, getWPTitle } from '@/helpers/apiHelpers'
-import { WPResponse, WPCategory } from '@/config/types/wordpressTypes'
-import { Sponsors, Sponsor, SponsorCategories } from '@/config/types/types'
+import { WPResponse, WPCategory, WPCategories, WpImage } from '@/config/types/wordpressTypes'
+import { Sponsors, Sponsor, SponsorCategories, SponsorCategory } from '@/config/types/types'
 import { category } from '../state/initialState'
 
 export type SponsorFromAPI = {
   name: string
-  logo: string
+  logo: WpImage,
   date: string
   author: number
   order: number
   category: WPCategory
-  url?: string
+  url: string
 }
 
 export const getSponsorsFromAPI = (sponsors: WPResponse): SponsorFromAPI[] =>
@@ -24,10 +24,21 @@ export const getSponsorsFromAPI = (sponsors: WPResponse): SponsorFromAPI[] =>
     url: getAcfField(sponsor, 'url', null)
   }))
 
+export const getSponsorCategoriesFromApi = (categories: WPCategories): SponsorCategory[] => {
+  return categories.map((category: WPCategory) => ({
+    id: category.id,
+    // Replace dashes with spaces
+    name: category.name.replace(/\s+/g, ' '),
+    description: category.description || ''
+  }))
+}
+
 export const getSponsors = (
   parsedSponsors: SponsorFromAPI[],
   categories: SponsorCategories
 ): Sponsors => {
+  console.log(parsedSponsors)
+
   const sponsors: Sponsors = parsedSponsors
     // For now, filtering sponsors created by the admin wp user
     .filter(
@@ -39,7 +50,7 @@ export const getSponsors = (
         ...sponsor,
         category:
           categories.find(
-            cat => sponsor.category && cat.id === sponsor.category.term_id
+            cat => cat.id === sponsor.category.term_id
           ) || category
       })
     )

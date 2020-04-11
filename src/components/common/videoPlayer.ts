@@ -73,7 +73,7 @@ class VideoPlayer extends Vue {
   }
 
   mounted () {
-    console.log('this is current player instance object', this.player)
+    // console.log('this is current player instance object', this.player)
   }
 }
 export default VideoPlayer

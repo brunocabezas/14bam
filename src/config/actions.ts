@@ -41,7 +41,7 @@ const actions: ActionTree<State, any> = {
     url: routes.programActivities,
     slug: DataType.Activities
   }),
-  loadWpCategories: (store) => fetchData(store, {
+  loadCategories: (store) => fetchData(store, {
     url: routes.categories,
     slug: DataType.Categories
   }),

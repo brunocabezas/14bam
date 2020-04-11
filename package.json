@@ -63,6 +63,9 @@
   "keywords": [
     "vue",
     "frontend",
-    "wordpress"
+    "vuex",
+    "vue-router",
+    "wordpress",
+    "typescript"
   ]
 }

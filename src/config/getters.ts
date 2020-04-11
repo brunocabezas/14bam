@@ -1,11 +1,15 @@
 import { GetterTree } from 'vuex'
 import { isLoadingHelper, isNotFetchedHelper } from '@/helpers/remoteDataHelper'
-import { Exposition, MainProgram, Participants } from './types/types'
+import { MainProgram, Participants } from './types/types'
 import { DataType } from './mutationTypes'
 // Getters
 import { pageFromStateByLabel, WPStaticPageSlug } from '@/config/getters/pages'
 import { getMainPrograms, getProgram } from '@/config/getters/programs'
-import { getSponsors, getSponsorsFromAPI } from '@/config/getters/sponsors'
+import {
+  getSponsors,
+  getSponsorsFromAPI,
+  getSponsorCategoriesFromApi
+} from '@/config/getters/sponsors'
 import { getEventsFromApi, getEventBySlug } from '@/config/getters/events'
 import {
   expositionsSortedByDate,
@@ -16,10 +20,7 @@ import {
   getKeywordsFromParticipants,
   getParticipantFromApi
 } from '@/config/getters/participants'
-import {
-  getCategoriesFromApi,
-  getCategoriesFromSponsors
-} from '@/config/getters/categories'
+import { getCategoriesFromSponsors } from '@/config/getters/categories'
 
 let getters: GetterTree<any, any> = {
   // Expositions
@@ -70,11 +71,12 @@ let getters: GetterTree<any, any> = {
 
   // Sponsors - Categories
   // used only on another getter: categoriesFromSponsors
-  sponsors: state => {
-    const parsedSponsors = getSponsorsFromAPI(state.sponsors.responseData)
-    const parsedCategories = getCategoriesFromApi(state.categories.responseData)
-    return getSponsors(parsedSponsors, parsedCategories)
-  },
+  getSponsorCategoriesFromApi: state =>
+    getSponsorCategoriesFromApi(state.categories.responseData),
+  getSponsorsFromApi: state => getSponsorsFromAPI(state.sponsors.responseData),
+  // Main sponsors getter, used only by categoriesFromSponsors
+  sponsors: (state, { getSponsorsFromApi, getSponsorCategoriesFromApi }) =>
+    getSponsors(getSponsorsFromApi, getSponsorCategoriesFromApi),
   isLoadingSponsors: isLoadingHelper(DataType.Sponsors),
   sponsorsNotFetched: isNotFetchedHelper(DataType.Sponsors),
   // used on Sponsors component
