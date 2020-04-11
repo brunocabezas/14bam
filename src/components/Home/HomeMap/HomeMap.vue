@@ -2,7 +2,6 @@
   <Loader :loading="loadingData">
     <div class="map">
       <MglMap
-        :mapboxGl="mapbox-gl"
         :center="mapCenter"
         :zoom="12"
         :accessToken="mapBoxAccessToken"

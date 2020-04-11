@@ -10,5 +10,6 @@ export type AsyncPayload = {
   data: any, // data from the API response
   statusCode: number, // status code
   value: any, // status code
+  // mutation type
   type: string
 }

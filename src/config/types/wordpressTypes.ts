@@ -1,4 +1,3 @@
-
 // Wordrpess data types
 export type WPEvent = {
   ID: number,
@@ -50,13 +49,6 @@ export interface WPExcerpt {
   protected: boolean;
 }
 
-export interface AcfFields {
-  video: string;
-  gallery: WpImage[];
-  short_description: string;
-  dates: string;
-}
-
 export interface WPLinks {
   self: Link[];
   collection: Link[];
@@ -102,14 +94,6 @@ interface Cury {
 interface Link {
   href: string;
 }
-
-type WPParticipant = {
-  img: string,
-  images: any[],
-  keywords: string[]
-}
-
-export type WPParticipants = WPParticipant[]
 
 type AcfGenericField = {
   [string: string]: any
