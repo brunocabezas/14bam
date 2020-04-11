@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator'
-import { loadVideos } from '../../../api/client'
+import { getVideos } from '../../../api/client'
 import VideoPlayer from '@/components/common/VideoPlayer.vue'
 import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid/ExpositionsGrid.vue'
 import MainPrograms from '@/components/Programs/MainPrograms/MainPrograms.vue'
@@ -47,7 +47,7 @@ class FutureHome extends Vue {
   abstractPage!: Page;
 
   mounted () {
-    loadVideos()
+    getVideos()
       .then(response => {
         const { data } = response
         // Only using data from the first video
@@ -64,7 +64,7 @@ class FutureHome extends Vue {
           }
         }
       })
-      .catch(res => console.log('loadVideosError', res))
+      .catch(res => console.log('getVideosError', res))
   }
 }
 export default FutureHome

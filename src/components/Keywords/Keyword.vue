@@ -7,7 +7,7 @@
       <h3 v-if="keyword.participants.length > 0">
         {{ keyword.participants.length }} participante(s) relacionado(s)
       </h3>
-      <ParticpantsGrid :participantsProps="keyword.participants" />
+      <ParticipantsGrid :participantsProps="keyword.participants" />
     </Loader>
   </div>
 </template>

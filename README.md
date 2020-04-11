@@ -73,4 +73,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ ] check use of any on types
 - [x] remove oldSponsors from store state
 - [ ] remove comments from apiHelpers
-- [ ] use type variants on remote data helper
+- [x] api/ with typescript
+- [ ] use type variants on remote data helper. Make remote data helper an interface itself
+- [ ] check the use of vue-mq strings on views, maybe we can use enums?
+- 

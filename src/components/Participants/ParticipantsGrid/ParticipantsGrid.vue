@@ -19,5 +19,5 @@
   </div>
 </template>
 
-<script src="./participantsGrid.js"></script>
+<script src="./participantsGrid.ts"></script>
 <style scoped lang="stylus" src="./participantsGrid.styl"></style>

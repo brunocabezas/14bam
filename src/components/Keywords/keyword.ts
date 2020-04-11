@@ -2,7 +2,7 @@ import { Vue, Component } from 'vue-property-decorator'
 import { mapGetters } from 'vuex'
 import { Route } from 'vue-router'
 import Loader from '@/components/common/Loader.vue'
-import ParticpantsGrid from '@/components/Participants/ParticipantsGrid/ParticipantsGrid.vue'
+import ParticipantsGrid from '@/components/Participants/ParticipantsGrid/ParticipantsGrid.vue'
 import store from '@/config/store'
 import { Keywords, Keyword } from '@/config/types/types'
 import { keyword } from '@/config/state/initialState'
@@ -11,7 +11,7 @@ import { keyword } from '@/config/state/initialState'
   store,
   components: {
     Loader,
-    ParticpantsGrid
+    ParticipantsGrid
   },
   computed: {
     ...mapGetters({

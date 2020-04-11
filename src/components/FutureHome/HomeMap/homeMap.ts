@@ -60,7 +60,7 @@ class HomeMap extends Vue {
     return this.expositionsFromState.filter(expo => expo.address)
   }
 
-  get markers () {
+  get markers () : MapMarker[] {
     const markers = this.$store.state.markersData
       .map((marker: GoogleMapMarker, ix: number) => {
         return {

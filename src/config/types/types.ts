@@ -23,7 +23,7 @@ export interface State {
   markersData: GoogleMapMarker[],
 }
 
-// Arrays 
+// Arrays
 export type Participants = Participant[]
 export type Programs = Program[]
 export type MainPrograms = MainProgram[]

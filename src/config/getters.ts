@@ -1,4 +1,8 @@
+import { GetterTree } from 'vuex'
 import { isLoadingHelper, isNotFetchedHelper } from '@/helpers/remoteDataHelper'
+import { Exposition, MainProgram, Participants } from './types/types'
+import { DataType } from './mutationTypes'
+// Getters
 import { pageFromStateByLabel, WPStaticPageSlug } from '@/config/getters/pages'
 import { getMainPrograms, getProgram } from '@/config/getters/programs'
 import { getSponsors, getSponsorsFromAPI } from '@/config/getters/sponsors'
@@ -9,19 +13,16 @@ import {
 import {
   getExpositionFromApi,
   expositionsSortedByDate
-} from './getters/exposition'
-import { GetterTree } from 'vuex'
-import { Exposition, Program, Event, MainProgram } from './types/types'
+} from '@/config/getters/exposition'
 import {
   getParticipants,
   getKeywordsFromParticipants,
   getParticipantFromApi
-} from './getters/participants'
+} from '@/config/getters/participants'
 import {
   getCategoriesFromApi,
   getCategoriesFromSponsors
-} from './getters/categories'
-import { DataType } from './mutationTypes'
+} from '@/config/getters/categories'
 
 let getters: GetterTree<any, any> = {
   // Expositions
@@ -43,8 +44,9 @@ let getters: GetterTree<any, any> = {
   participants: getParticipants,
   isLoadingParticipants: isLoadingHelper(DataType.Participants),
   participantsNotFetched: isNotFetchedHelper(DataType.Participants),
-  keywordsFromParticipants: (state, { participants }) =>
-    getKeywordsFromParticipants(participants),
+  keywordsFromParticipants: (state, { participants }: { participants: Participants }) => {
+    return getKeywordsFromParticipants(participants)
+  },
 
   // Participant
   participant: state => getParticipantFromApi(state.participant.responseData),

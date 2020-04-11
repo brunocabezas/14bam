@@ -1,9 +1,12 @@
 import { Component, Vue, Watch } from 'vue-property-decorator'
+import { mapActions, mapGetters } from 'vuex'
 import Carousel from '@/components/common/Carousel/Carousel.vue'
 import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/ExpositionInfoBar.vue'
 import Loader from '@/components/common/Loader.vue'
 import store from '@/config/store'
-import { mapActions, mapGetters } from 'vuex'
+import urls, { AppUrls } from '@/config/urls'
+import { SingleParticipant } from '@/config/types/types'
+import { Route } from 'vue-router'
 
 @Component({
   store,
@@ -18,29 +21,36 @@ import { mapActions, mapGetters } from 'vuex'
   computed: {
     ...mapGetters({
       participant: 'participant',
-      loadingData: 'isLoadingParticipant'
+      isLoading: 'isLoadingParticipant'
     })
   }
 })
-class Participant extends Vue {
-  urls = this.$root.urls
+class ParticipantComponent extends Vue {
+  urls: AppUrls = urls
+  // Methods
+  loadParticipant!: (slug: string) => void
+  // Computed
+  participant!: SingleParticipant
+  isLoading!: boolean
+  participantsNotFetched!: boolean
 
   @Watch('$route')
-  onRouteChanged (route) {
+  onRouteChanged (route: Route) {
     // console.log(route)
-    this.loadParticipant({ slug: route.params.slug })
+    this.loadParticipant(route.params.slug)
+  }
+
+  mounted () {
+    if (this.$route.params.slug) {
+      const doRequest = this.$route.params.slug !== this.participant.slug
+      if (doRequest) {
+        this.loadParticipant(this.$route.params.slug)
+      }
+    }
   }
 
   get expositionSlug () {
     return (this.participant.expo && this.participant.expo.post_name) || ''
   }
-  mounted () {
-    if (this.$route.params.slug) {
-      const doRequest = this.$route.params.slug !== this.participant.slug
-      if (doRequest) {
-        this.loadParticipant({ slug: this.$route.params.slug })
-      }
-    }
-  }
 }
-export default Participant
+export default ParticipantComponent

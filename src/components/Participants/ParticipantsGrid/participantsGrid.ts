@@ -1,18 +1,14 @@
-import { Vue, Component } from 'vue-property-decorator'
-import store from '@/config/store'
-import Loader from '@/components/common/Loader'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 import { mapActions, mapGetters } from 'vuex'
+import store from '@/config/store'
+import Loader from '@/components/common/Loader.vue'
+import urls, { AppUrls } from '@/config/urls'
+import { Participants } from '@/config/types/types'
 
 @Component({
   store,
   components: {
     Loader
-  },
-  props: {
-    participantsProps: {
-      type: Array,
-      default: null
-    }
   },
   computed: {
     ...mapGetters({
@@ -26,9 +22,17 @@ import { mapActions, mapGetters } from 'vuex'
   }
 })
 class ParticipantsGrid extends Vue {
-  urls = this.$root.urls
+  @Prop({ default: null }) readonly participantsProps!: Participants
 
-  get participants () {
+  urls : AppUrls = urls
+  // Methods
+  loadParticipants!: () => void
+  // Computed
+  participantsFromState!: Participants
+  isLoading!: boolean
+  participantsNotFetched!: boolean
+
+  get participants () : Participants {
     return this.participantsProps || this.participantsFromState
   }
 

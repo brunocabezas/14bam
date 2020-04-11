@@ -18,6 +18,8 @@ const mutationTypes = {
   CATEGORIES: 'CATEGORIES'
 }
 
+// TODO Define how to use mutationTypes to generate DataType
+// Wordpress data types
 export enum DataType {
   Expositions = 'expositions',
   Exposition = 'exposition',

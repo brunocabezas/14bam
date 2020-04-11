@@ -3,7 +3,8 @@ import axios from 'axios'
 import routes from './routes'
 import { resolvedPromise } from '../src/helpers/promiseHelpers'
 
-const BASE_URL = 'http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2'
+// TODO Add base url on as env variable
+const BASE_URL : string = 'http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2'
 
 // Not used
 // export const loadPosts = () =>
@@ -16,13 +17,11 @@ const BASE_URL = 'http://www.bienaldeartesmediales.cl/14/wp-json/wp/v2'
 //     console.log('loadPost', postId, response.data)
 //   })
 
-// Custom posts
-export const loadVideos = () => Vue.axios.get(routes.videos)
-
-// export const loadExposition = name => Vue.axios.get(routes.exposition(name))
+// Make requests to wordpress videos, which are not on vuex store
+export const getVideos = () => Vue.axios.get(routes.videos)
 
 // directions is an array of strings representing valid addresses
-export const loadMarkersData = (directions = []) => {
+export const loadMarkersData = (directions : string[] = []) => {
   let promiseArray = directions.map(address => {
     return Vue.axios.get(routes.markerData(address))
   })

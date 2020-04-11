@@ -7,10 +7,10 @@ import urls, { AppUrls } from '@/config/urls'
 import { Route } from 'vue-router'
 
 enum VueMqMediaQuery {
-  SM = "sm",
-  LG = "lg",
-  MD = "md",
-} 
+  SM = 'sm',
+  LG = 'lg',
+  MD = 'md',
+}
 
 @Component({
   components: {
@@ -27,7 +27,7 @@ class Header extends Vue {
 
   // Global media query object available by vue-mq
   $mq!: VueMqMediaQuery
-  
+
   get scrollBreakpoint () {
     return this.$mq === VueMqMediaQuery.SM ? 300 : 100
   }

@@ -1,5 +1,5 @@
 <template>
-  <Loader :loading="loadingData">
+  <Loader :loading="isLoading">
     <ExpositionInfoBar v-if="expositionSlug" :expoSlug="expositionSlug" />
     <div class="participant pageLayout">
       <div class="pageLeft">
@@ -85,7 +85,7 @@
   </Loader>
 </template>
 
-<script src="./participant.js"></script>
+<script src="./participant.ts"></script>
 <style scoped lang="stylus">
 @import '../../../styles/colors';
 
