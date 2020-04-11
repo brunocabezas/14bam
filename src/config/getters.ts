@@ -88,8 +88,8 @@ let getters: GetterTree<any, any> = {
     pageFromStateByLabel(WPStaticPageSlug.About, state),
   [WPStaticPageSlug.Contest]: state =>
     pageFromStateByLabel(WPStaticPageSlug.Contest, state),
-  [WPStaticPageSlug.AboutExposition]: state =>
-    pageFromStateByLabel(WPStaticPageSlug.AboutExposition, state),
+  [WPStaticPageSlug.Abstract]: state =>
+    pageFromStateByLabel(WPStaticPageSlug.Abstract, state),
   isLoadingPages: isLoadingHelper(DataType.Pages),
   pagesNotFetched: isNotFetchedHelper(DataType.Pages)
 }

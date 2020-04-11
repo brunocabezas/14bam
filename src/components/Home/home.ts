@@ -3,13 +3,14 @@ import { getVideos } from '../../../api/client'
 import VideoPlayer from '@/components/common/VideoPlayer.vue'
 import ExpositionsGrid from '@/components/Expositions/ExpositionsGrid/ExpositionsGrid.vue'
 import MainPrograms from '@/components/Programs/MainPrograms/MainPrograms.vue'
-import Agenda from '@/components/FutureHome/Agenda/Agenda.vue'
-import Map from '@/components/FutureHome/HomeMap/HomeMap.vue'
-import Sponsors from '@/components/FutureHome/Sponsors/Sponsors.vue'
+import Agenda from '@/components/Home/Agenda/Agenda.vue'
+import Map from '@/components/Home/HomeMap/HomeMap.vue'
+import Sponsors from '@/components/Home/Sponsors/Sponsors.vue'
 import store from '@/config/store'
 import urls, { AppUrls } from '@/config/urls'
 import { mapGetters } from 'vuex'
 import { Page } from '@/config/types/types'
+import { WPStaticPageSlug } from '@/config/getters/pages'
 
 type HomeVideo = {
   id: number,
@@ -30,11 +31,11 @@ type HomeVideo = {
   store,
   computed: {
     ...mapGetters({
-      abstractPage: 'abstractPage'
+      abstractPage: WPStaticPageSlug.Abstract
     })
   }
 })
-class FutureHome extends Vue {
+class Home extends Vue {
   urls : AppUrls = urls;
   video : HomeVideo= {
     id: 0,
@@ -67,4 +68,4 @@ class FutureHome extends Vue {
       .catch(res => console.log('getVideosError', res))
   }
 }
-export default FutureHome
+export default Home

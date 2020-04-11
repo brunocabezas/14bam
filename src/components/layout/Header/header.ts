@@ -5,6 +5,7 @@ import SocialNetworks from '../../common/SocialNetworks.vue'
 import 'vue-burger-button/dist/vue-burger-button.css'
 import urls, { AppUrls } from '@/config/urls'
 import { Route } from 'vue-router'
+import { HOME_URL_NAME } from '@/config/router'
 
 enum VueMqMediaQuery {
   SM = 'sm',
@@ -42,18 +43,16 @@ class Header extends Vue {
   @Watch('$route')
   onPropertyChanged (to : Route, from : Route) {
     // If is on home and scroll passdown the first section, show header
-    this.isOnHome = to.name === 'home'
+    this.isOnHome = to.name === HOME_URL_NAME
     this.displayElements =
-      to.name !== 'home' ||
+      to.name !== HOME_URL_NAME ||
       window.scrollY > this.viewportHeight - this.scrollBreakpoint
   }
 
   created () {
-    // const isOnFutureHome = this.$route.name === 'futureHome'
-    this.isOnHome = this.$route.name === 'home'
-    // this.isOnFutureHome = isOnFutureHome
+    this.isOnHome = this.$route.name === HOME_URL_NAME
     this.displayElements =
-      this.$route.name !== 'home' ||
+      this.$route.name !== HOME_URL_NAME ||
       window.scrollY > this.viewportHeight - this.scrollBreakpoint
     document.addEventListener('scroll', this.handleScroll)
     document.addEventListener('keyup', this.closeMenuByKeyboard)

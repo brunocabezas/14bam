@@ -7,7 +7,7 @@ import { page } from '../state/initialState'
 export enum WPStaticPageSlug {
   About = 'sobre',
   Contest = 'concurso',
-  AboutExposition = 'mundo',
+  Abstract = 'mundo',
 }
 
 export function pageFromStateByLabel (slug: WPStaticPageSlug, state: State) : Page {

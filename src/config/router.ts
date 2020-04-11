@@ -4,16 +4,13 @@ import paths from '@/config/urls'
 
 Vue.use(Router)
 
+export const HOME_URL_NAME = 'home'
+
 const routes: RouteConfig[] = [
-  // {
-  //   path: paths.home,
-  //   name: 'home',
-  //   component: () => import(Home)
-  // },
   {
     path: paths.home,
-    name: 'home',
-    component: () => import('@/components/FutureHome/FutureHome.vue')
+    name: HOME_URL_NAME,
+    component: () => import('@/components/Home/Home.vue')
   },
   // Static content pages
   {

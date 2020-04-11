@@ -19,7 +19,7 @@ import { Page } from '../../config/types/types'
     ...mapGetters({
       isLoading: 'isLoadingPages',
       pagesNotFetched: 'pagesNotFetched',
-      page: WPStaticPageSlug.AboutExposition
+      page: WPStaticPageSlug.Abstract
     })
   },
   components: {
