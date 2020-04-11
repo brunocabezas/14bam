@@ -3,7 +3,7 @@ import { mapGetters, mapActions } from 'vuex'
 import store from '@/config/store'
 import Loader from '@/components/common/Loader.vue'
 import urls, { AppUrls } from '@/config/urls'
-import { Activities } from '@/config/types/types'
+import { Events } from '@/config/types/types'
 import { shortenMonth } from '@/helpers/dateHelpers'
 
 @Component({
@@ -32,7 +32,7 @@ class Agenda extends Vue {
   // Computed
   eventsNotFetched!: boolean
   isLoading!: boolean
-  events!: Activities
+  events!: Events
 
   mounted () {
     if (this.eventsNotFetched) {

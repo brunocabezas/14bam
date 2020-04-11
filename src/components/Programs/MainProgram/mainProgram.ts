@@ -32,7 +32,7 @@ class MainProgram extends Vue {
   // Computed
   getProgramBySlug!: (eventSlug: string) => Program
   isLoading!: boolean
-  mainProgramsNotFetched!: boolean
+  dataNotFetched!: boolean
 
   get program (): Program {
     return this.getProgramBySlug(this.$route.params.slug)
@@ -57,7 +57,7 @@ class MainProgram extends Vue {
   }
 
   mounted () {
-    if (this.$route.params.slug && this.mainProgramsNotFetched) {
+    if (this.$route.params.slug && this.dataNotFetched) {
       this.loadMainPrograms()
     }
   }

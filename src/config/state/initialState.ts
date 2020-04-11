@@ -5,7 +5,7 @@ import {
   DateObject,
   Page,
   Keyword,
-  Activity,
+  Event,
   SponsorCategory
 } from '../types/types'
 import { wpPost } from './initialWordpressState'
@@ -72,14 +72,14 @@ export const date: DateObject = {
   time: ''
 }
 
-export const event: Activity = {
+export const event: Event = {
   id: 0,
   slug: '',
   title: '',
   description: '',
   image: '',
   place: [],
-  limitedTickets: '',
+  limitedTickets: false,
   participants: [],
   videoUrl: '',
   date,

@@ -17,7 +17,7 @@ export interface State {
   [DataType.MainPrograms]: AsyncData,
   [DataType.Program]: AsyncData,
   [DataType.Pages]: AsyncData,
-  [DataType.Activities]: AsyncData,
+  [DataType.Events]: AsyncData,
   [DataType.Categories]: AsyncData,
   markersData: GoogleMapMarker[],
 }
@@ -29,7 +29,7 @@ export type MainPrograms = MainProgram[]
 export type Categories = Category[]
 export type Sponsors = Sponsor[]
 export type SponsorCategories = SponsorCategory[]
-export type Activities = Activity[]
+export type Events = Event[]
 export type Expositions = Exposition[]
 export type Keywords = Keyword[]
 export type MapMarkers = MapMarker[]
@@ -94,30 +94,30 @@ export interface Participant {
 }
 
 // Activities/Events
-export interface Activity {
+export interface Event {
   id: number,
   slug: string,
   title: string,
   description: string,
-  image: string,
-  place: WPPost[],
-  limitedTickets: any,
-  participants: any,
   videoUrl: string,
+  place: WPPost[],
+  limitedTickets: boolean,
   date: DateObject,
+  image: string,
+  participants: WPPost[],
   program: WPPost[],
   summary: string,
 }
 
-export interface Event {
-  id: number,
-  slug: string,
-  date: DateObject,
-  start: {
-    dateTime: any
-  },
-  summary: string,
-}
+// export interface Event {
+//   id: number,
+//   slug: string,
+//   date: DateObject,
+//   start: {
+//     dateTime: any
+//   },
+//   summary: string,
+// }
 
 export interface DateObject {
   day: string,

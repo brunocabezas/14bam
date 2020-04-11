@@ -25,7 +25,7 @@ let state: State = {
   // Programs and sub-programs
   [DataType.MainPrograms]: asyncState(), // Main program contain programs
   [DataType.Program]: asyncState([program]), // Program contains activities
-  [DataType.Activities]: asyncState(),
+  [DataType.Events]: asyncState(),
   // Data fetched from google api to get lat,lon coordinates from an array of addresses
   markersData: [],
   // Wordpress data
@@ -40,7 +40,7 @@ const mutations = {
   ...asyncDataMutations(DataType.Participant),
   ...asyncDataMutations(DataType.MainPrograms),
   ...asyncDataMutations(DataType.Program),
-  ...asyncDataMutations(DataType.Activities),
+  ...asyncDataMutations(DataType.Events),
   ...asyncDataMutations(DataType.Sponsors),
   ...asyncDataMutations(DataType.Categories),
   ...asyncDataMutations(DataType.Pages),

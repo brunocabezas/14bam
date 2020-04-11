@@ -49,12 +49,6 @@ export const isValidDate = (d: any) : boolean => {
   return d instanceof Date
 }
 
-export const sortEventsByDate = (a: Event, b: Event) => {
-  // Turn your strings into dates, and then subtract them
-  // to get a value that is either negative, positive, or zero.
-  return new Date(a.start.dateTime).valueOf() - new Date(b.start.dateTime).valueOf()
-}
-
 // dateStringToDate
 // receives date string as
 // 12 de noviembre

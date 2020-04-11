@@ -39,7 +39,7 @@ const actions: ActionTree<State, any> = {
   }),
   loadEvents: (store) => fetchData(store, {
     url: routes.programActivities,
-    slug: DataType.Activities
+    slug: DataType.Events
   }),
   loadCategories: (store) => fetchData(store, {
     url: routes.categories,

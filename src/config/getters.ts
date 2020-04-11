@@ -66,8 +66,8 @@ let getters: GetterTree<any, any> = {
   events: st => getEventsFromApi(st.activities.responseData),
   eventBySlug: (st, { events }) => (eventSlug: string) =>
     getEventBySlug(events, eventSlug),
-  isLoadingEvents: isLoadingHelper(DataType.Activities),
-  eventsNotFetched: isNotFetchedHelper(DataType.Activities),
+  isLoadingEvents: isLoadingHelper(DataType.Events),
+  eventsNotFetched: isNotFetchedHelper(DataType.Events),
 
   // Sponsors - Categories
   // used only on another getter: categoriesFromSponsors

@@ -1,7 +1,7 @@
 import sortBy from 'array-sort-by'
 import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
 import { WPResponse, WPPost } from '@/config/types/wordpressTypes'
-import { MainPrograms, Program, State, Activity } from '@/config/types/types'
+import { MainPrograms, Program, State, Event } from '@/config/types/types'
 import { getEventsFromApi } from '@/config/getters/events'
 import { program, date } from '../state/initialState'
 
@@ -48,7 +48,7 @@ export const getProgram = (state: State): Program => {
   // Replacing events with activities from state
   return Object.assign({}, program, {
     events: sortBy(program.events
-      .map((event: WPPost) => activities.find((act: Activity) => act.id === event.ID))
-      .filter((validItem?: Activity) => validItem), (e: Activity) => e.date.jsDate)
+      .map((event: WPPost) => activities.find((act: Event) => act.id === event.ID))
+      .filter((validItem?: Event) => validItem), (e: Event) => e.date.jsDate)
   })
 }

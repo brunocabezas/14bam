@@ -52,6 +52,7 @@ const routes: RouteConfig[] = [
     component: () =>
       import('@/components/Participants/Participant/Participant.vue')
   },
+  // Keyword view
   {
     path: paths.keyword(':slug'),
     name: 'keyword',

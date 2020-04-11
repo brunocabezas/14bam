@@ -1,5 +1,4 @@
-import { Categories } from '@/config/types/types'
-import { WPResponseItem, WPCategories, WPCategory } from '@/config/types/wordpressTypes'
+import { WPResponseItem } from '@/config/types/wordpressTypes'
 
 //
 // apiHelpers
@@ -10,11 +9,15 @@ import { WPResponseItem, WPCategories, WPCategory } from '@/config/types/wordpre
 
 // Local Helpers
 // Gets advanced custom fields values from results
-export const getAcfField = (results: WPResponseItem, fieldName: string, defaultValue: any = undefined): any =>
-  (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
+export const getAcfField = (
+  results: WPResponseItem,
+  fieldName: string,
+  defaultValue: any = undefined
+): any => (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
 
 // Gets wordpress post title
-export const getWPTitle = (object: WPResponseItem): string => (object.title && object.title.rendered) || ''
+export const getWPTitle = (object: WPResponseItem): string =>
+  (object.title && object.title.rendered) || ''
 
 // type SortedEvent = {
 //   id: number,

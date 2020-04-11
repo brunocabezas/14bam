@@ -7,7 +7,7 @@ import Loader from '@/components/common/Loader.vue'
 import ProgressiveImage from '@/components/common/ProgressiveImage.vue'
 import ExpositionInfoBar from '@/components/Expositions/ExpositionInfoBar/ExpositionInfoBar.vue'
 import urls, { AppUrls } from '@/config/urls'
-import { Activity } from '@/config/types/types'
+import { Event } from '@/config/types/types'
 
 @Component({
   store,
@@ -33,7 +33,7 @@ class EventComponent extends Vue {
   // Actions
   loadEvents!: () => void
   // Computed
-  getEventBySlug!: (eventSlug: string) => Activity
+  getEventBySlug!: (eventSlug: string) => Event
   isLoading!: boolean
   dataNotFetched!: boolean
 
@@ -43,7 +43,7 @@ class EventComponent extends Vue {
     }
   }
 
-  get event () : Activity {
+  get event () : Event {
     const { slug } = this.$route.params
     return this.getEventBySlug(slug)
   }
