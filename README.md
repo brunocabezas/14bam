@@ -77,4 +77,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ ] use type variants on remote data helper. Make remote data helper an interface itself
 - [ ] check the use of vue-mq strings on views, maybe we can use enums?
 - [ ] use event instead of activity
-- [ ] remove vue-types
+- [x] remove vue-types

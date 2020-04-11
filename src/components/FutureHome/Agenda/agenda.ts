@@ -13,7 +13,7 @@ import { shortenMonth } from '@/helpers/dateHelpers'
   },
   computed: {
     ...mapGetters({
-      events: 'activities',
+      events: 'events',
       isLoading: 'isLoadingEvents',
       eventsNotFetched: 'eventsNotFetched'
     })

@@ -3,17 +3,19 @@ import { WpImage, WPResponse } from '../types/wordpressTypes'
 import { Expositions, Exposition, State } from '../types/types'
 import { exposition } from '../state/initialState'
 import { dateStringToDate } from '@/helpers/dateHelpers'
+import { DataType } from '../mutationTypes'
 
 // const mapArrayOfImgUrls = img => img.sizes.medium || img.url
 const mapArrayOfImgUrls = (img: WpImage) => img.url
 
 export const getExpositionsFromApi = (data: WPResponse): Expositions =>
   data.map(expo => {
-    const images = getAcfField(expo, 'galeria', []).map(
-      mapArrayOfImgUrls
-    )
-    const mainImg = getAcfField(expo, 'foto_principal', { url: '', sizes: { medium: '' } })
-    return ({
+    const images = getAcfField(expo, 'galeria', []).map(mapArrayOfImgUrls)
+    const mainImg = getAcfField(expo, 'foto_principal', {
+      url: '',
+      sizes: { medium: '' }
+    })
+    return {
       id: expo.id,
       wpId: expo.id,
       slug: expo.slug,
@@ -33,17 +35,18 @@ export const getExpositionsFromApi = (data: WPResponse): Expositions =>
       images: [mainImg.sizes.medium || mainImg.url, ...images],
       mainImg,
       name: getWPTitle(expo)
-    })
+    }
   })
 
 export const getExpositionFromApi = (data: WPResponse = []): Exposition => {
   if (!data[0]) {
     return { ...exposition }
   }
-  const images = getAcfField(data[0], 'galeria', []).map(
-    mapArrayOfImgUrls
-  )
-  const mainImg = getAcfField(data[0], 'foto_principal', { url: '', sizes: { medium: '' } })
+  const images = getAcfField(data[0], 'galeria', []).map(mapArrayOfImgUrls)
+  const mainImg = getAcfField(data[0], 'foto_principal', {
+    url: '',
+    sizes: { medium: '' }
+  })
   return Object.assign(
     {},
     {
@@ -70,11 +73,28 @@ export const getExpositionFromApi = (data: WPResponse = []): Exposition => {
   )
 }
 
-export const expositionsSortedByDate = (state: State) : Expositions => {
+export const expositionsSortedByDate = (state: State): Expositions => {
   if (!state.expositions || !state.expositions.responseData) {
     return []
   }
   return getExpositionsFromApi(state.expositions.responseData).sort(
-    (a: Exposition, b: Exposition) => dateStringToDate(a.startDate).valueOf() - dateStringToDate(b.startDate).valueOf()
+    (a: Exposition, b: Exposition) =>
+      dateStringToDate(a.startDate).valueOf() -
+      dateStringToDate(b.startDate).valueOf()
+  )
+}
+
+export const expositionBySlug = (
+  expositionsOnState: Expositions,
+  expoSlug: string,
+  state: State
+): Exposition => {
+  const expositionOnState = expositionsOnState.find(
+    (e: Exposition) => e.slug === expoSlug
+  )
+  // If the data it's not in the state.expositions, should be on state.exposition
+  return (
+    expositionOnState ||
+    getExpositionFromApi(state[DataType.Exposition].responseData)
   )
 }

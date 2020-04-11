@@ -2,7 +2,7 @@ import sortBy from 'array-sort-by'
 import { getAcfField, getWPTitle } from '../../helpers/apiHelpers'
 import { WPResponse, WPPost } from '@/config/types/wordpressTypes'
 import { MainPrograms, Program, State, Activity } from '@/config/types/types'
-import { getActivitiesFromApi } from '@/config/getters/activities'
+import { getEventsFromApi } from '@/config/getters/events'
 import { program, date } from '../state/initialState'
 
 // Main program is not included
@@ -41,7 +41,7 @@ const getProgramFromApi = (apiResponse: WPResponse = []): Program => {
 }
 
 export const getProgram = (state: State): Program => {
-  const activities = getActivitiesFromApi(state.activities.responseData)
+  const activities = getEventsFromApi(state.activities.responseData)
   // If there are no activities on state; doing nothing
   const program = getProgramFromApi(state.program.responseData)
   if (activities.length === 0) return program

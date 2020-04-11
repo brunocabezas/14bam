@@ -14,7 +14,7 @@ import { Exposition } from '@/config/types/types'
   },
   computed: {
     ...mapGetters({
-      expositionBySlug: 'expositionBySlug',
+      getExpositionBySlug: 'expositionBySlug',
       isLoadingExpositions: 'isLoadingExpositions',
       isLoadingExposition: 'isLoadingExposition',
       expositionsNotFetched: 'expositionsNotFetched',
@@ -28,7 +28,7 @@ class ExpositionInfoBar extends Vue {
   // Actions
   loadExposition!: (expositionSlug: string) => void
   // Computed
-  expositionBySlug!: (expositionSlug: string) => Exposition
+  getExpositionBySlug!: (expositionSlug: string) => Exposition
   isLoadingExpositions!: boolean
   isLoadingExposition!: boolean
   expositionsNotFetched!: boolean
@@ -36,7 +36,7 @@ class ExpositionInfoBar extends Vue {
 
   get exposition () : Exposition {
     return (
-      this.expo || this.expositionBySlug(this.expoSlug) || {}
+      this.expo || this.getExpositionBySlug(this.expoSlug) || {}
     )
   }
 

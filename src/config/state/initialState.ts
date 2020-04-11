@@ -62,7 +62,7 @@ export const date: DateObject = {
   time: ''
 }
 
-export const activity: Activity = {
+export const event: Activity = {
   id: 0,
   slug: '',
   title: '',

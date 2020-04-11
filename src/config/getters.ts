@@ -6,13 +6,10 @@ import { DataType } from './mutationTypes'
 import { pageFromStateByLabel, WPStaticPageSlug } from '@/config/getters/pages'
 import { getMainPrograms, getProgram } from '@/config/getters/programs'
 import { getSponsors, getSponsorsFromAPI } from '@/config/getters/sponsors'
+import { getEventsFromApi, getEventBySlug } from '@/config/getters/events'
 import {
-  getActivitiesFromApi,
-  getActivityBySlug
-} from '@/config/getters/activities'
-import {
-  getExpositionFromApi,
-  expositionsSortedByDate
+  expositionsSortedByDate,
+  expositionBySlug
 } from '@/config/getters/exposition'
 import {
   getParticipants,
@@ -31,12 +28,8 @@ let getters: GetterTree<any, any> = {
   expositionsNotFetched: isNotFetchedHelper(DataType.Expositions),
 
   // Exposition
-  expositionBySlug: (state, { expositionsByDate }) => (expoSlug: string) => {
-    const isOnState = expositionsByDate.find(
-      (e: Exposition) => e.slug === expoSlug
-    )
-    return isOnState || getExpositionFromApi(state.exposition.responseData)
-  },
+  expositionBySlug: (state, { expositionsByDate }) => (expoSlug: string) =>
+    expositionBySlug(expositionsByDate, expoSlug, state),
   isLoadingExposition: isLoadingHelper(DataType.Exposition),
   expositionNotFetched: isNotFetchedHelper(DataType.Exposition),
 
@@ -44,7 +37,10 @@ let getters: GetterTree<any, any> = {
   participants: getParticipants,
   isLoadingParticipants: isLoadingHelper(DataType.Participants),
   participantsNotFetched: isNotFetchedHelper(DataType.Participants),
-  keywordsFromParticipants: (state, { participants }: { participants: Participants }) => {
+  keywordsFromParticipants: (
+    state,
+    { participants }: { participants: Participants }
+  ) => {
     return getKeywordsFromParticipants(participants)
   },
 
@@ -65,10 +61,10 @@ let getters: GetterTree<any, any> = {
   isLoadingProgram: isLoadingHelper(DataType.Program),
   programNotFetched: isNotFetchedHelper(DataType.Program),
 
-  // Activities/Events
-  activities: st => getActivitiesFromApi(st.activities.responseData),
-  eventBySlug: (st, { activities }) => (eventSlug: string) =>
-    getActivityBySlug(activities, eventSlug),
+  // Events (ex activities)
+  events: st => getEventsFromApi(st.activities.responseData),
+  eventBySlug: (st, { events }) => (eventSlug: string) =>
+    getEventBySlug(events, eventSlug),
   isLoadingEvents: isLoadingHelper(DataType.Activities),
   eventsNotFetched: isNotFetchedHelper(DataType.Activities),
 
@@ -88,8 +84,10 @@ let getters: GetterTree<any, any> = {
   categoriesNotFetched: isNotFetchedHelper(DataType.Categories),
 
   // Wordpress static pages
-  [WPStaticPageSlug.About]: state => pageFromStateByLabel(WPStaticPageSlug.About, state),
-  [WPStaticPageSlug.Contest]: state => pageFromStateByLabel(WPStaticPageSlug.Contest, state),
+  [WPStaticPageSlug.About]: state =>
+    pageFromStateByLabel(WPStaticPageSlug.About, state),
+  [WPStaticPageSlug.Contest]: state =>
+    pageFromStateByLabel(WPStaticPageSlug.Contest, state),
   [WPStaticPageSlug.AboutExposition]: state =>
     pageFromStateByLabel(WPStaticPageSlug.AboutExposition, state),
   isLoadingPages: isLoadingHelper(DataType.Pages),
