@@ -2,11 +2,13 @@
   <StaticPage :loading="isLoading" :page="page" />
 </template>
 
-<script>
+<script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { mapActions, mapGetters } from 'vuex'
 import store from '@/config/store'
 import StaticPage from '@/components/StaticPages/StaticPage.vue'
+import { WPStaticPageSlug } from '../../config/getters/pages'
+import { Page } from '../../config/types/types'
 
 @Component({
   store,
@@ -17,7 +19,7 @@ import StaticPage from '@/components/StaticPages/StaticPage.vue'
     ...mapGetters({
       isLoading: 'isLoadingPages',
       pagesNotFetched: 'pagesNotFetched',
-      page: 'aboutPage'
+      page: WPStaticPageSlug.About
     })
   },
   components: {
@@ -25,6 +27,13 @@ import StaticPage from '@/components/StaticPages/StaticPage.vue'
   }
 })
 class About extends Vue {
+  // Actions
+  loadWpPages!: () => void
+  // Computed
+  page!: Page
+  isLoading!: boolean
+  pagesNotFetched!: boolean
+
   mounted () {
     if (this.pagesNotFetched) {
       this.loadWpPages()

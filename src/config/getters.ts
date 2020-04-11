@@ -88,9 +88,9 @@ let getters: GetterTree<any, any> = {
   categoriesNotFetched: isNotFetchedHelper(DataType.Categories),
 
   // Wordpress static pages
-  aboutPage: state => pageFromStateByLabel(WPStaticPageSlug.About, state),
-  contestPage: state => pageFromStateByLabel(WPStaticPageSlug.Contest, state),
-  abstractPage: state =>
+  [WPStaticPageSlug.About]: state => pageFromStateByLabel(WPStaticPageSlug.About, state),
+  [WPStaticPageSlug.Contest]: state => pageFromStateByLabel(WPStaticPageSlug.Contest, state),
+  [WPStaticPageSlug.AboutExposition]: state =>
     pageFromStateByLabel(WPStaticPageSlug.AboutExposition, state),
   isLoadingPages: isLoadingHelper(DataType.Pages),
   pagesNotFetched: isNotFetchedHelper(DataType.Pages)

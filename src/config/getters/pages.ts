@@ -3,6 +3,7 @@ import { Page, PageGalleryImg, State } from '@/config/types/types'
 import { WPResponseItem } from '@/config/types/wordpressTypes'
 import { page } from '../state/initialState'
 
+// Three wordpress pages are being displayed
 export enum WPStaticPageSlug {
   About = 'sobre',
   Contest = 'concurso',
